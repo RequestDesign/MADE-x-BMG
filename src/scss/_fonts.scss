@@ -1,0 +1,7 @@
+//путь до шрифтов идет из папки src
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 400;
+  src: url("./assets/fonts/HelveticaNeueCyr-Roman.woff") format("woff"),
+    url("./assets/fonts/HelveticaNeueCyr-Roman.woff2") format("woff2");
+}
