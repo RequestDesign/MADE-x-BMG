@@ -1,0 +1,102 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 33rem;
+    right: 0;
+
+    padding: 1.6rem 3.2rem 1.6rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $yl-color-container;
+    color: $yl-color-text;
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__user-info {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-right: 4.8rem;
+
+        &__photo {
+            width: 5.7rem;
+            height: 5.7rem;
+            border-radius: 100%;
+            overflow: hidden;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__desc {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        &__name {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 93.75%;
+        }
+
+        &__job {
+            color: $y-color-text-muted;
+        }
+    }
+
+    &__work {
+        background-color: $yl-color-bg;
+        border-radius: 3.2rem;
+        padding: 1.7rem 2.4rem;
+        margin-right: 1.6rem;
+        cursor: pointer;
+
+        img {
+            width: 12.6rem;
+            height: 1.5rem;
+            flex-shrink: 0;
+        }
+    }
+
+    &__notices {
+        background-color: $yl-color-bg;
+        border-radius: 3.2rem;
+        padding: 0.7rem 0.8rem 0.7rem 1.8rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        gap: 3.4rem;
+        cursor: pointer;
+
+        &__ico{
+            background-color: $yl-color-text;
+            padding: 1.2rem 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+
+            svg{
+                width: 1.3rem;
+                height: 1.3rem;
+            }
+        }
+    }
+
+    &__exit {
+        svg {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+}

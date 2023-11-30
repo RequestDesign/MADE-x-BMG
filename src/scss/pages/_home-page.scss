@@ -1,0 +1,242 @@
+.home {
+    .container {
+        display: flex;
+        gap: 2rem;
+        background-color: $yl-color-bg;
+        height: 100%;
+    }
+
+    &__news {
+        width: 29rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1;
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+        margin-bottom: 1.2rem;
+    }
+
+    &__row {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__incoming-requests {
+        width: 44.5rem;
+        padding: 2.4rem 2.4rem 2.7rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title {
+            font-weight: 500;
+            font-size: 2rem;
+            letter-spacing: 0.02rem;
+        }
+
+        &__cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        &__card {
+            padding: 1.8rem 1.6rem 1.8rem 2.4rem;
+            border-radius: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .title {
+                font-size: 1.8rem;
+                font-weight: 500;
+                letter-spacing: 0.018rem;
+                min-width: 14.4rem;
+                text-align: left;
+            }
+
+            .amount {
+                font-size: 2rem;
+                font-weight: 500;
+                letter-spacing: 0.02rem;
+                background-color: $yl-color-bg;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1.2rem;
+                width: 3.6rem;
+                height: 3.6rem;
+            }
+        }
+    }
+
+    &__my-discovery {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .title {
+            font-weight: 500;
+            font-size: 2rem;
+            letter-spacing: 0.02rem;
+        }
+
+        &__cards {
+            display: flex;
+            gap: 1.6rem;
+        }
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            gap: 6.5rem;
+            padding: 1.2rem 3.5rem 1.2rem 1.2rem;
+            border-radius: 1.6rem;
+            width: 14.9rem;
+
+            .title {
+                font-size: 1.6rem;
+                font-weight: 500;
+                letter-spacing: 0.016rem;
+            }
+
+            .icon {
+                background-color: $yl-color-bg;
+                border-radius: 100%;
+                width: 3.6rem;
+                height: 3.6rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+
+    &__requests {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 2.8rem 2.4rem;
+        flex: 1;
+
+        &__title {
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0.024rem;
+        }
+
+        &__cards {
+            display: flex;
+            gap: 1.6rem;
+        }
+
+
+        &__card {
+            border-radius: 1.6rem;
+            padding-bottom: 3.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+            background-color: $yl-color-bg;
+
+            .title {
+                font-size: 2rem;
+                font-weight: 500;
+                letter-spacing: 0.02rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .card-img {
+                height: 10.7rem;
+                width: 100%;
+                border-radius: 1.6rem 1.6rem 0 0;
+            }
+        }
+    }
+
+    &__news {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .swiper-wrapper{
+            height: 89.6rem !important;
+        }
+
+        .swiper-slide{
+            height: 21.2rem !important;
+        }
+
+        &__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0.024rem;
+        }
+
+        &__slider {
+            height: 89.6rem !important;
+        }
+
+        &__card {
+            border-radius: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            background-color: $yl-color-bg;
+            padding-bottom: 1.2rem;
+
+            .card-img{
+                height: 12.3rem;
+                width: 100%;
+                border-radius: 1.6rem 1.6rem 0 0;
+            }
+
+            .title {
+                margin-top: 0.4rem;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 120%;
+                letter-spacing: 0.016rem;
+                padding: 0 2.3rem 0 1.2rem;
+            }
+
+            .date {
+                color: $yl-color-date;
+                font-size: 1.6rem;
+                font-weight: 500;
+                letter-spacing: 0.016rem;
+                padding: 0 2.3rem 0 1.2rem;
+            }
+        }
+    }
+}

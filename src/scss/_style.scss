@@ -1,55 +1,59 @@
 //Font
 @font-face {
-  font-family: 'Gilroy';
-  src: url(./../assets/fonts/Gilroy-Regular.woff);
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Gilroy";
+    src: url(./../assets/fonts/Gilroy-Regular.woff);
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url(./../assets/fonts/Gilroy-Medium.woff);
-  font-weight: 500;
-  font-style: normal;
+    font-family: "Gilroy";
+    src: url(./../assets/fonts/Gilroy-Medium.woff);
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url(./../assets/fonts/Gilroy-Semibold.woff);
-  font-weight: 600;
-  font-style: normal;
+    font-family: "Gilroy";
+    src: url(./../assets/fonts/Gilroy-Semibold.woff);
+    font-weight: 600;
+    font-style: normal;
 }
 
 // Vars
 
 //common colors
-$color-rejected: #BB2323;
-$color-border: rgba(161, 172, 185, 0.20);
+$color-rejected: #bb2323;
+$color-border: rgba(161, 172, 185, 0.2);
 
 //common colors yellow
-$y-color-accent: #F9EC00;
-$y-color-text-muted: #ACACAC;
+$y-color-accent: #f9ec00;
+$y-color-text-muted: #acacac;
 
 //theme light yellow
 $yl-color-bg: #fff;
-$yl-color-container: #F4F4F4;
-$yl-color-container-dark: #EEEEEE;
+$yl-color-container: #f4f4f4;
+$yl-color-container-dark: #eeeeee;
+$yl-color-card-light: #d7d7d7;
 $yl-color-text: #101010;
+$yl-color-date: rgba(73, 68, 64, 0.40);
 
 //theme dark yellow
-$yd-color-bg: #1D1D1D;
+$yd-color-bg: #1d1d1d;
 $yd-color-container: #292929;
 $yd-color-container-dark: #101010;
 $yd-color-text: #fff;
+$yd-color-date: rgba(255, 255, 255, 0.20);
 
 //common colors pink
-$p-color-accent: #D01181;
-$p-color-text-muted: #A1ACB9;
+$p-color-accent: #d01181;
+$p-color-text-muted: #a1acb9;
 
 //theme light pink
 $pl-color-bg: #fff;
-$pl-color-container: #F1F4F6;
-$pl-color-container-dark: #A1ACB9;
+$pl-color-container: #f1f4f6;
+$pl-color-card-light: #a1acb9;
+$pl-color-container-dark: #a1acb9;
 $pl-color-text: #101010;
 
 //theme dark pink
@@ -60,36 +64,81 @@ $pd-color-text: #fff;
 
 //	reset / base styles
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'Gilroy', sans-serif;
-  color: black;
-  font-weight: normal;
-  font-size: 1.6rem;
-  line-height: normal;
-  list-style-type: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Gilroy", sans-serif;
+    color: black;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: normal;
+    list-style-type: none;
 }
 
 html,
 body {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-//gsap
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-img{
-object-fit: cover;
+section {
+    margin-top: 8.9rem;
+    margin-left: 33rem;
+    height: calc(100vh - 8.9rem);
 }
 
-.text{
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: normal;
-  letter-spacing: 0.016rem;
+img {
+    object-fit: cover;
 }
 
+.text {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: normal;
+    letter-spacing: 0.016rem;
+}
+
+.container--sm {
+    background-color: $yl-color-container;
+    border-radius: 1.6rem;
+    padding: 2rem;
+}
+
+//cards
+.card--accent {
+    background-color: $y-color-accent;
+}
+
+.card--light {
+    background-color: $yl-color-card-light;
+}
+
+.card--dark {
+    background-color: $yl-color-text;
+    color: $yl-color-bg;
+
+    .title {
+        color: $yl-color-bg;
+    }
+}
+
+//buttons
+.btn--show-all {
+    display: flex;
+    align-items: center;
+    gap: 0.79rem;
+
+    span {
+        font-size: 1.6rem;
+        letter-spacing: 0.016rem;
+    }
+
+    svg {
+        width: 0.6rem;
+        height: 1.1rem;
+    }
+}
