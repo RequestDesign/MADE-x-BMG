@@ -4,15 +4,20 @@ body .notifications {
     --reversTextColor: #FFF;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #101010;
+    --switchBtnActiveColor: #FFF;
     --switchBtnSpan: #F9EC00;
+    --switchBtnSpanColor: #101010;
     --switchBtnActiveSpan: #F9EC00;
+    --switchBtnActiveSpanColor: #101010;
     --viewBg: #D7D7D7;
     --viewCircle: #F4F4F4;
     --viewColor: #AAAAAA;
     --viewColorActive: #101010;
     --ItemBg: #F4F4F4;
+    --ItemBgColor: #101010;
     --itemBorder: rgba(161, 172, 185, 0.2);
     --notif: #F9EC00;
+    --notifColor: #101010;
     --notifCancel: #BB2323;
     --btnBg: #FFF;
     --btnBgSVG: #101010;
@@ -26,15 +31,20 @@ body.color_yd .notifications {
     --reversTextColor: #101010;
     --switchBtn: #292929;
     --switchBtnActive: #F9EC00;
+    --switchBtnActiveColor: #101010;
     --switchBtnSpan: #F9EC00;
+    --switchBtnSpanColor: #F9EC00;
     --switchBtnActiveSpan: #101010;
+    --switchBtnActiveSpanColor: #101010;
     --viewBg: #292929;
     --viewCircle: #F9EC00;
     --viewColor: #AAAAAA;
     --viewColorActive: #101010;
     --ItemBg: #101010;
+    --ItemBgColor: #FFF;
     --itemBorder: rgba(161, 172, 185, 0.2);
     --notif: #F9EC00;
+    --notifColor: #101010;
     --notifCancel: #BB2323;
     --btnBg: #FFF;
     --btnBgSVG: #101010;
@@ -42,28 +52,60 @@ body.color_yd .notifications {
     --btnBgActiveSVG: #F9EC00;
     --btnBgActiveSVGrow: #FFF;
 }
-// body.color_pl .notifications {
-//     --normalTextColor: #101010;
-//     --subTextColor: #ACACAC;
-//     --reversTextColor: #FFF;
-//     --switchBtn: #f4f4f4;
-//     --switchBtnActive: #101010;
-//     --switchBtnSpan: #F9EC00;
-//     --switchBtnActiveSpan: #F9EC00;
-//     --viewBg: #D7D7D7;
-//     --viewCircle: #F4F4F4;
-//     --viewColor: #AAAAAA;
-//     --viewColorActive: #101010;
-//     --ItemBg: #F4F4F4;
-//     --itemBorder: rgba(161, 172, 185, 0.2);
-//     --notif: #F9EC00;
-//     --notifCancel: #BB2323;
-//     --btnBg: #FFF;
-//     --btnBgSVG: #101010;
-//     --btnBgActive: #101010;
-//     --btnBgActiveSVG: #FFF;
-//     --btnBgActiveSVGrow: #101010;
-// }
+body.color_pl .notifications {
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --switchBtn: #f4f4f4;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --switchBtnSpan: #101010;
+    --switchBtnSpanColor: #FFF;
+    --switchBtnActiveSpan: #101010;
+    --switchBtnActiveSpanColor: #FFF;
+    --viewBg: #A1ACB9;
+    --ItemBgColor: #101010;
+    --viewCircle: #F1F4F6;
+    --viewColor: #6C747E;
+    --viewColorActive: #101010;
+    --ItemBg: #D5DCE1;
+    --itemBorder: rgba(161, 172, 185, 0.2);
+    --notif: #D01181;
+    --notifColor: #FFF;
+    --notifCancel: #BB2323;
+    --btnBg: #FFF;
+    --btnBgSVG: #101010;
+    --btnBgActive: #101010;
+    --btnBgActiveSVG: #FFF;
+    --btnBgActiveSVGrow: #101010;
+}
+body.color_pd .notifications {
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --switchBtn: #292929;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --switchBtnSpan: #D01181;
+    --switchBtnSpanColor: #FFF;
+    --switchBtnActiveSpan: #FFF;
+    --switchBtnActiveSpanColor: #D01181;
+    --viewBg: #A1ACB9;
+    --ItemBgColor: #101010;
+    --viewCircle: #F1F4F6;
+    --viewColor: #6C747E;
+    --viewColorActive: #101010;
+    --ItemBg: #F1F4F6;
+    --itemBorder: rgba(161, 172, 185, 0.2);
+    --notif: #D01181;
+    --notifColor: #FFF;
+    --notifCancel: #BB2323;
+    --btnBg: #FFF;
+    --btnBgSVG: #101010;
+    --btnBgActive: #101010;
+    --btnBgActiveSVG: #D01181;
+    --btnBgActiveSVGrow: #FFF;
+}
 
 .main__title {
     font-size: 3.2rem;
@@ -100,6 +142,7 @@ body.color_yd .notifications {
         span {
             width: 2.4rem;
             height: 2.4rem;
+            color: var(--switchBtnSpanColor);
             background: var(--switchBtnSpan);
             border-radius: 50%;
             display: flex;
@@ -115,10 +158,11 @@ body.color_yd .notifications {
 
         &.active {
             background: var(--switchBtnActive);
-            color: var(--reversTextColor);
+            color: var(--switchBtnActiveColor);
             font-weight: 500;
 
             span {
+                color: var(--switchBtnActiveSpanColor);
                 background: var(--switchBtnActiveSpan);
             }
         }
@@ -224,13 +268,15 @@ body.color_yd .notifications {
                         font-weight: 700;
                     }
                     &_who, &_date {
-                        color: var(--normalTextColor);
+                        color: var(--ItemBgColor);
                     }
                     &_title {
                         font-weight: 700;
+                        color: var(--ItemBgColor);
                     }
                     &_text {
                         font-weight: 700;
+                        color: var(--ItemBgColor);
                     }
                     &_bottom {
                         display: flex;
@@ -319,6 +365,7 @@ body.color_yd .notifications {
             height: 2.2rem;
             padding: 0 1.2rem;
             border-radius: 1.6rem;
+            color: var(--notifColor);
             background: var(--notif);
             width: fit-content;
             margin-bottom: auto;
@@ -387,7 +434,7 @@ body.color_yd .notifications {
                     
 
                             &_who, &_date {
-                                color: var(--normalTextColor);
+                                color: var(--ItemBgColor);
                             }
                             &_title {
                                 font-weight: 700;
