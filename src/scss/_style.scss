@@ -1,3 +1,4 @@
+@import 'color' ;
 //Font
 @font-face {
     font-family: "Gilroy";
@@ -168,6 +169,14 @@ img {
     }
 }
 
+.switcher__content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
 //radio btn
 .radio-wrapper{
 
@@ -193,4 +202,12 @@ img {
         background-size: 1rem 0.7rem;
     }
 
+}
+
+.switcher__content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
 }
