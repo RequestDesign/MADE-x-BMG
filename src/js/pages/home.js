@@ -3,6 +3,7 @@ import 'swiper/css';
 
 const swiper = new Swiper('.swiper', {
     direction: 'vertical',
-    loop: true,
+    loop: false,
     spaceBetween: 16,
+    slidesPerView: 'auto'
   });

@@ -181,14 +181,7 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-
-        .swiper-wrapper{
-            height: 89.6rem !important;
-        }
-
-        .swiper-slide{
-            height: 21.2rem !important;
-        }
+        padding-bottom: unset;
 
         &__top {
             display: flex;
@@ -203,8 +196,8 @@
             letter-spacing: 0.024rem;
         }
 
-        &__slider {
-            height: 89.6rem !important;
+        .swiper-slide{
+            height: 21.2rem;
         }
 
         &__card {
