@@ -1,0 +1,92 @@
+// Vars
+
+//common colors
+$color-rejected: #bb2323;
+$color-border: rgba(161, 172, 185, 0.2);
+
+//common colors yellow
+$y-color-accent: #f9ec00;
+$y-color-text-muted: #acacac;
+
+//theme light yellow
+$yl-color-bg: #fff;
+$yl-color-container: #f4f4f4;
+$yl-color-container-dark: #eeeeee;
+$yl-color-card-light: #d7d7d7;
+$yl-color-text: #101010;
+$yl-color-date: rgba(73, 68, 64, 0.40);
+
+//theme dark yellow
+$yd-color-bg: #1d1d1d;
+$yd-color-container: #292929;
+$yd-color-container-dark: #101010;
+$yd-color-text: #fff;
+$yd-color-date: rgba(255, 255, 255, 0.20);
+
+//common colors pink
+$p-color-accent: #d01181;
+$p-color-text-muted: #a1acb9;
+
+//theme light pink
+$pl-color-bg: #fff;
+$pl-color-container: #f1f4f6;
+$pl-color-card-light: #a1acb9;
+$pl-color-container-dark: #a1acb9;
+$pl-color-text: #101010;
+
+//theme dark pink
+$pd-color-bg: #101010;
+$pd-color-container: #292929;
+$pd-color-container-dark: #101010;
+$pd-color-text: #fff;
+
+// $themes: (
+//   yl: (
+//     color-accent: #f9ec00,
+//     color-text-muted: #acacac,
+//     color-bg: #fff,
+//     color-container: #f4f4f4,
+//     color-container-dark: #eeeeee,
+//     color-card-light: #d7d7d7,
+//     color-text: #101010,
+//     color-date: rgba(73, 68, 64, 0.40),
+//   ),
+//   yd: (
+//     color-accent: #f9ec00,
+//     color-text-muted: #acacac,
+//     color-bg: #1d1d1d,
+//     color-container: #292929,
+//     color-container-dark: #101010,
+//     color-text: #fff,
+//     color-date: rgba(255, 255, 255, 0.20),
+//   ),
+//   pl: (
+//     color-accent: #d01181,
+//     color-text-muted: #a1acb9,
+//     color-bg: #fff,
+//     color-container: #f1f4f6,
+//     color-card-light: #a1acb9,
+//     color-container-dark: #a1acb9,
+//     color-text: #101010,
+//   ),
+//   pd: (
+//     color-accent: #d01181,
+//     color-text-muted: #a1acb9,
+//     color-bg: #101010,
+//     color-container: #292929,
+//     color-container-dark: #101010,
+//     color-text: #fff,
+//   )
+// );
+
+// @mixin themify($themes) {
+//     @each $name, $values in $themes {
+//       .#{$name}-theme {
+//         $theme-map: $values !global;
+//         @content;
+//       }
+//     }
+// }
+// @function themed($key) {
+//     @return map-get($theme-map, $key);
+// }

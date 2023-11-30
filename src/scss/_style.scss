@@ -1,3 +1,4 @@
+@import 'color' ;
 //Font
 @font-face {
     font-family: "Gilroy";
@@ -165,6 +166,14 @@ img {
     svg {
         width: 0.6rem;
         height: 1.1rem;
+    }
+}
+
+.switcher__content {
+    display: none;
+
+    &.active {
+        display: block;
     }
 }
 
