@@ -1,9 +1,16 @@
 import Swiper from 'swiper';
 import 'swiper/css';
 
-const swiper = new Swiper('.swiper', {
-    direction: 'vertical',
+function remToPx(remValue) {
+    var htmlFontSize = parseFloat(
+      getComputedStyle(document.documentElement).fontSize
+    );
+    var pxValue = remValue * htmlFontSize;
+    return Math.round(pxValue) + "px";
+  }
+
+const swiper = new Swiper('.home__my-discovery__cards', {
     loop: false,
-    spaceBetween: 16,
+    spaceBetween: `${remToPx(1.6)}rem`,
     slidesPerView: 'auto'
   });
