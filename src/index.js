@@ -1,6 +1,8 @@
 import "./index.scss";
 import "./js/pages/home";
+import "./js/pages/notifications";
 import "./js/components/header";
+import "./js/components/switcher";
 import { example } from "./js/utils/constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
