@@ -36,14 +36,14 @@ $yl-color-container: #f4f4f4;
 $yl-color-container-dark: #eeeeee;
 $yl-color-card-light: #d7d7d7;
 $yl-color-text: #101010;
-$yl-color-date: rgba(73, 68, 64, 0.40);
+$yl-color-date: rgba(73, 68, 64, 0.4);
 
 //theme dark yellow
 $yd-color-bg: #1d1d1d;
 $yd-color-container: #292929;
 $yd-color-container-dark: #101010;
 $yd-color-text: #fff;
-$yd-color-date: rgba(255, 255, 255, 0.20);
+$yd-color-date: rgba(255, 255, 255, 0.2);
 
 //common colors pink
 $p-color-accent: #d01181;
@@ -83,6 +83,11 @@ body {
 body {
     margin: 0;
     padding: 0;
+
+    &.lock {
+        overflow: hidden;
+        touch-action: none;
+    }
 }
 
 section {
@@ -127,7 +132,27 @@ img {
 }
 
 //buttons
-.btn--show-all {
+
+.btn {
+    border-radius: 3.2rem;
+    padding: 1.6rem 14.4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: normal;
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.016rem;
+    background-color: $y-color-accent;
+}
+
+.btn__save-changes {
+    margin-top: auto;
+    width: 37.2rem;
+}
+
+.btn__show-all {
     display: flex;
     align-items: center;
     gap: 0.79rem;
@@ -141,4 +166,31 @@ img {
         width: 0.6rem;
         height: 1.1rem;
     }
+}
+
+//radio btn
+.radio-wrapper{
+
+    input[type="radio"]{
+        display: none;
+    }
+
+    .radio-icon{
+        display: block;
+        width: 1.8rem;
+        height: 1.8rem;
+        border: 0.1rem solid $yl-color-text;
+        border-radius: 100%;
+        background-color: transparent;
+    }
+
+    input[type="radio"]:checked ~ .radio-icon{
+        background-color: $yl-color-text;
+        border: none;
+        background-image: url('./../assets/images/common/checked-ico.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1rem 0.7rem;
+    }
+
 }
