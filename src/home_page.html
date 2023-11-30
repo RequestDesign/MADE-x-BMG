@@ -97,7 +97,7 @@
                         <div class="header__user-info__job">бизнес-администратор</div>
                     </div>
                 </div>
-                <div class="header__work" data-modal="change-workplace">
+                <div class="header__work" data-modal="change-work">
                     <div class="header__work__logo">
                         <img src="./assets/images/companies/discovery.svg" alt="Company" />
                     </div>
@@ -157,7 +157,7 @@
                         <div class="home__incoming-requests container--sm">
                             <div class="home__incoming-requests__top">
                                 <span class="title">Входящие заявки</span>
-                                <button class="btn--show-all">
+                                <button class="btn__show-all">
                                     <span>Все</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 11" fill="none">
                                         <path
@@ -230,7 +230,7 @@
                 <div class="home__news container--sm">
                     <div class="home__news__top">
                         <div class="title">Новости</div>
-                        <button class="btn--show-all">
+                        <button class="btn__show-all">
                             <span>Все</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 11" fill="none">
                                 <path
@@ -270,5 +270,69 @@
                 </div>
             </div>
         </section>
+
+        <div class="modal modal__change-work">
+                <div class="modal-back"></div>
+                <div class="modal-wrapper">
+                        <div class="modal-exit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                                <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010"/>
+                                <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </div>
+            
+                    <div class="modal-content">
+                        <div class="modal__change-work__title">Место работы</div>
+
+                        <div class="modal__change-work__options">
+
+                            <label for="radioWork1" class="modal__change-work__option">
+                                <div class="modal__change-work__company"><img src="./assets/images/companies/discovery.svg" alt="Company"></div>
+                                <div class="modal__change-work__radio radio-wrapper">
+                                    <input type="radio" name="workplace" id="radioWork1">
+                                    <label for="radioWork1" class="radio-icon"></label>
+                                </div>
+                            </label>
+
+                            <label for="radioWork2" class="modal__change-work__option">
+                                <div class="modal__change-work__company"><img src="./assets/images/companies/vodny.svg" alt="Company"></div>
+                                <div class="modal__change-work__radio radio-wrapper">
+                                    <input type="radio" name="workplace" id="radioWork2">
+                                    <label for="radioWork2" class="radio-icon"></label>
+                                </div>
+                            </label>
+
+                            <label for="radioWork3" class="modal__change-work__option">
+                                <div class="modal__change-work__company"><img src="./assets/images/companies/discovery.svg" alt="Company"></div>
+                                <div class="modal__change-work__radio radio-wrapper">
+                                    <input type="radio" name="workplace" id="radioWork3">
+                                    <label for="radioWork3" class="radio-icon"></label>
+                                </div>
+                            </label>
+
+                            <label for="radioWork4" class="modal__change-work__option">
+                                <div class="modal__change-work__company"><img src="./assets/images/companies/vodny.svg" alt="Company"></div>
+                                <div class="modal__change-work__radio radio-wrapper">
+                                    <input type="radio" name="workplace" id="radioWork4">
+                                    <label for="radioWork4" class="radio-icon"></label>
+                                </div>
+                            </label>
+
+                            <label for="radioWork5" class="modal__change-work__option">
+                                <div class="modal__change-work__company"><img src="./assets/images/companies/discovery.svg" alt="Company"></div>
+                                <div class="modal__change-work__radio radio-wrapper">
+                                    <input type="radio" name="workplace" id="radioWork5">
+                                    <label for="radioWork5" class="radio-icon"></label>
+                                </div>
+                            </label>
+                        </div>
+                        <button class="btn btn__save-changes">Сохранить изменения</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </body>
 </html>
