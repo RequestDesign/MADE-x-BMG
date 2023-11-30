@@ -1,8 +1,41 @@
+body .home {
+    --containerBg: #fff;
+    --textColor: #101010;
+    --iconBg: #fff;
+    --cardPassBg: #d7d7d7;
+    --cardReqBg: #f9ec00;
+    --cardNewsBg: #101010;
+    --cardNewsText: #fff;
+    --cardReqSecBg: #fff;
+    --cardNewsSec: #fff;
+    --dateColor: rgba(73, 68, 64, 0.4);
+    --cardIncNew: #f9ec00;
+    --cardIncActive: #d7d7d7;
+}
+body.color_yd .home {
+    --containerBg: #1d1d1d;
+    --textColor: #fff;
+    --iconBg: #f9ec00;
+    --cardPassBg: #292929;
+    --cardReqBg: #292929;
+    --cardNewsBg: #292929;
+    --cardNewsText: #fff;
+    --cardReqSecBg: #292929;
+    --cardNewsSec: #292929;
+    --dateColor: rgba(255, 255, 255, 0.2);
+    --cardIncNew: #292929;
+    --cardIncActive: #292929;
+}
+// body.color_pl .home{}
+// body.color_pd .home{}
+
 .home {
+    color: var(--textColor);
+
     .container {
         display: flex;
         gap: 2rem;
-        background-color: $yl-color-bg;
+        background-color: var(--containerBg);
         height: 100%;
     }
 
@@ -61,6 +94,14 @@
             align-items: center;
             justify-content: space-between;
 
+            &--new {
+                background-color: var(--cardIncNew);
+            }
+
+            &--active {
+                background-color: var(--cardIncActive);
+            }
+
             .title {
                 font-size: 1.8rem;
                 font-weight: 500;
@@ -73,7 +114,7 @@
                 font-size: 2rem;
                 font-weight: 500;
                 letter-spacing: 0.02rem;
-                background-color: $yl-color-bg;
+                background-color: var(--iconBg);
                 border-radius: 100%;
                 display: flex;
                 align-items: center;
@@ -102,11 +143,11 @@
             width: 100%;
         }
 
-        .swiper-wrapper{
+        .swiper-wrapper {
             width: 75.5rem;
         }
 
-        .swiper-slide{
+        .swiper-slide {
             width: 14.9rem;
         }
 
@@ -118,6 +159,19 @@
             border-radius: 1.6rem;
             width: 14.9rem;
 
+            &--pass {
+                background-color: var(--cardPassBg);
+            }
+
+            &--req {
+                background-color: var(--cardReqBg);
+            }
+
+            &--news {
+                background-color: var(--cardNewsBg);
+                color: var(--cardNewsText);
+            }
+
             .title {
                 font-size: 1.6rem;
                 font-weight: 500;
@@ -125,7 +179,7 @@
             }
 
             .icon {
-                background-color: $yl-color-bg;
+                background-color: var(--iconBg);
                 border-radius: 100%;
                 width: 3.6rem;
                 height: 3.6rem;
@@ -160,14 +214,13 @@
             gap: 1.6rem;
         }
 
-
         &__card {
             border-radius: 1.6rem;
             padding-bottom: 3.4rem;
             display: flex;
             flex-direction: column;
             gap: 3.5rem;
-            background-color: $yl-color-bg;
+            background-color: var(--cardReqSecBg);
 
             .title {
                 font-size: 2rem;
@@ -204,14 +257,14 @@
             letter-spacing: 0.024rem;
         }
 
-        &__cards{
+        &__cards {
             display: grid;
             flex-direction: column;
             gap: 1.6rem;
             overflow: scroll;
             padding-bottom: 2rem;
 
-            &::-webkit-scrollbar{
+            &::-webkit-scrollbar {
                 display: none;
             }
         }
@@ -221,12 +274,12 @@
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
-            background-color: $yl-color-bg;
+            background-color: var(--cardNewsSec);
             padding-bottom: 1.2rem;
 
             height: 21.2rem;
 
-            .card-img{
+            .card-img {
                 height: 12.3rem;
                 width: 100%;
                 border-radius: 1.6rem 1.6rem 0 0;
@@ -242,7 +295,7 @@
             }
 
             .date {
-                color: $yl-color-date;
+                color: var(--dateColor);
                 font-size: 1.6rem;
                 font-weight: 500;
                 letter-spacing: 0.016rem;

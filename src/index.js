@@ -1,6 +1,7 @@
 import "./index.scss";
-import "./js/pages/home";
 import "./js/pages/notifications";
+import "./js/pages/home-page";
+import "./js/pages/passes-page";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
