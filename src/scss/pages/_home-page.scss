@@ -90,6 +90,7 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        padding-right: unset;
 
         .title {
             font-weight: 500;
@@ -98,8 +99,15 @@
         }
 
         &__cards {
-            display: flex;
-            gap: 1.6rem;
+            width: 100%;
+        }
+
+        .swiper-wrapper{
+            width: 75.5rem;
+        }
+
+        .swiper-slide{
+            width: 14.9rem;
         }
 
         &__card {
@@ -196,8 +204,16 @@
             letter-spacing: 0.024rem;
         }
 
-        .swiper-slide{
-            height: 21.2rem;
+        &__cards{
+            display: grid;
+            flex-direction: column;
+            gap: 1.6rem;
+            overflow: scroll;
+            padding-bottom: 2rem;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
         }
 
         &__card {
@@ -207,6 +223,8 @@
             gap: 0.8rem;
             background-color: $yl-color-bg;
             padding-bottom: 1.2rem;
+
+            height: 21.2rem;
 
             .card-img{
                 height: 12.3rem;
