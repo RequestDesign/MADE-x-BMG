@@ -1,4 +1,3 @@
-@import 'color' ;
 //Font
 @font-face {
     font-family: "Gilroy";
@@ -21,55 +20,12 @@
     font-style: normal;
 }
 
-// Vars
-
-//common colors
-$color-rejected: #bb2323;
-$color-border: rgba(161, 172, 185, 0.2);
-
-//common colors yellow
-$y-color-accent: #f9ec00;
-$y-color-text-muted: #acacac;
-
-//theme light yellow
-$yl-color-bg: #fff;
-$yl-color-container: #f4f4f4;
-$yl-color-container-dark: #eeeeee;
-$yl-color-card-light: #d7d7d7;
-$yl-color-text: #101010;
-$yl-color-date: rgba(73, 68, 64, 0.4);
-
-//theme dark yellow
-$yd-color-bg: #1d1d1d;
-$yd-color-container: #292929;
-$yd-color-container-dark: #101010;
-$yd-color-text: #fff;
-$yd-color-date: rgba(255, 255, 255, 0.2);
-
-//common colors pink
-$p-color-accent: #d01181;
-$p-color-text-muted: #a1acb9;
-
-//theme light pink
-$pl-color-bg: #fff;
-$pl-color-container: #f1f4f6;
-$pl-color-card-light: #a1acb9;
-$pl-color-container-dark: #a1acb9;
-$pl-color-text: #101010;
-
-//theme dark pink
-$pd-color-bg: #101010;
-$pd-color-container: #292929;
-$pd-color-container-dark: #101010;
-$pd-color-text: #fff;
-
 //	reset / base styles
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: "Gilroy", sans-serif;
-    color: black;
     font-weight: normal;
     font-size: 1.6rem;
     line-height: normal;
@@ -108,32 +64,18 @@ img {
     letter-spacing: 0.016rem;
 }
 
+body .container--sm {
+    --containerSmBg: #f4f4f4;
+}
+
+body.color_yd .container--sm {
+    --containerSmBg: #101010;
+}
+
 .container--sm {
-    background-color: $yl-color-container;
+    background-color: var(--containerSmBg);
     border-radius: 1.6rem;
     padding: 2rem;
-}
-
-//cards
-.card--accent {
-    background-color: $y-color-accent;
-}
-
-.card--light {
-    background-color: $yl-color-card-light;
-}
-
-.card--extra-light{
-    background-color: $yl-color-container;
-}
-
-.card--dark {
-    background-color: $yl-color-text;
-    color: $yl-color-bg;
-
-    .title {
-        color: $yl-color-bg;
-    }
 }
 
 //buttons
@@ -149,28 +91,28 @@ img {
     align-items: center;
     justify-content: center;
     letter-spacing: 0.016rem;
-    background-color: $y-color-accent;
+}
+
+body .btn__save-changes {
+    --btnSaveBg: #f9ec00;
+    --btnSaveText: #101010;
+}
+
+body.color_yd .btn__save-changes {
+    --btnSaveBg: #f9ec00;
+    --btnSaveText: #101010;
 }
 
 .btn__save-changes {
     margin-top: auto;
     width: 37.2rem;
+    background-color: var(--btnSaveBg);
+    color: var(--btnSaveText);
 }
 
 .btn__show-all {
-    display: flex;
-    align-items: center;
-    gap: 0.79rem;
-
-    span {
-        font-size: 1.6rem;
-        letter-spacing: 0.016rem;
-    }
-
-    svg {
-        width: 0.6rem;
-        height: 1.1rem;
-    }
+    font-size: 1.6rem;
+    letter-spacing: 0.016rem;
 }
 
 .switcher__content {
@@ -182,30 +124,38 @@ img {
 }
 
 //radio btn
-.radio-wrapper{
+body .radio-wrapper {
+    --radioBg: #101010;
+    --checkIco: url("./../assets/images/common/checked-ico.svg");
+}
 
-    input[type="radio"]{
+body.color_yd .radio-wrapper {
+    --radioBg: #f9ec00;
+    --checkIco: url("./../assets/images/common/checked-ico-black.svg");
+}
+
+.radio-wrapper {
+    input[type="radio"] {
         display: none;
     }
 
-    .radio-icon{
+    .radio-icon {
         display: block;
         width: 1.8rem;
         height: 1.8rem;
-        border: 0.1rem solid $yl-color-text;
+        border: 0.1rem solid var(--radioBg);
         border-radius: 100%;
         background-color: transparent;
     }
 
-    input[type="radio"]:checked ~ .radio-icon{
-        background-color: $yl-color-text;
+    input[type="radio"]:checked ~ .radio-icon {
+        background-color: var(--radioBg);
         border: none;
-        background-image: url('./../assets/images/common/checked-ico.svg');
+        background-image: var(--checkIco);
         background-repeat: no-repeat;
         background-position: center;
         background-size: 1rem 0.7rem;
     }
-
 }
 
 .switcher__content {

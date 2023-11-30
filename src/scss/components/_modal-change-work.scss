@@ -1,3 +1,8 @@
+body .modal__change-work {}
+body.color_yd .modal__change-work {}
+body.color_pl .modal__change-work{}
+body.color_pd .modal__change-work{}
+
 .modal__change-work {
     .modal-wrapper {
         width: 83.5rem;
@@ -40,5 +45,4 @@
             max-height: 2.8rem;
         }
     }
-
 }
