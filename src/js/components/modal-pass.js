@@ -18,7 +18,7 @@ $('[data-modal="pass"]').on('click', function () {
     }
 
     let iconSrc = card.find('.icon img').attr('src');
-    $('.modal-top-img img').attr('src', iconSrc);
+    $('.modal__pass__img img').attr('src', iconSrc);
     $('.modal__pass').addClass('active');
 });
 
