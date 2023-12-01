@@ -7,6 +7,7 @@ $(function () {
     $(".modal-back").on("click", closeModal);
     $(".modal-exit").on("click", closeModal);
     $(".btn__save-changes").on("click", closeModal);
+    $("[data-modal='close-modal']").on("click", closeModal);
 
     function closeModal() {
         $(".modal").removeClass("active");

@@ -1,0 +1,37 @@
+.modal__success {
+    .modal-wrapper {
+        padding: 2rem;
+        width: 38.2rem;
+    }
+
+    .modal-content {
+        margin-top: 7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .success-ico {
+        filter: none;
+        width: 4.2rem;
+        height: 4rem;
+    }
+
+    &__title {
+        margin-bottom: 1.6rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.024rem;
+    }
+
+    &__desc {
+        margin-bottom: 6rem;
+        color: #acacac;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 93.75%;
+        width: 25.3rem;
+    }
+}
