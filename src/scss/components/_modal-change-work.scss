@@ -1,7 +1,15 @@
-body .modal__change-work {}
-body.color_yd .modal__change-work {}
-body.color_pl .modal__change-work{}
-body.color_pd .modal__change-work{}
+body .modal__change-work {
+    --workImgFilter: invert(0);
+}
+body.color_yd .modal__change-work {
+    --workImgFilter: invert(1);
+}
+body.color_pl .modal__change-work{
+    --workImgFilter: invert(0);
+}
+body.color_pd .modal__change-work{
+    --workImgFilter: invert(1);
+}
 
 .modal__change-work {
     .modal-wrapper {
@@ -43,6 +51,7 @@ body.color_pd .modal__change-work{}
         img{
             max-width: 12.6rem;
             max-height: 2.8rem;
+            filter: var(--workImgFilter);
         }
     }
 }

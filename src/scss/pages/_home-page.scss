@@ -11,6 +11,10 @@ body .home {
     --dateColor: rgba(73, 68, 64, 0.4);
     --cardIncNew: #f9ec00;
     --cardIncActive: #d7d7d7;
+    --cardsSmColor: #101010;
+    --iconColor: #101010;
+    --cardReqSecColor: #101010;
+    --cardNewsSecColor: #101010;
 }
 body.color_yd .home {
     --containerBg: #1d1d1d;
@@ -25,9 +29,48 @@ body.color_yd .home {
     --dateColor: rgba(255, 255, 255, 0.2);
     --cardIncNew: #292929;
     --cardIncActive: #292929;
+    --cardsSmColor: #fff;
+    --iconColor: #101010;
+    --cardReqSecColor: #FFFFFF;
+    --cardNewsSecColor: #FFFFFF;
 }
-// body.color_pl .home{}
-// body.color_pd .home{}
+body.color_pl .home{
+    --containerBg: #fff;
+    --textColor: #101010;
+    --iconBg: #fff;
+    --cardPassBg: #A1ACB9;
+    --cardReqBg: #D01181;
+    --cardNewsBg: #101010;
+    --cardNewsText: #fff;
+    --cardReqSecBg: #fff;
+    --cardNewsSec: #fff;
+    --dateColor: #A1ACB9;
+    --cardIncNew: #D01181;
+    --cardIncActive: #A1ACB9;
+    --cardsSmColor: #fff;
+    --iconColor: #101010;
+    --cardReqSecColor: #101010;
+    --cardNewsSecColor: #101010;
+}
+
+body.color_pd .home{
+    --containerBg: #101010;
+    --textColor: #FFFFFF;
+    --iconBg: #fff;
+    --cardPassBg: #A1ACB9;
+    --cardReqBg: #D01181;
+    --cardNewsBg: #292929;
+    --cardNewsText: #fff;
+    --cardReqSecBg: #fff;
+    --cardNewsSec: #fff;
+    --dateColor: #A1ACB9;
+    --cardIncNew: #D01181;
+    --cardIncActive: #A1ACB9;
+    --cardsSmColor: #fff;
+    --iconColor: #101010;
+    --cardReqSecColor: #101010;
+    --cardNewsSecColor: #101010;
+}
 
 .home {
     color: var(--textColor);
@@ -96,10 +139,17 @@ body.color_yd .home {
 
             &--new {
                 background-color: var(--cardIncNew);
+                .title{
+                    color: var(--cardsSmColor);
+                }
+                
             }
 
             &--active {
                 background-color: var(--cardIncActive);
+                .title{
+                    color: var(--cardsSmColor);
+                }
             }
 
             .title {
@@ -115,6 +165,7 @@ body.color_yd .home {
                 font-weight: 500;
                 letter-spacing: 0.02rem;
                 background-color: var(--iconBg);
+                color: var(--iconColor);
                 border-radius: 100%;
                 display: flex;
                 align-items: center;
@@ -161,10 +212,12 @@ body.color_yd .home {
 
             &--pass {
                 background-color: var(--cardPassBg);
+                color: var(--cardsSmColor);
             }
 
             &--req {
                 background-color: var(--cardReqBg);
+                color: var(--cardsSmColor);
             }
 
             &--news {
@@ -221,6 +274,7 @@ body.color_yd .home {
             flex-direction: column;
             gap: 3.5rem;
             background-color: var(--cardReqSecBg);
+            color: var(--cardReqSecColor);
 
             .title {
                 font-size: 2rem;
@@ -255,6 +309,7 @@ body.color_yd .home {
             font-weight: 500;
             line-height: 100%;
             letter-spacing: 0.024rem;
+            color: var(--cardNewsSecColor)
         }
 
         &__cards {
