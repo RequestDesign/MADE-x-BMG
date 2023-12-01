@@ -1,93 +1,131 @@
 body .modal {
---modalBg: #FFF;
---textColor: #101010;
---exitIcoBg: #101010;
---btnBg: #F9EC00;
---btnText: #101010;
---borderModal: 0.1rem solid transparent;
+    --modalBg: #fff;
+    --textColor: #101010;
+    --exitIcoBg: #101010;
+    --btnBg: #f9ec00;
+    --btnText: #101010;
+    --borderModal: 0.1rem solid transparent;
+    --topImgBorderColor: #ffffff;
+    --topImgBg: #101010;
 }
 body.color_yd .modal {
---modalBg: #101010;
---textColor: #FFF;
---exitIcoBg: #292929;
---btnBg: #F9EC00;
---btnText: #101010;
---borderModal: 0.1rem solid rgba(255, 255, 255, 0.30);
+    --modalBg: #101010;
+    --textColor: #fff;
+    --exitIcoBg: #292929;
+    --btnBg: #f9ec00;
+    --btnText: #101010;
+    --borderModal: 0.1rem solid rgba(255, 255, 255, 0.3);
+    --topImgBorderColor: #101010;
+    --topImgBg: #292929;
 }
 
-body.color_pl .modal{
-	--modalBg: #FFF;
-	--textColor: #101010;
-	--exitIcoBg: #101010;
-	--btnBg: #D01181;
-	--btnText: #FFFFFF;
-	--borderModal: 0.1rem solid transparent;
+body.color_pl .modal {
+    --modalBg: #fff;
+    --textColor: #101010;
+    --exitIcoBg: #101010;
+    --btnBg: #d01181;
+    --btnText: #ffffff;
+    --borderModal: 0.1rem solid transparent;
+    --topImgBorderColor: #ffffff;
+    --topImgBg: #101010;
 }
 
-body.color_pd .modal{
-	--modalBg: #101010;
-	--textColor: #FFFFFF;
-	--exitIcoBg: #292929;
-	--btnBg: #D01181;
-	--btnText: #FFFFFF;
-	--borderModal: 0.1rem solid rgba(255, 255, 255, 0.30);
+body.color_pd .modal {
+    --modalBg: #101010;
+    --textColor: #ffffff;
+    --exitIcoBg: #292929;
+    --btnBg: #d01181;
+    --btnText: #ffffff;
+    --borderModal: 0.1rem solid rgba(255, 255, 255, 0.3);
+    --topImgBorderColor: #101010;
+    --topImgBg: #292929;
 }
 
 .modal {
-	overflow: hidden;
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1010;
-	width: 100%;
-	height: 100vh;
+    overflow: hidden;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    height: 100vh;
 
-	&.active {
-		display: block;
-	}
-
-	&-back {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #101010;
-        opacity: 0.5;
-	}
-
-	&-wrapper {
-		position: absolute;
-		top: 50%;
-        left: 69.5rem;
-        transform: translateY(-50%);
-		background: var(--modalBg);
-		padding: 4rem 2rem 2rem;
-		border-radius: 1.6rem;
-		border: var(--borderModal);
-	}
-
-	&-content{
-		height: 100%;
-		color: var(--textColor);
-	}
-
-	&-exit {
-		cursor: pointer;
-		position: absolute;
-		top: -2.5rem;
-		right: -2.5rem;
-		width: 5.6rem;
-		height: 5.6rem;
-
-		svg {
-			width: 100%;
-			height: 100%;
-
-			circle{
-				fill: var(--exitIcoBg)
-			}
+	&--sm{
+		.modal-wrapper{
+			right: 62.6rem;
+			left: unset;
+			padding: 2rem 1.5rem;
 		}
 	}
+
+    &.active {
+        display: block;
+    }
+
+    &-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #101010;
+        opacity: 0.5;
+    }
+
+    &-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 69.5rem;
+        transform: translateY(-50%);
+        background: var(--modalBg);
+        padding: 4rem 2rem 2rem;
+        border-radius: 1.6rem;
+        border: var(--borderModal);
+    }
+
+    &-content {
+        height: 100%;
+        color: var(--textColor);
+    }
+
+    &-exit {
+        cursor: pointer;
+        position: absolute;
+        top: -2.5rem;
+        right: -2.5rem;
+        width: 5.6rem;
+        height: 5.6rem;
+
+        svg {
+            width: 100%;
+            height: 100%;
+
+            circle {
+                fill: var(--exitIcoBg);
+            }
+        }
+    }
+
+    &-top-img {
+        position: absolute;
+        top: -5rem;
+        left: 14.1rem;
+        width: 10rem;
+        height: 10rem;
+
+		border-radius: 100%;
+		border: 0.4rem solid var(--topImgBorderColor);
+		background-color: var(--topImgBg);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+        img {
+            width: 5rem;
+            height: 5rem;
+			filter: invert(1);
+        }
+    }
 }

@@ -1,0 +1,132 @@
+body .passes {
+    --passBg: #ffffff;
+    --passText: #101010;
+    --passCardFirstBg: #d7d7d7;
+    --passCardFirstText: #101010;
+    --passCardFiSecondBg: #f9ec00;
+    --passCardSecondText: #101010;
+    --passCardThirdBg: #101010;
+    --passCardThirdText: #FFFFFF;
+    --passCardFourthBg: #f4f4f4;
+    --passCardFourthText: #101010;
+}
+body.color_yd .passes {
+    --passBg: #1D1D1D;
+    --passText: #ffffff;
+    --passCardFirstBg: #101010;
+    --passCardFirstText: #FFFFFF;
+    --passCardFiSecondBg: #101010;
+    --passCardSecondText: #FFFFFF;
+    --passCardThirdBg: #101010;
+    --passCardThirdText: #FFFFFF;
+    --passCardFourthBg: #101010;
+    --passCardFourthText: #FFFFFF;
+}
+body.color_pl .passes {
+    --passBg: #ffffff;
+    --passText: #101010;
+    --passCardFirstBg: #a1acb9;
+    --passCardFirstText: #FFFFFF;
+    --passCardFiSecondBg: #d01181;
+    --passCardSecondText: #FFFFFF;
+    --passCardThirdBg: #222427;
+    --passCardThirdText: #FFFFFF;
+    --passCardFourthBg: #f1f4f6;
+    --passCardFourthText: #101010;
+}
+body.color_pd .passes {
+    --passBg: #101010;
+    --passText: #FFFFFF;
+    --passCardFirstBg: #a1acb9;
+    --passCardFirstText: #FFFFFF;
+    --passCardFiSecondBg: #d01181;
+    --passCardSecondText: #FFFFFF;
+    --passCardThirdBg: #222427;
+    --passCardThirdText: #FFFFFF;
+    --passCardFourthBg: #f1f4f6;
+    --passCardFourthText: #101010;
+}
+
+.passes {
+    background-color: var(--passBg);
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+        margin-bottom: 3.2rem;
+        color: var(--passText);
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: stretch;
+    }
+
+    &__card {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 1.6rem;
+        height: 29rem;
+        width: 29rem;
+        padding: 2.4rem;
+
+        &:nth-child(4n + 1) {
+            background-color: var(--passCardFirstBg);
+            color: var(--passCardFirstText)
+        }
+        &:nth-child(4n + 2) {
+            background-color: var(--passCardFiSecondBg);
+            color: var(--passCardSecondText)
+        }
+        &:nth-child(4n + 3) {
+            background-color: var(--passCardThirdBg);
+            color: var(--passCardThirdText)
+        }
+        &:nth-child(4n + 4) {
+            background-color: var(--passCardFourthBg);
+            color: var(--passCardFourthText)
+        }
+
+        .icon {
+            background-color: #fff;
+            border-radius: 100%;
+            height: 5.6rem;
+            width: 5.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .title {
+            max-width: 14.3rem;
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0.024rem;
+            color: var(--cardTitleColor);
+        }
+
+        .terms {
+            color: #acacac;
+            line-height: 125%;
+            letter-spacing: 0.016rem;
+        }
+    }
+}
