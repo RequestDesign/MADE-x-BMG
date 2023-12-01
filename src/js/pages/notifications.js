@@ -1,6 +1,6 @@
 import $ from "jquery";
-
 $('.notifications__view').on('click', function(e){
+
     if(!$(this).hasClass('active')) {
         $('.notifications__view').removeClass('active')
         $(this).addClass('active')
