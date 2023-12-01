@@ -1,0 +1,252 @@
+body .requests {
+    --textColor: #101010;
+    --requestsBg: #fff;
+    --typeBg: #fff;
+    --cardText: #101010;
+    --cardBg: #fff;
+    --typeIconColor: #101010;
+    --switcherActiveBg: #101010;
+    --switcherActiveColor: #ffffff;
+    --switcherBg: #fff;
+    --switcherColor: #101010;
+    --switcherBorder: none;
+}
+body.color_yd .requests {
+    --textColor: #fff;
+    --requestsBg: #292929;
+    --typeBg: #292929;
+    --cardText: #fff;
+    --cardBg: #292929;
+    --typeIconColor: #ffffff;
+    --switcherActiveBg: #f9ec00;
+    --switcherActiveColor: #101010;
+    --switcherBg: #292929;
+    --switcherColor: #ffffff;
+    --switcherBorder: none;
+}
+body.color_pl .requests {
+    --textColor: #101010;
+    --requestsBg: #fff;
+    --typeBg: #fff;
+    --cardText: #101010;
+    --cardBg: #fff;
+    --typeIconColor: #101010;
+    --switcherActiveBg: #d01181;
+    --switcherActiveColor: #ffffff;
+    --switcherBg: #ffffff;
+    --switcherColor: #101010;
+    --switcherBorder: none;
+}
+body.color_pd .requests {
+    --textColor: #fff;
+    --requestsBg: #101010;
+    --typeBg: #fff;
+    --cardBg: #fff;
+    --cardText: #101010;
+    --typeIconColor: #101010;
+    --switcherActiveBg: #d01181;
+    --switcherActiveColor: #ffffff;
+    --switcherBg: #101010;
+    --switcherColor: #ffffff;
+    --switcherBorder: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.requests {
+    color: var(--textColor);
+    background-color: var(--requestsBg);
+
+    &__title {
+        font-size: 3.2rem;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+        margin-bottom: 3.2rem;
+    }
+    &__sections {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__type {
+        display: flex;
+        gap: 2rem;
+        padding: 2.4rem;
+
+        &__item {
+            background-color: var(--typeBg);
+            color: var(--cardText);
+            padding: 1.5rem 1.6rem 1.5rem 2rem;
+            border-radius: 4rem;
+            width: 46.3rem;
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &__icon {
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+                path {
+                    stroke: var(--typeIconColor);
+                }
+            }
+        }
+
+        &__title {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.018rem;
+        }
+
+        &__btn {
+            margin-left: auto;
+        }
+    }
+
+    &__popular {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2.4rem;
+        padding-right: 0;
+        padding-left: 0;
+
+        position: relative;
+
+        &__title {
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0.02rem;
+            padding-left: 2.4rem;
+        }
+
+        &__cards {
+            overflow: hidden;
+            padding-left: 2.4rem;
+            touch-action: pan-y;
+
+            .swiper-wrapper {
+                width: 156rem;
+            }
+
+            .swiper-slide {
+                width: 23.4rem !important;
+            }
+        }
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            gap: 2.7rem;
+
+            align-items: center;
+            padding-bottom: 2.6rem;
+            background-color: var(--cardBg);
+            border-radius: 1.6rem;
+
+            .image {
+                width: 23.4rem;
+                height: 10.7rem;
+                border-radius: 1.6rem 1.6rem 0 0;
+                overflow: hidden;
+            }
+
+            .title {
+                font-weight: 500;
+                letter-spacing: 0.016rem;
+                color: var(--cardText);
+            }
+        }
+
+        .swiper-button-next {
+            position: absolute;
+            right: -2.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .btn__go-to {
+            width: 5.2rem;
+            height: 5.2rem;
+            svg {
+                width: 1.2rem;
+                height: 2rem;
+            }
+        }
+    }
+
+    &__categories {
+        display: flex;
+        flex-direction: column;
+        padding: 2.4rem;
+        padding-top: 3rem;
+
+        .switcher-content {
+            display: flex;
+            gap: 1.6rem;
+        }
+
+        &__title {
+            margin-bottom: 2.4rem;
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0.024rem;
+        }
+
+        &__switchers {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+
+            .switcher {
+                border-radius: 2rem;
+                padding: 1.2rem 3.2rem;
+                min-width: 16.1rem;
+                text-align: center;
+                letter-spacing: 0.016rem;
+                line-height: normal;
+                background-color: var(--switcherBg);
+                color: var(--switcherColor);
+                border: var(--switcherBorder);
+
+                &--active {
+                    background-color: var(--switcherActiveBg);
+                    color: var(--switcherActiveColor);
+                }
+            }
+        }
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            gap: 2.3rem;
+
+            align-items: center;
+            padding-bottom: 2.6rem;
+            background-color: var(--cardBg);
+            border-radius: 1.6rem;
+            height: 20rem;
+
+            .image {
+                width: 28.1rem;
+                height: 10.7rem;
+                border-radius: 1.6rem 1.6rem 0 0;
+                overflow: hidden;
+            }
+
+            .title {
+                font-size: 2rem;
+                font-weight: 500;
+                letter-spacing: 0.02rem;
+                text-align: center;
+                max-width: 19.4rem;
+                color: var(--cardText);
+            }
+        }
+    }
+}

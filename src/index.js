@@ -3,6 +3,7 @@ import "./js/pages/notifications";
 import "./js/pages/settings";
 import "./js/pages/home-page";
 import "./js/pages/passes-page";
+import "./js/pages/requests-page";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
