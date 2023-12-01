@@ -4,11 +4,13 @@ $('[data-modal="share-pass"]').on("click", function () {
     $(".modal__pass").removeClass("active");
     $(".modal__share-pass").addClass("active");
     uncheckAllUsers();
+    updateShareButtonState();
 });
 
 $('[data-modal="share-pass-final"]').on("click", function () {
     $(".modal__share-pass").removeClass("active");
     uncheckAllUsers();
+    updateShareButtonState();
 });
 
 const userListContainer = $(".modal__share-pass__user-list");
@@ -99,6 +101,7 @@ $(document).on("change", ".modal__share-pass__user__checkbox input", function ()
     const index = $(this).data("index");
     users[index].checked = $(this).prop("checked");
     renderUserList();
+    updateShareButtonState();
 });
 
 // handle search input
@@ -125,3 +128,10 @@ function uncheckAllUsers() {
     });
     renderUserList();
 }
+
+//make btn active when at least one user was choosen
+function updateShareButtonState() {
+    $('[data-modal="share-pass-final"]').prop('disabled', !users.some((user) => user.checked));
+}
+updateShareButtonState();
+

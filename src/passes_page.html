@@ -203,7 +203,7 @@
                         <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <div class="modal-top-img">
+                <div class="modal-top-img modal__pass__img">
                     <img src="./assets/images/common/time-ico.svg" alt="Pass icon" />
                 </div>
                 <div class="modal-content">
@@ -248,7 +248,7 @@
                         <input type="search" placeholder="Поиск по ФИО, по отделу, по должности" />
                     </div>
                     <ul class="modal__share-pass__user-list">
-                         <!-- <li class="modal__share-pass__user">
+                        <!-- <li class="modal__share-pass__user">
                             <div class="modal__share-pass__user__photo"><img src="./assets/images/common/user-1.webp" alt="User" /></div>
                             <div class="modal__share-pass__user__info">
                                 <div class="modal__share-pass__user__name">Смирнов Евгений Сергеевич</div>
@@ -260,9 +260,32 @@
                             </div>
                         </li> -->
                     </ul>
-                    <button class="btn btn__share-pass-final" data-modal="share-pass-final">Поделиться</button>
+                    <button class="btn btn__share-pass-final" data-modal="share-pass-final" disabled>Поделиться</button>
                 </div>
             </div>
         </div>
+
+        <!-- modal success -->
+        <div class="modal modal--sm modal__success">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
+                        <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="modal-top-img">
+                    <img class="success-ico" src="./assets/images/common/success-ico.svg" alt="Success" />
+                </div>
+                <div class="modal-content">
+                    <div class="modal__success__title">Пропуск <br>успешно отправлен</div>
+                    <div class="modal__success__desc">Выбранному получателю придет уведомление о том, что Вы направили ему пропуск</div>
+                    <button class="btn btn__go-back" data-modal="close-modal">Вернуться</button>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
