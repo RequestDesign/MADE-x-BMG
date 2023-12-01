@@ -69,7 +69,6 @@ $pd-color-text: #fff;
     padding: 0;
     margin: 0;
     font-family: "Gilroy", sans-serif;
-    color: black;
     font-weight: normal;
     font-size: 1.6rem;
     line-height: normal;
@@ -202,12 +201,4 @@ img {
         background-size: 1rem 0.7rem;
     }
 
-}
-
-.switcher__content {
-    display: none;
-
-    &.active {
-        display: block;
-    }
 }

@@ -108,6 +108,9 @@ body.color_pd .notifications {
 }
 
 .main__title {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
     font-size: 3.2rem;
     font-style: normal;
     font-weight: 500;
@@ -115,6 +118,14 @@ body.color_pd .notifications {
     letter-spacing: 0.032rem;
     color: $yl-color-text;
     margin-bottom: 3.2rem;
+
+    span {
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+    }
 }
 
 .notifications {
@@ -534,3 +545,187 @@ body.color_pd .notifications {
     }
 }
 
+body .notifications-detail {
+    --normalTextColor: #101010;
+    --reversTextColor: #FFF;
+    --Btn: #F9EC00;
+    --BtnColor: #101010;
+    --Bg: #F4F4F4;
+    --inpBg: #FFF;
+    --notif: #F9EC00;
+    --notifColor: #101010;
+    --notifCancel: #BB2323;
+    --notifCancelColor: #FFF;
+}
+body.color_yd .notifications-detail {
+    --normalTextColor: #FFFFFF;
+    --reversTextColor: #101010;
+    --Btn: #F9EC00;
+    --BtnColor: #101010;
+    --Bg: #101010;
+    --inpBg: #292929;
+    --notif: #F9EC00;
+    --notifColor: #101010;
+    --notifCancel: #BB2323;
+    --notifCancelColor: #FFF;
+}
+body.color_pl .notifications-detail {
+    --normalTextColor: #101010;
+    --reversTextColor: #FFF;
+    --Btn: #D01181;
+    --BtnColor: #FFF;
+    --Bg: #F1F4F6;
+    --inpBg: #FFF;
+    --notif: #D01181;
+    --notifColor: #FFF;
+    --notifCancel: #BB2323;
+    --notifCancelColor: #FFF;
+}
+body.color_pl .notifications-detail {
+    --normalTextColor: #FFF;
+    --reversTextColor: #101010;
+    --Btn: #D01181;
+    --BtnColor: #FFF;
+    --Bg: #101010;
+    --inpBg: #292929;
+    --notif: #D01181;
+    --notifColor: #FFF;
+    --notifCancel: #BB2323;
+    --notifCancelColor: #FFF;
+}
+
+.main__back {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    background: #F4F4F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 0.7202rem;
+        height: 1.4857rem;
+    }
+}
+
+.notifications-detail {
+    &__status {
+        height: 2.2rem;
+        padding: 0 1.2rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.014rem;
+        background: var(--notif);
+        color: var(--notifColor);
+        border-radius: 1.6rem;
+        &.cancel {
+            color: var(--notifCancelColor);
+            background: var(--notifCancel);
+        }
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__left {
+        width: 120.8rem;
+        padding: 3.2rem 2.4rem;
+        background: var(--Bg);
+        color: var(--normalTextColor);
+        border-radius: 1.6rem;
+    }
+    &__right {
+        width: 29rem;
+        height: 83.7rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.6rem;
+        }
+    }
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+    &__title {
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.024rem;
+    }
+    &__btn {
+        height: 5rem;
+        padding: 0 9.2rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.016rem;
+        border-radius: 3.2rem;
+        color: var(--BtnColor);
+        background: var(--Btn);
+        cursor: pointer;
+    }
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+    &__item {
+        display: flex;
+        gap: 3.2rem;
+
+        &_name {
+            flex: none;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 93.75%;
+        }
+        &_input {
+            width: 93.6rem;
+            padding: 1.8rem 1.6rem;
+            height: 5.5rem;
+            border-radius: 1.6rem;
+            background: var(--inpBg);
+            margin-left: auto;
+
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 120%;
+
+            &-big {
+                height: 14.9rem;
+            }
+            &-file {
+                height: auto;
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+        }
+        &_file {
+            width: 8rem;
+            height: 8rem;
+
+            img {
+                border-radius: 0.8rem;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.error {
+    .container {
+        height: calc(100vh - 8.9rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 34.8rem;
+        overflow: hidden;
+    }
+    &__left {
+        width: 35.5rem;
+
+    }
+    &__title {
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+        margin-bottom: 2rem;
+    }
+    &__text {
+        color: #ACACAC;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        margin-bottom: 3.2rem;
+    }
+    &__btn {
+        border-radius: 3.2rem;
+        height: 5.1rem;
+        background: #F9EC00;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.016rem;
+    }
+    &__right {
+        position: relative;
+
+        svg {
+            width: 68.4rem;
+            height: 48.8rem;
+            position: absolute;
+            left: -8rem;
+            top: -7rem;
+            z-index: -1;
+        }
+    }
+    &__number {
+        font-size: 25rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: 0.25rem;
+    }
+}

@@ -166,8 +166,6 @@ module.exports = {
 
   entry: {
     main: path.resolve(__dirname, "src", "index.js"),
-    home_page: path.resolve(__dirname, "src", "index.js"),
-    notifications: path.resolve(__dirname, "src", "index.js"),
   },
   // entry: getEntries(),
   output: {
