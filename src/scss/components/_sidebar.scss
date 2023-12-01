@@ -1,20 +1,34 @@
 body .sidebar {
---sidebarBg: #101010;
---textColor: #FFF;
---accentColor: #F9EC00;
---borderColor: #292929;
+    --sidebarBg: #101010;
+    --textColor: #fff;
+    --accentColor: #f9ec00;
+    --borderColor: #292929;
 }
 body.color_yd .sidebar {
---sidebarBg: #101010;
---textColor: #FFF;
---accentColor: #F9EC00; 
---borderColor: #292929;   
+    --sidebarBg: #101010;
+    --textColor: #fff;
+    --accentColor: #f9ec00;
+    --borderColor: #292929;
 }
 
-body.color_pl .sidebar{
+body.color_pl .sidebar {
+    --sidebarBg: #101010;
+    --textColor: #fff;
+    --accentColor: #D01181;
+    --borderColor: transparent;
+}
+
+body.color_pd .sidebar {
+    --sidebarBg: #101010;
+    --textColor: #fff;
+    --accentColor: #D01181;
+    --borderColor: transparent;
+}
+
+body.color_pl .sidebar {
     background-image: none;
 }
-body.color_pd .sidebar{
+body.color_pd .sidebar {
     background-image: none;
 }
 
@@ -27,19 +41,19 @@ body.color_pd .sidebar{
 
     background-color: var(--sidebarBg);
     padding: 3.1rem 4rem;
-    background-image: url('./../../assets/images/common/sidebar-deco.svg');
+    background-image: url("./../../assets/images/common/sidebar-deco.svg");
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: 33rem;
 
-    &__logo{
+    &__logo {
         padding-bottom: 2.9rem;
         border-bottom: 0.1rem solid var(--borderColor);
         margin-left: -4rem;
         margin-right: -4rem;
         padding-left: 4rem;
         padding-right: 4rem;
-        img{
+        img {
             width: 17.5rem;
             height: 2.9rem;
         }
@@ -57,31 +71,30 @@ body.color_pd .sidebar{
             line-height: 100%;
         }
 
-        svg{
+        svg {
             width: 3.2rem;
             height: 3.2rem;
         }
 
-        &__item{
+        &__item {
             display: flex;
             align-items: center;
             gap: 1.6rem;
 
-            &--active{
-                span{
+            &--active {
+                span {
                     color: var(--accentColor);
                 }
 
-                svg{
-                    path:first-child{
+                svg {
+                    path:first-child {
                         fill: var(--accentColor);
                     }
                     path {
                         stroke: var(--accentColor);
                     }
                 }
-                
             }
-        }  
+        }
     }
 }

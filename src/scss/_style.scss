@@ -66,20 +66,32 @@ img {
 
 body .container--sm {
     --containerSmBg: #f4f4f4;
+        --containerSmBorder: none;
 }
 
 body.color_yd .container--sm {
     --containerSmBg: #101010;
+        --containerSmBorder: none;
+}
+
+body.color_pl .container--sm {
+    --containerSmBg: #F1F4F6;
+        --containerSmBorder: none;
+}
+
+body.color_pd .container--sm {
+    --containerSmBg: #101010;
+    --containerSmBorder: 0.1rem solid rgba(255, 255, 255, 0.20);
 }
 
 .container--sm {
     background-color: var(--containerSmBg);
     border-radius: 1.6rem;
     padding: 2rem;
+    border: var(--containerSmBorder);
 }
 
 //buttons
-
 .btn {
     border-radius: 3.2rem;
     padding: 1.6rem 14.4rem;
@@ -102,6 +114,17 @@ body.color_yd .btn__save-changes {
     --btnSaveBg: #f9ec00;
     --btnSaveText: #101010;
 }
+
+body.color_pl .btn__save-changes {
+    --btnSaveBg: #D01181;
+    --btnSaveText: #FFFFFF;
+}
+
+body.color_pd .btn__save-changes {
+    --btnSaveBg: #D01181;
+    --btnSaveText: #FFFFFF;
+}
+
 
 .btn__save-changes {
     margin-top: auto;
@@ -131,6 +154,16 @@ body .radio-wrapper {
 
 body.color_yd .radio-wrapper {
     --radioBg: #f9ec00;
+    --checkIco: url("./../assets/images/common/checked-ico-black.svg");
+}
+
+body.color_pl .radio-wrapper {
+    --radioBg: #101010;
+    --checkIco: url("./../assets/images/common/checked-ico.svg");
+}
+
+body.color_pd .radio-wrapper {
+    --radioBg: #D01181;
     --checkIco: url("./../assets/images/common/checked-ico-black.svg");
 }
 
