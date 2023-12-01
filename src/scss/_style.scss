@@ -92,6 +92,26 @@ body.color_pd .container--sm {
 }
 
 //buttons
+body .btn {
+    --btnBg: #f9ec00;
+    --btnText: #101010;
+}
+
+body.color_yd .btn {
+    --btnBg: #f9ec00;
+    --btnText: #101010;
+}
+
+body.color_pl .btn {
+    --btnBg: #D01181;
+    --btnText: #FFFFFF;
+}
+
+body.color_pd .btn {
+    --btnBg: #D01181;
+    --btnText: #FFFFFF;
+}
+
 .btn {
     border-radius: 3.2rem;
     padding: 1.6rem 14.4rem;
@@ -103,34 +123,22 @@ body.color_pd .container--sm {
     align-items: center;
     justify-content: center;
     letter-spacing: 0.016rem;
+    background-color: var(--btnBg);
+    color: var(--btnText)
 }
-
-body .btn__save-changes {
-    --btnSaveBg: #f9ec00;
-    --btnSaveText: #101010;
-}
-
-body.color_yd .btn__save-changes {
-    --btnSaveBg: #f9ec00;
-    --btnSaveText: #101010;
-}
-
-body.color_pl .btn__save-changes {
-    --btnSaveBg: #D01181;
-    --btnSaveText: #FFFFFF;
-}
-
-body.color_pd .btn__save-changes {
-    --btnSaveBg: #D01181;
-    --btnSaveText: #FFFFFF;
-}
-
 
 .btn__save-changes {
     margin-top: auto;
     width: 37.2rem;
-    background-color: var(--btnSaveBg);
-    color: var(--btnSaveText);
+}
+
+.btn__share-pass{
+    margin-top: 1.6rem;
+    width: 100%;
+}
+
+.btn__share-pass-final{
+    width: 37.2rem;
 }
 
 .btn__show-all {
@@ -179,6 +187,7 @@ body.color_pd .radio-wrapper {
         border: 0.1rem solid var(--radioBg);
         border-radius: 100%;
         background-color: transparent;
+        cursor: pointer;
     }
 
     input[type="radio"]:checked ~ .radio-icon {
@@ -190,6 +199,53 @@ body.color_pd .radio-wrapper {
         background-size: 1rem 0.7rem;
     }
 }
+
+//checkbox
+body .checkbox-wrapper {
+    --checkboxBg: #101010;
+    --checkIco: url("./../assets/images/common/checked-ico.svg");
+}
+
+body.color_yd .checkbox-wrapper {
+    --checkboxBg: #f9ec00;
+    --checkIco: url("./../assets/images/common/checked-ico-black.svg");
+}
+
+body.color_pl .checkbox-wrapper {
+    --checkboxBg: #101010;
+    --checkIco: url("./../assets/images/common/checked-ico.svg");
+}
+
+body.color_pd .checkbox-wrapper {
+    --checkboxBg: #D01181;
+    --checkIco: url("./../assets/images/common/checked-ico-black.svg");
+}
+
+.checkbox-wrapper {
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .checkbox-icon {
+        display: block;
+        width: 1.8rem;
+        height: 1.8rem;
+        border: 0.1rem solid var(--checkboxBg);
+        border-radius: 0.4rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked ~ .checkbox-icon {
+        background-color: var(--checkboxBg);
+        border: none;
+        background-image: var(--checkIco);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1rem 0.7rem;
+    }
+}
+
 
 .switcher__content {
     display: none;

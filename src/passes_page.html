@@ -153,36 +153,36 @@
             <div class="container">
                 <div class="passes__title">Мои пропуска</div>
                 <div class="passes__cards">
-                    <div class="passes__card">
-                        <div class="icon"></div>
+                    <div class="passes__card" data-modal="pass">
+                        <div class="icon"><img src="./assets/images/common/pass-ico.svg" alt="Pass" /></div>
                         <div class="card-info">
                             <div class="title">Постоянный пропуск</div>
                         </div>
                     </div>
 
-                    <div class="passes__card">
-                        <div class="icon"></div>
+                    <div class="passes__card" data-modal="pass">
+                        <div class="icon"><img src="./assets/images/common/car-ico.svg" alt="Parking Pass" /></div>
                         <div class="card-info">
-                            <div class="title">Пропуск на парковку</div>
+                            <div class="title">Пропуск <br />на парковку</div>
                         </div>
                     </div>
 
-                    <div class="passes__card">
-                        <div class="icon"></div>
+                    <div class="passes__card passes__card--temporary" data-modal="pass">
+                        <div class="icon"><img src="./assets/images/common/time-ico.svg" alt="Temporary Pass" /></div>
                         <div class="card-info">
                             <div class="terms">
-                                <div class="trems__type">Парковка</div>
+                                <div class="terms__type">Парковка</div>
                                 <div class="terms__date">с 09.09.23 до 23.09.23</div>
                             </div>
                             <div class="title">Временный пропуск</div>
                         </div>
                     </div>
 
-                    <div class="passes__card">
-                        <div class="icon"></div>
+                    <div class="passes__card passes__card--temporary" data-modal="pass">
+                        <div class="icon"><img src="./assets/images/common/time-ico.svg" alt="Temporary Pass" /></div>
                         <div class="card-info">
                             <div class="terms">
-                                <div class="trems__type">Ввоз товара</div>
+                                <div class="terms__type">Ввоз товара</div>
                                 <div class="terms__date">с 09.09.23 до 10.09.23</div>
                             </div>
                             <div class="title">Временный пропуск</div>
@@ -191,5 +191,78 @@
                 </div>
             </div>
         </section>
+
+        <!-- modal pass -->
+        <div class="modal modal--sm modal__pass">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
+                        <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="modal-top-img">
+                    <img src="./assets/images/common/time-ico.svg" alt="Pass icon" />
+                </div>
+                <div class="modal-content">
+                    <div class="modal__pass__type"></div>
+                    <div class="modal__pass__info">
+                        <div class="modal__pass__title"></div>
+                        <div class="modal__pass__id">14009542</div>
+                        <div class="modal__pass__term"></div>
+                    </div>
+                    <a href="#!" class="modal__pass__details">Детали заявки</a>
+                    <button class="btn btn__share-pass" data-modal="share-pass">Поделиться</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal share-pass -->
+        <div class="modal modal__share-pass">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
+                        <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="modal-content">
+                    <div class="modal__share-pass__title">Выберите получателя</div>
+                    <div class="modal__share-pass__search">
+                        <div class="search-ico">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                                <path
+                                    d="M8.02175 14.5435C11.6236 14.5435 14.5435 11.6236 14.5435 8.02175C14.5435 4.41989 11.6236 1.5 8.02175 1.5C4.41989 1.5 1.5 4.41989 1.5 8.02175C1.5 11.6236 4.41989 14.5435 8.02175 14.5435Z"
+                                    stroke="#101010"
+                                    stroke-width="1.6"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path d="M17.1451 17.1427L12.6328 12.6304" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <input type="search" placeholder="Поиск по ФИО, по отделу, по должности" />
+                    </div>
+                    <ul class="modal__share-pass__user-list">
+                         <!-- <li class="modal__share-pass__user">
+                            <div class="modal__share-pass__user__photo"><img src="./assets/images/common/user-1.webp" alt="User" /></div>
+                            <div class="modal__share-pass__user__info">
+                                <div class="modal__share-pass__user__name">Смирнов Евгений Сергеевич</div>
+                                <div class="modal__share-pass__user__role"><span class="job">арендатор</span> | <span class="workplace">Магазин Цветы</span></div>
+                            </div>
+                            <div class="modal__share-pass__user__checkbox checkbox-wrapper">
+                                <input type="checkbox" id="user1" checked />
+                                <label for="user1" class="checkbox-icon"></label>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <button class="btn btn__share-pass-final" data-modal="share-pass-final">Поделиться</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

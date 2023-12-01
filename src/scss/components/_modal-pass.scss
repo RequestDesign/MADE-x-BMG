@@ -1,0 +1,64 @@
+.modal__pass {
+    .modal-content {
+        margin-top: 7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .modal-wrapper{
+        width: 38.2rem;
+    }
+
+    &__type {
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.024rem;
+        margin-bottom: 2.4rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 2.6rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 0.02rem;
+    }
+
+    &__id {
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 0.016rem;
+    }
+
+    &__term {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 93.75%;
+        color: #ACACAC;
+    }
+
+    &__details {
+        font-size: 1.6rem;
+        letter-spacing: 0.016rem;
+        line-height: normal;
+        position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--textColor);
+            height: 0.1rem;
+            left: 0;
+        }
+    }
+}

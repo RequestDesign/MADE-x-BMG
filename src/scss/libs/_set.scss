@@ -109,6 +109,19 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+input[type="search"]{
+  &::-webkit-search-clear-button,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration{
+      display: none;
+  }
+  &::-ms-clear,
+  &::-ms-reveal{
+      display: none;
+  }
+}
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
