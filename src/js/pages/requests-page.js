@@ -22,7 +22,7 @@ const swiper = new Swiper(".requests__popular__cards", {
 //switchers
 $(function () {
     $(".switcher-content").hide();
-    $('.switcher-content[data-content="works"]').show();
+    $('.switcher-content[data-content="execution"]').show();
 
     $(".switcher-category").on("click", function () {
         $(".switcher-category").removeClass("switcher--active");

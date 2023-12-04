@@ -1,0 +1,102 @@
+body .requests__execution {
+    --btnBg: #F4F4F4;
+    --textColor: #101010;
+    --Bg: #FFF;
+    --cardBg: #F4F4F4;
+    --cardTextColor: #101010;
+}
+body.color_yd .requests__execution {
+    --btnBg: #F4F4F4;
+    --textColor: #FFF;
+    --Bg: #1d1d1d;
+    --cardBg: #101010;
+    --cardTextColor: #ffffff;
+
+}
+body.color_pl .requests__execution {
+    --btnBg: #F1F4F6;
+    --textColor: #101010;
+    --Bg: #FFF;
+    --cardBg: #f1f4f6;
+    --cardTextColor: #101010;
+}
+body.color_pd .requests__execution {
+    --btnBg: #F1F4F6;
+    --textColor: #FFF;
+    --Bg: #101010;
+    --cardBg: #FFFFFF;
+    --cardTextColor: #101010;
+}
+
+
+.requests__execution {
+    background-color: var(--Bg);
+
+    &__top {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 3.2rem;
+    }
+
+    &__btn {
+        border-radius: 100%;
+        width: 4.2rem;
+        height: 4.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--btnBg);
+
+        svg {
+            width: 1rem;
+            height: 1.8rem;
+        }
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+        color: var(--textColor);
+    }
+
+    &__cards{
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    &__card{
+        cursor: pointer;
+        background-color: var(--cardBg);
+        width: 44.5rem;
+        height: 28rem;
+        border-radius: 1.6rem;
+        overflow: hidden;
+        padding-bottom: 2rem;
+
+        .image{
+            width: 100%;
+            height: 19.2rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 2rem;
+            line-height: normal;
+            letter-spacing: 0.02rem;
+            font-weight: 500;
+            color: var(--cardTextColor);
+            height: 4.7rem;
+            padding: 0rem 2rem 0rem;
+        }
+
+    }
+}
