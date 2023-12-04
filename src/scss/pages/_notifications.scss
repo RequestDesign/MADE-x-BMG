@@ -692,6 +692,7 @@ body.color_pl .notifications-detail {
             font-style: normal;
             font-weight: 600;
             line-height: 93.75%;
+            max-width: 19.2rem;
         }
         &_input {
             width: 93.6rem;
@@ -705,6 +706,8 @@ body.color_pl .notifications-detail {
             font-style: normal;
             font-weight: 500;
             line-height: 120%;
+            display: flex;
+            align-items: center;
 
             &-big {
                 height: 14.9rem;
@@ -714,6 +717,21 @@ body.color_pl .notifications-detail {
                 display: flex;
                 gap: 1rem;
                 flex-wrap: wrap;
+            }
+            &-change {
+                justify-content: space-between;
+
+                span {
+                    font-size: 1.6rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 93.75%;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; //количество текста который будет отображатся
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
         }
         &_file {
@@ -728,4 +746,39 @@ body.color_pl .notifications-detail {
             }
         }
     }
+    &__btn {
+        width: fit-content;
+        margin-left: auto;
+
+        &:disabled {
+            color: rgba(16, 16, 16, 0.40);
+            background: #FFF;
+        }
+    }
+}
+
+.modal__share-pass__department-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 50.4rem;
+    overflow: auto;
+    padding-bottom: 10rem;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.modal__share-pass__department {
+    background-color: var(--userBg);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.6rem;
+    border: var(--userBorder);
+    flex: none;
 }

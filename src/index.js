@@ -5,6 +5,7 @@ import "./js/pages/home-page";
 import "./js/pages/passes-page";
 import "./js/pages/requests-page";
 import "./js/pages/making-request-page";
+import "./js/pages/settings-about";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
@@ -12,6 +13,7 @@ import './js/components/modal-pass'
 import './js/components/modal-share-pass'
 import './js/components/modal-success'
 import "./js/components/switcher";
+import "./js/components/form";
 import { example } from "./js/utils/constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
