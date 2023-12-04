@@ -3,7 +3,9 @@
 @import "./scss/style";
 @import "./scss/components/header";
 @import "./scss/components/sidebar";
+@import "./scss/components/form";
 @import "./scss/components/modal";
+@import "./scss/components/modal-move-choice";
 @import "./scss/components/modal-change-work";
 @import "./scss/components/modal-pass";
 @import "./scss/components/modal-share-pass";
@@ -15,3 +17,4 @@
 @import "./scss/pages/error";
 @import "./scss/pages/passes-page";
 @import "./scss/pages/requests-page";
+@import "./scss/pages/adding_user";

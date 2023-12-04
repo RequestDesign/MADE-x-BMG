@@ -1,0 +1,70 @@
+body .adding_user {
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --switchBtn: #f4f4f4;
+    --switchBtnActive: #101010;
+    --switchBtnActiveColor: #FFF;
+    --switchBtnSpan: #F9EC00;
+    --switchBtnSpanColor: #101010;
+}
+body.color_yd .adding_user {
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --switchBtn: #292929;
+    --switchBtnActive: #F9EC00;
+    --switchBtnActiveColor: #101010;
+    --switchBtnSpan: #F9EC00;
+    --switchBtnSpanColor: #F9EC00;
+}
+body.color_pl .adding_user {
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --switchBtn: #f4f4f4;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --switchBtnSpan: #101010;
+    --switchBtnSpanColor: #FFF;
+}
+body.color_pd .adding_user {
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --switchBtn: #292929;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --switchBtnSpan: #D01181;
+    --switchBtnSpanColor: #FFF;
+}
+
+.adding_user {
+    &__btns {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    &__btn {
+        height: 4.5rem;
+        display: flex;
+        align-items: center;
+        padding: 0 3.2rem;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.016rem;
+        border-radius: 2rem;
+        color: var(--normalTextColor);
+        background: var(--switchBtn);
+        cursor: pointer;
+        gap: 1rem;
+
+        &.active {
+            background: var(--switchBtnActive);
+            color: var(--switchBtnActiveColor);
+            font-weight: 500;
+        }
+    }
+}
