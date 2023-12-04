@@ -1,0 +1,331 @@
+body .making-request {
+    --btnBg: #f4f4f4;
+    --textColor: #101010;
+    --Bg: #fff;
+    --cardBg: #f4f4f4;
+    --cardTextColor: #101010;
+    --stepsBg: #f4f4f4;
+    --stepText: #101010;
+    --stepActiveBg: #101010;
+    --stepActiveText: #ffffff;
+    --inputBg: #ffffff;
+}
+body.color_yd .making-request {
+    --btnBg: #f4f4f4;
+    --textColor: #fff;
+    --Bg: #1d1d1d;
+    --cardBg: #101010;
+    --cardTextColor: #ffffff;
+    --stepsBg: #f4f4f4;
+    --stepText: #101010;
+    --stepActiveBg: #101010;
+    --stepActiveText: #ffffff;
+    --inputBg: #ffffff;
+}
+body.color_pl .making-request {
+    --btnBg: #f1f4f6;
+    --textColor: #101010;
+    --Bg: #fff;
+    --cardBg: #f1f4f6;
+    --cardTextColor: #101010;
+    --stepsBg: #f4f4f4;
+    --stepText: #101010;
+    --stepActiveBg: #101010;
+    --stepActiveText: #ffffff;
+    --inputBg: #ffffff;
+}
+body.color_pd .making-request {
+    --btnBg: #f1f4f6;
+    --textColor: #fff;
+    --Bg: #101010;
+    --cardBg: #ffffff;
+    --cardTextColor: #101010;
+    --stepsBg: #f4f4f4;
+    --stepText: #101010;
+    --stepActiveBg: #101010;
+    --stepActiveText: #ffffff;
+    --inputBg: #ffffff;
+}
+
+.making-request {
+
+    &__content{
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__top {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+        color: var(--textColor);
+    }
+
+    &__left{
+        flex: 1;
+    }
+
+    &__right{
+        width: 29rem;
+        height: 79.8rem;
+        overflow: hidden;
+        border-radius: 1.6rem;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__btn {
+        border-radius: 100%;
+        width: 4.2rem;
+        height: 4.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--btnBg);
+
+        svg {
+            width: 1rem;
+            height: 1.8rem;
+        }
+    }
+
+    &__steps {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 1.6rem;
+        height: 3rem;
+        width: 34.3rem;
+        overflow: hidden;
+        background-color: var(--stepsBg);
+        margin: 0 auto;
+        margin-bottom: 3.2rem;
+
+        .step {
+            text-align: center;
+            letter-spacing: 0.016rem;
+            padding: 0.525rem 3.5rem 0.575rem;
+            border-radius: 1.6rem;
+
+            &--active {
+                background-color: var(--stepActiveBg);
+                color: var(--stepActiveText);
+            }
+        }
+    }
+
+    &__steps-container {
+        padding: 3.2rem 2.4rem;
+
+        .step-content {
+            .form {
+                &__title {
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                    line-height: 100%;
+                    letter-spacing: 0.024rem;
+                    margin-bottom: 4rem;
+                }
+
+                &__inputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+                    margin-bottom: 4rem;
+                }
+
+                &__input {
+                    display: flex;
+                    align-items: center;
+                    gap: 3.2rem;
+
+                    &--textarea {
+                        align-items: start;
+                    }
+
+                    &__title {
+                        width: 19.2rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.4rem;
+
+                        .add-file-hint {
+                            display: none;
+                            position: absolute;
+                            top: -1.4rem;
+                            left: 0;
+                            padding: 0.8rem 1rem 0.9rem 1.8rem;
+                            color: #fff;
+
+                            span {
+                                z-index: 2;
+                                position: absolute;
+                                top: 1.4rem;
+                                left: 3.5rem;
+                                width: 16.4rem;
+                                font-size: 1.4rem;
+                                letter-spacing: 0.014rem;
+                            }
+
+                            .hint-bg {
+                                z-index: 1;
+                                width: 19.2rem;
+                                height: 8.1rem;
+                                position: relative;
+
+                                path {
+                                    fill: #101010;
+                                }
+                            }
+                        }
+
+                        .icon {
+                            position: relative;
+                            cursor: pointer;
+                        }
+
+                        .icon:hover {
+                            .add-file-hint {
+                                display: block;
+                            }
+                        }
+
+                        svg {
+                            width: 1.4rem;
+                            height: 1.4rem;
+                        }
+                    }
+
+                    &__wrapper {
+                        flex: 1;
+                        background-color: var(--inputBg);
+                        border-radius: 1.6rem;
+                        padding: 1.8rem 1.6rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        cursor: pointer;
+
+                        input {
+                            width: 100%;
+                        }
+
+                        textarea {
+                            width: 100%;
+                            resize: none;
+                            height: 15.7rem;
+                        }
+
+                        .icon {
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            .icon-file {
+                                width: 2.4rem;
+                                height: 2.4rem;
+                            }
+
+                            .icon-asterisk {
+                                width: 2.4rem;
+                                height: 2.4rem;
+                            }
+                        }
+
+                        span {
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                            line-height: 93.75%;
+                        }
+
+                        input[type="file"] {
+                            display: none;
+                        }
+
+                        .btn__open-list {
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            svg {
+                                width: 1.4rem;
+                                height: 0.8rem;
+                                transition: transform 0.2s ease;
+                            }
+
+                            &.open{
+                                svg{
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__btn {
+                    width: 34.2rem;
+                    margin-left: auto;
+                }
+
+                
+
+                #executorInputWrapper{
+                    position: relative;
+                }
+
+                .executor-list{
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    top: calc(100% + 1.5rem);
+                    width: 100%;
+                    
+                    padding: 1.6rem;
+                    border-radius: 1.6rem;
+                    background-color: #fff;
+                    overflow: auto;
+
+                    &__img{
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        border-radius: 100%;
+                        overflow: hidden;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    &__option{
+                        display: flex;
+                        align-items: center;
+                        gap: 0.6rem;
+                        padding: 0.8rem 0;
+                        border-bottom: 0.1rem solid rgba(161, 172, 185, 0.20);
+                    }
+
+                    &__radio{
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}

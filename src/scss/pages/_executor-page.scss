@@ -2,8 +2,6 @@ body .executor {
     --btnBg: #f4f4f4;
     --textColor: #101010;
     --Bg: #fff;
-    --cardBg: #f4f4f4;
-    --cardTextColor: #101010;
     --btnGoTo: #101010;
     --deliveryBg: #FFF;
     --deliveryBorder: unset;
@@ -12,8 +10,6 @@ body.color_yd .executor {
     --btnBg: #f4f4f4;
     --textColor: #fff;
     --Bg: #1d1d1d;
-    --cardBg: #101010;
-    --cardTextColor: #ffffff;
     --btnGoTo: #f9ec00;
     --deliveryBg: #292929;
     --deliveryBorder: unset;
@@ -22,8 +18,6 @@ body.color_pl .executor {
     --btnBg: #f1f4f6;
     --textColor: #101010;
     --Bg: #fff;
-    --cardBg: #f1f4f6;
-    --cardTextColor: #101010;
     --btnGoTo: #101010;
     --deliveryBg: #FFF;
     --deliveryBorder: unset;
@@ -32,8 +26,6 @@ body.color_pd .executor {
     --btnBg: #f1f4f6;
     --textColor: #fff;
     --Bg: #101010;
-    --cardBg: #ffffff;
-    --cardTextColor: #101010;
     --btnGoTo: #d01181;
     --deliveryBg: #101010;
     --deliveryBorder: 1px solid rgba(255, 255, 255, 0.20);
@@ -124,6 +116,7 @@ body.color_pd .executor {
         }
 
         &__delivery{
+            cursor: pointer;
             border-radius: 1.6rem;
             padding: 1.6rem;
             background-color: var(--deliveryBg);

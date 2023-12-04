@@ -318,15 +318,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="requests__categories container--sm">
+                    <div class="switcher requests__categories container--sm">
                         <div class="requests__categories__title">Категории заявок</div>
+
                         <div class="requests__categories__switchers">
-                            <div class="switcher switcher-category switcher--active" data-switcher="execution">Производство работ</div>
-                            <div class="switcher switcher-category" data-switcher="residents">Резиденты</div>
+                            <div class="switcher__btn switcher-category active">Производство работ</div>
+                            <div class="switcher__btn switcher-category">Резиденты</div>
                         </div>
-                        <div class="requests__categories__switchers-container">
+                        <div class="switcher__container">
                             <!-- execution -->
-                            <div class="switcher-content" data-content="execution">
+                            <div class="switcher__content active">
+                                <div class="requests__categories__cards">
                                 <div class="requests__categories__card">
                                     <div class="image">
                                         <img src="./assets/images/requests/cleaning-2.webp" alt="Cleaning" />
@@ -362,9 +364,11 @@
                                     <div class="title">Парковочное <br>место в ТЦ</div>
                                 </div>
                             </div>
+                        </div>
 
                             <!-- residents -->
-                            <div class="switcher-content" data-content="residents">
+                            <div class="switcher__content">
+                                <div class="requests__categories__cards">
                                 <div class="requests__categories__card">
                                     <div class="image">
                                         <img src="./assets/images/requests/flowers.webp" alt="Flowers" />
@@ -378,7 +382,7 @@
                                     </div>
                                     <div class="title">Заказать еду</div>
                                 </div>
-
+                            </div>
                             </div>
 
                         </div>

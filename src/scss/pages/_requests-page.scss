@@ -186,11 +186,6 @@ body.color_pd .requests {
         padding: 2.4rem;
         padding-top: 3rem;
 
-        .switcher-content {
-            display: flex;
-            gap: 1.6rem;
-        }
-
         &__title {
             margin-bottom: 2.4rem;
             font-size: 2.4rem;
@@ -204,7 +199,7 @@ body.color_pd .requests {
             display: flex;
             gap: 1rem;
 
-            .switcher {
+            .switcher__btn {
                 cursor: pointer;
                 border-radius: 2rem;
                 padding: 1.2rem 3.2rem;
@@ -216,11 +211,16 @@ body.color_pd .requests {
                 color: var(--switcherColor);
                 border: var(--switcherBorder);
 
-                &--active {
+                &.active {
                     background-color: var(--switcherActiveBg);
                     color: var(--switcherActiveColor);
                 }
             }
+        }
+
+        &__cards{
+            display: flex;
+            gap: 1.6rem;
         }
 
         &__card {

@@ -51,13 +51,11 @@ body.color_pd .modal {
     width: 100%;
     height: 100vh;
 
-	&--sm{
-		.modal-wrapper{
-			right: 62.6rem;
-			left: unset;
-			padding: 2rem 1.5rem;
-		}
-	}
+    &--sm {
+        .modal-wrapper {
+            padding: 2rem 1.5rem;
+        }
+    }
 
     &.active {
         display: block;
@@ -76,8 +74,8 @@ body.color_pd .modal {
     &-wrapper {
         position: absolute;
         top: 50%;
-        left: 69.5rem;
-        transform: translateY(-50%);
+        left: calc(50% + 16.5rem);
+        transform: translate(-50%, -50%);
         background: var(--modalBg);
         padding: 4rem 2rem 2rem;
         border-radius: 1.6rem;
@@ -114,18 +112,18 @@ body.color_pd .modal {
         width: 10rem;
         height: 10rem;
 
-		border-radius: 100%;
-		border: 0.4rem solid var(--topImgBorderColor);
-		background-color: var(--topImgBg);
+        border-radius: 100%;
+        border: 0.4rem solid var(--topImgBorderColor);
+        background-color: var(--topImgBg);
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
             width: 5rem;
             height: 5rem;
-			filter: invert(1);
+            filter: invert(1);
         }
     }
 }

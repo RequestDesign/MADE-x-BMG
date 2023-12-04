@@ -11,4 +11,4 @@ $('.switcher__btn').on('click', function (evt) {
     $this.addClass('active');
     $switcher_contents.removeClass('active')
     $($switcher_contents[index]).addClass('active');
-})
+}) 
