@@ -14,3 +14,11 @@ $('.users__tenant_settings').on('click', function(e){
     $(this).closest('.users__tenant_item').find('.users__tenant_choice').slideToggle()
     $(this).closest('.users__tenant_item').toggleClass('active')
 })
+$('.users__tenant_checkbox input').on('change', function(e){
+    $(this).closest('.users__tenant').find(':checked')
+    if($(this).closest('.users__tenant').find(':checked').length) {
+        $(this).closest('.users__tenant').find('.users__tenant_add_btn').prop("disabled", false)
+    } else {
+        $(this).closest('.users__tenant').find('.users__tenant_add_btn').prop("disabled", true)
+    }
+})

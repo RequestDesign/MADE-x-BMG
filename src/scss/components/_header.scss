@@ -56,6 +56,7 @@ body.color_pd .header {
     justify-content: space-between;
     background-color: var(--headerBg);
     color: var(--textColor);
+    z-index: 10;
 
     &__content {
         display: flex;
