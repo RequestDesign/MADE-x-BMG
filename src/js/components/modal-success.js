@@ -25,6 +25,11 @@ $('[data-modal="success"]').on("click", function (e) {
     $(".modal__success").addClass("active");
 });
 
+$('[data-modal="make-request"]').on("click", function (e) {
+    e.preventDefault()
+    $(".modal__success").addClass("active");
+});
+
 $('[data-modal="add-open"]').on("click", function (e) {
     e.preventDefault()
     $(".modal__move-choice").addClass("active");

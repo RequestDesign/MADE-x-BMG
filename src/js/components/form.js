@@ -84,6 +84,12 @@ if($('#phone-mask1').length){
     });
 }
 
+if($('#phone-mask2').length){
+    IMask(document.getElementById("phone-mask2"), {
+        mask: "+{7} 000 000-00-00",
+    });
+}
+
 $(".form__dropdown_top input").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $(this).closest(".form__dropdown").find('.form__dropdown_item').filter(function() {
