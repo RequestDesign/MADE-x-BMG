@@ -149,22 +149,9 @@
             </div>
         </header>
 
-        <section class="making-request">
+        <!-- <section class="making-request">
             <div class="container">
-                <div class="making-request__top">
-                    <a href="#!" class="making-request__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 18" fill="none">
-                            <path
-                                d="M8.60156 16.4277L1.57299 9.39916C1.51833 9.34786 1.47476 9.2859 1.44498 9.2171C1.41519 9.1483 1.39983 9.07413 1.39983 8.99916C1.39983 8.9242 1.41519 8.85002 1.44498 8.78123C1.47476 8.71243 1.51833 8.65047 1.57299 8.59916L8.60156 1.57059"
-                                stroke="#101010"
-                                stroke-width="1.6"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
-                    </a>
-                    <div class="making-request__title">Заказать цветы</div>
-                </div>
+
 
                 <div class="making-request__content">
                     <div class="making-request__left">
@@ -371,8 +358,131 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section> -->
+
+        <section class="making-request">
+            <div class="container">
+                <div class="making-request__top">
+                    <a href="#!" class="btn__go-back--circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 18" fill="none">
+                            <path
+                                d="M8.60156 16.4277L1.57299 9.39916C1.51833 9.34786 1.47476 9.2859 1.44498 9.2171C1.41519 9.1483 1.39983 9.07413 1.39983 8.99916C1.39983 8.9242 1.41519 8.85002 1.44498 8.78123C1.47476 8.71243 1.51833 8.65047 1.57299 8.59916L8.60156 1.57059"
+                                stroke="#101010"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </a>
+                    <div class="title">Заказать цветы</div>
+                </div>
+
+                <div class="making-request__content">
+                    <div class="making-request__left">
+
+                        <!-- steps -->
+                        <div class="making-request__steps">
+                            <div class="making-request__step making-request__step--active" data-step="step1">1 шаг</div>
+                            <div class="making-request__step" data-step="step2">2 шаг</div>
+                            <div class="making-request__step" data-step="step3">3 шаг</div>
+                        </div>
+
+                        <!-- steps container -->
+                        <div class="making-request__steps-container container--sm">
+
+                            <!-- step 1 -->
+                            <div class="making-request__step-content" data-content="step1">
+                                <form class="form form--contact">
+                                    <div class="form__title">Укажите необходимые контактные данные</div>
+
+                                    <div class="form__inputs">
+
+                                        <div class="form__input">
+                                            <div class="form__input__title">Название компании и № помещения</div>
+                                            <div class="form__input__wrapper container--sm">
+                                                <span>Hoff, пом 123</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form__input">
+                                            <div class="form__input__title">Имя</div>
+                                            <div class="form__input__wrapper">
+                                                <input type="text" placeholder="Введите имя контактного лица" />
+                                                <div class="form__input__icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                                        <path d="M14.8284 9.17139L9.17188 14.8279" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M9.17188 9.17139L14.8284 14.8279" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11.9998 8.00021V15.9998" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M8.00021 11.9997H15.9998" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form__btns">
+                                        <button class="btn form__btn" id="firstStepBtn">Продолжить</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- step 2 -->
+                            <div class="making-request__step-content" data-content="step2">
+                                <form class="form form--price"> 
+                                    <div class="form__input">
+                                        <div class="form__input__title">Имя2</div>
+                                        <div class="form__input__wrapper">
+                                            <input type="text" placeholder="Введите имя контактного лица" />
+                                            <div class="form__input__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M14.8284 9.17139L9.17188 14.8279" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M9.17188 9.17139L14.8284 14.8279" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M11.9998 8.00021V15.9998" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M8.00021 11.9997H15.9998" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                                <div class="form__btns">
+                                    <a href="#!" class="go-back-link">Назад</a>
+                                    <button class="btn form__btn" id="secStepBtn">Продолжить</button>
+                                </div>
+                            </div>
+
+                            <!-- step 3 -->
+                            <div class="making-request__step-content" data-content="step3">
+                                <form class="form form--date"> 
+                                    <div class="form__input">
+                                        <div class="form__input__title">Имя3</div>
+                                        <div class="form__input__wrapper">
+                                            <input type="text" placeholder="Введите имя контактного лица" />
+                                            <div class="form__input__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M14.8284 9.17139L9.17188 14.8279" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M9.17188 9.17139L14.8284 14.8279" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M11.9998 8.00021V15.9998" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M8.00021 11.9997H15.9998" stroke="#F06767" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="form__btns">
+                                    <a href="#!" class="go-back-link">Назад</a>
+                                    <button class="btn form__btn" id="thirdStepBtn">Продолжить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="making-request__right">
-                        <img src="./assets/images/notifications/notifications1.webp" alt="" />
+                        <img src="./assets/images/notifications/notifications1.webp" alt="flowers" />
                     </div>
                 </div>
             </div>

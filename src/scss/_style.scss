@@ -145,6 +145,21 @@ body.color_pd .btn {
     width: 34.2rem;
 }
 
+.btn__go-back--circle{
+    border-radius: 100%;
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F4F4F4;
+
+    svg{
+        width: 1rem;
+        height: 1.8rem;
+    }
+}
+
 .btn__show-all {
     font-size: 1.6rem;
     letter-spacing: 0.016rem;
@@ -307,8 +322,6 @@ body.color_pd .radio-wrapper {
         background-position: center;
         background-size: 1rem 0.7rem;
     }
-
-
 }
 .radio-wrapper {
     input[type="checkbox"] {
@@ -335,12 +348,4 @@ body.color_pd .radio-wrapper {
     }
 
 
-}
-
-.switcher__content {
-    display: none;
-
-    &.active {
-        display: block;
-    }
 }
