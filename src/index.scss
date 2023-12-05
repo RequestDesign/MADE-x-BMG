@@ -1,6 +1,7 @@
 @import "./scss/fonts";
 @import "./scss/libs/set";
 @import "./scss/style";
+@import "./scss/libs/jquery-ui.scss";
 @import "./scss/components/header";
 @import "./scss/components/sidebar";
 @import "./scss/components/form";
@@ -22,3 +23,4 @@
 @import "./scss/pages/executor-page";
 @import "./scss/pages/making-request-page";
 @import "./scss/pages/adding_user";
+@import "./scss/pages/applications";
