@@ -129,31 +129,30 @@ $("#toFirstStep").on("click", function () {
 $("#thirdStepBtn").on("click", function (e) {
     e.preventDefault();
     $(".making-request__step-content").hide();
-    $('[data-content="step3"]').show();
     $(".making-request__step").removeClass("making-request__step--active");
     $("[data-step='step3']").addClass("making-request__step--active");
+    $('[data-content="step3"]').show();
     checkRequiredFields('#formDate');
 
     $.datepicker.regional['ru'] = {
-        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
-        dayNames: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
-        dayNamesMin: ['вс','пн','вт','ср','чт','пт','сб'],
+        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+        dayNames: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+        dayNamesMin: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
         dateFormat: 'dd/mm/yy',
         firstDay: 1
     };
 
     $.datepicker.setDefaults($.datepicker.regional['ru']);
 
+    $("#formDate .form__input input").on("input", function () {
+        checkRequiredFields('#formDate');
+    });
+
     $("#datepicker").datepicker({
         nextText: "",
         prevText: "",
-        dateFormat: 'dd.mm.yy'
-    });
-
-    // Make btn active on input change in step 3
-    $("#formDate .form__input input").on("input", function () {
-        checkRequiredFields('#formDate');
+        dateFormat: 'dd.mm.yy',
     });
 });
 
