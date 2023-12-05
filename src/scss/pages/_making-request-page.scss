@@ -376,7 +376,6 @@ body.color_pd .making-request {
         background-repeat: no-repeat;
     }
     
-
     .ui-datepicker-title {
         order: 2;
 
@@ -409,4 +408,10 @@ body.color_pd .making-request {
 
 #ui-datepicker-div{
     display: none;
+}
+
+.ui-state-default, .ui-widget-header, .ui-widget-content a{
+    color: unset !important;
+    background-color: unset !important;
+    border: unset !important;
 }
