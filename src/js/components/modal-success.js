@@ -24,3 +24,14 @@ $('[data-modal="success"]').on("click", function (e) {
     e.preventDefault()
     $(".modal__success").addClass("active");
 });
+
+$('[data-modal="add-open"]').on("click", function (e) {
+    e.preventDefault()
+    $(".modal__move-choice").addClass("active");
+});
+
+$('[data-modal="success-open"]').on("click", function (e) {
+    e.preventDefault()
+    $(".modal__move-choice").removeClass("active");
+    $(".modal__success").addClass("active");
+});
