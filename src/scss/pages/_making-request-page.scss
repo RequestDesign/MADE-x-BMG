@@ -1,8 +1,6 @@
 body .making-request {
     --textColor: #101010;
     --Bg: #fff;
-    // --cardBg: #f4f4f4;
-    // --cardTextColor: #101010;
     --stepsBg: #f4f4f4;
     --stepsBorder: none;
     --stepText: rgba(16, 16, 16, 0.3);
@@ -14,8 +12,6 @@ body .making-request {
 body.color_yd .making-request {
     --textColor: #fff;
     --Bg: #1d1d1d;
-    // --cardBg: #101010;
-    // --cardTextColor: #ffffff;
     --stepsBg: #292929;
     --stepsBorder: none;
     --stepText: #acacac;
@@ -27,8 +23,6 @@ body.color_yd .making-request {
 body.color_pl .making-request {
     --textColor: #101010;
     --Bg: #fff;
-    // --cardBg: #f1f4f6;
-    // --cardTextColor: #101010;
     --stepsBg: #f1f4f6;
     --stepsBorder: none;
     --stepText: rgba(16, 16, 16, 0.3);
@@ -40,8 +34,6 @@ body.color_pl .making-request {
 body.color_pd .making-request {
     --textColor: #fff;
     --Bg: #101010;
-    // --cardBg: #ffffff;
-    // --cardTextColor: #101010;
     --stepsBg: #101010;
     --stepsBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
     --stepText: #acacac;
@@ -50,197 +42,6 @@ body.color_pd .making-request {
     --inputBg: #101010;
     --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
 }
-
-// .making-request {
-
-//     &__steps-container {
-//         padding: 3.2rem 2.4rem;
-
-//         .step-content {
-//             .form {
-//
-
-//                 &__input {
-//                     display: flex;
-//                     align-items: center;
-//                     gap: 3.2rem;
-
-//                     &--textarea {
-//                         align-items: start;
-//                     }
-
-//                     &__title {
-//                         width: 19.2rem;
-//                         display: flex;
-//                         align-items: center;
-//                         gap: 0.4rem;
-
-//                         .add-file-hint {
-//                             display: none;
-//                             position: absolute;
-//                             top: -1.4rem;
-//                             left: 0;
-//                             padding: 0.8rem 1rem 0.9rem 1.8rem;
-//                             color: #fff;
-
-//                             span {
-//                                 z-index: 2;
-//                                 position: absolute;
-//                                 top: 1.4rem;
-//                                 left: 3.5rem;
-//                                 width: 16.4rem;
-//                                 font-size: 1.4rem;
-//                                 letter-spacing: 0.014rem;
-//                             }
-
-//                             .hint-bg {
-//                                 z-index: 1;
-//                                 width: 19.2rem;
-//                                 height: 8.1rem;
-//                                 position: relative;
-
-//                                 path {
-//                                     fill: #101010;
-//                                 }
-//                             }
-//                         }
-
-//                         .icon {
-//                             position: relative;
-//                             cursor: pointer;
-//                         }
-
-//                         .icon:hover {
-//                             .add-file-hint {
-//                                 display: block;
-//                             }
-//                         }
-
-//                         svg {
-//                             width: 1.4rem;
-//                             height: 1.4rem;
-//                         }
-//                     }
-
-//                     &__wrapper {
-//                         flex: 1;
-//                         background-color: var(--inputBg);
-//                         border-radius: 1.6rem;
-//                         padding: 1.8rem 1.6rem;
-//                         display: flex;
-//                         align-items: center;
-//                         justify-content: space-between;
-//                         cursor: pointer;
-
-//                         input {
-//                             width: 100%;
-//                         }
-
-//                         textarea {
-//                             width: 100%;
-//                             resize: none;
-//                             height: 15.7rem;
-//                         }
-
-//                         .icon {
-//                             width: 2.4rem;
-//                             height: 2.4rem;
-//                             display: flex;
-//                             align-items: center;
-//                             justify-content: center;
-
-//                             .icon-file {
-//                                 width: 2.4rem;
-//                                 height: 2.4rem;
-//                             }
-
-//                             .icon-asterisk {
-//                                 width: 2.4rem;
-//                                 height: 2.4rem;
-//                             }
-//                         }
-
-//                         span {
-//                             font-size: 1.6rem;
-//                             font-weight: 500;
-//                             line-height: 93.75%;
-//                         }
-
-//                         input[type="file"] {
-//                             display: none;
-//                         }
-
-//                         .btn__open-list {
-//                             width: 2.4rem;
-//                             height: 2.4rem;
-//                             display: flex;
-//                             align-items: center;
-//                             justify-content: center;
-//                             svg {
-//                                 width: 1.4rem;
-//                                 height: 0.8rem;
-//                                 transition: transform 0.2s ease;
-//                             }
-
-//                             &.open{
-//                                 svg{
-//                                     transform: rotate(180deg);
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-
-//                 &__btn {
-//                     width: 34.2rem;
-//                     margin-left: auto;
-//                 }
-
-//                 #executorInputWrapper{
-//                     position: relative;
-//                 }
-
-//                 .executor-list{
-//                     display: none;
-//                     position: absolute;
-//                     top: 0;
-//                     left: 0;
-//                     top: calc(100% + 1.5rem);
-//                     width: 100%;
-
-//                     padding: 1.6rem;
-//                     border-radius: 1.6rem;
-//                     background-color: #fff;
-//                     overflow: auto;
-
-//                     &__img{
-//                         width: 3.2rem;
-//                         height: 3.2rem;
-//                         border-radius: 100%;
-//                         overflow: hidden;
-
-//                         img{
-//                             width: 100%;
-//                             height: 100%;
-//                         }
-//                     }
-
-//                     &__option{
-//                         display: flex;
-//                         align-items: center;
-//                         gap: 0.6rem;
-//                         padding: 0.8rem 0;
-//                         border-bottom: 0.1rem solid rgba(161, 172, 185, 0.20);
-//                     }
-
-//                     &__radio{
-//                         margin-left: auto;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
 
 .making-request {
     background-color: var(--Bg);
@@ -304,6 +105,8 @@ body.color_pd .making-request {
     // form
     &__step-content {
         .form {
+            gap: unset;
+
             &__title {
                 font-size: 2.4rem;
                 font-weight: 500;
@@ -312,70 +115,62 @@ body.color_pd .making-request {
                 margin-bottom: 4rem;
             }
 
-            &__inputs {
+            &__items {
                 display: flex;
                 flex-direction: column;
                 gap: 1.6rem;
                 margin-bottom: 4rem;
             }
 
-            &__input {
-                display: flex;
-                align-items: center;
-                gap: 3.2rem;
-
-                &__title {
-                    width: 19.2rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.4rem;
-                    font-weight: 600;
-                }
-
-                &__wrapper {
-                    flex: 1;
-                    background-color: var(--inputBg);
-                    border: var(--inputBorder);
-                    border-radius: 1.6rem;
-                    padding: 1.8rem 1.6rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    cursor: pointer;
-
-                    span {
-                        font-size: 1.6rem;
-                        font-weight: 500;
-                        line-height: 93.75%;
-                    }
-
-                    input {
-                        width: 100%;
-                        font-weight: 500;
-                        line-height: 93.75%;
-
-                        &::placeholder {
-                            color: #acacac;
-                        }
-                    }
+            &__item {
+                &--textarea {
+                    align-items: start;
 
                     textarea {
                         width: 100%;
                         resize: none;
                         height: 15.7rem;
+                        font-weight: 500;
                     }
                 }
+            }
 
-                &__icon {
-                    width: 2.4rem;
-                    height: 2.4rem;
+            &__input {
+                height: unset;
+
+                display: flex;
+                gap: 2rem;
+
+                &--file {
+                    cursor: pointer;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    justify-content: space-between;
+                    align-items: end;
 
-                    svg {
+                    input {
+                        display: none;
+                    }
+
+                    &__name {
+                        font-weight: 500;
+                    }
+
+                    &__icon {
+                        cursor: pointer;
                         width: 2.4rem;
                         height: 2.4rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        svg {
+                            width: 1.4rem;
+                            height: 1.6rem;
+
+                            path {
+                                stroke: var(--textColor);
+                            }
+                        }
                     }
                 }
             }
@@ -390,8 +185,8 @@ body.color_pd .making-request {
                     letter-spacing: 0.016rem;
                     position: relative;
 
-                    &::after{
-                        content: '';
+                    &::after {
+                        content: "";
                         position: absolute;
                         bottom: 0;
                         right: 0;
@@ -406,6 +201,82 @@ body.color_pd .making-request {
             &__btn {
                 width: 34.2rem;
             }
+
+            &__name--file {
+                position: relative;
+
+                svg {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 2rem;
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    &:hover {
+                        & ~ .add-file-hint {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .add-file-hint {
+                    position: absolute;
+                    top: 25%;
+                    right: -92%;
+                    opacity: 0;
+                    transition: opacity 0.2s ease;
+                    width: 19.2rem;
+                    height: 8.1rem;
+                    color: var(--Bg);
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    letter-spacing: 0.014rem;
+                    padding: 0.8rem 1rem 0.9rem 1.8rem;
+
+                    background-image: url("./../../assets/images/common/hint-bg.svg");
+                    background-size: 19.2rem 8.1rem;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &__thumbnails-container {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            &__thumbnail {
+                &__img {
+                    width: 8rem;
+                    height: 8rem;
+                    border-radius: 1.6rem;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+
+    //form price
+    #formPrice {
+        .form__items {
+            gap: 2rem;
+            flex-direction: row;
+        }
+
+        .form__input {
+            width: 45.9rem;
+        }
+
+        .form__btn {
+            margin-left: unset;
+        }
+    }
+
+    //form date
+    #formDate {
+        .form__btn {
+            margin-left: unset;
         }
     }
 
@@ -420,4 +291,125 @@ body.color_pd .making-request {
             height: 100%;
         }
     }
+
+    .form__dropdown_bottom {
+        top: 7rem;
+    }
+
+    .form__dropdown_top span.filled {
+        color: var(--textColor);
+    }
+
+    .executor-list {
+        &__img {
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__option {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 0;
+            border-bottom: 0.1rem solid rgba(161, 172, 185, 0.2);
+        }
+
+        &__radio {
+            margin-left: auto;
+        }
+    }
+}
+
+#datepicker {
+    position: relative;
+}
+
+.ui-datepicker {
+    position: absolute;
+    top: calc(100% + 8rem);
+    left: 0;
+    z-index: 9999;
+    background-color: #fff;
+    margin-top: 4rem;
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
+    border-radius: 1.6rem;
+    width: 94.8rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.2rem;
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+
+    .ui-datepicker-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 19.9rem;
+    }
+
+    .ui-datepicker-calendar {
+        width: 30.4rem;
+
+        td {
+            height: 4rem;
+            width: 4rem;
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+
+    .ui-datepicker-prev {
+        order: 1;
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url("./../../assets/images/calendar/arrow-prew-black.svg");
+        background-size: 2.4rem 2.4rem;
+        background-repeat: no-repeat;
+    }
+    
+
+    .ui-datepicker-title {
+        order: 2;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    .ui-datepicker-next {
+        order: 3;
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url("./../../assets/images/calendar/arrow-next-black.svg");
+        background-size: 2.4rem 2.4rem;
+        background-repeat: no-repeat;
+    }
+
+    .ui-datepicker-today {
+        background-color: #101010;
+        color: #fff;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    .ui-datepicker-week-end {
+        color: #acacac;
+    }
+}
+
+.ui-datepicker-div{
+    display: none;
 }
