@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Данные паспорта</title>
+    <title>Получатели входящих заявок подкатегория</title>
 </head>
 <body class="">
     <aside class="sidebar">
@@ -149,7 +149,7 @@
         </div>
     </header>
 
-    <section class="adding_user">
+    <section class="users">
         <div class="container">
             <div class="main__title">
                 <a class="main__back">
@@ -157,131 +157,142 @@
                         <path d="M8.60156 16.4277L1.57299 9.39916C1.51833 9.34786 1.47476 9.2859 1.44498 9.2171C1.41519 9.1483 1.39983 9.07413 1.39983 8.99916C1.39983 8.9242 1.41519 8.85002 1.44498 8.78123C1.47476 8.71243 1.51833 8.65047 1.57299 8.59916L8.60156 1.57059" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <span>Данные паспорта</span>
+                <span>Клининг</span>
+                <a class="btn main__users_btn">Добавить заявку</a>
             </div>
-            <form class="form form__bg">
-                <div class="form__item">
-                    <div class="form__name">ФИО</div>
-                    <div class="form__input">
-                        <input class="input " type="text" placeholder="Укажите актуальные ФИО">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Серия паспорта</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите серию паспорта">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Номер паспорта</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите номер паспорта">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Кем и когда выдан</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите кем и когда выдан паспорт">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Название нового арендатора</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите название">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Причина внесенных изменений</div>
-                    <div class="form__dropdown form__dropdown_search">
-                        <div class="form__dropdown_top ">
-                            <input type="text" placeholder="Укажите причину внесенных изменений">
-                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.1875 1.18945L7.33177 7.04518C7.28903 7.09073 7.2374 7.12702 7.18009 7.15184C7.12277 7.17665 7.06097 7.18945 6.99852 7.18945C6.93606 7.18945 6.87426 7.17665 6.81695 7.15184C6.75963 7.12702 6.70801 7.09073 6.66526 7.04518L0.809533 1.18945" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"/>
+            <div class="applications__container">
+                <div class="applications__item">
+                    <div class="applications__item_head">
+                        <div class="applications__item_head_photo">
+                            <img src="./assets/images/settings/applications_main1.webp" alt="">
+                        </div>
+                        <div class="applications__item_head_name applications__item_head_name_sub">
+                            <span>Уборка помещений</span>
+                        </div>
+                        <div class="applications__item_head_settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5"/>
+                                <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5"/>
+                                <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5"/>
                             </svg>
                         </div>
-                        <div class="form__dropdown_bottom">
-                            <div class="form__dropdown_list">
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Заключение брака</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Документ украден или утрачен</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Замена паспорта по возрасту</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Документ не пригоден к использованию</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Смена имени</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 3</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 1</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 2</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 3</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
+                        <div class="applications__item_head_box">
+                            <div class="applications__item_head_choices">
+                                <a class="applications__item_head_choice">Отредактировать заявку</a>
+                                <a class="applications__item_head_choice">Добавить заявку</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Кем и когда выдан</div>
-                    <div class="form__input form__input_file">
-                        <input type="file">
-                        <span>Максимальный размер 512 Кбайт, расширение: jpeg, png</span>
+                    <div class="applications__item_body">
+                        <div class="applications__box applications__box_worker">
+                            <div class="applications__box_img">
+                                <img src="./assets/images/settings/ava1.webp" alt="">
+                            </div>
+                            <div class="applications__box_name">
+                                <span class="applications__box_name_title">Сергеева Марина Анатольевна</span>
+                                <span class="applications__box_name_subtitle">бизнес-администратор</span>
+                            </div>
+                            <svg class="applications__box_delete applications__box_delete_worker" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="12" fill="#101010"/>
+                                <path d="M16 8L8 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 8L16 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="applications__box applications__box_worker">
+                            <div class="applications__box_img">
+                                <img src="./assets/images/settings/ava1.webp" alt="">
+                            </div>
+                            <div class="applications__box_name">
+                                <span class="applications__box_name_title">Сергеева Марина Анатольевна</span>
+                                <span class="applications__box_name_subtitle">бизнес-администратор</span>
+                            </div>
+                            <svg class="applications__box_delete applications__box_delete_worker" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="12" fill="#101010"/>
+                                <path d="M16 8L8 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 8L16 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="applications__item_footer">
+                        <div class="applications__item_footer_change applications__add_employee">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="12" fill="#F9EC00"/>
+                                <path d="M12 7V17" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7 11.9688H17" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Добавить исполнителя</span>
+                        </div>
                     </div>
                 </div>
-                <button data-modal="success" class="btn form__btn" disabled>Отправить</button>
-            </form>
+                <div class="applications__item">
+                    <div class="applications__item_head">
+                        <div class="applications__item_head_photo">
+                            <img src="./assets/images/settings/applications_main1.webp" alt="">
+                        </div>
+                        <div class="applications__item_head_name applications__item_head_name_sub">
+                            <span>Уборка помещений</span>
+                        </div>
+                        <div class="applications__item_head_settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5"/>
+                                <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5"/>
+                                <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="applications__item_head_box">
+                            <div class="applications__item_head_choices">
+                                <a class="applications__item_head_choice">Отредактировать заявку</a>
+                                <a class="applications__item_head_choice">Добавить заявку</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="applications__item_body">
+                        <div class="applications__box applications__box_worker">
+                            <div class="applications__box_img">
+                                <img src="./assets/images/settings/ava1.webp" alt="">
+                            </div>
+                            <div class="applications__box_name">
+                                <span class="applications__box_name_title">Сергеева Марина Анатольевна</span>
+                                <span class="applications__box_name_subtitle">бизнес-администратор</span>
+                            </div>
+                            <svg class="applications__box_delete applications__box_delete_worker" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="12" fill="#101010"/>
+                                <path d="M16 8L8 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 8L16 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="applications__box applications__box_worker">
+                            <div class="applications__box_img">
+                                <img src="./assets/images/settings/ava1.webp" alt="">
+                            </div>
+                            <div class="applications__box_name">
+                                <span class="applications__box_name_title">Сергеева Марина Анатольевна</span>
+                                <span class="applications__box_name_subtitle">бизнес-администратор</span>
+                            </div>
+                            <svg class="applications__box_delete applications__box_delete_worker" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="12" fill="#101010"/>
+                                <path d="M16 8L8 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 8L16 16" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="applications__item_footer">
+                        <div class="applications__item_footer_change applications__add_employee">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="12" fill="#F9EC00"/>
+                                <path d="M12 7V17" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7 11.9688H17" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Добавить исполнителя</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- modal success -->
-    <div class="modal modal--sm modal__success">
+    <!-- modal share-pass -->
+    <div class="modal modal__share-pass">
         <div class="modal-back"></div>
         <div class="modal-wrapper">
             <div class="modal-exit">
@@ -291,13 +302,37 @@
                     <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </div>
-            <div class="modal-top-img">
-                <img class="success-ico" src="./assets/images/common/success-ico.svg" alt="Success" />
-            </div>
             <div class="modal-content">
-                <div class="modal__success__title">Ваша заявка <br>успешно отправлена</div>
-                <div class="modal__success__desc">После модерации заявки Вам придет уведомление с результатом ее рассмотрения</div>
-                <button class="btn btn__go-back" data-modal="close-modal">На главную</button>
+                <div class="modal__share-pass__title">Выберите получателя</div>
+                <div class="modal__share-pass__search">
+                    <div class="search-ico">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                            <path
+                                d="M8.02175 14.5435C11.6236 14.5435 14.5435 11.6236 14.5435 8.02175C14.5435 4.41989 11.6236 1.5 8.02175 1.5C4.41989 1.5 1.5 4.41989 1.5 8.02175C1.5 11.6236 4.41989 14.5435 8.02175 14.5435Z"
+                                stroke="#101010"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path d="M17.1451 17.1427L12.6328 12.6304" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <input type="search" placeholder="Поиск по ФИО, по отделу, по должности" />
+                </div>
+                <ul class="modal__share-pass__user-list">
+                    <!-- <li class="modal__share-pass__user">
+                        <div class="modal__share-pass__user__photo"><img src="./assets/images/common/user-1.webp" alt="User" /></div>
+                        <div class="modal__share-pass__user__info">
+                            <div class="modal__share-pass__user__name">Смирнов Евгений Сергеевич</div>
+                            <div class="modal__share-pass__user__role"><span class="job">арендатор</span> | <span class="workplace">Магазин Цветы</span></div>
+                        </div>
+                        <div class="modal__share-pass__user__checkbox checkbox-wrapper">
+                            <input type="checkbox" id="user1" checked />
+                            <label for="user1" class="checkbox-icon"></label>
+                        </div>
+                    </li> -->
+                </ul>
+                <button class="btn btn__share-pass-final" data-modal="close-modal" disabled>Добавить</button>
             </div>
         </div>
     </div>
