@@ -7,6 +7,7 @@ import "./js/pages/requests-page";
 import "./js/pages/making-request-page";
 import "./js/pages/settings-about";
 import "./js/pages/applications";
+import "./js/pages/adding_application";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
