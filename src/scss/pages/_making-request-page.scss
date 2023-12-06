@@ -8,6 +8,10 @@ body .making-request {
     --stepActiveText: #ffffff;
     --inputBg: #ffffff;
     --inputBorder: unset;
+    --inputTitle: #101010;
+    --addFileHintBg: unset;
+    --addFileHintColor: #101010;
+    --iconColor: #101010;
 }
 body.color_yd .making-request {
     --textColor: #fff;
@@ -19,6 +23,10 @@ body.color_yd .making-request {
     --stepActiveText: #ffffff;
     --inputBg: #292929;
     --inputBorder: unset;
+    --inputTitle: rgba(255, 255, 255, 0.80);
+    --addFileHintBg: invert(1);
+    --addFileHintColor: #fff;
+    --iconColor: #F9EC00;
 }
 body.color_pl .making-request {
     --textColor: #101010;
@@ -30,6 +38,10 @@ body.color_pl .making-request {
     --stepActiveText: #ffffff;
     --inputBg: #ffffff;
     --inputBorder: unset;
+    --inputTitle: #101010;
+    --addFileHintBg: unset;
+    --addFileHintColor: #fff;
+    --iconColor: #101010;
 }
 body.color_pd .making-request {
     --textColor: #fff;
@@ -41,6 +53,10 @@ body.color_pd .making-request {
     --stepActiveText: #ffffff;
     --inputBg: #101010;
     --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
+    --inputTitle: rgba(255, 255, 255, 0.80);
+    --addFileHintBg: invert(1);
+    --addFileHintColor: #101010;
+    --iconColor: #d01181;
 }
 
 .making-request {
@@ -73,7 +89,7 @@ body.color_pd .making-request {
     &__steps {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
         border-radius: 1.6rem;
         height: 3rem;
@@ -107,6 +123,10 @@ body.color_pd .making-request {
         .form {
             gap: unset;
 
+            &__name{
+                color: var(--inputTitle);
+            }
+
             &__title {
                 font-size: 2.4rem;
                 font-weight: 500;
@@ -125,11 +145,32 @@ body.color_pd .making-request {
             &__item {
                 &--textarea {
                     align-items: start;
+                    color: var(--textColor);
+
+                    .form__input{
+                        flex-direction: column;
+                        gap: unset;
+                        color: var(--textColor);
+                        border: var(--inputBorder);
+
+                        & input::placeholder{
+                            color: #ACACAC;
+                        }
+                    }
 
                     textarea {
                         width: 100%;
                         resize: none;
                         height: 15.7rem;
+                        font-weight: 500;
+                        color: var(--textColor);
+                    }
+
+                    .max-length, .max-length span{
+                       align-self: flex-end;
+                        color: #ACACAC;
+                        font-size: 1.2rem;
+                        line-height: 125%;
                         font-weight: 500;
                     }
                 }
@@ -137,7 +178,9 @@ body.color_pd .making-request {
 
             &__input {
                 height: unset;
-
+                background-color: var(--inputBg);
+                color: var(--textColor);
+                border: var(--inputBorder);
                 display: flex;
                 gap: 2rem;
 
@@ -168,7 +211,7 @@ body.color_pd .making-request {
                             height: 1.6rem;
 
                             path {
-                                stroke: var(--textColor);
+                                stroke: var(--iconColor);
                             }
                         }
                     }
@@ -184,6 +227,7 @@ body.color_pd .making-request {
                 .go-back-link {
                     letter-spacing: 0.016rem;
                     position: relative;
+                    color: var(--textColor);
 
                     &::after {
                         content: "";
@@ -193,7 +237,7 @@ body.color_pd .making-request {
                         left: 0;
                         width: 100%;
                         height: 0.1rem;
-                        background-color: #101010;
+                        background-color: var(--textColor);
                     }
                 }
             }
@@ -213,6 +257,10 @@ body.color_pd .making-request {
                     right: 2rem;
                     width: 1.4rem;
                     height: 1.4rem;
+                    path{
+                        stroke: var(--iconColor)
+                    }
+
                     &:hover {
                         & ~ .add-file-hint {
                             opacity: 1;
@@ -237,6 +285,8 @@ body.color_pd .making-request {
                     background-image: url("./../../assets/images/common/hint-bg.svg");
                     background-size: 19.2rem 8.1rem;
                     background-repeat: no-repeat;
+                    filter: var(--addFileHintBg);
+                    color: var(--addFileHintColor);
                 }
             }
 
@@ -294,6 +344,20 @@ body.color_pd .making-request {
 
     .form__dropdown_bottom {
         top: 7rem;
+        background-color: var(--inputBg);
+        color: var(--textColor);
+    }
+
+    .form__dropdown_top{
+        background-color: var(--inputBg);
+        color: var(--textColor);
+        border: var(--inputBorder);
+
+        svg{
+            path{
+                stroke: var(--iconColor)
+            }
+        }
     }
 
     .form__dropdown_top span.filled {
@@ -414,4 +478,51 @@ body.color_pd .making-request {
     color: unset !important;
     background-color: unset !important;
     border: unset !important;
+}
+
+.ui-widget.ui-widget-content{
+    border: unset;
+}
+
+body.color_yd{
+    .ui-datepicker {
+        color: #fff;
+        background-color: #292929;
+        box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+    
+        .ui-datepicker-prev {
+            filter: invert(1);
+        }
+    
+        .ui-datepicker-next {
+            filter: invert(1);
+        }
+    
+        .ui-datepicker-today {
+            background-color: #F9EC00;
+            color: #101010;
+        }
+    } 
+}
+
+body.color_pd{
+    .ui-datepicker {
+        color: #fff;
+        background-color: #101010;
+        border:  0.1rem solid rgba(255, 255, 255, 0.20);;
+        box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+    
+        .ui-datepicker-prev {
+            filter: invert(1);
+        }
+    
+        .ui-datepicker-next {
+            filter: invert(1);
+        }
+    
+        .ui-datepicker-today {
+            background-color: #D01181;
+            color: #101010;
+        }
+    } 
 }
