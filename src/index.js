@@ -8,6 +8,7 @@ import "./js/pages/making-request-page";
 import "./js/pages/settings-about";
 import "./js/pages/applications";
 import "./js/pages/outgoing-requests";
+import "./js/pages/incoming-requests";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
