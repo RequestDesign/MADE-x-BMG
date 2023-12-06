@@ -1,0 +1,70 @@
+.modal__reject-request {
+    .modal-wrapper{
+        padding: 4rem 3.4rem 4rem 4rem;
+        width: 53.4rem;
+    }
+    &__title {
+        margin-bottom: 2.4rem;
+        text-align: center;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.024rem;
+    }
+
+    &__textarea {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 4rem;
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 93.75%;
+        }
+
+        .textarea-wrapper{
+            padding: 1.8rem 1.6rem;
+            border-radius: 1.6rem;
+            background-color: #F4F4F4;
+            height: 14rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            textarea {
+                width: 100%;
+                resize: none;
+                font-weight: 500;
+                color:#ACACAC;
+                flex: 1;
+            }
+
+            .max-length, .max-length span{
+                margin-top: auto;
+               align-self: flex-end;
+                color: #ACACAC;
+                font-size: 1.2rem;
+                line-height: 125%;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__btns{
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+
+        .btn{
+            width: 50%;
+            padding: 1.6rem 7.25rem;
+        }
+
+        .btn__cancel{
+            background-color: #D7D7D7;
+        }
+    }
+}

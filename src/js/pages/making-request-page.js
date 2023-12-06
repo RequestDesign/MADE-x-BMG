@@ -92,7 +92,7 @@ $(function () {
 
     //textarea length
     $(function () {
-        let textarea = $('textarea');
+        let textarea = $('form__item--textarea textarea');
         textarea.on('input', function () {
             let currentLength = textarea.val().length;
             $('.max-length span').text(currentLength);
