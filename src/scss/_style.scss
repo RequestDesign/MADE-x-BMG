@@ -45,12 +45,23 @@ body {
         overflow: hidden;
         touch-action: none;
     }
+
+    &.color_yd{
+        background-color: #1D1D1D;
+    }
+
+    &.color_pl{
+        background-color: #fff;
+    }
+
+    &.color_pd{
+        background-color: #101010;
+    }
 }
 
 section {
     margin-top: 8.9rem;
     margin-left: 33rem;
-    // height: calc(100vh - 8.9rem);
 }
 
 img {
