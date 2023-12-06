@@ -72,6 +72,9 @@ $(document).on('click', function (e) {
 $('.input.required').on("input", function (e) {
     checkBtn(this)
 });
+$('.form__grid-item input').on("change", function (e) {
+    checkBtn(this)
+});
 
 if($('#phone-mask').length){
     IMask(document.getElementById("phone-mask"), {

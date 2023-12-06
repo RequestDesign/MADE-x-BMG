@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Данные паспорта</title>
+    <title>Добавление новой заявки шаблон</title>
 </head>
 <body class="">
     <aside class="sidebar">
@@ -149,7 +149,7 @@
         </div>
     </header>
 
-    <section class="adding_user">
+    <section class="adding_application_template">
         <div class="container">
             <div class="main__title">
                 <a class="main__back">
@@ -157,125 +157,39 @@
                         <path d="M8.60156 16.4277L1.57299 9.39916C1.51833 9.34786 1.47476 9.2859 1.44498 9.2171C1.41519 9.1483 1.39983 9.07413 1.39983 8.99916C1.39983 8.9242 1.41519 8.85002 1.44498 8.78123C1.47476 8.71243 1.51833 8.65047 1.57299 8.59916L8.60156 1.57059" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <span>Данные паспорта</span>
+                <span>Добавление новой заявки</span>
             </div>
             <form class="form form__bg">
-                <div class="form__item">
-                    <div class="form__name">ФИО</div>
-                    <div class="form__input">
-                        <input class="input " type="text" placeholder="Укажите актуальные ФИО">
-                    </div>
+                <div class="adding_application_template__title">Выберите шаблон для заявки</div>
+                <div class="form__grid">
+                    <label class="form__grid-item radio-wrapper">
+                        <span>Производство работ</span>
+                        <input type="radio" name="template">
+                        <div class="radio-icon"></div>
+                    </label>
+                    <label class="form__grid-item radio-wrapper">
+                        <span>Услуги УК</span>
+                        <input type="radio" name="template">
+                        <div class="radio-icon"></div>
+                    </label>
+                    <label class="form__grid-item radio-wrapper">
+                        <span>Пропуска</span>
+                        <input type="radio" name="template">
+                        <div class="radio-icon"></div>
+                    </label>
+                    <label class="form__grid-item radio-wrapper">
+                        <span>Резиденты</span>
+                        <input type="radio" name="template">
+                        <div class="radio-icon"></div>
+                    </label>
+                    <label class="form__grid-item radio-wrapper">
+                        <span>Новый</span>
+                        <input type="radio" name="template">
+                        <div class="radio-icon"></div>
+                    </label>
                 </div>
-                <div class="form__item">
-                    <div class="form__name">Серия паспорта</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите серию паспорта">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Номер паспорта</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите номер паспорта">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Кем и когда выдан</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите кем и когда выдан паспорт">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Название нового арендатора</div>
-                    <div class="form__input">
-                        <input class="input required" type="text" placeholder="Введите название">
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Причина внесенных изменений</div>
-                    <div class="form__dropdown form__dropdown_search">
-                        <div class="form__dropdown_top ">
-                            <input type="text" placeholder="Укажите причину внесенных изменений">
-                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.1875 1.18945L7.33177 7.04518C7.28903 7.09073 7.2374 7.12702 7.18009 7.15184C7.12277 7.17665 7.06097 7.18945 6.99852 7.18945C6.93606 7.18945 6.87426 7.17665 6.81695 7.15184C6.75963 7.12702 6.70801 7.09073 6.66526 7.04518L0.809533 1.18945" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="form__dropdown_bottom">
-                            <div class="form__dropdown_list">
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Заключение брака</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Документ украден или утрачен</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Замена паспорта по возрасту</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Документ не пригоден к использованию</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Смена имени</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 3</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 1</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 2</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                                <label class="form__dropdown_item">
-                                    <div class="form__dropdown_item_name">Отдел 3</div>
-                                    <div class="form__dropdown_item_checkbox radio-wrapper">
-                                        <input type="radio" name="passport">
-                                        <div class="radio-icon"></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form__item">
-                    <div class="form__name">Кем и когда выдан</div>
-                    <div class="form__input form__input_file">
-                        <input type="file">
-                        <span>Максимальный размер 512 Кбайт, расширение: jpeg, png</span>
-                    </div>
-                </div>
-                <button data-modal="success" class="btn form__btn" disabled>Отправить</button>
+
+                <button class="btn form__btn" disabled>Продолжить</button>
             </form>
         </div>
     </section>

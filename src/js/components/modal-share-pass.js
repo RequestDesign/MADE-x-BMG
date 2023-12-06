@@ -22,6 +22,11 @@ $('[data-modal="move-choice"]').on("click", function () {
     uncheckAllDepartment();
     updateShareButtonState();
 });
+$('[data-modal="close-modal"]').on("click", function () {
+    $(".modal__share-pass").removeClass("active");
+    uncheckAllUsers();
+    updateShareButtonState();
+});
 
 const userListContainer = $(".modal__share-pass__user-list");
 const users = [
@@ -222,6 +227,9 @@ function uncheckAllDepartment() {
 function updateShareButtonState() {
     $('[data-modal="share-pass-final"]').prop('disabled', !users.some((user) => user.checked));
     $('[data-modal="move-choice"]').prop('disabled', !department.some((user) => user.checked))
+    if($('.users').length) {
+        $('.btn__share-pass-final').prop('disabled', !users.some((user) => user.checked));
+    }
 }
 updateShareButtonState();
 

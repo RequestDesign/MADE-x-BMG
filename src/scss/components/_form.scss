@@ -176,4 +176,32 @@
             color: #10101066;
         }
     }
+    &__grid {
+        display: grid;
+        gap: 1.6rem;
+        grid-template-columns: 1fr 1fr;
+
+        &-item {
+            height: 6.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            border-radius: 1.6rem;
+            background: #FFF;
+            padding: 0 1.6rem;
+
+            span {
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 120%;
+            }
+
+            .radio-icon {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
 }
