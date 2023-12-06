@@ -10,6 +10,7 @@ import "./js/pages/applications";
 import "./js/pages/adding_application";
 import "./js/pages/outgoing-requests";
 import "./js/pages/incoming-requests";
+import "./js/pages/incoming-request-details";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
@@ -18,6 +19,7 @@ import './js/components/modal-share-pass'
 import './js/components/modal-success'
 import "./js/components/switcher";
 import "./js/components/form";
+import "./js/components/modal-reject-request";
 import { example } from "./js/utils/constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
