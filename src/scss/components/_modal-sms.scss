@@ -75,4 +75,10 @@
         line-height: normal;
         display: block;
     }
+
+    &--login{
+        .modal-wrapper{
+        left: 50%;
+        }
+    }
 }
