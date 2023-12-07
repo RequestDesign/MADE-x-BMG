@@ -37,11 +37,45 @@
                             </div>
                         </div>
                         <div class="login__form__btn">
-                            <button class="btn btn__login" disabled>Войти</button>
+                            <a href="#!" class="btn btn__login" disabled data-modal="modal-sms">Войти</a>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
+
+        <div class="modal modal__sms modal__sms--login">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-content">
+                    <div class="modal__sms__title">Введите код из смс</div>
+                    <div class="modal__sms__subtitle">На номер +7 900 000-00-00 будет <br> отправлен код подтверждения</div>
+                    <div class="modal__sms__boxs">
+                        <label class="modal__sms__box">
+                            <input type="text">
+                        </label>
+                        <label class="modal__sms__box">
+                            <input type="text">
+                        </label>
+                        <label class="modal__sms__box">
+                            <input type="text">
+                        </label>
+                        <label class="modal__sms__box">
+                            <input type="text">
+                        </label>
+                        <label class="modal__sms__box">
+                            <input type="text">
+                        </label>
+                        <label class="modal__sms__box">
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="modal__sms__wait">Запросить новый код через <span class="modal__sms__wait_time">1:00</span></div>
+                    <div class="modal__sms__new">Получить новый код</div>
+                    <a class="modal__sms__exit">Не можете войти?</a>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

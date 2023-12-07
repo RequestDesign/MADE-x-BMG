@@ -13,6 +13,8 @@ import "./js/pages/incoming-requests";
 import "./js/pages/incoming-request-details";
 import "./js/pages/request-repeat";
 import "./js/pages/login-page";
+import "./js/pages/news";
+import "./js/pages/add-news";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
