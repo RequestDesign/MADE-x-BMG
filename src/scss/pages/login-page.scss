@@ -1,0 +1,122 @@
+body .login {
+    --bgRight: #292929;
+    --bgLeft: #101010;
+    --text: #fff;
+    --textMuted: #acacac;
+    --textAccent: #f9ec00;
+    --inputText: #101010;
+}
+
+.login {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bgRight);
+    color: var(--text);
+
+    .container {
+        padding: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__left {
+        background-color: var(--bgLeft);
+        width: 79.5rem;
+        padding: 3rem 4rem;
+        background-image: url("./../../assets/images/common/sidebar-deco-big.svg");
+        background-position: bottom left;
+        background-repeat: no-repeat;
+    }
+
+    &__right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__logo {
+        width: 17.5rem;
+        height: 2.9rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__info {
+        margin-top: 33.7rem;
+        margin-left: 4rem;
+        width: 41.1rem;
+
+        &__title {
+            font-size: 6rem;
+            font-weight: 700;
+        }
+
+        &__line {
+            margin-top: 6rem;
+            margin-bottom: 6rem;
+            height: 0.2rem;
+            background-color: var(--text);
+            width: 16rem;
+        }
+
+        &__desc {
+            letter-spacing: 0.016rem;
+            line-height: normal;
+            color: var(--textMuted);
+        }
+        a {
+            color: var(--textAccent);
+        }
+    }
+
+    &__form {
+        width: 47.7rem;
+
+        &__title {
+            color: var(--text);
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0.032rem;
+            margin-bottom: 5.2rem;
+            text-align: center;
+        }
+
+        &__inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin-bottom: 4rem;
+        }
+
+        .input-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            letter-spacing: 0.016rem;
+
+            span{
+                color: var(--textAccent);
+            }
+
+            input{
+                height: 5.4rem;
+                background-color: var(--text);
+                border-radius: 1.6rem;
+                padding: 1.8rem 1.6rem;
+                color: var(--inputText);
+
+                &::placeholder{
+                    color: var(--textMuted);
+                }
+            }
+        }
+    }
+}

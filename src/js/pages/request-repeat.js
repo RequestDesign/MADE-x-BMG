@@ -1,13 +1,14 @@
 import $ from "jquery";
 
-$(function() {
+$(function () {
     toggleButtonState();
-    $('#inputDate').on('input', toggleButtonState);
+    $("#inputDate").on("input", toggleButtonState);
     function toggleButtonState() {
-        if ($('#inputDate').val().trim() !== '') {
-            $('.btn__repeat-request').prop('disabled', false);
+        let inputValue = $("#inputDate").val();
+        if (inputValue && inputValue.trim() !== "") {
+            $(".btn__repeat-request").prop("disabled", false);
         } else {
-            $('.btn__repeat-request').prop('disabled', true);
+            $(".btn__repeat-request").prop("disabled", true);
         }
     }
 });
