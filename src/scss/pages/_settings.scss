@@ -265,6 +265,13 @@ body .settings {
             border-radius: 3.2rem;
             background: #101010;
             cursor: pointer;
+
+            &_disabled {
+                background: #D7D7D7;
+                color: #ACACAC;
+                pointer-events: none;
+                cursor: default;
+            }
         }
     }
 }
