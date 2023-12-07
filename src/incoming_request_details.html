@@ -244,8 +244,8 @@
                         </div>
 
                         <div class="incoming-request-details__form__btns">
-                            <button class="btn btn__cancel" data-modal="reject-request">Отклонить</button>
-                            <button class="btn btn__accept">Принять</button>
+                            <a href="#!" class="btn btn__cancel" data-modal="reject-request">Отклонить</a>
+                            <a href="#!" class="btn btn__accept">Принять</a>
                         </div>
                     </form>
                     <div class="incoming-request-details__img">
@@ -277,7 +277,7 @@
                         </div>
                     </div>
                     <div class="modal__reject-request__btns">
-                        <button class="btn btn__reject" data-modal="close-modal">Вернуться</button>
+                        <button class="btn btn__reject" data-modal="close-modal">Отклонить</button>
                         <button class="btn btn__cancel" data-modal="close-modal">Отмена</button>
                     </div>
                 </div>
@@ -351,5 +351,43 @@
                 </div>
             </div>
         </div>
+
+        <label for="inputFile" class="form__input form__input--file" id="fileLabel">
+            <input class="input" id="inputFile" type="file"/>
+            <div class="form__input--file__col">
+                <span class="form__input--file__restr">Максимальный размер 512 Кбайт, расширение: jpeg, png</span>
+                <div id="thumbnailsContainer" class="form__thumbnails-container"></div>
+            </div>
+            <div class="form__input--file__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" fill="none">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.76471 1.21429C2.17993 1.21429 1.70588 1.69398 1.70588 2.28571V13.7143C1.70588 14.306 2.17993 14.7857 2.76471 14.7857H11.2353C11.8201 14.7857 12.2941 14.306 12.2941 13.7143V5.79991C12.2941 5.48713 12.1591 5.18997 11.9244 4.98642L7.87271 1.47223C7.68081 1.30578 7.43639 1.21429 7.18364 1.21429H2.76471ZM1 2.28571C1 1.29949 1.79009 0.5 2.76471 0.5H7.18364C7.60489 0.5 8.01225 0.652486 8.33209 0.929899L12.3838 4.44409C12.7749 4.78335 13 5.27861 13 5.79991V13.7143C13 14.7005 12.2099 15.5 11.2353 15.5H2.76471C1.79009 15.5 1 14.7005 1 13.7143V2.28571Z"
+                        fill="#101010"
+                        stroke="#101010"
+                        stroke-width="0.5"
+                        stroke-linejoin="round"
+                    />
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M7.35156 3.71484V1.21484H8.05744V3.71484C8.05744 4.30658 8.5315 4.78627 9.11627 4.78627H12.2927V5.50056H9.11627C8.14165 5.50056 7.35156 4.70107 7.35156 3.71484Z"
+                        fill="#101010"
+                        stroke="#101010"
+                        stroke-width="0.5"
+                        stroke-linejoin="round"
+                    />
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.10497 7.60248C7.03611 6.70542 8.53895 6.70542 9.4701 7.60248C10.411 8.50899 10.411 9.98634 9.4701 10.8928L7.31129 12.9726C6.77757 13.4868 5.91909 13.4868 5.38536 12.9726C4.84184 12.449 4.84184 11.5924 5.38536 11.0688L7.54417 8.989L8.0309 9.50633L5.87209 11.5861C5.62077 11.8282 5.62077 12.2132 5.87209 12.4553C6.13322 12.7069 6.56344 12.7069 6.82457 12.4553L8.98337 10.3755C9.63211 9.75052 9.63211 8.74481 8.98337 8.11981C8.32482 7.48536 7.25025 7.48536 6.59169 8.11981L3.71329 10.8928L3.22656 10.3755L6.10497 7.60248Z"
+                        fill="#101010"
+                        stroke="#101010"
+                        stroke-width="0.5"
+                    />
+                </svg>
+            </div>
+        </label>
     </body>
 </html>

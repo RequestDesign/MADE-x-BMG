@@ -194,7 +194,12 @@ body.color_pd .making-request {
                         display: none;
                     }
 
-                    &__name {
+                    &__col{
+                        display: flex;
+                        flex-direction: column-reverse;
+                    }
+
+                    &__restr {
                         font-weight: 500;
                     }
 
@@ -270,6 +275,7 @@ body.color_pd .making-request {
 
                 .add-file-hint {
                     position: absolute;
+                    z-index: 10;
                     top: 25%;
                     right: -92%;
                     opacity: 0;
@@ -286,7 +292,7 @@ body.color_pd .making-request {
                     background-size: 19.2rem 8.1rem;
                     background-repeat: no-repeat;
                     filter: var(--addFileHintBg);
-                    color: var(--addFileHintColor);
+                    color: #fff;
                 }
             }
 
@@ -297,11 +303,25 @@ body.color_pd .making-request {
             }
 
             &__thumbnail {
+                position: relative;
+                margin-bottom: 2.85rem;
                 &__img {
-                    width: 8rem;
-                    height: 8rem;
+                    width: 6rem;
+                    height: 6rem;
                     border-radius: 1.6rem;
                     overflow: hidden;
+                    
+                }
+
+                &__btn-delete{
+                    position: absolute;
+                    top: -0.8rem;
+                    right: -0.8rem;
+
+                    svg{
+                        width: 2.4rem;
+                        height: 2.4rem;
+                    }
                 }
             }
         }
@@ -525,4 +545,9 @@ body.color_pd{
             color: #101010;
         }
     } 
+}
+
+//не работает в firefox
+.form__item--file:has(.form__thumbnail) {
+    align-items: start;
 }

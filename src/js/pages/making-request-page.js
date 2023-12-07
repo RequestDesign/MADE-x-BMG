@@ -55,41 +55,6 @@ $(function () {
     $('[data-content="step1"]').show();
     checkRequiredFields('#formContact');
 
-    // Add file
-    let input = document.getElementById("inputFile");
-    let thumbnailsContainer = $("#thumbnailsContainer");
-    let formInputFileName = $(".form__input--file__name");
-
-    $("#inputFile").on("change", function () {
-        formInputFileName.hide();
-
-        if (input.files && input.files.length > 0) {
-            for (let i = 0; i < input.files.length; i++) {
-                let file = input.files[i];
-                let reader = new FileReader();
-                let thumb = $('<div class="form__thumbnail"></div>');
-
-                if (file.size > 512 * 1024) {
-                    alert("Максимальный размер 512 Кбайт");
-                    return;
-                }
-
-                if (!["image/jpeg", "image/png"].includes(file.type)) {
-                    alert("Допустимое расширение: jpeg, png");
-                    return;
-                }
-
-                reader.onload = function (e) {
-                    thumb.append('<img class="form__thumbnail__img" src="' + e.target.result + '" alt="Thumbnail" />');
-                    formInputFileName.hide();
-                };
-
-                reader.readAsDataURL(file);
-                thumbnailsContainer.append(thumb);
-            }
-        }
-    });
-
     //textarea length
     $(function () {
         let textarea = $('form__item--textarea textarea');
