@@ -23,6 +23,7 @@ import "./js/components/switcher";
 import "./js/components/form";
 import "./js/components/modal-reject-request";
 import "./js/components/input-add-file";
+import "./js/components/modal-exit";
 import { example } from "./js/utils/constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
