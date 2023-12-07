@@ -11,6 +11,7 @@ import "./js/pages/adding_application";
 import "./js/pages/outgoing-requests";
 import "./js/pages/incoming-requests";
 import "./js/pages/incoming-request-details";
+import "./js/pages/request-repeat";
 import "./js/components/header";
 import './js/components/modal'
 import './js/components/modal-change-work'
