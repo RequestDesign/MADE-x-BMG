@@ -1,4 +1,62 @@
 <header class="header">
-  <h3 class="title content">example text from header</h3>
-  <img src="./assets/images/example.png" alt="" />
+  <div class="header__content">
+      <div class="header__user-info">
+          <div class="header__user-info__photo">
+              <img src="./assets/images/common/user.webp" alt="User" />
+          </div>
+          <div class="header__user-info__desc">
+              <div class="header__user-info__name">Сергеева Марина Анатольевна</div>
+              <div class="header__user-info__job">бизнес-администратор</div>
+          </div>
+      </div>
+      <div class="header__work" data-modal="change-work">
+          <div class="header__work__logo">
+              <img id="headerWorkLogo" src="./assets/images/companies/discovery.svg" alt="Company" />
+          </div>
+      </div>
+      <div class="header__notices">
+          <div class="header__notices__amount">20</div>
+          <div class="header__notices__ico">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" fill="none">
+                  <g clip-path="url(#clip0_2305_26950)">
+                      <path
+                          d="M6.49665 0.464355C7.55316 0.464355 8.5664 0.884052 9.31346 1.63112C10.0605 2.37818 10.4802 3.39142 10.4802 4.44793C10.4802 8.87721 12.0959 9.75007 12.5324 9.75007H0.460938C0.906652 9.75007 2.51308 8.86793 2.51308 4.44793C2.51308 3.39142 2.93278 2.37818 3.67984 1.63112C4.42691 0.884052 5.44014 0.464355 6.49665 0.464355Z"
+                          fill="white"
+                      />
+                      <path
+                          d="M5.10156 11.4492C5.18183 11.7575 5.36212 12.0305 5.61418 12.2253C5.86625 12.4202 6.17583 12.5259 6.49442 12.5259C6.81301 12.5259 7.12259 12.4202 7.37466 12.2253C7.62672 12.0305 7.80701 11.7575 7.88728 11.4492"
+                          stroke="white"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                      />
+                  </g>
+                  <defs>
+                      <clipPath id="clip0_2305_26950">
+                          <rect width="13" height="13" fill="white" />
+                      </clipPath>
+                  </defs>
+              </svg>
+          </div>
+      </div>
+  </div>
+  <a href="#!" class="header__exit" data-modal="exit">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+          <g clip-path="url(#clip0_2305_26920)">
+              <path
+                  d="M16.2879 17.9998V21.4284C16.2879 21.883 16.1073 22.3191 15.7858 22.6405C15.4644 22.962 15.0283 23.1426 14.5737 23.1426H2.57366C2.119 23.1426 1.68297 22.962 1.36148 22.6405C1.03999 22.3191 0.859375 21.883 0.859375 21.4284V2.57122C0.859375 2.11656 1.03999 1.68053 1.36148 1.35904C1.68297 1.03755 2.119 0.856934 2.57366 0.856934H14.5737C15.0283 0.856934 15.4644 1.03755 15.7858 1.35904C16.1073 1.68053 16.2879 2.11656 16.2879 2.57122V5.99979"
+                  stroke="#101010"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+              />
+              <path d="M11.1484 12H23.1484" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M19.7188 8.57129L23.1473 11.9999L19.7188 15.4284" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+              <clipPath id="clip0_2305_26920">
+                  <rect width="24" height="24" fill="white" />
+              </clipPath>
+          </defs>
+      </svg>
+  </a>
 </header>

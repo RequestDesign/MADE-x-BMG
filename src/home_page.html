@@ -127,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="header__exit">
+            <a href="#!" class="header__exit" data-modal="exit">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                     <g clip-path="url(#clip0_2305_26920)">
                         <path
@@ -146,7 +146,7 @@
                         </clipPath>
                     </defs>
                 </svg>
-            </div>
+            </a>
         </header>
 
         <section class="home">
@@ -160,14 +160,14 @@
                                 <button class="btn__show-all">Все</button>
                             </div>
                             <div class="home__incoming-requests__cards">
-                                <div class="home__incoming-requests__card home__incoming-requests__card--new">
+                                <a href="#!" class="home__incoming-requests__card home__incoming-requests__card--new">
                                     <div class="amount">2</div>
                                     <div class="title">Новые заявки</div>
-                                </div>
-                                <div class="home__incoming-requests__card home__incoming-requests__card--active">
+                                </a>
+                                <a href="#!" class="home__incoming-requests__card home__incoming-requests__card--active">
                                     <div class="amount">8</div>
                                     <div class="title">Действующие заявки</div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div class="home__my-discovery container--sm">
@@ -175,28 +175,28 @@
                             <div class="home__my-discovery__cards">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <div class="home__my-discovery__card home__my-discovery__card--pass">
+                                        <a href="#!" class="home__my-discovery__card home__my-discovery__card--pass">
                                             <div class="icon">
                                                 <img src="./assets/images/common/pass-ico.svg" alt="Pass" />
                                             </div>
                                             <div class="title">Сканировать пропуск</div>
-                                        </div>
+                                        </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="home__my-discovery__card home__my-discovery__card--req">
+                                        <a href="#!" class="home__my-discovery__card home__my-discovery__card--req">
                                             <div class="icon">
                                                 <img src="./assets/images/common/requests-ico.svg" alt="Requests" />
                                             </div>
                                             <div class="title">Открыть<br />Мои заявки</div>
-                                        </div>
+                                        </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="home__my-discovery__card home__my-discovery__card--news">
+                                        <a href="#!" class="home__my-discovery__card home__my-discovery__card--news">
                                             <div class="icon">
                                                 <img src="./assets/images/common/add-news-ico.svg" alt="Add news" />
                                             </div>
                                             <div class="title">Добавить новость</div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -205,14 +205,14 @@
                     <div class="home__requests container--sm">
                         <div class="home__requests__title">Заявки</div>
                         <div class="home__requests__cards">
-                            <div class="home__requests__card">
+                            <a href="#!" class="home__requests__card">
                                 <img src="./assets/images/home/works.webp" alt="Works" class="card-img" />
                                 <div class="title">Производство работ</div>
-                            </div>
-                            <div class="home__requests__card">
+                            </a>
+                            <a href="#!" class="home__requests__card">
                                 <img src="./assets/images/home/residents.webp" alt="Residents" class="card-img" />
                                 <div class="title">Резиденты</div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -223,29 +223,29 @@
                         <button class="btn__show-all">Все</button>
                     </div>
                     <div class="home__news__cards">
-                        <div class="home__news__card">
+                        <a href="#!" class="home__news__card">
                             <img src="./assets/images/home/news.webp" alt="News" class="card-img" />
                             <div class="title">Неделя скидок в магазине Hoff</div>
                             <div class="date">12 сентября</div>
-                        </div>
+                        </a>
 
-                        <div class="home__news__card">
+                        <a href="#!" class="home__news__card">
                             <img src="./assets/images/home/news.webp" alt="News" class="card-img" />
                             <div class="title">Неделя скидок в магазине Hoff</div>
                             <div class="date">12 сентября</div>
-                        </div>
+                        </a>
 
-                        <div class="home__news__card">
+                        <a href="#!" class="home__news__card">
                             <img src="./assets/images/home/news.webp" alt="News" class="card-img" />
                             <div class="title">Неделя скидок в магазине Hoff</div>
                             <div class="date">12 сентября</div>
-                        </div>
+                        </a>
 
-                        <div class="home__news__card">
+                        <a href="#!" class="home__news__card">
                             <img src="./assets/images/home/news.webp" alt="News" class="card-img" />
                             <div class="title">Неделя скидок в магазине Hoff</div>
                             <div class="date">12 сентября</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -311,5 +311,27 @@
                 </div>
             </div>
         </div>
+
+        <!-- modal exit -->
+        <div class="modal modal__exit">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
+                        <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="modal-content">
+                    <div class="modal__exit__title">Вы уверены что хотите выйти?</div>
+                    <div class="modal__exit__btns">
+                        <button class="btn btn__exit" data-modal="close-modal">Выйти</button>
+                        <button class="btn btn__cancel" data-modal="close-modal">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

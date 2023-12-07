@@ -1,0 +1,29 @@
+.modal__exit {
+    .modal-wrapper {
+        padding: 4rem;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.024rem;
+    }
+
+    &__btns{
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        .btn{
+            width: 100%;
+        }
+    }
+}
