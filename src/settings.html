@@ -310,13 +310,68 @@
                         </div>
                         <div class="settings__right_hidden">
                             <div class="settings__right_hidden_back"></div>
-                            <div class="settings__right_hidden_btn">Посмотреть данные</div>
+                            <div data-modal="modal-sms" class="settings__right_hidden_btn">Посмотреть данные</div>
                         </div>
                     </div>
-                    <div class="settings__right_btn">Изменить паспортные данные</div>
+                    <a href="#" class="settings__right_btn settings__right_btn_disabled">Изменить паспортные данные</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="modal modal__sms">
+        <div class="modal-back"></div>
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <div class="modal__sms__title">Введите код из смс</div>
+                <div class="modal__sms__subtitle">На номер +7 900 000-00-00 будет <br> отправлен код подтверждения</div>
+                <div class="modal__sms__boxs">
+                    <label class="modal__sms__box">
+                        <input type="text">
+                    </label>
+                    <label class="modal__sms__box">
+                        <input type="text">
+                    </label>
+                    <label class="modal__sms__box">
+                        <input type="text">
+                    </label>
+                    <label class="modal__sms__box">
+                        <input type="text">
+                    </label>
+                    <label class="modal__sms__box">
+                        <input type="text">
+                    </label>
+                    <label class="modal__sms__box">
+                        <input type="text">
+                    </label>
+                </div>
+                <div class="modal__sms__wait">Запросить новый код через <span class="modal__sms__wait_time">1:00</span></div>
+                <div class="modal__sms__new">Получить новый код</div>
+                <a class="modal__sms__exit">Не можете войти?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal success -->
+    <div class="modal modal--sm modal__success">
+        <div class="modal-back"></div>
+        <div class="modal-wrapper">
+            <div class="modal-exit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                    <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
+                    <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="modal-top-img">
+                <img class="success-ico" src="./assets/images/common/success-ico.svg" alt="Success" />
+            </div>
+            <div class="modal-content">
+                <div class="modal__success__title">Ваша заявка <br>успешно отправлена</div>
+                <div class="modal__success__desc">После модерации заявки Вам придет уведомление с результатом ее рассмотрения</div>
+                <button class="btn btn__go-back" data-modal="close-modal">На главную</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
