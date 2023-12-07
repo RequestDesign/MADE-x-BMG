@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Оформление заявки</title>
     </head>
-    <body class="color_yd">
+    <body class="">
         <aside class="sidebar">
             <div class="sidebar__logo">
                 <img src="./assets/images/common/logo.svg" alt="Logo" />
@@ -306,9 +306,11 @@
                                                 <div class="add-file-hint">Если у Вас есть пример заказа, можете прикрепить фото/изображения</div>
                                             </div>
                                             <label for="inputFile" class="form__input form__input--file" id="fileLabel">
-                                                <input class="input" id="inputFile" type="file" placeholder="Максимальный размер 512 Кбайт, расширение: jpeg, png" />
-                                                <span class="form__input--file__name">Максимальный размер 512 Кбайт, расширение: jpeg, png</span>
-                                                <div id="thumbnailsContainer" class="form__thumbnails-container"></div>
+                                                <input class="input" id="inputFile" type="file"/>
+                                                <div class="form__input--file__col">
+                                                    <span class="form__input--file__restr">Максимальный размер 512 Кбайт, расширение: jpeg, png</span>
+                                                    <div id="thumbnailsContainer" class="form__thumbnails-container"></div>
+                                                </div>
                                                 <div class="form__input--file__icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" fill="none">
                                                         <path

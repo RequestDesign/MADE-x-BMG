@@ -20,6 +20,7 @@ import './js/components/modal-success'
 import "./js/components/switcher";
 import "./js/components/form";
 import "./js/components/modal-reject-request";
+import "./js/components/input-add-file";
 import { example } from "./js/utils/constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
