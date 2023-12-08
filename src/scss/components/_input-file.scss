@@ -1,0 +1,95 @@
+body .input-file {
+    --iconColor: #101010;
+    --deleteBtnCross: #fff;
+}
+
+body.color_yd .input-file {
+    --iconColor: #f9ec00;
+    --deleteBtnCross: #101010;
+}
+
+body.color_pl .input-file {
+    --iconColor: #101010;
+    --deleteBtnCross: #fff;
+}
+
+body.color_pd .input-file {
+    --iconColor: #d01181;
+    --deleteBtnCross: #101010;
+}
+
+.input-file {
+    cursor: pointer;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    input[type="file"] {
+        display: none;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &__restr {
+        font-weight: 500;
+    }
+
+    &__icon {
+        cursor: pointer;
+        width: 2.4rem;
+        height: 2.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 1.4rem;
+            height: 1.6rem;
+
+            path {
+                stroke: var(--iconColor);
+            }
+        }
+    }
+
+    &__thumbnails-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    &__thumbnail {
+        position: relative;
+        margin-bottom: 2.85rem;
+        &__img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 1.6rem;
+            overflow: hidden;
+        }
+
+        &__btn-delete {
+            position: absolute;
+            top: -0.8rem;
+            right: -0.8rem;
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+
+                path {
+                    fill: var(--iconColor);
+                    stroke: var(--deleteBtnCross);
+                    &:first-child {
+                        stroke: unset;
+                    }
+                }
+            }
+        }
+    }
+}
