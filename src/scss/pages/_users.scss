@@ -218,7 +218,8 @@
             background: #FFF;
             box-shadow: 0 0.3rem 1.4rem 0 rgba(0, 0, 0, 0.08);
 
-            & > div {
+            & > a {
+                display: block;
                 font-size: 1.6rem;
                 font-style: normal;
                 font-weight: 400;
