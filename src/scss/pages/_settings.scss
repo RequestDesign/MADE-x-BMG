@@ -445,3 +445,73 @@ body .settings {
         }
     }
 }
+
+.modal__password {
+    .modal-wrapper {
+        width: 51.7rem;
+        padding: 4rem;
+    }
+    &__title {
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.032rem;
+        margin-bottom: 4rem;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3.2rem;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    &__name {
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.016rem;
+    }
+    &__input {
+        padding: 1.8rem 2.4rem 1.8rem 1.6rem;
+        border-radius: 1.6rem;
+        background: #F4F4F4;
+        display: flex;
+        align-items: center;
+
+        input {
+            flex: 1;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.016rem;
+        }
+    }
+    &__eye {
+        cursor: pointer;
+        flex: none;
+        width: 2.4rem;
+        height: 2.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            display: none;
+        }
+
+        svg {
+            width: 1.8rem;
+            height: 1.3rem;
+        }
+    }
+    .btn {
+        width: 100%;
+    }
+}
