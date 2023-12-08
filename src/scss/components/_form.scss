@@ -1,3 +1,64 @@
+body .form {
+    --textColor: #101010;
+    --Bg: #fff;
+    --stepsBg: #f4f4f4;
+    --stepsBorder: none;
+    --stepText: rgba(16, 16, 16, 0.3);
+    --stepActiveBg: #101010;
+    --stepActiveText: #ffffff;
+    --inputBg: #ffffff;
+    --inputBorder: unset;
+    --inputTitle: #101010;
+    --addFileHintBg: unset;
+    --addFileHintColor: #101010;
+    --iconColor: #101010;
+}
+body.color_yd .form {
+    --textColor: #fff;
+    --Bg: #1d1d1d;
+    --stepsBg: #292929;
+    --stepsBorder: none;
+    --stepText: #acacac;
+    --stepActiveBg: #101010;
+    --stepActiveText: #ffffff;
+    --inputBg: #292929;
+    --inputBorder: unset;
+    --inputTitle: rgba(255, 255, 255, 0.80);
+    --addFileHintBg: invert(1);
+    --addFileHintColor: #fff;
+    --iconColor: #F9EC00;
+}
+body.color_pl .form {
+    --textColor: #101010;
+    --Bg: #fff;
+    --stepsBg: #f1f4f6;
+    --stepsBorder: none;
+    --stepText: rgba(16, 16, 16, 0.3);
+    --stepActiveBg: #101010;
+    --stepActiveText: #ffffff;
+    --inputBg: #ffffff;
+    --inputBorder: unset;
+    --inputTitle: #101010;
+    --addFileHintBg: unset;
+    --addFileHintColor: #fff;
+    --iconColor: #101010;
+}
+body.color_pd .form {
+    --textColor: #fff;
+    --Bg: #101010;
+    --stepsBg: #101010;
+    --stepsBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
+    --stepText: #acacac;
+    --stepActiveBg: #d01181;
+    --stepActiveText: #ffffff;
+    --inputBg: #101010;
+    --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
+    --inputTitle: rgba(255, 255, 255, 0.80);
+    --addFileHintBg: invert(1);
+    --addFileHintColor: #101010;
+    --iconColor: #d01181;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -204,4 +265,203 @@
             }
         }
     }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.024rem;
+        margin-bottom: 4rem;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        margin-bottom: 4rem;
+    }
+
+    &__item {
+        &--textarea {
+            align-items: start;
+            color: var(--textColor);
+
+            .form__input{
+                flex-direction: column;
+                gap: unset;
+                color: var(--textColor);
+                border: var(--inputBorder);
+
+                & input::placeholder{
+                    color: #ACACAC;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                resize: none;
+                height: 15.7rem;
+                font-weight: 500;
+                color: var(--textColor);
+            }
+
+            .max-length, .max-length span{
+               align-self: flex-end;
+                color: #ACACAC;
+                font-size: 1.2rem;
+                line-height: 125%;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__input {
+        height: unset;
+        background-color: var(--inputBg);
+        color: var(--textColor);
+        border: var(--inputBorder);
+        display: flex;
+        gap: 2rem;
+
+        &--file {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            input {
+                display: none;
+            }
+
+            &__col{
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            &__restr {
+                font-weight: 500;
+            }
+
+            &__icon {
+                cursor: pointer;
+                width: 2.4rem;
+                height: 2.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    width: 1.4rem;
+                    height: 1.6rem;
+
+                    path {
+                        stroke: var(--iconColor);
+                    }
+                }
+            }
+        }
+    }
+
+    &__btns {
+        justify-content: flex-end;
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+
+        .go-back-link {
+            letter-spacing: 0.016rem;
+            position: relative;
+            color: var(--textColor);
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 0.1rem;
+                background-color: var(--textColor);
+            }
+        }
+    }
+
+    &__btn {
+        width: 34.2rem;
+    }
+
+    &__name--file {
+        position: relative;
+
+        svg {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2rem;
+            width: 1.4rem;
+            height: 1.4rem;
+            path{
+                stroke: var(--iconColor)
+            }
+
+            &:hover {
+                & ~ .add-file-hint {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .add-file-hint {
+            position: absolute;
+            z-index: 10;
+            top: 25%;
+            right: -92%;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            width: 19.2rem;
+            height: 8.1rem;
+            color: var(--Bg);
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.014rem;
+            padding: 0.8rem 1rem 0.9rem 1.8rem;
+
+            background-image: url("./../../assets/images/common/hint-bg.svg");
+            background-size: 19.2rem 8.1rem;
+            background-repeat: no-repeat;
+            filter: var(--addFileHintBg);
+            color: #fff;
+        }
+    }
+
+    &__thumbnails-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    &__thumbnail {
+        position: relative;
+        margin-bottom: 2.85rem;
+        &__img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 1.6rem;
+            overflow: hidden;
+            
+        }
+
+        &__btn-delete{
+            position: absolute;
+            top: -0.8rem;
+            right: -0.8rem;
+
+            svg{
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
+    
 }
