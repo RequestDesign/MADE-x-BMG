@@ -238,7 +238,7 @@
                     <div class="incoming-requests__filter">
                         <div class="incoming-requests__filter__title">Тип заявки</div>
                         <div class="incoming-requests__filter__input-wrapper">
-                            <input type="text" readonly value="Клининг" />
+                            <input id="requestTypeInput" type="text" readonly />
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
                                 <path
                                     d="M13 1L7.14427 6.85573C7.10153 6.90127 7.0499 6.93757 6.99259 6.96238C6.93527 6.9872 6.87347 7 6.81102 7C6.74856 7 6.68676 6.9872 6.62945 6.96238C6.57213 6.93757 6.52051 6.90127 6.47776 6.85573L0.622033 1"
@@ -248,37 +248,28 @@
                                 />
                             </svg>
                         </div>
-                        <ul class="incoming-requests__filter__dropdown request-filter-list">
-                            <label for="requestTypeOption1" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 1</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestType" id="requestTypeOption1" />
-                                    <label for="requestTypeOption1" class="radio-icon"></label>
-                                </div>
-                            </label>
+                        <div class="incoming-requests__filter__dropdown">
+                            <div class="incoming-requests__filter__dropdown__search">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M10.0218 17.5435C13.6236 17.5435 16.5435 14.6236 16.5435 11.0218C16.5435 7.41989 13.6236 4.5 10.0218 4.5C6.41989 4.5 3.5 7.41989 3.5 11.0218C3.5 14.6236 6.41989 17.5435 10.0218 17.5435Z"
+                                        stroke="#101010"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path d="M19.1441 20.1428L14.6318 15.6305" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <input type="search" id="searchTypeInput" />
+                            </div>
 
-                            <label for="requestTypeOption2" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 2</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestType" id="requestTypeOption2" />
-                                    <label for="requestTypeOption2" class="radio-icon"></label>
-                                </div>
-                            </label>
-
-                            <label for="requestTypeOption3" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 3</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestType" id="requestTypeOption3" />
-                                    <label for="requestTypeOption3" class="radio-icon"></label>
-                                </div>
-                            </label>
-                        </ul>
+                            <ul id="requestTypeList" class="request-filter-list"></ul>
+                        </div>
                     </div>
 
                     <div class="incoming-requests__filter">
                         <div class="incoming-requests__filter__title">Арендатор</div>
                         <div class="incoming-requests__filter__input-wrapper">
-                            <input type="text" readonly value="Calzedonia" />
+                            <input id="requestTenantInput" type="text" readonly />
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
                                 <path
                                     d="M13 1L7.14427 6.85573C7.10153 6.90127 7.0499 6.93757 6.99259 6.96238C6.93527 6.9872 6.87347 7 6.81102 7C6.74856 7 6.68676 6.9872 6.62945 6.96238C6.57213 6.93757 6.52051 6.90127 6.47776 6.85573L0.622033 1"
@@ -288,37 +279,28 @@
                                 />
                             </svg>
                         </div>
-                        <ul class="incoming-requests__filter__dropdown request-filter-list">
-                            <label for="requestTenantOption1" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 1</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestTenant" id="requestTenantOption1" />
-                                    <label for="requestTenantOption1" class="radio-icon"></label>
-                                </div>
-                            </label>
 
-                            <label for="requestTenantOption2" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 2</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestTenant" id="requestTenantOption2" />
-                                    <label for="requestTenantOption2" class="radio-icon"></label>
-                                </div>
-                            </label>
-
-                            <label for="requestTenantOption3" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 3</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestTenant" id="requestTenantOption3" />
-                                    <label for="requestTenantOption3" class="radio-icon"></label>
-                                </div>
-                            </label>
-                        </ul>
+                        <div class="incoming-requests__filter__dropdown">
+                            <div class="incoming-requests__filter__dropdown__search">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M10.0218 17.5435C13.6236 17.5435 16.5435 14.6236 16.5435 11.0218C16.5435 7.41989 13.6236 4.5 10.0218 4.5C6.41989 4.5 3.5 7.41989 3.5 11.0218C3.5 14.6236 6.41989 17.5435 10.0218 17.5435Z"
+                                        stroke="#101010"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path d="M19.1441 20.1428L14.6318 15.6305" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <input type="search" id="searchTenantInput" />
+                            </div>
+                            <ul id="requestTenantList" class="request-filter-list"></ul>
+                        </div>
                     </div>
 
                     <div class="incoming-requests__filter">
                         <div class="incoming-requests__filter__title">Дата</div>
                         <div class="incoming-requests__filter__input-wrapper">
-                            <input type="text" readonly value="с 12.08.23 по 15.08.23" />
+                            <input id="requestDateInput" type="text" readonly />
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
                                 <path
                                     d="M13 1L7.14427 6.85573C7.10153 6.90127 7.0499 6.93757 6.99259 6.96238C6.93527 6.9872 6.87347 7 6.81102 7C6.74856 7 6.68676 6.9872 6.62945 6.96238C6.57213 6.93757 6.52051 6.90127 6.47776 6.85573L0.622033 1"
@@ -328,31 +310,23 @@
                                 />
                             </svg>
                         </div>
-                        <ul class="incoming-requests__filter__dropdown request-dateist request-filter-list">
-                            <label for="requestDateOption1" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 1</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestDate" id="requestDateOption1" />
-                                    <label for="requestDateOption1" class="radio-icon"></label>
-                                </div>
-                            </label>
 
-                            <label for="requestDateOption2" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 2</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestDate" id="requestDateOption2" />
-                                    <label for="requestDateOption2" class="radio-icon"></label>
+                        <div class="incoming-requests__filter__dropdown incoming-requests__filter__dropdown--date">
+                            <div class="incoming-requests__filter__date">
+                                <div id="filterDatepicker" class="incoming-requests__filter__date__calendar"></div>
+                                <div class="incoming-requests__filter__date__inputs">
+                                    <div class="input-wrapper">
+                                        <span>С</span>
+                                        <input type="text" id="startDate" />
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <span>По</span>
+                                        <input type="text" id="endDate" />
+                                    </div>
+                                    <button class="btn btn__apply">Применить</button>
                                 </div>
-                            </label>
-
-                            <label for="requestDateOption3" class="request-filter-list__option">
-                                <span class="request-filter-list__title">Option 3</span>
-                                <div class="request-filter-list__radio radio-wrapper">
-                                    <input type="radio" name="requestDate" id="requestDateOption3" />
-                                    <label for="requestDateOption3" class="radio-icon"></label>
-                                </div>
-                            </label>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="incoming-requests__filter">
@@ -390,8 +364,12 @@
                                     <div class="incoming-requests__item__info">
                                         <div class="incoming-requests__item__star">
                                             <svg class="star-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                                            <path d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z" stroke-linejoin="round"/>
-                                            </svg></div>
+                                                <path
+                                                    d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
                                         <div class="incoming-requests__item__details">
                                             <div class="request-id">№ 1209878</div>
                                             <div class="request-date">12 августа 14:35</div>
@@ -427,8 +405,12 @@
                                     <div class="incoming-requests__item__info">
                                         <div class="incoming-requests__item__star">
                                             <svg class="star-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                                            <path d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z" stroke-linejoin="round"/>
-                                            </svg></div>
+                                                <path
+                                                    d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
                                         <div class="incoming-requests__item__details">
                                             <div class="request-id">№ 1209878</div>
                                             <div class="request-date">12 августа 14:35</div>
@@ -464,8 +446,12 @@
                                     <div class="incoming-requests__item__info">
                                         <div class="incoming-requests__item__star">
                                             <svg class="star-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                                            <path d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z" stroke-linejoin="round"/>
-                                            </svg></div>
+                                                <path
+                                                    d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
                                         <div class="incoming-requests__item__details">
                                             <div class="request-id">№ 1209878</div>
                                             <div class="request-date">12 августа 14:35</div>
@@ -513,8 +499,12 @@
                                     <div class="incoming-requests__item__info">
                                         <div class="incoming-requests__item__star">
                                             <svg class="star-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                                            <path d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z" stroke-linejoin="round"/>
-                                            </svg></div>
+                                                <path
+                                                    d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
                                         <div class="incoming-requests__item__details">
                                             <div class="request-id">№ 1209878</div>
                                             <div class="request-date">12 августа 14:35</div>
@@ -550,8 +540,12 @@
                                     <div class="incoming-requests__item__info">
                                         <div class="incoming-requests__item__star">
                                             <svg class="star-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                                            <path d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z" stroke-linejoin="round"/>
-                                            </svg></div>
+                                                <path
+                                                    d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
                                         <div class="incoming-requests__item__details">
                                             <div class="request-id">№ 1209878</div>
                                             <div class="request-date">12 августа 14:35</div>
@@ -587,8 +581,12 @@
                                     <div class="incoming-requests__item__info">
                                         <div class="incoming-requests__item__star">
                                             <svg class="star-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                                            <path d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z" stroke-linejoin="round"/>
-                                            </svg></div>
+                                                <path
+                                                    d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
                                         <div class="incoming-requests__item__details">
                                             <div class="request-id">№ 1209878</div>
                                             <div class="request-date">12 августа 14:35</div>
@@ -624,8 +622,12 @@
                                     <div class="incoming-requests__item__info">
                                         <div class="incoming-requests__item__star">
                                             <svg class="star-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                                            <path d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z" stroke-linejoin="round"/>
-                                            </svg></div>
+                                                <path
+                                                    d="M8.05199 1.92682C8.35134 1.00551 9.65475 1.00551 9.9541 1.92682L11.2482 5.9096C11.3821 6.32163 11.766 6.60059 12.1992 6.60059H16.387C17.3557 6.60059 17.7585 7.8402 16.9748 8.4096L13.5868 10.8711C13.2363 11.1257 13.0897 11.5771 13.2235 11.9891L14.5176 15.9719C14.817 16.8932 13.7625 17.6593 12.9788 17.0899L9.59083 14.6284C9.24034 14.3738 8.76575 14.3738 8.41526 14.6285L5.0273 17.0899C4.24359 17.6593 3.18911 16.8932 3.48846 15.9719L4.78255 11.9891C4.91642 11.5771 4.76976 11.1257 4.41927 10.8711L1.03132 8.4096C0.247605 7.8402 0.650382 6.60059 1.61911 6.60059H5.80685C6.24007 6.60059 6.62403 6.32163 6.7579 5.9096L8.05199 1.92682Z"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
                                         <div class="incoming-requests__item__details">
                                             <div class="request-id">№ 1209878</div>
                                             <div class="request-date">12 августа 14:35</div>

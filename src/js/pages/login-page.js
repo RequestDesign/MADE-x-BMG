@@ -8,3 +8,7 @@ $(function() {
         $('.btn__login').prop('disabled', !allInputsFilled);
     });
 });
+
+$('.btn__login').on('click', function(e){
+e.preventDefault()
+})

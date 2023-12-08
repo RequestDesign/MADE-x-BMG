@@ -19,20 +19,19 @@ $(".incoming-requests__filter__input-wrapper").on("click", function () {
     $(this).closest(".incoming-requests__filter").find(".incoming-requests__filter__dropdown").slideToggle();
 });
 
-//select options in filters
-$(".incoming-requests__filter__dropdown input[type='radio']").on("change", function () {
-    let $input = $(this);
-    let $dropdown = $input.closest(".incoming-requests__filter__dropdown");
-    let selectedOption = $input.closest("label").find(".request-filter-list__title").text();
-
-    let $inputWrapper = $dropdown.closest(".incoming-requests__filter").find(".incoming-requests__filter__input-wrapper");
-    $inputWrapper.find("input[type='text']").val(selectedOption);
-
-    $inputWrapper.removeClass("open");
-    $dropdown.slideUp();
-});
+$(".btn__apply").on('click', function(){
+    $('.incoming-requests__filter__dropdown--date').closest($('.incoming-requests__filter__input-wrapper')).removeClass("open");
+    $('.incoming-requests__filter__dropdown--date').slideUp();
+})
 
 //star
 $('.star-ico').on('click', function(){
     $(this).toggleClass('filled')
 })
+
+//clear filters
+$('.incoming-requests__filter--reset').on('click', function () {
+    $('#requestTypeInput, #requestTenantInput, #requestDateInput, #startDate, #endDate').val("");
+    $('td').removeClass('dp-highlight')
+    $('#requestTenantList input, #requestTypeList input').removeAttr('checked');
+});

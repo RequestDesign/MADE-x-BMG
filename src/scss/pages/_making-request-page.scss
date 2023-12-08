@@ -261,7 +261,6 @@ body.color_pd .making-request {
         }
     }
 
-    //form price
     #formPrice {
         .form__items {
             gap: 2rem;
@@ -277,7 +276,6 @@ body.color_pd .making-request {
         }
     }
 
-    //form date
     #formDate {
         .form__btn {
             margin-left: unset;
@@ -345,11 +343,11 @@ body.color_pd .making-request {
     }
 }
 
-#datepicker {
+.making-request ~ #datepicker {
     position: relative;
 }
 
-.ui-datepicker {
+.making-request ~ .ui-datepicker {
     position: absolute;
     top: calc(100% + 8rem);
     left: 0;
@@ -424,17 +422,18 @@ body.color_pd .making-request {
     }
 }
 
-#ui-datepicker-div{
+
+.making-request ~ #ui-datepicker-div{
     display: none;
 }
 
-.ui-state-default, .ui-widget-header, .ui-widget-content a{
+.making-request ~ .ui-state-default, .ui-widget-header, .ui-widget-content a{
     color: unset !important;
     background-color: unset !important;
     border: unset !important;
 }
 
-.ui-widget.ui-widget-content{
+.making-request ~ .ui-widget.ui-widget-content{
     border: unset;
 }
 
