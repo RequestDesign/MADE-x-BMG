@@ -28,10 +28,12 @@ body .incoming-requests {
     --searchBg: #f4f4f4;
     --filterBg: #f4f4f4;
     --filterBorder: unset;
-    --unreadBg: #F4F4F4;
+    --unreadBg: #f4f4f4;
     --readBg: #ffffff;
     --unreadBorder: none;
-    --readBorder: 0.1rem solid #D7D7D7;
+    --readBorder: 0.1rem solid #d7d7d7;
+    --searchSmBg: #fff;
+    --highlightDateColor: #fff;
 }
 body.color_yd .incoming-requests {
     --normalTextColor: #ffffff;
@@ -64,9 +66,11 @@ body.color_yd .incoming-requests {
     --filterBg: #1d1d1d;
     --filterBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
     --unreadBg: #101010;
-    --readBg: #1D1D1D;
+    --readBg: #1d1d1d;
     --unreadBorder: none;
     --readBorder: 0.1rem solid #acacac;
+    --searchSmBg: #fff;
+    --highlightDateColor: #101010;
 }
 body.color_pl .incoming-requests {
     --normalTextColor: #101010;
@@ -100,9 +104,11 @@ body.color_pl .incoming-requests {
     --filterBg: #f1f4f6;
     --filterBorder: unset;
     --readBg: #ffffff;
-    --unreadBg: #A1ACB9;
-    --readBorder: 0.1rem solid rgba(161, 172, 185, 0.20);
+    --unreadBg: #a1acb9;
+    --readBorder: 0.1rem solid rgba(161, 172, 185, 0.2);
     --unreadBorder: none;
+    --searchSmBg: #fff;
+    --highlightDateColor: #fff;
 }
 body.color_pd .incoming-requests {
     --normalTextColor: #ffffff;
@@ -136,9 +142,11 @@ body.color_pd .incoming-requests {
     --filterBg: #101010;
     --filterBorder: 0.1rem solid var(--black, #101010);
     --readBg: #101010;
-    --unreadBg: #F1F4F6;
-    --readBorder: 0.1rem solid #ACACAC;
+    --unreadBg: #f1f4f6;
+    --readBorder: 0.1rem solid #acacac;
     --unreadBorder: none;
+    --searchSmBg: #fff;
+    --highlightDateColor: #101010;
 }
 
 .incoming-requests {
@@ -173,6 +181,13 @@ body.color_pd .incoming-requests {
         padding: 1.4rem 2.4rem 1.3rem;
         border-radius: 1.6rem;
         width: 115.2rem;
+
+        .icon{
+            svg{
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
     }
 
     &__filters {
@@ -197,14 +212,22 @@ body.color_pd .incoming-requests {
         &__input-wrapper {
             border-radius: 1.6rem;
             background-color: var(--filterBg);
+            color: var(--normalTextColor);
             border: var(--filterBorder);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.1rem 1.6rem;
 
+            input{
+                width: 100%;
+            }
+
             svg {
                 transition: transform 0.2s ease;
+                path {
+                    stroke: var(--normalTextColor);
+                }
             }
 
             &.open {
@@ -226,13 +249,186 @@ body.color_pd .incoming-requests {
             background-color: var(--filterBg);
             border: var(--filterBorder);
             z-index: 100;
+            box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
 
-            label {
-                padding: 0.8rem 0;
+            &--date {
+                right: unset;
+                height: 31.6rem;
+                width: 65.2rem;
+            }
+
+            &__search {
+                background-color: var(--searchSmBg);
+                padding: 1rem 1.6rem;
+                border-radius: 0.8rem;
                 display: flex;
+                gap: 0.8rem;
                 align-items: center;
-                justify-content: space-between;
-                border-bottom: 0.1rem solid rgba(161, 172, 185, 0.2);
+                margin-bottom: 1.2rem;
+
+                svg {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+
+                input {
+                    flex: 1;
+                }
+            }
+
+            .request-filter-list {
+                max-height: 20rem;
+                overflow: auto;
+                margin-right: -0.8rem;
+                padding-right: 0.8rem;
+                color: var(--normalTextColor);
+
+                &__option {
+                    padding: 0.8rem 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 0.1rem solid rgba(161, 172, 185, 0.2);
+                    line-height: 120%;
+                    font-weight: 500;
+                }
+
+                mark {
+                    font-weight: 600;
+                    background-color: transparent;
+                }
+
+                mark ~ span {
+                    color: var(--subTextColor);
+                }
+            }
+        }
+
+        &__date {
+            display: flex;
+            justify-content: space-between;
+            gap: 3.2rem;
+            height: 100%;
+            width: 100%;
+            padding: 2rem;
+
+            &__calendar {
+                width: 27.6rem;
+
+                .ui-datepicker-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.4rem;
+                    margin-bottom: 1.2rem;
+                }
+
+                .ui-datepicker-calendar {
+                    width: 27.6rem;
+                    margin: 0 auto;
+
+                    td {
+                        height: 4rem;
+                        width: 4rem;
+                        text-align: center;
+                        font-weight: 500;
+                    }
+                }
+
+                .ui-datepicker-prev {
+                    order: 1;
+                    display: block;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url("./../../assets/images/calendar/arrow-prew-black.svg");
+                    background-size: 2.4rem 2.4rem;
+                    background-repeat: no-repeat;
+                }
+
+                .ui-datepicker-title {
+                    order: 2;
+
+                    span {
+                        font-weight: 500;
+                    }
+                }
+
+                .ui-datepicker-next {
+                    order: 3;
+                    display: block;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url("./../../assets/images/calendar/arrow-next-black.svg");
+                    background-size: 2.4rem 2.4rem;
+                    background-repeat: no-repeat;
+                }
+
+                .ui-datepicker-week-end {
+                    color: #acacac;
+                }
+
+                #ui-datepicker-div {
+                    display: none;
+                }
+
+                .ui-state-default,
+                .ui-widget-header,
+                .ui-widget-content a {
+                    color: unset;
+                    background-color: unset;
+                    border: unset;
+                }
+
+                .ui-widget.ui-widget-content {
+                    border: unset;
+                    background-color: unset;
+                    color: unset;
+                }
+
+                //styles for date range
+                .dp-highlight {
+                    background: var(--normalTextColor);
+                    color: var(--highlightDateColor);
+
+                    // &:first-child {
+                    //     border-radius: 100% 0 0 100%;
+                    // }
+
+                    // &:last-child {
+                    //     border-radius: 0 100% 100% 0;
+                    // }
+                }
+            }
+
+            &__inputs {
+                width: 27.6rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                font-weight: 500;
+
+                .input-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+
+                    span{
+                        color: #acacac;
+                        line-height: 93.75%;
+                    }
+
+                    input{
+                        background-color: var(--btnBg);
+                        border-radius: 1.6rem;
+                        padding: 1.3rem 1.6rem;
+                    }
+                }
+
+                .btn__apply {
+                    margin-top: auto;
+                    width: 100%;
+                    padding: 1.6rem 9.6rem;
+                }
             }
         }
 
@@ -263,36 +459,34 @@ body.color_pd .incoming-requests {
         align-items: center;
         gap: 1.6rem;
     }
-
     &__list {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         margin-bottom: 3.2rem;
     }
-
     &__box {
         display: flex;
         gap: 2rem;
-        flex-wrap: wrap;   
+        flex-wrap: wrap;
 
-        &--unread{
-            .incoming-requests__item{
+        &--unread {
+            .incoming-requests__item {
                 background-color: var(--unreadBg);
                 border: var(--unreadBorder);
                 font-weight: 600;
 
-                &__title{
+                &__title {
                     font-weight: 600;
                 }
-            }  
+            }
         }
 
-        &--read{
-            .incoming-requests__item{
+        &--read {
+            .incoming-requests__item {
                 background-color: var(--readBg);
                 border: var(--readBorder);
-            }  
+            }
         }
     }
     &__btns {
@@ -424,7 +618,7 @@ body.color_pd .incoming-requests {
                     display: none;
                 }
 
-                &__star{
+                &__star {
                     display: block;
                 }
 
@@ -454,11 +648,11 @@ body.color_pd .incoming-requests {
                 }
 
                 &__title {
-                    .request{
+                    .request {
                         display: none;
                     }
 
-                    .company{
+                    .company {
                         width: 17.3rem;
                         overflow: hidden;
                         text-overflow: ellipsis;
@@ -480,11 +674,9 @@ body.color_pd .incoming-requests {
             }
         }
     }
-
     .switcher__container {
         margin-top: 3.2rem;
     }
-
     &__item {
         border-radius: 1.6rem;
         overflow: hidden;
@@ -501,7 +693,7 @@ body.color_pd .incoming-requests {
             }
         }
 
-        &__star{
+        &__star {
             display: none;
         }
 
@@ -575,4 +767,8 @@ body.color_pd {
         background-color: #fff;
         border: unset;
     }
+}
+
+.incoming-requests ~ #ui-datepicker-div{
+    display: none !important;
 }

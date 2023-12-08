@@ -11,7 +11,6 @@ $('[data-modal="share-pass"]').on("click", function () {
     }
     updateShareButtonState();
 });
-
 $('[data-modal="share-pass-final"]').on("click", function () {
     $(".modal__share-pass").removeClass("active");
     uncheckAllUsers();
@@ -176,6 +175,11 @@ $(document).on("change", ".modal__share-pass__user__checkbox input", function ()
         department[index].checked = $(this).prop("checked");
         renderDepartmentList();
     }
+    // if($('.modal__share-pass__department-list').length){
+    //     department[index].checked = $(this).prop("checked");
+    //     renderDepartmentList();
+    // }
+
     updateShareButtonState();
 });
 
@@ -232,4 +236,3 @@ function updateShareButtonState() {
     }
 }
 updateShareButtonState();
-

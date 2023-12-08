@@ -113,7 +113,7 @@ $("#thirdStepBtn").on("click", function (e) {
         monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
         dayNames: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
         dayNamesMin: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
-        dateFormat: 'dd/mm/yy',
+        dateFormat: 'dd.mm.yy',
         firstDay: 1
     };
 
@@ -126,7 +126,6 @@ $("#thirdStepBtn").on("click", function (e) {
     $("#datepicker").datepicker({
         nextText: "",
         prevText: "",
-        dateFormat: 'dd.mm.yy',
     });
 });
 
