@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-$('.settings__center_input_open').on('click', function(e){
+$('.settings__center_input_open_block').on('click', function(e){
     if($(this).closest('.settings__center_input').find('input[readonly]').length) {
         $(this).closest('.settings__center_input').find('input').attr("readonly", false); 
     } else {
@@ -18,6 +18,18 @@ $('.users__tenant_checkbox input').on('change', function(e){
     } else {
         $(this).closest('.users__tenant').find('.users__tenant_add_btn').prop("disabled", true)
     }
+})
+
+$('[data-modal="modal-password"]').on("click", function () {
+    $(".modal__password").addClass("active");
+});
+
+$('.modal__password__eye input').on('change', function(evt){
+	if($(this).is(':checked')) {
+		$(this).closest('.modal__password__input').find('input[type=password]')[0].type = 'text';
+	} else {
+		$(this).closest('.modal__password__input').find('input[type=text]')[0].type = 'password';
+	}
 })
 
 
