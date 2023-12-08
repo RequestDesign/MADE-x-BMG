@@ -183,44 +183,6 @@ body.color_pd .making-request {
                 border: var(--inputBorder);
                 display: flex;
                 gap: 2rem;
-
-                &--file {
-                    cursor: pointer;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: end;
-
-                    input {
-                        display: none;
-                    }
-
-                    &__col{
-                        display: flex;
-                        flex-direction: column-reverse;
-                    }
-
-                    &__restr {
-                        font-weight: 500;
-                    }
-
-                    &__icon {
-                        cursor: pointer;
-                        width: 2.4rem;
-                        height: 2.4rem;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        svg {
-                            width: 1.4rem;
-                            height: 1.6rem;
-
-                            path {
-                                stroke: var(--iconColor);
-                            }
-                        }
-                    }
-                }
             }
 
             &__btns {
@@ -252,16 +214,16 @@ body.color_pd .making-request {
             }
 
             &__name--file {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
                 position: relative;
 
                 svg {
                     cursor: pointer;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    right: 2rem;
-                    width: 1.4rem;
-                    height: 1.4rem;
+                    width: 1.2rem;
+                    height: 1.2rem;
+
                     path{
                         stroke: var(--iconColor)
                     }
@@ -274,6 +236,7 @@ body.color_pd .making-request {
                 }
 
                 .add-file-hint {
+                    pointer-events: none;
                     position: absolute;
                     z-index: 10;
                     top: 25%;
@@ -293,35 +256,6 @@ body.color_pd .making-request {
                     background-repeat: no-repeat;
                     filter: var(--addFileHintBg);
                     color: #fff;
-                }
-            }
-
-            &__thumbnails-container {
-                display: flex;
-                gap: 1rem;
-                flex-wrap: wrap;
-            }
-
-            &__thumbnail {
-                position: relative;
-                margin-bottom: 2.85rem;
-                &__img {
-                    width: 6rem;
-                    height: 6rem;
-                    border-radius: 1.6rem;
-                    overflow: hidden;
-                    
-                }
-
-                &__btn-delete{
-                    position: absolute;
-                    top: -0.8rem;
-                    right: -0.8rem;
-
-                    svg{
-                        width: 2.4rem;
-                        height: 2.4rem;
-                    }
                 }
             }
         }
@@ -548,6 +482,6 @@ body.color_pd{
 }
 
 //не работает в firefox
-.form__item--file:has(.form__thumbnail) {
-    align-items: start;
-}
+// .form__item--file:has(.form__thumbnail) {
+//     align-items: start;
+// }
