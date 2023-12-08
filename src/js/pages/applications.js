@@ -167,7 +167,7 @@ $('body').on("click",'.applications__add_subcategory', function (e) {
 
         </div>
         <div class="applications__box_name">
-            <span>Название</span>
+            <span contenteditable>Название</span>
         </div>
         <svg data-modal="modal-delete" class="applications__box_delete" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="12" fill="#101010"/>
