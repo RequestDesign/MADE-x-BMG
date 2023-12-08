@@ -208,7 +208,7 @@
                                             <div class="form__name">Исполнитель</div>
                                             <div class="form__dropdown form__dropdown_employees">
                                                 <div class="form__dropdown_top">
-                                                    <input id="inputExecutor" required type="text" placeholder="Выберите исполнителя" />
+                                                    <input id="inputExecutor" required readonly type="text" placeholder="Выберите исполнителя" />
                                                     <!-- <span>Выберите исполнителя</span> -->
                                                     <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -306,7 +306,7 @@
                                                 <div class="add-file-hint">Если у Вас есть пример заказа, можете прикрепить фото/изображения</div>
                                             </div>
                                             <label for="inputFile" class="form__input form__input--file" id="fileLabel">
-                                                <input class="input" id="inputFile" type="file"/>
+                                                <input class="input" id="inputFile" type="file" />
                                                 <div class="form__input--file__col">
                                                     <span class="form__input--file__restr">Максимальный размер 512 Кбайт, расширение: jpeg, png</span>
                                                     <div id="thumbnailsContainer" class="form__thumbnails-container"></div>
@@ -414,25 +414,25 @@
         </section>
 
         <!-- modal success -->
-    <div class="modal modal--sm modal__success">
-        <div class="modal-back"></div>
-        <div class="modal-wrapper">
-            <div class="modal-exit">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
-                    <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
-                    <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div class="modal-top-img">
-                <img class="success-ico" src="./assets/images/common/success-ico.svg" alt="Success" />
-            </div>
-            <div class="modal-content">
-                <div class="modal__success__title">Ваша заявка <br>успешно отправлена</div>
-                <div class="modal__success__desc">После модерации заявки Вам придет уведомление с результатом ее рассмотрения</div>
-                <button class="btn btn__go-back" data-modal="close-modal">На главную</button>
+        <div class="modal modal--sm modal__success">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
+                        <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="modal-top-img">
+                    <img class="success-ico" src="./assets/images/common/success-ico.svg" alt="Success" />
+                </div>
+                <div class="modal-content">
+                    <div class="modal__success__title">Ваша заявка <br />успешно отправлена</div>
+                    <div class="modal__success__desc">После модерации заявки Вам придет уведомление с результатом ее рассмотрения</div>
+                    <button class="btn btn__go-back" data-modal="close-modal">На главную</button>
+                </div>
             </div>
         </div>
-    </div>
     </body>
 </html>
