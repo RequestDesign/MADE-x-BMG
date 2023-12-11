@@ -1,3 +1,23 @@
+body .modal__sms {
+    --borderAdd: none;
+    --inputBg:#FFF;
+}
+
+body.color_yd .modal__sms {
+    --borderAdd: none;
+    --inputBg:#292929;
+}
+
+body.color_pl .modal__sms {
+    --borderAdd: none;
+    --inputBg:#FFF;
+}
+
+body.color_pd .modal__sms {
+    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.20);
+    --inputBg:#101010;
+}
+
 .modal__sms {
     .modal-wrapper {
         padding: 4rem;
@@ -28,13 +48,14 @@
     }
     &__box {
         border-radius: 0.8rem;
-        background: #F4F4F4;
+        background: var(--inputBg);
         display: flex;
         align-items: center;
         justify-content: center;
         width: 6.1rem;
         height: 6.8rem;
         overflow: hidden;
+        border: var(--borderAdd);
 
         input {
             font-size: 3.2rem;

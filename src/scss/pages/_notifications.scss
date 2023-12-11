@@ -107,6 +107,27 @@ body.color_pd .notifications {
     --btnBgActiveSVGrow: #FFF;
 }
 
+body .main__title {
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+}
+body.color_yd .main__title {
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+}
+body.color_pl .main__title {
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+}
+body.color_pd .main__title {
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+}
+
 .main__title {
     display: flex;
     gap: 2rem;
@@ -116,7 +137,7 @@ body.color_pd .notifications {
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.032rem;
-    // color: $yl-color-text;
+    color: var(--normalTextColor);
     margin-bottom: 3.2rem;
 
     span {
@@ -546,6 +567,7 @@ body.color_pd .notifications {
 }
 
 body .notifications-detail {
+    --borderAdd: none;
     --normalTextColor: #101010;
     --reversTextColor: #FFF;
     --Btn: #F9EC00;
@@ -556,8 +578,11 @@ body .notifications-detail {
     --notifColor: #101010;
     --notifCancel: #BB2323;
     --notifCancelColor: #FFF;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
 }
 body.color_yd .notifications-detail {
+    --borderAdd: none;
     --normalTextColor: #FFFFFF;
     --reversTextColor: #101010;
     --Btn: #F9EC00;
@@ -568,8 +593,11 @@ body.color_yd .notifications-detail {
     --notifColor: #101010;
     --notifCancel: #BB2323;
     --notifCancelColor: #FFF;
+    --settingsSwitchActive: #F9EC00;
+    --settingsSwitchActiveColor: #101010;
 }
 body.color_pl .notifications-detail {
+    --borderAdd: none;
     --normalTextColor: #101010;
     --reversTextColor: #FFF;
     --Btn: #D01181;
@@ -580,18 +608,23 @@ body.color_pl .notifications-detail {
     --notifColor: #FFF;
     --notifCancel: #BB2323;
     --notifCancelColor: #FFF;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
 }
-body.color_pl .notifications-detail {
+body.color_pd .notifications-detail {
+    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.20);
     --normalTextColor: #FFF;
     --reversTextColor: #101010;
     --Btn: #D01181;
     --BtnColor: #FFF;
     --Bg: #101010;
-    --inpBg: #292929;
+    --inpBg: #101010;
     --notif: #D01181;
     --notifColor: #FFF;
     --notifCancel: #BB2323;
     --notifCancelColor: #FFF;
+    --settingsSwitchActive: #D01181;
+    --settingsSwitchActiveColor: #FFF;
 }
 
 .main__back {
@@ -644,6 +677,7 @@ body.color_pl .notifications-detail {
         background: var(--Bg);
         color: var(--normalTextColor);
         border-radius: 1.6rem;
+        border: var(--borderAdd);
     }
     &__right {
         width: 29rem;
@@ -691,6 +725,7 @@ body.color_pl .notifications-detail {
     &__item {
         display: flex;
         gap: 3.2rem;
+        align-items: center;
 
         &_name {
             flex: none;
@@ -707,6 +742,7 @@ body.color_pl .notifications-detail {
             border-radius: 1.6rem;
             background: var(--inpBg);
             margin-left: auto;
+            border: var(--borderAdd);
 
             font-size: 1.6rem;
             font-style: normal;
@@ -738,6 +774,14 @@ body.color_pl .notifications-detail {
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                }
+
+                svg {
+                    cursor: pointer;
+                    path {
+                        fill: var(--settingsSwitchActive);
+                        stroke: var(--settingsSwitchActive);
+                    }
                 }
             }
         }
