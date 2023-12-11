@@ -1,42 +1,94 @@
 body .adding_user {
+    --mainTheme:#F9EC00;
+    --mainThemeColor:#000;
+    --borderAdd: none;
     --normalTextColor: #101010;
     --subTextColor: #ACACAC;
     --reversTextColor: #FFF;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #101010;
     --switchBtnActiveColor: #FFF;
-    --switchBtnSpan: #F9EC00;
-    --switchBtnSpanColor: #101010;
+    --backgroundCard: #F4F4F4;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#FFF;
+    --userActive: #D7D7D7;
+    --userActiveText: #101010;
+    --userActiveSVG: #101010;
+    --userBorder: none;
+    --tenantBtn: #101010;
+    --tenantBtnText: #FFF;
+    --tabs: #ACACAC;
+    --tabsActive: #292929;
 }
 body.color_yd .adding_user {
+    --mainTheme:#F9EC00;
+    --mainThemeColor:#101010;
+    --borderAdd: none;
     --normalTextColor: #FFFFFF;
     --subTextColor: #ACACAC;
     --reversTextColor: #101010;
     --switchBtn: #292929;
     --switchBtnActive: #F9EC00;
     --switchBtnActiveColor: #101010;
-    --switchBtnSpan: #F9EC00;
-    --switchBtnSpanColor: #F9EC00;
+    --backgroundCard: #101010;
+    --settingsSwitchActive: #F9EC00;
+    --settingsSwitchActiveColor: #101010;
+    --inputBg:#292929;
+    --userActive: #292929;
+    --userActiveText: #FFF;
+    --userActiveSVG: #FFFFFF;
+    --userBorder: 0.2rem solid rgba(255, 255, 255, 0.30);
+    --tenantBtn: #F4F4F4;
+    --tenantBtnText: #101010;
+    --tabs: rgba(255, 255, 255, 0.30);
+    --tabsActive: #FFF;
 }
 body.color_pl .adding_user {
+    --mainTheme:#D01181;
+    --mainThemeColor:#FFFFFF;
+    --borderAdd: none;
     --normalTextColor: #101010;
     --subTextColor: #ACACAC;
     --reversTextColor: #FFF;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #D01181;
     --switchBtnActiveColor: #FFF;
-    --switchBtnSpan: #101010;
-    --switchBtnSpanColor: #FFF;
+    --backgroundCard: #F1F4F6;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#FFF;
+    --userActive: #A1ACB9;
+    --userActiveText: #FFF;
+    --userActiveSVG: #FFF;
+    --userBorder: none;
+    --tenantBtn: #101010;
+    --tenantBtnText: #FFF;
+    --tabs: #ACACAC;
+    --tabsActive: #292929;
 }
 body.color_pd .adding_user {
+    --mainTheme:#D01181;
+    --mainThemeColor:#FFFFFF;
+    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.20);
     --normalTextColor: #FFFFFF;
     --subTextColor: #ACACAC;
     --reversTextColor: #101010;
-    --switchBtn: #292929;
+    --switchBtn: #101010;
     --switchBtnActive: #D01181;
     --switchBtnActiveColor: #FFF;
-    --switchBtnSpan: #D01181;
-    --switchBtnSpanColor: #FFF;
+    --backgroundCard: #101010;
+    --settingsSwitchActive: #D01181;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#101010;
+    --userActive: #101010;
+    --userActiveText: #FFF;
+    --userActiveSVG: #FFF;
+    --userBorder: 0.1rem solid #FFF;
+    --tenantBtn: #F4F4F4;
+    --tenantBtnText: #101010;
+    --tabs: rgba(255, 255, 255, 0.30);
+    --tabsActive: #FFF;
 }
 
 .adding_user {
@@ -60,11 +112,13 @@ body.color_pd .adding_user {
         background: var(--switchBtn);
         cursor: pointer;
         gap: 1rem;
+        border: var(--borderAdd);
 
         &.active {
             background: var(--switchBtnActive);
             color: var(--switchBtnActiveColor);
             font-weight: 500;
+            border: none;
         }
     }
 }

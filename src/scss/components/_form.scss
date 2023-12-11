@@ -2,6 +2,7 @@ body .form {
     --textColor: #101010;
     --Bg: #fff;
     --stepsBg: #f4f4f4;
+    --formBg: #F4F4F4;
     --stepsBorder: none;
     --stepText: rgba(16, 16, 16, 0.3);
     --stepActiveBg: #101010;
@@ -12,11 +13,13 @@ body .form {
     --addFileHintBg: unset;
     --addFileHintColor: #101010;
     --iconColor: #101010;
+    --deleteBtnCross: #fff;
 }
 body.color_yd .form {
     --textColor: #fff;
     --Bg: #1d1d1d;
     --stepsBg: #292929;
+    --formBg: #101010;
     --stepsBorder: none;
     --stepText: #acacac;
     --stepActiveBg: #101010;
@@ -27,11 +30,13 @@ body.color_yd .form {
     --addFileHintBg: invert(1);
     --addFileHintColor: #fff;
     --iconColor: #F9EC00;
+    --deleteBtnCross: #101010;
 }
 body.color_pl .form {
     --textColor: #101010;
     --Bg: #fff;
     --stepsBg: #f1f4f6;
+    --formBg: #F1F4F6;
     --stepsBorder: none;
     --stepText: rgba(16, 16, 16, 0.3);
     --stepActiveBg: #101010;
@@ -42,11 +47,13 @@ body.color_pl .form {
     --addFileHintBg: unset;
     --addFileHintColor: #fff;
     --iconColor: #101010;
+    --deleteBtnCross: #fff;
 }
 body.color_pd .form {
     --textColor: #fff;
     --Bg: #101010;
     --stepsBg: #101010;
+    --formBg: #101010;
     --stepsBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
     --stepText: #acacac;
     --stepActiveBg: #d01181;
@@ -57,6 +64,7 @@ body.color_pd .form {
     --addFileHintBg: invert(1);
     --addFileHintColor: #101010;
     --iconColor: #d01181;
+    --deleteBtnCross: #101010;
 }
 
 .form {
@@ -67,7 +75,8 @@ body.color_pd .form {
         width: 120.8rem;
         padding: 3.2rem 2.4rem;
         border-radius: 1.6rem;
-        background: #F4F4F4;
+        background: var(--formBg);
+        border: var(--inputBorder);
     }
     &__item {
         display: grid;
@@ -85,6 +94,7 @@ body.color_pd .form {
         line-height: normal;
         display: flex;
         align-items: center;
+        color: var(--textColor);
     }
     &__input {
         padding: 1.8rem 1.6rem;
@@ -114,7 +124,9 @@ body.color_pd .form {
         &_top {
             padding: 1.8rem 1.6rem;
             border-radius: 1.6rem;
-            background: #FFF;
+            background-color: var(--inputBg);
+            color: var(--textColor);
+            border: var(--inputBorder);
             height: 6rem;
             display: flex;
             justify-content: space-between;
@@ -129,7 +141,7 @@ body.color_pd .form {
                 line-height: 93.75%;
 
                 &.active {
-                    color: #101010;
+                    color: var(--textColor);
                 }
             }
             input {
@@ -153,6 +165,10 @@ body.color_pd .form {
                 height: 2.4rem;
                 margin-right: 0.5rem;
                 transition: transform 0.5s ease-in-out;
+
+                path {
+                    stroke: var(--iconColor);
+                }
             }
         }
         &_bottom {
@@ -160,7 +176,9 @@ body.color_pd .form {
             padding: 1.6rem;
             width: 100%;
             border-radius: 1.6rem;
-            background: #FFF;
+            background-color: var(--inputBg);
+            color: var(--textColor);
+            border: var(--inputBorder);
             box-shadow: 0 0.3rem 1.4rem 0 rgba(0, 0, 0, 0.08);
             
             position: absolute;

@@ -1,3 +1,36 @@
+body .error {
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --gearFill: #F4F4F4;
+    --errorBtnBack: #F9EC00;
+    --errorBtnColor: #101010;
+}
+body.color_yd .error {
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --gearFill: #292929;
+    --errorBtnBack: #F9EC00;
+    --errorBtnColor: #101010;
+}
+body.color_pl .error {
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --gearFill: #F4F4F4;
+    --errorBtnBack: #D01181;
+    --errorBtnColor: #FFF;
+}
+body.color_pd .error {
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --gearFill: #292929;
+    --errorBtnBack: #D01181;
+    --errorBtnColor: #FFF;
+}
+
 .error {
     .container {
         height: calc(100vh - 8.9rem);
@@ -18,6 +51,7 @@
         line-height: 100%;
         letter-spacing: 0.032rem;
         margin-bottom: 2rem;
+        color: var(--normalTextColor);
     }
     &__text {
         color: #ACACAC;
@@ -30,7 +64,8 @@
     &__btn {
         border-radius: 3.2rem;
         height: 5.1rem;
-        background: #F9EC00;
+        background: var(--errorBtnBack);
+        color: var(--errorBtnColor);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -51,6 +86,10 @@
             left: -8rem;
             top: -7rem;
             z-index: -1;
+
+            path {
+                fill: var(--gearFill);
+            }
         }
     }
     &__number {
@@ -59,5 +98,6 @@
         font-weight: 700;
         line-height: 100%;
         letter-spacing: 0.25rem;
+        color: var(--normalTextColor);
     }
 }
