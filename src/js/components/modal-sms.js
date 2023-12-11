@@ -58,6 +58,7 @@ if ($('.modal__sms__boxs').length) {
                 $(".modal__sms").removeClass("active");
                 $('.settings__right_hidden').css('display', 'none')
                 $('.settings__right_btn_disabled').removeClass('settings__right_btn_disabled')
+                $("body").removeClass("lock");
             }
             return
         }

@@ -1,3 +1,96 @@
+body .users {
+    --mainTheme:#F9EC00;
+    --mainThemeColor:#000;
+    --borderAdd: none;
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --switchBtn: #f4f4f4;
+    --switchBtnActive: #101010;
+    --switchBtnActiveColor: #FFF;
+    --backgroundCard: #F4F4F4;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#FFF;
+    --userActive: #D7D7D7;
+    --userActiveText: #101010;
+    --userActiveSVG: #101010;
+    --userBorder: none;
+    --tenantBtn: #101010;
+    --tenantBtnText: #FFF;
+    --tabs: #ACACAC;
+    --tabsActive: #292929;
+}
+body.color_yd .users {
+    --mainTheme:#F9EC00;
+    --mainThemeColor:#101010;
+    --borderAdd: none;
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --switchBtn: #292929;
+    --switchBtnActive: #F9EC00;
+    --switchBtnActiveColor: #101010;
+    --backgroundCard: #101010;
+    --settingsSwitchActive: #F9EC00;
+    --settingsSwitchActiveColor: #101010;
+    --inputBg:#292929;
+    --userActive: #292929;
+    --userActiveText: #FFF;
+    --userActiveSVG: #FFFFFF;
+    --userBorder: 0.2rem solid rgba(255, 255, 255, 0.30);
+    --tenantBtn: #F4F4F4;
+    --tenantBtnText: #101010;
+    --tabs: rgba(255, 255, 255, 0.30);
+    --tabsActive: #FFF;
+}
+body.color_pl .users {
+    --mainTheme:#D01181;
+    --mainThemeColor:#FFFFFF;
+    --borderAdd: none;
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --switchBtn: #f4f4f4;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --backgroundCard: #F1F4F6;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#FFF;
+    --userActive: #A1ACB9;
+    --userActiveText: #FFF;
+    --userActiveSVG: #FFF;
+    --userBorder: none;
+    --tenantBtn: #101010;
+    --tenantBtnText: #FFF;
+    --tabs: #ACACAC;
+    --tabsActive: #292929;
+}
+body.color_pd .users {
+    --mainTheme:#D01181;
+    --mainThemeColor:#FFFFFF;
+    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.20);
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --switchBtn: #101010;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --backgroundCard: #101010;
+    --settingsSwitchActive: #D01181;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#101010;
+    --userActive: #101010;
+    --userActiveText: #FFF;
+    --userActiveSVG: #FFF;
+    --userBorder: 0.1rem solid #FFF;
+    --tenantBtn: #F4F4F4;
+    --tenantBtnText: #101010;
+    --tabs: rgba(255, 255, 255, 0.30);
+    --tabsActive: #FFF;
+}
+
 .users {
     &__container {
         display: flex;
@@ -7,8 +100,9 @@
         padding: 2.4rem 2.4rem;
         width: 104.5rem;
         border-radius: 1.6rem;
-        background: #F4F4F4;
+        background: var(--backgroundCard);
         height: fit-content;
+        border: var(--borderAdd);
     }
     &__head {
         display: flex;
@@ -22,6 +116,7 @@
             font-weight: 400;
             line-height: 100%;
             letter-spacing: 0.024rem;
+            color: var(--normalTextColor);
         }
         &_add {
             width: 5.1rem;
@@ -30,6 +125,13 @@
             svg {
                 width: 5.1rem;
                 height: 5.1rem;
+
+                circle {
+                    fill: var(--mainTheme);
+                }
+                path {
+                    stroke: var(--mainThemeColor);
+                }
             }
         }
         &_search {
@@ -73,11 +175,11 @@
             bottom: 0;
             width: 100%;
             height: 0.1rem;
-            background: #ACACAC;
+            background: var(--tabs);
         }
     }
     &__tab {
-        color: #ACACAC;
+        color: var(--tabs);
         font-size: 1.6rem;
         font-style: normal;
         font-weight: 500;
@@ -87,8 +189,8 @@
         cursor: pointer;
 
         &.active {
-            color: #292929;
-            border-bottom: 0.2rem solid #292929;
+            color: var(--tabsActive);
+            border-bottom: 0.2rem solid var(--tabsActive);
         }
     }
     &__th {
@@ -117,8 +219,10 @@
         padding: 0 2.4rem;
 
         border-radius: 2rem;
-        background: #FFF;
+        background: var(--inputBg);
         cursor: pointer;
+        color: var(--normalTextColor);
+        border: var(--borderAdd);
 
         & > div {
             font-size: 1.6rem;
@@ -129,18 +233,30 @@
         svg {
             width: 2.4rem;
             height: 2.4rem;
+
+            path {
+                stroke: var(--settingsSwitchActive);
+            }
         }
         &.active {
-            background: #D7D7D7;
+            background: var(--userActive);
+            color: var(--userActiveText);
+            border: var(--userBorder);
+            svg {
+                path {
+                    stroke: var(--userActiveSVG);
+                }
+            }
         }
     }
 
     &__tenant {
         width: 44.5rem;
         border-radius: 1.6rem;
-        background: #F4F4F4;
+        background: var(--backgroundCard);
         padding: 2.4rem;
         height: fit-content;
+        border: var(--borderAdd);
 
         &_title {
             font-size: 2.4rem;
@@ -149,6 +265,7 @@
             line-height: 100%;
             letter-spacing: 0.024rem;
             margin-bottom: 2.4rem;
+            color: var(--normalTextColor);
         }
         &_list {
             display: flex;
@@ -160,12 +277,13 @@
             display: flex;
             align-items: center;
             border-radius: 1.6rem;
-            background: #FFF;
+            background: var(--inputBg);
             padding: 0.8rem 1.6rem;
             width: 100%;
             position: relative;
             z-index: 0;
             transition: z-index .4s ease-in-out;
+            border: var(--borderAdd);
 
             &.active {
                 z-index: 1;
@@ -196,6 +314,9 @@
                 letter-spacing: 0.016rem;
             }
         }
+        &_name {
+            color: var(--normalTextColor);
+        }
         &_job {
             color: #ACACAC;
         }
@@ -206,6 +327,10 @@
             svg {
                 width: 2.4rem;
                 height: 2.4rem;
+
+                circle {
+                    stroke: var(--settingsSwitchActive);
+                }
             }
         }
         &_choice {
@@ -215,7 +340,8 @@
             width: 34.3rem;
             padding: 1.6rem;
             border-radius: 1.6rem;
-            background: #FFF;
+            background: var(--inputBg);
+            color: var(--normalTextColor);
             box-shadow: 0 0.3rem 1.4rem 0 rgba(0, 0, 0, 0.08);
 
             & > a {
@@ -235,8 +361,8 @@
         &_btn {
             width: 100%;
             border-radius: 3.2rem;
-            background: #101010;
-            color: #FFF;
+            background: var(--tenantBtn);
+            color: var(--tenantBtnText);
             display: flex;
             justify-content: center;
             align-items: center;

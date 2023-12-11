@@ -44,84 +44,85 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
     const searchInput = $(`#${searchInputId}`);
     const inputValue = $(`#${inputValueId}`);
 
-    function renderFilterList(filteredOptions) {
-        filteredOptions.sort((a, b) => (b.checked ? 1 : 0) - (a.checked ? 1 : 0));
-
-        container.html(
-            filteredOptions
-                .map(
-                    (option, index) => {
-                        const title = option.title;
-                        const highlightedTitle = highlightMatches(title, searchInput.val().trim());
-                        return `
-                            <li class="request-filter-list__option ${option.checked ? 'checked' : ''}">
-                                <span class="request-filter-list__title">${highlightedTitle}</span>
-                                <div class="request-filter-list__checkbox checkbox-wrapper">
-                                    <input type="checkbox" id="${containerId}Option${index}" ${option.checked ? "checked" : ""} data-index="${index}" />
-                                    <label for="${containerId}Option${index}" class="checkbox-icon"></label>
-                                </div>
-                            </li>`;
-                    }
-                )
-                .join("")
-        );
-
-        updateInputValue();
-    }
-
-    function highlightMatches(text, query) {
-        if (!query) {
-            return text;
+    if(searchInput.length) {
+        function renderFilterList(filteredOptions) {
+            filteredOptions.sort((a, b) => (b.checked ? 1 : 0) - (a.checked ? 1 : 0));
+    
+            container.html(
+                filteredOptions
+                    .map(
+                        (option, index) => {
+                            const title = option.title;
+                            const highlightedTitle = highlightMatches(title, searchInput.val().trim());
+                            return `
+                                <li class="request-filter-list__option ${option.checked ? 'checked' : ''}">
+                                    <span class="request-filter-list__title">${highlightedTitle}</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" id="${containerId}Option${index}" ${option.checked ? "checked" : ""} data-index="${index}" />
+                                        <label for="${containerId}Option${index}" class="checkbox-icon"></label>
+                                    </div>
+                                </li>`;
+                        }
+                    )
+                    .join("")
+            );
+    
+            updateInputValue();
         }
-
-        const regex = new RegExp(`(${query})`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
-    }
-
-    $(document).on("change", `#${containerId} .request-filter-list__checkbox input`, function () {
-        const title = $(this).closest("li").find(".request-filter-list__title").text();
-
-        if (title === 'Все') {
-            const allChecked = $(this).prop("checked");
-            data.forEach(option => {
-                option.checked = allChecked;
-            });
-
-            if (!allChecked) {
-                data.slice(1).forEach(option => {
-                    option.checked = false;
-                });
+    
+        function highlightMatches(text, query) {
+            if (!query) {
+                return text;
             }
-        } else {
-            const index = data.findIndex(option => option.title === title);
-            if (index !== -1) {
-                data[index].checked = $(this).prop("checked");
-
-                if (!$(this).prop("checked")) {
-                    data[0].checked = false;
+    
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+    
+        $(document).on("change", `#${containerId} .request-filter-list__checkbox input`, function () {
+            const title = $(this).closest("li").find(".request-filter-list__title").text();
+    
+            if (title === 'Все') {
+                const allChecked = $(this).prop("checked");
+                data.forEach(option => {
+                    option.checked = allChecked;
+                });
+    
+                if (!allChecked) {
+                    data.slice(1).forEach(option => {
+                        option.checked = false;
+                    });
+                }
+            } else {
+                const index = data.findIndex(option => option.title === title);
+                if (index !== -1) {
+                    data[index].checked = $(this).prop("checked");
+    
+                    if (!$(this).prop("checked")) {
+                        data[0].checked = false;
+                    }
                 }
             }
+    
+            const searchQuery = searchInput.val().trim().toLowerCase();
+            const filteredOptions = data.filter(option => option.title.toLowerCase().includes(searchQuery));
+            renderFilterList(filteredOptions);
+        });
+    
+        searchInput.on("input", function () {
+            const searchQuery = $(this).val().trim().toLowerCase();
+            const filteredOptions = data.filter(option => option.title.toLowerCase().includes(searchQuery));
+            renderFilterList(filteredOptions);
+        });
+    
+        function updateInputValue() {
+            const selectedOptions = data.filter(option => option.checked).map(option => option.title);
+            inputValue.val(selectedOptions.includes('Все') ? 'Все' : selectedOptions.join(', '));
         }
-
-        const searchQuery = searchInput.val().trim().toLowerCase();
-        const filteredOptions = data.filter(option => option.title.toLowerCase().includes(searchQuery));
-        renderFilterList(filteredOptions);
-    });
-
-    searchInput.on("input", function () {
-        const searchQuery = $(this).val().trim().toLowerCase();
-        const filteredOptions = data.filter(option => option.title.toLowerCase().includes(searchQuery));
-        renderFilterList(filteredOptions);
-    });
-
-    function updateInputValue() {
-        const selectedOptions = data.filter(option => option.checked).map(option => option.title);
-        inputValue.val(selectedOptions.includes('Все') ? 'Все' : selectedOptions.join(', '));
+    
+        renderFilterList(data);
     }
-
-    renderFilterList(data);
 }
-
 initializeFilterList("requestTypeList", "searchTypeInput", "requestTypeInput", requestType);
 initializeFilterList("requestTenantList", "searchTenantInput", "requestTenantInput", requestTenant);
 
