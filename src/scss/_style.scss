@@ -123,6 +123,11 @@ body.color_pd .btn {
     --btnText: #FFFFFF;
 }
 
+button:disabled{
+    background-color: #FFFFFF;
+    color: rgba(16, 16, 16, 0.40);
+}
+
 .btn {
     border-radius: 3.2rem;
     padding: 1.6rem 14.4rem;
@@ -227,6 +232,10 @@ body.color_pd .btn__go-to {
 
 .btn__cancel{
     background-color: #D7D7D7;
+}
+
+.btn__send-news{
+    width: 34.2rem;
 }
 
 .switcher__content {

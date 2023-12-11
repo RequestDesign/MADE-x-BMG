@@ -1,6 +1,5 @@
 body .requests {
     --textColor: #101010;
-    --requestsBg: #fff;
     --typeBg: #fff;
     --cardText: #101010;
     --cardBg: #fff;
@@ -13,7 +12,6 @@ body .requests {
 }
 body.color_yd .requests {
     --textColor: #fff;
-    --requestsBg: #292929;
     --typeBg: #292929;
     --cardText: #fff;
     --cardBg: #292929;
@@ -26,7 +24,6 @@ body.color_yd .requests {
 }
 body.color_pl .requests {
     --textColor: #101010;
-    --requestsBg: #fff;
     --typeBg: #fff;
     --cardText: #101010;
     --cardBg: #fff;
@@ -39,7 +36,6 @@ body.color_pl .requests {
 }
 body.color_pd .requests {
     --textColor: #fff;
-    --requestsBg: #101010;
     --typeBg: #fff;
     --cardBg: #fff;
     --cardText: #101010;
@@ -53,7 +49,6 @@ body.color_pd .requests {
 
 .requests {
     color: var(--textColor);
-    background-color: var(--requestsBg);
 
     &__title {
         font-size: 3.2rem;
@@ -81,7 +76,6 @@ body.color_pd .requests {
             display: flex;
             gap: 1.2rem;
             align-items: center;
-            cursor: pointer;
         }
 
         &__icon {
@@ -126,6 +120,7 @@ body.color_pd .requests {
         &__cards {
             overflow: hidden;
             padding-left: 2.4rem;
+            // padding-right: 2.4rem;
             touch-action: pan-y;
 
             .swiper-wrapper {
@@ -168,6 +163,19 @@ body.color_pd .requests {
             top: 50%;
             transform: translateY(-50%);
             z-index: 100;
+        }
+
+        .swiper-button-prev{
+            display: none;
+            position: absolute;
+            left: -2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+
+            svg{
+                transform: rotate(180deg);
+            }
         }
 
         .btn__go-to {

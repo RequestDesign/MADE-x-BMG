@@ -1,32 +1,92 @@
 body .request-details {
+    --textColor: #101010;
     --statusWaitingBg: #d7d7d7;
     --statusWaitingText: #101010;
-    --statusApprovedBg: #f9ec00;
-    --statusApprovedText: #101010;
-
+    --statusAgreedBg: #f9ec00;
+    --statusAgreedText: #101010;
     --btnShareBg: #101010;
     --btnShareStroke: #ffffff;
     --btnCallBg: #f9ec00;
     --btnCallStroke: #101010;
     --inputBg: #ffffff;
+    --placeholderColor: #ACACAC;
     --btnCancelBg: #d7d7d7;
     --btnCancelText: #101010;
+    --inputBorder: none;
+    --inputTitleColor: #101010;
+}
+
+body.color_yd .request-details {
+    --textColor: #ffffff;
+    --statusWaitingBg: #d7d7d7;
+    --statusWaitingText: #101010;
+    --statusAgreedBg: #f9ec00;
+    --statusAgreedText: #101010;
+    --btnShareBg: #292929;
+    --btnShareStroke: #ffffff;
+    --btnCallBg: #f9ec00;
+    --btnCallStroke: #101010;
+    --inputBg: #292929;
+    --placeholderColor: #ACACAC;
+    --btnCancelBg: #ffffff;
+    --btnCancelText: #101010;
+    --inputBorder: none;
+    --inputTitleColor: rgba(255, 255, 255, 0.80);
+}
+
+body.color_pl .request-details {
+    --btnCallBg: #D01181;
+    --btnCallStroke: #ffffff;
+    --btnCancelBg: #A1ACB9;
+    --btnCancelText: #ffffff;
+    --btnShareBg: #101010;
+    --btnShareStroke: #ffffff;
+    --inputTitleColor: #101010;
+    --statusAgreedBg: #D01181;
+    --statusAgreedText: #ffffff;
+}
+
+body.color_pd .request-details {
+    --textColor: #ffffff;
+    --inputBg: #101010;
+    --inputBorder:  0.1rem solid rgba(255, 255, 255, 0.20);
+    --inputTitleColor: rgba(255, 255, 255, 0.80);
+    --btnCallStroke: #ffffff;
+    --btnCancelBg: #ffffff;
+    --btnCancelText: #101010;
+    --btnShareBg: #222427;
+    --btnShareStroke: #ffffff;
+    --btnCallBg: #D01181;
+    --btnCallStroke: #ffffff;
+    --statusAgreedBg: #D01181;
+    --statusAgreedText: #ffffff;
 }
 
 .request-details {
+    color: var(--textColor);
+
     .main__title {
         .status {
             border-radius: 1.6rem;
-            color: var(--statusWaitingText);
-            background-color: var(--statusWaitingBg);
+            
             padding: 0.4rem 1.2rem;
             letter-spacing: 0.014rem;
             font-size: 1.4rem;
             white-space: nowrap;
 
-            &--approved{
-                color: var(--statusApprovedText);
-                background-color: var(--statusApprovedBg)
+            &.agreed{
+                color: var(--statusAgreedText);
+                background-color: var(--statusAgreedBg)
+            }
+            
+            &.waiting{
+                color: var(--statusWaitingText);
+                background-color: var(--statusWaitingBg);
+            }
+
+            &.rejected{
+                color: #fff;
+                background: #BB2323;
             }
         }
     }
@@ -113,11 +173,13 @@ body .request-details {
                 font-weight: 600;
                 line-height: 93.75%;
                 width: 19.2rem;
+                color: var(--inputTitleColor);
             }
 
             .input-wrapper {
                 padding: 1.8rem 1.6rem;
                 background-color: var(--inputBg);
+                border: var(--inputBorder);
                 flex: 1;
                 border-radius: 1.6rem;
                 font-weight: 500;
@@ -126,6 +188,10 @@ body .request-details {
 
             input{
                 width: 100%;
+
+                &::placeholder{
+                    color: var(--placeholderColor);
+                }
             }
 
             &--textarea {
@@ -134,6 +200,10 @@ body .request-details {
                     height: 13.9rem;
                     width: 100%;
                     resize: none;
+
+                    &::placeholder{
+                        color: var(--placeholderColor);
+                    }
                 }
             }
 

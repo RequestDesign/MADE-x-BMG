@@ -1,7 +1,6 @@
 body .outgoing-requests {
     --normalTextColor: #101010;
     --subTextColor: #acacac;
-    --reversTextColor: #fff;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #101010;
     --switchBtnActiveColor: #fff;
@@ -9,28 +8,26 @@ body .outgoing-requests {
     --switchBtnSpanColor: #101010;
     --switchBtnActiveSpan: #f9ec00;
     --switchBtnActiveSpanColor: #101010;
+    --switcherBorder: unset;
     --viewBg: #d7d7d7;
     --viewCircle: #f4f4f4;
     --viewColor: #aaaaaa;
     --viewColorActive: #101010;
-    --ItemBg: #f4f4f4;
-    --itemColor: #101010;
-    --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #f9ec00;
-    --notifColor: #101010;
-    --notifCancel: #bb2323;
+    --itemTitle: #101010;
+    --statusAgreedBg: #F9EC00;
+    --statusAgreedText: #101010;
+    --statusWaitingBg: #D7D7D7;
+    --statusWaitingText: #101010;
     --btnBg: #fff;
     --btnBgSVG: #101010;
     --btnBgActive: #101010;
     --btnBgActiveSVG: #fff;
     --btnBgActiveSVGrow: #101010;
     --btnBorder: unset;
-
 }
 body.color_yd .outgoing-requests {
     --normalTextColor: #ffffff;
     --subTextColor: #acacac;
-    --reversTextColor: #101010;
     --switchBtn: #292929;
     --switchBtnActive: #f9ec00;
     --switchBtnActiveColor: #101010;
@@ -38,16 +35,16 @@ body.color_yd .outgoing-requests {
     --switchBtnSpanColor: #f9ec00;
     --switchBtnActiveSpan: #101010;
     --switchBtnActiveSpanColor: #101010;
+    --switcherBorder: unset;
     --viewBg: #292929;
     --viewCircle: #f9ec00;
     --viewColor: #aaaaaa;
     --viewColorActive: #101010;
-    --ItemBg: #101010;
-    --itemColor: #fff;
-    --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #f9ec00;
-    --notifColor: #101010;
-    --notifCancel: #bb2323;
+    --itemTitle: #ffffff;
+    --statusAgreedBg: #F9EC00;
+    --statusAgreedText: #101010;
+    --statusWaitingBg: #D7D7D7;
+    --statusWaitingText: #101010;
     --btnBg: #fff;
     --btnBgSVG: #101010;
     --btnBgActive: #101010;
@@ -58,7 +55,6 @@ body.color_yd .outgoing-requests {
 body.color_pl .outgoing-requests {
     --normalTextColor: #101010;
     --subTextColor: #acacac;
-    --reversTextColor: #fff;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #d01181;
     --switchBtnActiveColor: #fff;
@@ -66,17 +62,16 @@ body.color_pl .outgoing-requests {
     --switchBtnSpanColor: #fff;
     --switchBtnActiveSpan: #101010;
     --switchBtnActiveSpanColor: #fff;
+    --switcherBorder: unset;
     --viewBg: #a1acb9;
-    --ItemBgColor: #101010;
     --viewCircle: #f1f4f6;
     --viewColor: #6c747e;
     --viewColorActive: #101010;
-    --ItemBg: #d5dce1;
-    --itemColor: #101010;
-    --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #d01181;
-    --notifColor: #fff;
-    --notifCancel: #bb2323;
+    --statusAgreedBg: #D01181;
+    --statusAgreedText: #FFFFFF;
+    --statusWaitingBg: #A1ACB9;
+    --statusWaitingText: #FFFFFF;
+    --itemTitle: #101010;
     --btnBg: #fff;
     --btnBgSVG: #101010;
     --btnBgActive: #101010;
@@ -87,31 +82,29 @@ body.color_pl .outgoing-requests {
 body.color_pd .outgoing-requests {
     --normalTextColor: #ffffff;
     --subTextColor: #acacac;
-    --reversTextColor: #101010;
-    --switchBtn: #292929;
+    --switchBtn: #101010;
     --switchBtnActive: #d01181;
     --switchBtnActiveColor: #fff;
     --switchBtnSpan: #d01181;
     --switchBtnSpanColor: #fff;
     --switchBtnActiveSpan: #fff;
     --switchBtnActiveSpanColor: #d01181;
+    --switcherBorder: 0.1rem solid rgba(255, 255, 255, 0.20);
     --viewBg: #a1acb9;
-    --ItemBgColor: #101010;
     --viewCircle: #f1f4f6;
     --viewColor: #6c747e;
     --viewColorActive: #101010;
-    --ItemBg: #f1f4f6;
-    --itemColor: #101010;
-    --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #d01181;
-    --notifColor: #fff;
-    --notifCancel: #bb2323;
+    --itemTitle: #101010;
+    --statusAgreedBg: #D01181;
+    --statusAgreedText: #FFFFFF;
+    --statusWaitingBg: #A1ACB9;
+    --statusWaitingText: #FFFFFF;
     --btnBg: #fff;
     --btnBgSVG: #101010;
     --btnBgActive: #101010;
     --btnBgActiveSVG: #d01181;
     --btnBgActiveSVGrow: #fff;
-    --btnBorder: 0.1rem solid var(--black, #101010);
+    --btnBorder: 0.1rem solid #101010;
 }
 
 .outgoing-requests {
@@ -154,6 +147,7 @@ body.color_pd .outgoing-requests {
         border-radius: 2rem;
         color: var(--normalTextColor);
         background: var(--switchBtn);
+        border: var(--switcherBorder);
         cursor: pointer;
         gap: 1rem;
 
@@ -177,6 +171,7 @@ body.color_pd .outgoing-requests {
         &.active {
             background: var(--switchBtnActive);
             color: var(--switchBtnActiveColor);
+            border: none;
             font-weight: 500;
 
             span {
@@ -275,7 +270,7 @@ body.color_pd .outgoing-requests {
 
                 &__details {
                     order: 3;
-                    color: var(--normalTextColor);
+                    color: var(--itemTitle);
                     .request-id {
                         display: none;
                     }
@@ -293,13 +288,17 @@ body.color_pd .outgoing-requests {
                     display: none;
                     &--row {
                         display: block;
-                        max-width: 50rem;
+                        width: 60rem;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                        color: var(--normalTextColor);
+                        color: var(--itemTitle);
                         font-weight: 400;
-                        margin-right: 18.6rem;
+                        margin-right: 15.7rem;
+
+                        .bold{
+                            font-weight: 500;
+                        }
                     }
                 }
 
@@ -347,7 +346,7 @@ body.color_pd .outgoing-requests {
         &__title {
             font-size: 1.8rem;
             line-height: 120%;
-            color: var(--itemColor);
+            color: var(--itemTitle);
 
             &--row {
                 display: none;
@@ -365,20 +364,23 @@ body.color_pd .outgoing-requests {
 
             .request-status {
                 border-radius: 1.6rem;
-                color: var(--notifColor);
-                background-color: var(--notif);
                 padding: 0.4rem 1.2rem;
                 letter-spacing: 0.014rem;
                 font-size: 1.4rem;
 
-                &.cancel {
+                &.agreed{
+                    background-color: var(--statusAgreedBg);
+                    color: var(--statusAgreedText);
+                }
+
+                &.rejected {
                     color: #fff;
-                    background: var(--notifCancel);
+                    background: #BB2323;
                 }
 
                 &.waiting {
-                    background-color: #d7d7d7;
-                    color: #101010;
+                    background-color: var(--statusWaitingBg);
+                    color: var(--statusWaitingText);
                 }
             }
         }
@@ -388,7 +390,7 @@ body.color_pd .outgoing-requests {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: var(--btnBg);
+            background-color: #fff;
             padding: 0.65rem 0.7rem 0.65rem 1.6rem;
             border-radius: 3.2rem;
             border: var(--btnBorder);

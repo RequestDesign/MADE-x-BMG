@@ -57,12 +57,12 @@ $(function () {
 
     //textarea length
     $(function () {
-        let textarea = $('form__item--textarea textarea');
+        let textarea = $('.form__item--textarea textarea');
         textarea.on('input', function () {
             let currentLength = textarea.val().length;
             $('.max-length span').text(currentLength);
         });
-    });
+    }); 
 
     //make btn active
     $(".executor-list__option input[type='radio']").on("change", function () {
@@ -126,6 +126,11 @@ $("#thirdStepBtn").on("click", function (e) {
     $("#datepicker").datepicker({
         nextText: "",
         prevText: "",
+        onSelect: function (date) {
+            $("#inputDate").val(date);
+            checkRequiredFields('#formDate');
+            $(".form__dropdown_bottom").slideUp();
+        },
     });
 });
 
@@ -136,7 +141,3 @@ $("#toSecStep").on("click", function () {
     $("[data-step='step2']").addClass("making-request__step--active");
     checkRequiredFields('#formPrice');
 });
-
-// $("#makeRequestBtn").on("click", function () {
-//     $('.making-request__step-content input').val() == "";
-// });

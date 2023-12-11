@@ -1,34 +1,29 @@
 body .requests__residents {
     --btnBg: #f4f4f4;
     --textColor: #101010;
-    --Bg: #fff;
     --cardBg: #f4f4f4;
     --cardTextColor: #101010;
 }
 body.color_yd .requests__residents {
     --btnBg: #f4f4f4;
     --textColor: #fff;
-    --Bg: #1d1d1d;
     --cardBg: #101010;
     --cardTextColor: #ffffff;
 }
 body.color_pl .requests__residents {
     --btnBg: #f1f4f6;
     --textColor: #101010;
-    --Bg: #fff;
     --cardBg: #f1f4f6;
     --cardTextColor: #101010;
 }
 body.color_pd .requests__residents {
     --btnBg: #f1f4f6;
     --textColor: #fff;
-    --Bg: #101010;
     --cardBg: #ffffff;
     --cardTextColor: #101010;
 }
 
 .requests__residents {
-    background-color: var(--Bg);
 
     &__top {
         display: flex;

@@ -1,3 +1,36 @@
+body .modal__reject-request {
+    --textareaTitle: #101010;
+    --textareaBg: #F4F4F4;
+    --textareaBorder: unset;
+    --textareaColor: #101010;
+    --btnCancelBg: #D7D7D7;
+    --btnCancelColor: #101010;
+}
+body.color_yd .modal__reject-request {
+    --textareaTitle: #ACACAC;
+    --textareaBg: #292929;
+    --textareaBorder: unset;
+    --textareaColor: #ffffff;
+    --btnCancelBg: #292929;
+    --btnCancelColor: #FFFFFF;
+}
+body.color_pl .modal__reject-request{
+    --textareaTitle: #101010;
+    --textareaBg: #f1f4f6;
+    --textareaBorder: unset;
+    --textareaColor: #101010;
+    --btnCancelBg: #A1ACB9;
+    --btnCancelColor: #FFFFFF;
+}
+body.color_pd .modal__reject-request{
+    --textareaTitle: #ACACAC;
+    --textareaBg: #101010;
+    --textareaBorder: 0.1rem solid rgba(255, 255, 255, 0.20);
+    --textareaColor: #ffffff;
+    --btnCancelBg: #292929;
+    --btnCancelColor: #FFFFFF;
+}
+
 .modal__reject-request {
     .modal-wrapper{
         padding: 4rem 3.4rem 4rem 4rem;
@@ -23,12 +56,14 @@
             font-size: 1.6rem;
             font-weight: 500;
             line-height: 93.75%;
+            color: var(--textareaTitle);
         }
 
         .textarea-wrapper{
             padding: 1.8rem 1.6rem;
             border-radius: 1.6rem;
-            background-color: #F4F4F4;
+            background-color: var(--textareaBg);
+            border: var(--textareaBorder);
             height: 14rem;
             display: flex;
             flex-direction: column;
@@ -38,8 +73,12 @@
                 width: 100%;
                 resize: none;
                 font-weight: 500;
-                color:#ACACAC;
+                color: var(--textareaColor);
                 flex: 1;
+
+                &::placeholder{
+                    color:#ACACAC;
+                }
             }
 
             .max-length, .max-length span{
@@ -61,6 +100,11 @@
         .btn{
             width: 50%;
             padding: 1.6rem 7.25rem;
+        }
+
+        .btn__cancel{
+            background-color: var(--btnCancelBg);
+            color: var(--btnCancelColor);
         }
     }
 }
