@@ -384,13 +384,18 @@
                             <!-- step 3 -->
                             <div class="making-request__step-content" data-content="step3">
                                 <form class="form making-request__form" id="formDate">
-                                    <div class="form__title">Укажите цену</div>
+                                    <div class="form__title">Укажите дату и время доставки</div>
 
                                     <div class="form__items">
                                         <div class="form__item">
                                             <div class="form__name">Дата</div>
-                                            <div class="form__input form__input--date">
-                                                <input class="input" id="datepicker" required type="text" placeholder="Выберите дату" />
+                                            <div class="form__dropdown">
+                                                <div class="form__dropdown_top">
+                                                    <input id="inputDate" required readonly type="text" placeholder="Выберите дату" />
+                                                </div>
+                                                <div class="form__dropdown_bottom">
+                                                    <div id="datepicker"></div>
+                                                </div>
                                             </div>
                                         </div>
 

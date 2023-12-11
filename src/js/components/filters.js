@@ -52,7 +52,7 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
                 .map(
                     (option, index) => {
                         const title = option.title;
-                        const highlightedTitle = highlightMatches(title, searchInput.val().trim());
+                        const highlightedTitle = highlightMatches(title, (searchInput.val() || '').trim());
                         return `
                             <li class="request-filter-list__option ${option.checked ? 'checked' : ''}">
                                 <span class="request-filter-list__title">${highlightedTitle}</span>
@@ -73,7 +73,6 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
         if (!query) {
             return text;
         }
-
         const regex = new RegExp(`(${query})`, 'gi');
         return text.replace(regex, '<mark>$1</mark>');
     }
@@ -102,7 +101,6 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
                 }
             }
         }
-
         const searchQuery = searchInput.val().trim().toLowerCase();
         const filteredOptions = data.filter(option => option.title.toLowerCase().includes(searchQuery));
         renderFilterList(filteredOptions);
@@ -118,8 +116,8 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
         const selectedOptions = data.filter(option => option.checked).map(option => option.title);
         inputValue.val(selectedOptions.includes('Все') ? 'Все' : selectedOptions.join(', '));
     }
-
     renderFilterList(data);
+    updateInputValue();
 }
 
 initializeFilterList("requestTypeList", "searchTypeInput", "requestTypeInput", requestType);
@@ -165,4 +163,4 @@ $("#filterDatepicker").datepicker({
     },
     nextText: "",
     prevText: ""
-});
+}); 

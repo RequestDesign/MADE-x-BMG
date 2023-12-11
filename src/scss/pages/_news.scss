@@ -1,12 +1,50 @@
 body .news {
+    --textColor: #101010;
     --addNewsBg: #f4f4f4;
     --addNewsText: #101010;
+    --addNewsIconStroke: #ffffff;
     --cardBg: #f4f4f4;
     --cardText: #101010;
     --textMuted: #acacac;
+    --addNewsBtnBg: #101010;
+}
+
+body.color_yd .news {
+    --textColor: #ffffff;
+    --addNewsBg: #F9EC00;
+    --addNewsText: #101010;
+    --addNewsIconStroke: #F9EC00;
+    --cardBg: #101010;
+    --cardText: #ffffff;
+    --textMuted: #acacac;
+    --addNewsBtnBg: #101010;
+}
+
+body.color_pl .news {
+    --textColor: #101010;
+    --addNewsBg: #f4f4f4;
+    --addNewsText: #101010;
+    --addNewsIconStroke: #ffffff;
+    --cardBg: #f1f4f6;
+    --cardText: #101010;
+    --textMuted: #A1ACB9;
+    --addNewsBtnBg: #D01181;
+}
+
+body.color_pd .news {
+    --textColor: #FFFFFF;
+    --addNewsBg: #f4f4f4;
+    --addNewsText: #101010;
+    --addNewsIconStroke: #ffffff;
+    --cardBg: #f1f4f6;
+    --cardText: #101010;
+    --textMuted: #A1ACB9;
+    --addNewsBtnBg: #D01181;
 }
 
 .news {
+    color: var(--textColor);
+
     &__content {
         width: 122rem;
         display: flex;
@@ -33,6 +71,14 @@ body .news {
         svg {
             width: 4rem;
             height: 4rem;
+
+            path{
+                stroke: var(--addNewsIconStroke);
+            }
+
+            circle{
+                fill: var(--addNewsBtnBg)
+            }
         }
     }
 
@@ -42,15 +88,38 @@ body .news {
         border-radius: 3.2rem;
         overflow: hidden;
         letter-spacing: 0.016rem;
-
         display: flex;
 
-        &__img {
+        &__swiper {
             width: 60.2rem;
+            position: relative;
 
             img {
                 width: 100%;
                 height: 100%;
+            }
+
+            .swiper-pagination{
+                z-index: 100;
+                position: absolute;
+                bottom: 2rem;
+                left: 50%;
+                transform: translate(-50%);
+                width: 4rem;
+                height: 0.8rem;
+                display: flex;
+                gap: 0.8rem;
+
+                .swiper-pagination-bullet{
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    border-radius: 100%;
+                    background-color: #D7D7D7;
+
+                    &-active{
+                        background-color: #101010;
+                    }
+                }
             }
         }
 

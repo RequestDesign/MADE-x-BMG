@@ -1,5 +1,4 @@
 body .home {
-    --containerBg: #fff;
     --textColor: #101010;
     --iconBg: #fff;
     --cardPassBg: #d7d7d7;
@@ -17,7 +16,6 @@ body .home {
     --cardNewsSecColor: #101010;
 }
 body.color_yd .home {
-    --containerBg: #1d1d1d;
     --textColor: #fff;
     --iconBg: #f9ec00;
     --cardPassBg: #292929;
@@ -28,14 +26,13 @@ body.color_yd .home {
     --cardNewsSec: #292929;
     --dateColor: rgba(255, 255, 255, 0.2);
     --cardIncNew: #292929;
-    --cardIncActive: #292929;
+    --cardIncActive: #1D1D1D;
     --cardsSmColor: #fff;
     --iconColor: #101010;
     --cardReqSecColor: #FFFFFF;
     --cardNewsSecColor: #FFFFFF;
 }
 body.color_pl .home{
-    --containerBg: #fff;
     --textColor: #101010;
     --iconBg: #fff;
     --cardPassBg: #A1ACB9;
@@ -54,7 +51,6 @@ body.color_pl .home{
 }
 
 body.color_pd .home{
-    --containerBg: #101010;
     --textColor: #FFFFFF;
     --iconBg: #fff;
     --cardPassBg: #A1ACB9;
@@ -78,7 +74,6 @@ body.color_pd .home{
     .container {
         display: flex;
         gap: 2rem;
-        background-color: var(--containerBg);
         height: 100%;
     }
 
