@@ -394,6 +394,11 @@ body.color_pd .outgoing-requests {
             padding: 0.65rem 0.7rem 0.65rem 1.6rem;
             border-radius: 3.2rem;
             border: var(--btnBorder);
+
+            svg{
+                width: 3.6rem;
+                height: 3.6rem;
+            }
         }
     }
 }

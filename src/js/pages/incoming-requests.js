@@ -31,9 +31,9 @@ $("#startDate, #endDate").on('input', function() {
 });
 
 $(".btn__apply").on('click', function(){
-    $('.incoming-requests__filter__dropdown--date').closest($('.incoming-requests__filter__input-wrapper')).removeClass("open");
+    $('.incoming-requests__filter__dropdown--date').siblings('.incoming-requests__filter__input-wrapper').removeClass("open");
     $('.incoming-requests__filter__dropdown--date').slideUp();
-})
+});
 
 //star
 $('.star-ico').on('click', function(){
@@ -42,7 +42,7 @@ $('.star-ico').on('click', function(){
 
 //clear filters
 $('.incoming-requests__filter--reset').on('click', function () {
-    $('#requestTypeInput, #requestTenantInput, #requestDateInput, #startDate, #endDate').val("");
+    $('#requestTypeInput, #requestTenantInput, #requestDateInput, #startDate, #endDate').val("Не выбрано");
     $('td').removeClass('dp-highlight')
     $('#requestTenantList input, #requestTypeList input').removeAttr('checked');
 });
