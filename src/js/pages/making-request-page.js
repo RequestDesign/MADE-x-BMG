@@ -7,19 +7,27 @@ function checkRequiredFields(form) {
     $(".form__btn").prop("disabled", !allFieldsFilled);
 }
 
-// Input masks
 $("#price-mask, #price-mask1").on("input", function () {
-    const maskId = $(this).attr("id");
-    if ($(`#${maskId}`).length) {
-        IMask(document.getElementById(maskId), {
-            lazy: false,
-            mask: "num ₽",
-            blocks: {
-                num: {
-                    mask: Number,
-                },
-            },
-        });
+    const inputValue = $(this).val();
+    const unformattedValue = inputValue.replace(/[^\d]/g, '');
+
+    if (unformattedValue.length > 0) {
+        const formattedValue = parseInt(unformattedValue).toLocaleString('ru-RU') + ' ₽';
+        $(this).val(formattedValue);
+        this.setSelectionRange(this.value.length - 2, this.value.length - 2);
+    } else {
+        $(this).val('');
+    }
+});
+
+$("#price-mask, #price-mask1").on("blur", function () {
+    const inputValue = $(this).val();
+    const unformattedValue = inputValue.replace(/[^\d]/g, '');
+
+    if (unformattedValue.length > 0) {
+        $(this).val(unformattedValue + ' ₽');
+    } else {
+        $(this).val('');
     }
 });
 
