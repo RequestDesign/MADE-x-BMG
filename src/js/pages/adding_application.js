@@ -4,6 +4,7 @@ import "../utils/jquery-ui.min";
 $( function() {
     $( ".adding_application__list" ).sortable({
         handle: ".adding_application__item_position",
+        cursor: "grabbing"
     });
 });
 function placeCaretAtEnd(el) {
