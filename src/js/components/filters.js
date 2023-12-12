@@ -2,38 +2,38 @@ import $ from "jquery";
 
 const requestType = [
     {
-        title: 'Все',
+        title: "Все",
         checked: false,
     },
     {
-        title: 'option 1',
+        title: "option 1",
         checked: false,
     },
     {
-        title: 'option 2',
+        title: "option 2",
         checked: false,
     },
     {
-        title: 'option 3',
+        title: "option 3",
         checked: false,
     },
 ];
 
 const requestTenant = [
     {
-        title: 'Все',
+        title: "Все",
         checked: false,
     },
     {
-        title: 'Calzedonia',
+        title: "Calzedonia",
         checked: false,
     },
     {
-        title: 'Аskona',
+        title: "Аskona",
         checked: false,
     },
     {
-        title: 'Афродита',
+        title: "Афродита",
         checked: false,
     },
 ];
@@ -49,20 +49,18 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
 
         container.html(
             filteredOptions
-                .map(
-                    (option, index) => {
-                        const title = option.title;
-                        const highlightedTitle = highlightMatches(title, (searchInput.val() || '').trim());
-                        return `
-                            <li class="request-filter-list__option ${option.checked ? 'checked' : ''}">
+                .map((option, index) => {
+                    const title = option.title;
+                    const highlightedTitle = highlightMatches(title, (searchInput.val() || "").trim());
+                    return `
+                            <li class="request-filter-list__option ${option.checked ? "checked" : ""}">
                                 <span class="request-filter-list__title">${highlightedTitle}</span>
                                 <div class="request-filter-list__checkbox checkbox-wrapper">
                                     <input type="checkbox" id="${containerId}Option${index}" ${option.checked ? "checked" : ""} data-index="${index}" />
                                     <label for="${containerId}Option${index}" class="checkbox-icon"></label>
                                 </div>
                             </li>`;
-                    }
-                )
+                })
                 .join("")
         );
 
@@ -73,26 +71,26 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
         if (!query) {
             return text;
         }
-        const regex = new RegExp(`(${query})`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
+        const regex = new RegExp(`(${query})`, "gi");
+        return text.replace(regex, "<mark>$1</mark>");
     }
 
     $(document).on("change", `#${containerId} .request-filter-list__checkbox input`, function () {
         const title = $(this).closest("li").find(".request-filter-list__title").text();
 
-        if (title === 'Все') {
+        if (title === "Все") {
             const allChecked = $(this).prop("checked");
-            data.forEach(option => {
+            data.forEach((option) => {
                 option.checked = allChecked;
             });
 
             if (!allChecked) {
-                data.slice(1).forEach(option => {
+                data.slice(1).forEach((option) => {
                     option.checked = false;
                 });
             }
         } else {
-            const index = data.findIndex(option => option.title === title);
+            const index = data.findIndex((option) => option.title === title);
             if (index !== -1) {
                 data[index].checked = $(this).prop("checked");
 
@@ -102,19 +100,35 @@ function initializeFilterList(containerId, searchInputId, inputValueId, data) {
             }
         }
         const searchQuery = searchInput.val().trim().toLowerCase();
-        const filteredOptions = data.filter(option => option.title.toLowerCase().includes(searchQuery));
+        const filteredOptions = data.filter((option) => option.title.toLowerCase().includes(searchQuery));
         renderFilterList(filteredOptions);
     });
 
     searchInput.on("input", function () {
         const searchQuery = $(this).val().trim().toLowerCase();
-        const filteredOptions = data.filter(option => option.title.toLowerCase().includes(searchQuery));
+        const filteredOptions = data.filter((option) => option.title.toLowerCase().includes(searchQuery));
         renderFilterList(filteredOptions);
     });
 
     function updateInputValue() {
-        const selectedOptions = data.filter(option => option.checked).map(option => option.title);
-        inputValue.val(selectedOptions.includes('Все') ? 'Все' : selectedOptions.join(', '));
+        const selectedOptions = data.filter((option) => option.checked).map((option) => option.title);
+        if (selectedOptions.length === 0) {
+            inputValue.val("Не выбрано");
+        } else {
+            inputValue.val(selectedOptions.includes("Все") ? "Все" : selectedOptions.join(", "));
+        }
+        const startDateValue = $("#startDate").val();
+        const endDateValue = $("#endDate").val();
+
+        if (startDateValue && endDateValue) {
+            $("#requestDateInput").val(`с ${startDateValue} по ${endDateValue}`);
+        } else if (startDateValue) {
+            $("#requestDateInput").val(`с ${startDateValue}`);
+        } else if (endDateValue) {
+            $("#requestDateInput").val(`по ${endDateValue}`);
+        } else {
+            $("#requestDateInput").val("Не выбрано");
+        }
     }
     renderFilterList(data);
     updateInputValue();
@@ -124,16 +138,16 @@ initializeFilterList("requestTypeList", "searchTypeInput", "requestTypeInput", r
 initializeFilterList("requestTenantList", "searchTenantInput", "requestTenantInput", requestTenant);
 
 //request date filter
-$.datepicker.regional['ru'] = {
-    monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    dayNames: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-    dayNamesMin: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
-    dateFormat: 'dd.mm.yy',
-    firstDay: 1
+$.datepicker.regional["ru"] = {
+    monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+    monthNamesShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+    dayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+    dayNamesMin: ["вс", "пн", "вт", "ср", "чт", "пт", "сб"],
+    dateFormat: "dd.mm.yy",
+    firstDay: 1,
 };
 
-$.datepicker.setDefaults($.datepicker.regional['ru']);
+$.datepicker.setDefaults($.datepicker.regional["ru"]);
 
 $("#filterDatepicker").datepicker({
     minDate: 0,
@@ -145,7 +159,7 @@ $("#filterDatepicker").datepicker({
         if (isFirstDay && isLastDay) {
             return [true, "dp-highlight dp-special"];
         }
-        let isHighlight = date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2));
+        let isHighlight = date1 && (date.getTime() == date1.getTime() || (date2 && date >= date1 && date <= date2));
         let classes = isHighlight ? "dp-highlight" : "";
         if (isFirstDay) {
             classes += " dp-first-special";
@@ -159,7 +173,7 @@ $("#filterDatepicker").datepicker({
         let date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#startDate").val());
         let date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#endDate").val());
         let selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
-        
+
         if (!date1 || date2) {
             $("#requestDateInput").val(dateText);
             $("#startDate").val(dateText);
@@ -172,8 +186,8 @@ $("#filterDatepicker").datepicker({
             $("#requestDateInput").val(`с ${$("#startDate").val()} по ${dateText}`);
             $("#endDate").val(dateText);
         }
-        $("#startDate, #endDate").trigger('input');
+        $("#startDate, #endDate").trigger("input");
     },
     nextText: "",
-    prevText: ""
+    prevText: "",
 });

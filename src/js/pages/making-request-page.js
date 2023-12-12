@@ -137,7 +137,6 @@ $("#thirdStepBtn").on("click", function (e) {
         onSelect: function (date) {
             $("#inputDate").val(date);
             checkRequiredFields('#formDate');
-            $(".form__dropdown_bottom").slideUp();
         },
     });
 });
