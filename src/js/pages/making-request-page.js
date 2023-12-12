@@ -59,29 +59,31 @@ $("#time-mask").on("input", function () {
 
 // Step 1
 $(function () {
-    $(".making-request__step-content").hide();
-    $('[data-content="step1"]').show();
-    checkRequiredFields('#formContact');
-
-    //textarea length
-    $(function () {
-        let textarea = $('.form__item--textarea textarea');
-        textarea.on('input', function () {
-            let currentLength = textarea.val().length;
-            $('.max-length span').text(currentLength);
+    if($('.making-request').length) {
+        $(".making-request__step-content").hide();
+        $('[data-content="step1"]').show();
+        checkRequiredFields('#formContact');
+    
+        //textarea length
+        $(function () {
+            let textarea = $('.form__item--textarea textarea');
+            textarea.on('input', function () {
+                let currentLength = textarea.val().length;
+                $('.max-length span').text(currentLength);
+            });
+        }); 
+    
+        //make btn active
+        $(".executor-list__option input[type='radio']").on("change", function () {
+            let selectedText = $(this).closest(".executor-list__option").find(".executor-list__title").text();
+            $("#inputExecutor").val(selectedText);
+            checkRequiredFields('#formContact');
         });
-    }); 
-
-    //make btn active
-    $(".executor-list__option input[type='radio']").on("change", function () {
-        let selectedText = $(this).closest(".executor-list__option").find(".executor-list__title").text();
-        $("#inputExecutor").val(selectedText);
-        checkRequiredFields('#formContact');
-    });
-
-    $("#formContact .form__input input").on("input", function () {
-        checkRequiredFields('#formContact');
-    });
+    
+        $("#formContact .form__input input").on("input", function () {
+            checkRequiredFields('#formContact');
+        });
+    }
 });
 
 // Step 2

@@ -3,6 +3,12 @@ import $ from "jquery";
 if ($('.modal__sms__boxs').length) {
     const fieldset = document.querySelector(".modal__sms__boxs");
     const fields = fieldset.querySelectorAll("input");
+    var timerInterval
+    $('.modal-back').on('click', function() {
+        if($(this).closest('.modal__sms').length) {
+            clearInterval(timerInterval)
+        }
+    })
 
     function timerText(timer, display, min, sec) {
         min = parseInt(timer / 60, 10)
@@ -18,7 +24,7 @@ if ($('.modal__sms__boxs').length) {
         var timer = duration, minutes, seconds;
         timerText(timer, display, minutes, seconds)
 
-        var timerInterval = setInterval(function () {
+        timerInterval = setInterval(function () {
             timerText(timer, display, minutes, seconds)
     
             if (--timer < 0) {
