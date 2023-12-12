@@ -1,3 +1,104 @@
+body .adding_application_template, body .adding_application {
+    --mainTheme:#F9EC00;
+    --mainThemeColor:#000;
+    --borderAdd: none;
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --switchBtn: #f4f4f4;
+    --switchBtnActive: #101010;
+    --switchBtnActiveColor: #FFF;
+    --backgroundCard: #F4F4F4;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#FFF;
+    --tabs: #ACACAC;
+    --tabsActive: #292929;
+    --footerBorder: #D7D7D7;
+    --cross: #101010;
+    --crossIneer: #FFF;
+    --appBG: #FFF;
+    --appBGColor: #101010;
+    --bodyBg: #FFF;
+    --appBtnBG: #D7D7D7;
+    --appBtnBGColor: #101010;
+}
+body.color_yd .adding_application_template, body.color_yd .adding_application{
+    --mainTheme:#F9EC00;
+    --mainThemeColor:#101010;
+    --borderAdd: none;
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --switchBtn: #292929;
+    --switchBtnActive: #F9EC00;
+    --switchBtnActiveColor: #101010;
+    --backgroundCard: #101010;
+    --settingsSwitchActive: #F9EC00;
+    --settingsSwitchActiveColor: #101010;
+    --inputBg:#292929;
+    --tabs: rgba(255, 255, 255, 0.30);
+    --tabsActive: #FFF;
+    --footerBorder: #292929;
+    --cross: #292929;
+    --crossIneer: #FFF;
+    --appBG: #292929;
+    --appBGColor: #FFF;
+    --bodyBg: #1D1D1D;
+    --appBtnBG: #FFF;
+    --appBtnBGColor: #101010;
+}
+body.color_pl .adding_application_template, body.color_pl .adding_application {
+    --mainTheme:#D01181;
+    --mainThemeColor:#FFFFFF;
+    --borderAdd: none;
+    --normalTextColor: #101010;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #FFF;
+    --switchBtn: #f4f4f4;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --backgroundCard: #F1F4F6;
+    --settingsSwitchActive: #101010;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#FFF;
+    --tabs: #ACACAC;
+    --tabsActive: #292929;
+    --footerBorder: #D7D7D7;
+    --cross: #101010;
+    --crossIneer: #FFF;
+    --appBG: #FFF;
+    --appBGColor: #101010;
+    --bodyBg: #FFF;
+    --appBtnBG: #A1ACB9;
+    --appBtnBGColor: #FFF;
+}
+body.color_pd .adding_application_template, body.color_pd .adding_application {
+    --mainTheme:#D01181;
+    --mainThemeColor:#FFFFFF;
+    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.20);
+    --normalTextColor: #FFFFFF;
+    --subTextColor: #ACACAC;
+    --reversTextColor: #101010;
+    --switchBtn: #101010;
+    --switchBtnActive: #D01181;
+    --switchBtnActiveColor: #FFF;
+    --backgroundCard: #101010;
+    --settingsSwitchActive: #D01181;
+    --settingsSwitchActiveColor: #FFF;
+    --inputBg:#101010;
+    --tabs: rgba(255, 255, 255, 0.30);
+    --tabsActive: #FFF;
+    --footerBorder: #292929;
+    --cross: #292929;
+    --crossIneer: #FFF;
+    --appBG: #FFF;
+    --appBGColor: #101010;
+    --bodyBg: #101010;
+    --appBtnBG: #FFF;
+    --appBtnBGColor: #101010;
+}
+
 .adding_application {
     &_template__title {
         font-size: 2.4rem;
@@ -5,6 +106,7 @@
         font-weight: 500;
         line-height: 100%;
         letter-spacing: 0.024rem;
+        color: var(--normalTextColor);
     }
 
     &__container {
@@ -14,24 +116,30 @@
     &__main {
         flex: 1;
         border-radius: 1.6rem;
-        background: #F4F4F4;
+        background: var(--backgroundCard);
         padding: 3.2rem 2.4rem;
         position: relative;
         z-index: 1;
+        border: var(--borderAdd);
     }
     &__photo {
         width: 29rem;
         height: 84.4rem;
         border-radius: 1.6rem;
-        background: #F4F4F4;
+        background: var(--backgroundCard);
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        border: var(--borderAdd);
 
-        svg {
+        &_empty {
             width: 8rem;
             height: 8rem;
+
+            path {
+                stroke: var(--footerBorder);
+            }
         }
         img {
             width: 100%;
@@ -48,7 +156,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #FFF;
+            background: var(--bodyBg);
             cursor: pointer;
             top: -0.4rem;
             right: -0.4rem;
@@ -60,7 +168,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
-                background: #101010;
+                background: var(--settingsSwitchActive);
                 width: 3.2rem;
                 height: 3.2rem;
                 border-radius: 50%;
@@ -70,6 +178,10 @@
                 width: 2.4rem;
                 height: 2.4rem;
                 z-index: 1;
+                
+                path {
+                    stroke: var(--switchBtnActiveColor);
+                }
             }
             input {
                 display: none;
@@ -84,12 +196,14 @@
         line-height: 100%;
         letter-spacing: 0.024rem;
         margin-bottom: 3.2rem;
+        color: var(--normalTextColor);
     }
     &__title {
         margin-bottom: 2rem;
         display: flex;
         gap: 1rem;
         align-items: center;
+        color: var(--normalTextColor);
         &:hover {
             svg {
                 display: block;
@@ -107,6 +221,11 @@
             cursor: pointer;
             width: 2.4rem;
             height: 2.4rem;
+
+            path {
+                fill: var(--settingsSwitchActive);
+                stroke: var(--settingsSwitchActive);
+            }
         }
     }
     &__list {
@@ -169,18 +288,24 @@
                 height: 2.4rem;
                 margin-left: auto;
                 flex: none;
+
+                path {
+                    fill: var(--settingsSwitchActive);
+                    stroke: var(--settingsSwitchActive);
+                }
             }
         }
         &_input {
             flex: 1;
             height: 6rem;
             border-radius: 1.6rem;
-            background: #FFF;
+            background: var(--inputBg);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 1.6rem;
             position: relative;
+            border: var(--borderAdd);
 
             &_text {
                 color: #ACACAC;
@@ -208,18 +333,25 @@
             svg {
                 width: 2.4rem;
                 height: 2.4rem;
+
+                circle {
+                    fill: var(--settingsSwitchActive);
+                    stroke: var(--settingsSwitchActive);
+                }
             }
         }
         &_box {
             display: none;
             position: absolute;
             border-radius: 1.6rem;
-            background: #FFF;
+            background: var(--inputBg);
             box-shadow: 0 0.3rem 1.4rem 0 rgba(0, 0, 0, 0.08);
             padding: 1.6rem;
             width: 28.9rem;
             right: -24rem;
             top: -3rem;
+            color: var(--normalTextColor);
+            border: var(--borderAdd);
         }
         &_choices {
             display: flex;
@@ -250,6 +382,13 @@
             svg {
                 width: 5.1rem;
                 height: 5.1rem;
+
+                circle {
+                    fill: var(--mainTheme);
+                }
+                path {
+                    stroke: var(--mainThemeColor);
+                }
             }
         }
         &_btn {
@@ -257,7 +396,8 @@
             height: 5.1rem;
             padding: 0;
             width: 41.7rem;
-            background: #D7D7D7;
+            background: var(--appBtnBG);
+            color: var(--appBtnBGColor);
         }
     }
 }

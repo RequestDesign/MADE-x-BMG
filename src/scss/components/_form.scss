@@ -267,14 +267,16 @@ body.color_pd .form {
             justify-content: space-between;
             cursor: pointer;
             border-radius: 1.6rem;
-            background: #FFF;
+            background: var(--inputBg);
             padding: 0 1.6rem;
+            border: var(--inputBorder);
 
             span {
                 font-size: 1.6rem;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 120%;
+                color: var(--textColor);
             }
 
             .radio-icon {

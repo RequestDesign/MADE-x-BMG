@@ -18,7 +18,9 @@ function renameElement($element,newElement){
 }
 
 $( function() {
-    $( ".applications__item_body" ).sortable();
+    $( ".applications__item_body" ).sortable({
+        cursor: "grabbing"
+    });
 } );
 
 $('body').on('click', '.applications__item_head_settings', function(){
@@ -133,7 +135,9 @@ $('body').on("click",'.applications__add_column', function (e) {
         </div>
     `
     $( function() {
-        $(newColum).find( ".applications__item_body" ).sortable();
+        $(newColum).find( ".applications__item_body" ).sortable({
+            cursor: "grabbing"
+        });
     } );
     document.querySelector('.applications__container').append(newColum)
 });
