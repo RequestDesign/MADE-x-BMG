@@ -294,6 +294,7 @@ body.color_pd .making-request {
 
     .form__dropdown_bottom {
         top: 7rem;
+        z-index: 100;
         background-color: var(--inputBg);
         border: var(--inputBorder);
         color: var(--textColor);
@@ -414,7 +415,7 @@ body.color_pd .making-request {
     }
 }
 
-body.color_yd{
+body.color_yd .making-request{
     .ui-datepicker {
         color: #fff;
         background-color: #292929;
@@ -435,7 +436,7 @@ body.color_yd{
     } 
 }
 
-body.color_pd{
+body.color_pd .making-request{
     .ui-datepicker {
         color: #fff;
         background-color: #101010;

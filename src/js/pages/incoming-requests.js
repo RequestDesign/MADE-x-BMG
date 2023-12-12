@@ -19,6 +19,17 @@ $(".incoming-requests__filter__input-wrapper").on("click", function () {
     $(this).closest(".incoming-requests__filter").find(".incoming-requests__filter__dropdown").slideToggle();
 });
 
+$("#startDate, #endDate").on('input', function() {
+    let startDateValue = $("#startDate").val();
+    let endDateValue = $("#endDate").val();
+
+    if (startDateValue && endDateValue) {
+        $(".btn__apply").prop("disabled", false);
+    } else {
+        $(".btn__apply").prop("disabled", true);
+    }
+});
+
 $(".btn__apply").on('click', function(){
     $('.incoming-requests__filter__dropdown--date').closest($('.incoming-requests__filter__input-wrapper')).removeClass("open");
     $('.incoming-requests__filter__dropdown--date').slideUp();

@@ -1,7 +1,6 @@
 body .incoming-requests {
     --normalTextColor: #101010;
     --subTextColor: #acacac;
-    --reversTextColor: #fff;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #101010;
     --switchBtnActiveColor: #fff;
@@ -16,11 +15,11 @@ body .incoming-requests {
     --ItemBg: #f4f4f4;
     --itemColor: #101010;
     --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #f9ec00;
-    --notifColor: #101010;
-    --notifCancel: #bb2323;
+    --statusAgreedBg: #f9ec00;
+    --statusAgreedText: #101010;
+    --statusWaitingBg: #d7d7d7;
+    --statusWaitingText: #101010;
     --btnBg: #fff;
-    --btnBgSVG: #101010;
     --btnBgActive: #101010;
     --btnBgActiveSVG: #fff;
     --btnBgActiveSVGrow: #101010;
@@ -34,18 +33,20 @@ body .incoming-requests {
     --readBorder: 0.1rem solid #d7d7d7;
     --searchSmBg: #fff;
     --highlightDateColor: #fff;
+    --settingsSwitchActive: #101010;
+    --cardTextColor: #101010;
+    --readTextColor: #101010;
 }
 body.color_yd .incoming-requests {
     --normalTextColor: #ffffff;
     --subTextColor: #acacac;
-    --reversTextColor: #101010;
     --switchBtn: #292929;
     --switchBtnActive: #f9ec00;
     --switchBtnActiveColor: #101010;
     --switchBtnSpan: #f9ec00;
     --switchBtnSpanColor: #f9ec00;
     --switchBtnActiveSpan: #101010;
-    --switchBtnActiveSpanColor: #101010;
+    --switchBtnActiveSpanColor: #f9ec00;
     --viewBg: #292929;
     --viewCircle: #f9ec00;
     --viewColor: #aaaaaa;
@@ -53,11 +54,11 @@ body.color_yd .incoming-requests {
     --ItemBg: #101010;
     --itemColor: #fff;
     --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #f9ec00;
-    --notifColor: #101010;
-    --notifCancel: #bb2323;
+    --statusAgreedBg: #f9ec00;
+    --statusAgreedText: #101010;
+    --statusWaitingBg: #d7d7d7;
+    --statusWaitingText: #101010;
     --btnBg: #fff;
-    --btnBgSVG: #101010;
     --btnBgActive: #101010;
     --btnBgActiveSVG: #f9ec00;
     --btnBgActiveSVGrow: #fff;
@@ -71,11 +72,13 @@ body.color_yd .incoming-requests {
     --readBorder: 0.1rem solid #acacac;
     --searchSmBg: #fff;
     --highlightDateColor: #101010;
+    --settingsSwitchActive: #f9ec00;
+    --cardTextColor: #fff;
+    --readTextColor: #fff;
 }
 body.color_pl .incoming-requests {
     --normalTextColor: #101010;
     --subTextColor: #acacac;
-    --reversTextColor: #fff;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #d01181;
     --switchBtnActiveColor: #fff;
@@ -91,11 +94,11 @@ body.color_pl .incoming-requests {
     --ItemBg: #d5dce1;
     --itemColor: #101010;
     --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #d01181;
-    --notifColor: #fff;
-    --notifCancel: #bb2323;
+    --statusAgreedBg: #d01181;
+    --statusAgreedText: #ffffff;
+    --statusWaitingBg: #a1acb9;
+    --statusWaitingText: #ffffff;
     --btnBg: #fff;
-    --btnBgSVG: #101010;
     --btnBgActive: #101010;
     --btnBgActiveSVG: #fff;
     --btnBgActiveSVGrow: #101010;
@@ -104,16 +107,18 @@ body.color_pl .incoming-requests {
     --filterBg: #f1f4f6;
     --filterBorder: unset;
     --readBg: #ffffff;
-    --unreadBg: #a1acb9;
+    --unreadBg: #d5dce1;
     --readBorder: 0.1rem solid rgba(161, 172, 185, 0.2);
     --unreadBorder: none;
     --searchSmBg: #fff;
     --highlightDateColor: #fff;
+    --settingsSwitchActive: #101010;
+    --cardTextColor: #101010;
+    --readTextColor: #101010;
 }
 body.color_pd .incoming-requests {
     --normalTextColor: #ffffff;
     --subTextColor: #acacac;
-    --reversTextColor: #101010;
     --switchBtn: #292929;
     --switchBtnActive: #d01181;
     --switchBtnActiveColor: #fff;
@@ -129,24 +134,27 @@ body.color_pd .incoming-requests {
     --ItemBg: #f1f4f6;
     --itemColor: #101010;
     --itemBorder: rgba(161, 172, 185, 0.2);
-    --notif: #d01181;
-    --notifColor: #fff;
-    --notifCancel: #bb2323;
+    --statusAgreedBg: #d01181;
+    --statusAgreedText: #ffffff;
+    --statusWaitingBg: #a1acb9;
+    --statusWaitingText: #ffffff;
     --btnBg: #fff;
-    --btnBgSVG: #101010;
     --btnBgActive: #101010;
     --btnBgActiveSVG: #d01181;
     --btnBgActiveSVGrow: #fff;
-    --btnBorder: 0.1rem solid var(--black, #101010);
+    --btnBorder: 0.1rem solid #101010;
     --searchBg: #f1f4f6;
     --filterBg: #101010;
-    --filterBorder: 0.1rem solid var(--black, #101010);
+    --filterBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
     --readBg: #101010;
     --unreadBg: #f1f4f6;
     --readBorder: 0.1rem solid #acacac;
     --unreadBorder: none;
     --searchSmBg: #fff;
     --highlightDateColor: #101010;
+    --settingsSwitchActive: #d01181;
+    --cardTextColor: #101010;
+    --readTextColor: #fff;
 }
 
 .incoming-requests {
@@ -182,8 +190,8 @@ body.color_pd .incoming-requests {
         border-radius: 1.6rem;
         width: 115.2rem;
 
-        .icon{
-            svg{
+        .icon {
+            svg {
                 width: 2.4rem;
                 height: 2.4rem;
             }
@@ -218,15 +226,18 @@ body.color_pd .incoming-requests {
             justify-content: space-between;
             align-items: center;
             padding: 1.1rem 1.6rem;
+            cursor: pointer;
 
-            input{
+            input {
                 width: 100%;
             }
 
             svg {
                 transition: transform 0.2s ease;
+                width: 1.4rem;
+                height: 0.8rem;
                 path {
-                    stroke: var(--normalTextColor);
+                    stroke: var(--settingsSwitchActive);
                 }
             }
 
@@ -321,15 +332,18 @@ body.color_pd .incoming-requests {
                     justify-content: center;
                     gap: 0.4rem;
                     margin-bottom: 1.2rem;
+                    color: var(--normalTextColor);
                 }
 
                 .ui-datepicker-calendar {
                     width: 27.6rem;
                     margin: 0 auto;
+                    color: var(--normalTextColor);
+                    border-collapse: collapse;
 
                     td {
-                        height: 4rem;
-                        width: 4rem;
+                        height: 4.2rem;
+                        width: 4.2rem;
                         text-align: center;
                         font-weight: 500;
                     }
@@ -347,6 +361,7 @@ body.color_pd .incoming-requests {
 
                 .ui-datepicker-title {
                     order: 2;
+                    color: var(--normalTextColor);
 
                     span {
                         font-weight: 500;
@@ -385,18 +400,28 @@ body.color_pd .incoming-requests {
                     color: unset;
                 }
 
-                //styles for date range
                 .dp-highlight {
                     background: var(--normalTextColor);
                     color: var(--highlightDateColor);
 
-                    // &:first-child {
-                    //     border-radius: 100% 0 0 100%;
-                    // }
+                    &:last-child{
+                        border-radius: 0 100% 100% 0;
+                    }
+                    &:first-child{
+                        border-radius: 100% 0 0 100%;
+                    }
+                }
 
-                    // &:last-child {
-                    //     border-radius: 0 100% 100% 0;
-                    // }
+                .dp-first-special {
+                    border-radius: 100% 0 0 100%;
+                }
+                
+                .dp-last-special {
+                    border-radius: 0 100% 100% 0;
+                }
+                
+                .dp-special{
+                    border-radius: 100%;
                 }
             }
 
@@ -407,17 +432,17 @@ body.color_pd .incoming-requests {
                 gap: 1.6rem;
                 font-weight: 500;
 
-                .input-wrapper{
+                .input-wrapper {
                     display: flex;
                     flex-direction: column;
                     gap: 0.8rem;
 
-                    span{
+                    span {
                         color: #acacac;
                         line-height: 93.75%;
                     }
 
-                    input{
+                    input {
                         background-color: var(--btnBg);
                         border-radius: 1.6rem;
                         padding: 1.3rem 1.6rem;
@@ -436,6 +461,7 @@ body.color_pd .incoming-requests {
             position: relative;
             letter-spacing: 0.016rem;
             padding-top: 2rem;
+            color: var(--normalTextColor);
             &::after {
                 content: "";
                 position: absolute;
@@ -479,6 +505,14 @@ body.color_pd .incoming-requests {
                 &__title {
                     font-weight: 600;
                 }
+
+                &__details {
+                    color: var(--cardTextColor);
+                }
+
+                &__subtitle .request-category {
+                    color: var(--cardTextColor);
+                }
             }
         }
 
@@ -486,6 +520,10 @@ body.color_pd .incoming-requests {
             .incoming-requests__item {
                 background-color: var(--readBg);
                 border: var(--readBorder);
+
+                &__info {
+                    color: var(--readTextColor);
+                }
             }
         }
     }
@@ -606,6 +644,20 @@ body.color_pd .incoming-requests {
                 flex-wrap: wrap;
                 max-height: calc(100vh - 33.6rem);
                 overflow: auto;
+
+                &--read {
+                    .incoming-requests__item__info,
+                    .incoming-requests__item__title--row,
+                    .incoming-requests__item__details {
+                        color: var(--readTextColor);
+                    }
+
+                    .request-archive svg {
+                        path {
+                            stroke: var(--readTextColor);
+                        }
+                    }
+                }
             }
             &__item {
                 display: flex;
@@ -614,12 +666,22 @@ body.color_pd .incoming-requests {
                 width: 100%;
                 margin-right: 13.5rem;
 
+                &:hover {
+                    .request-date {
+                        display: none;
+                    }
+                    .request-archive {
+                        display: flex;
+                    }
+                }
+
                 &__img {
                     display: none;
                 }
 
                 &__star {
                     display: block;
+                    cursor: pointer;
                 }
 
                 &__info {
@@ -633,7 +695,8 @@ body.color_pd .incoming-requests {
                 &__details {
                     order: 3;
                     margin-left: auto;
-                    color: var(--normalTextColor);
+                    color: var(--cardTextColor);
+
                     .request-id {
                         display: none;
                     }
@@ -664,7 +727,7 @@ body.color_pd .incoming-requests {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                        color: var(--normalTextColor);
+                        color: var(--cardTextColor);
                     }
                 }
 
@@ -702,12 +765,29 @@ body.color_pd .incoming-requests {
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
-            color: var(--normalTextColor);
+            color: var(--cardTextColor);
         }
 
         &__details {
             display: flex;
             justify-content: space-between;
+            color: #acacac;
+
+            .request-archive {
+                display: none;
+                width: 2.4rem;
+                height: 2.4rem;
+                justify-content: center;
+                align-items: center;
+                svg {
+                    width: 1.8rem;
+                    height: 1.8rem;
+
+                    path {
+                        stroke: var(--itemColor);
+                    }
+                }
+            }
         }
 
         &__title {
@@ -728,23 +808,30 @@ body.color_pd .incoming-requests {
             justify-content: space-between;
             align-items: center;
 
+            .request-category {
+                color: #acacac;
+            }
+
             .request-status {
                 border-radius: 1.6rem;
-                color: var(--notifColor);
-                background-color: var(--notif);
                 padding: 0.4rem 1.2rem;
                 letter-spacing: 0.014rem;
                 font-size: 1.4rem;
                 white-space: nowrap;
 
-                &.cancel {
+                &.agreed {
+                    background-color: var(--statusAgreedBg);
+                    color: var(--statusAgreedText);
+                }
+
+                &.rejected {
                     color: #fff;
-                    background: var(--notifCancel);
+                    background: #bb2323;
                 }
 
                 &.waiting {
-                    background-color: #d7d7d7;
-                    color: #101010;
+                    background-color: var(--statusWaitingBg);
+                    color: var(--statusWaitingText);
                 }
             }
         }
@@ -758,17 +845,23 @@ body.color_pd .incoming-requests {
             padding: 0.65rem 0.7rem 0.65rem 1.6rem;
             border-radius: 3.2rem;
             border: var(--btnBorder);
+
+            svg {
+                width: 3.6rem;
+                height: 3.6rem;
+            }
+
+            span {
+                color: #101010;
+            }
         }
     }
 }
 
-body.color_pd {
-    .incoming-requests__item {
-        background-color: #fff;
-        border: unset;
-    }
+body.color_pl .incoming-requests__box--unread .star-ico {
+    --starStroke: #ffffff;
 }
 
-.incoming-requests ~ #ui-datepicker-div{
+.incoming-requests ~ #ui-datepicker-div {
     display: none !important;
 }
