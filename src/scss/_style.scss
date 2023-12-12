@@ -419,5 +419,6 @@ body.color_pd .star-ico{
 .star-ico.filled{
     & path{
         fill: var(--starFill);
+        stroke: transparent
     }
 }

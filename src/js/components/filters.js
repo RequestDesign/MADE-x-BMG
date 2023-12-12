@@ -140,8 +140,20 @@ $("#filterDatepicker").datepicker({
     beforeShowDay: function (date) {
         let date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#startDate").val());
         let date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#endDate").val());
+        let isFirstDay = date1 && date.getTime() == date1.getTime();
+        let isLastDay = date2 && date.getTime() == date2.getTime();
+        if (isFirstDay && isLastDay) {
+            return [true, "dp-highlight dp-special"];
+        }
         let isHighlight = date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2));
-        return [true, isHighlight ? "dp-highlight" : ""];
+        let classes = isHighlight ? "dp-highlight" : "";
+        if (isFirstDay) {
+            classes += " dp-first-special";
+        }
+        if (isLastDay) {
+            classes += " dp-last-special";
+        }
+        return [true, classes];
     },
     onSelect: function (dateText, inst) {
         let date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#startDate").val());
@@ -160,7 +172,8 @@ $("#filterDatepicker").datepicker({
             $("#requestDateInput").val(`с ${$("#startDate").val()} по ${dateText}`);
             $("#endDate").val(dateText);
         }
+        $("#startDate, #endDate").trigger('input');
     },
     nextText: "",
     prevText: ""
-}); 
+});
