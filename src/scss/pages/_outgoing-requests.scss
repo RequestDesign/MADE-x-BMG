@@ -246,8 +246,8 @@ body.color_pd .outgoing-requests {
                 display: flex;
                 gap: 2rem;
                 flex-wrap: wrap;
-                max-height: calc(100vh - 33.6rem);
-                overflow: auto;
+                // max-height: calc(100vh - 33.6rem);
+                // overflow: auto;
                
             }
             &__item {

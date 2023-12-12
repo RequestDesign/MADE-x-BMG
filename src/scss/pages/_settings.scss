@@ -1,4 +1,4 @@
-body .settings {
+body .settings, body .modal__password {
     --mainTheme:#F9EC00;
     --mainThemeColor:#000;
     --borderAdd: none;
@@ -15,7 +15,7 @@ body .settings {
     --tabs: #ACACAC;
     --tabsActive: #292929;
 }
-body.color_yd .settings {
+body.color_yd .settings, body.color_yd .modal__password {
     --mainTheme:#F9EC00;
     --mainThemeColor:#101010;
     --borderAdd: none;
@@ -32,7 +32,7 @@ body.color_yd .settings {
     --tabs: rgba(255, 255, 255, 0.30);
     --tabsActive: #FFF;
 }
-body.color_pl .settings {
+body.color_pl .settings, body.color_pl .modal__password {
     --mainTheme:#D01181;
     --mainThemeColor:#FFFFFF;
     --borderAdd: none;
@@ -49,7 +49,7 @@ body.color_pl .settings {
     --tabs: #ACACAC;
     --tabsActive: #292929;
 }
-body.color_pd .settings {
+body.color_pd .settings, body.color_pd .modal__password {
     --mainTheme:#D01181;
     --mainThemeColor:#FFFFFF;
     --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.20);
@@ -599,7 +599,7 @@ body.color_pd .settings {
     &__input {
         padding: 1.8rem 2.4rem 1.8rem 1.6rem;
         border-radius: 1.6rem;
-        background: var(--inputBg);
+        background: var(--backgroundCard);
         color: var(--normalTextColor);
         display: flex;
         align-items: center;

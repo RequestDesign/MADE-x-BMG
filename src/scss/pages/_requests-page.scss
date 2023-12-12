@@ -248,6 +248,7 @@ body.color_pd .requests {
                 height: 10.7rem;
                 border-radius: 1.6rem 1.6rem 0 0;
                 overflow: hidden;
+                flex: none;
             }
 
             .title {
@@ -257,6 +258,10 @@ body.color_pd .requests {
                 text-align: center;
                 max-width: 19.4rem;
                 color: var(--cardText);
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
