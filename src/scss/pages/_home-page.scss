@@ -259,6 +259,7 @@ body.color_pd .home{
         &__cards {
             display: flex;
             gap: 1.6rem;
+            flex-wrap: wrap;
         }
 
         &__card {
@@ -280,7 +281,7 @@ body.color_pd .home{
 
             .card-img {
                 height: 10.7rem;
-                width: 100%;
+                width: 28.1rem;
                 border-radius: 1.6rem 1.6rem 0 0;
             }
         }
