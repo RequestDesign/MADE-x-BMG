@@ -3,6 +3,7 @@ import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 
+setTimeout(()=>{},100)
 $('.news__card__toggle').on('click', function() {
     let $newsCard = $(this).closest('.news__card');
     let $newsDesc = $newsCard.find('.news__card__desc');
@@ -17,5 +18,5 @@ const swiper = new Swiper('.news__card__swiper', {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      },
-  });
+    },
+});
