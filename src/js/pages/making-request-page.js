@@ -76,7 +76,7 @@ $(function () {
         //make btn active
         $(".executor-list__option input[type='radio']").on("change", function () {
             let selectedText = $(this).closest(".executor-list__option").find(".executor-list__title").text();
-            $("#inputExecutor").val(selectedText);
+            $(this).closest('.form__item').find("input[type='text']").val(selectedText);
             checkRequiredFields('#formContact');
         });
     

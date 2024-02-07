@@ -86,6 +86,12 @@ body.color_pd .form {
         &.active {
             z-index: 1;
         }
+
+        &_check {
+            .form__name {
+                margin-bottom: auto;
+            }
+        }
     }
     &__name {
         font-size: 1.6rem;
@@ -483,5 +489,15 @@ body.color_pd .form {
             }
         }
     }
-    
+    &__check {
+        padding: 1.8rem 1.6rem;
+        border-radius: 1.6rem;
+        background-color: var(--inputBg);
+        color: var(--textColor);
+        border: var(--inputBorder);
+
+        .executor-list__option:last-child {
+            border-bottom: unset;
+        }
+    }
 }
