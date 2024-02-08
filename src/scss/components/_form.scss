@@ -500,4 +500,28 @@ body.color_pd .form {
             border-bottom: unset;
         }
     }
+
+    &_interval {
+        display: flex;
+        align-items: center;
+
+        &_name {
+            flex: 0;
+            margin-right: 2rem;
+            margin-left: 2rem;
+            color: var(--inputTitle);
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .form__dropdown {
+            flex: 1;
+        }
+    }
 }

@@ -3,8 +3,8 @@ import IMask from "imask";
 import "jquery-ui/ui/widgets/datepicker";
 
 function checkRequiredFields(form) {
-    const allFieldsFilled = $(`${form} :input[required]`).toArray().every(element => $(element).val() !== "");
-    $(".form__btn").prop("disabled", !allFieldsFilled);
+    // const allFieldsFilled = $(`${form} :input[required]`).toArray().every(element => $(element).val() !== "");
+    // $(".form__btn").prop("disabled", !allFieldsFilled);
 }
 
 $("#price-mask, #price-mask1").on("input", function () {
@@ -141,8 +141,22 @@ $("#thirdStepBtn").on("click", function (e) {
             checkRequiredFields('#formDate');
         },
     });
-});
 
+});
+$("#datepicker1").datepicker({
+    nextText: "",
+    prevText: "",
+    onSelect: function (date) {
+        $(this).closest('.form__dropdown').find(`input[type='text']`).val(date)
+    },
+});
+$("#datepicker2").datepicker({
+    nextText: "",
+    prevText: "",
+    onSelect: function (date) {
+        $(this).closest('.form__dropdown').find(`input[type='text']`).val(date)
+    },
+});
 $("#toSecStep").on("click", function () {
     $(".making-request__step-content").hide();
     $('[data-content="step2"]').show();
