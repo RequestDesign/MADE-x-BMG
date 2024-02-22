@@ -41,6 +41,9 @@ $(document).on('click', function (e) {
     }
 });
 
+$('body').on('click','.applications__delete', function(){
+    $(this).closest('.applications__item').remove()
+})
 $('body').on('click','.applications__edit_section', function(){
     $(this).closest('.applications__item').addClass('show_change')
     $(this).closest('.applications__item').find('.applications__box').each(function (params) {
@@ -115,6 +118,7 @@ $('body').on("click",'.applications__add_column', function (e) {
             <div class="applications__item_head_box">
                 <div class="applications__item_head_choices">
                     <div class="applications__item_head_choice applications__edit_section">Отредактировать раздел</div>
+                    <div class="applications__item_head_choice applications__delete">Удалить раздел</div>
                     <div class="applications__item_head_choice applications__add_column">Добавить столбец (категорию)</div>
                     <div class="applications__item_head_choice applications__add_subcategory">Добавить подкатегорию заявки</div>
                 </div>
