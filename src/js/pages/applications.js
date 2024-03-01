@@ -24,20 +24,26 @@ $( function() {
 } );
 
 $('body').on('click', '.applications__item_head_settings', function(){
-    if(!$(this).closest('.applications__item').hasClass('active')) {
-        $(this).closest('.applications__item').addClass('active')
-        $(this).closest('.applications__item').find('.applications__item_head_box').slideToggle()
+    let clickedItem = $(this).closest('.applications__item');
+    if(clickedItem.hasClass('active')) {
+        clickedItem.find('.applications__item_head_box').slideUp();
+        clickedItem.removeClass("active");
+    } else {
+        $('.applications__item.active').not(clickedItem).each(function () {
+            $(this).find('.applications__item_head_box').slideUp();
+            $(this).removeClass("active");
+        });
+        clickedItem.addClass('active');
+        clickedItem.find('.applications__item_head_box').slideToggle();
     }
-})
+});
 
 $(document).on('click', function (e) {
     if ($(e.target).closest(".applications__item_head").length === 0) {
-        $('.applications__item').each(function (params) {
-            if($(this).hasClass('active')) {
-                $(this).closest('.applications__item').find('.applications__item_head_box').slideToggle()
-            }
+        $('.applications__item.active').each(function () {
+            $(this).find('.applications__item_head_box').slideUp();
             $(this).removeClass("active");
-        })
+        });
     }
 });
 
@@ -222,6 +228,20 @@ $('body').on('change', '.applications__box_img_add input', function (e) {
         imgTake.attr('src', URL.createObjectURL(this.files[0]));
     }
 })
+
+$('body').on('change', '.applications__box_change_img input', function (e) {
+    let boxContainer = $(this).closest('.applications__box');
+    if (boxContainer.hasClass('empty')) {
+        boxContainer.removeClass('empty');
+        boxContainer.find('.applications__box_img img').remove();
+        let fileImgElement = document.createElement('img');
+        fileImgElement.src = URL.createObjectURL(this.files[0]);
+        boxContainer.find('.applications__box_img')[0].prepend(fileImgElement);
+    } else {
+        const imgElement = boxContainer.find('.applications__box_img img');
+        imgElement.attr('src', URL.createObjectURL(this.files[0]));
+    }
+});
 
 $('.applications__box_delete_worker').on('click', function (e) {
     $(this).closest('.applications__box_worker').remove()
