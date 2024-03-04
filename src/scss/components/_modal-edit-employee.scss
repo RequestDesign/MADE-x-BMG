@@ -1,0 +1,102 @@
+body.color_pl .modal__edit-employee {
+    --inputBg: #f1f4f6;
+    --inputBorder: none;
+    --settingsColor: #101010;
+    --boxBg: #fff;
+}
+
+body.color_pd .modal__edit-employee {
+    --inputBg: #101010;
+    --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
+    --settingsColor: #fff;
+    --boxBg: #101010;
+}
+
+.modal__edit-employee {
+    z-index: 1000;
+
+    .modal-wrapper {
+        padding: 4rem;
+        width: 83.5rem;
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    &__subtitle {
+        font-size: 2.4rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    &__input-check {
+        background-color: var(--inputBg) !important;
+        border: var(--inputBorder) !important;
+        font-weight: 500;
+        margin-bottom: 3.2rem;
+
+        .checkbox-icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 0.8rem;
+            background-size: 1.3rem 0.9rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+
+        .adding_application__item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.8rem;
+
+            &_name {
+                width: 100%;
+
+                svg {
+                    fill: var(--settingsColor);
+                    stroke: var(--settingsColor);
+                    display: block;
+                    margin-left: 2rem;
+                    opacity: 0;
+                }
+            }
+
+            &_input {
+                width: 100%;
+                flex: unset;
+                background-color: var(--inputBg) !important;
+                border: var(--inputBorder) !important;
+            }
+
+            &_box {
+                border: var(--inputBorder);
+                background-color: var(--boxBg);
+            }
+
+            .adding_application__item_settings svg {
+                fill: var(--settingsColor);
+            }
+
+            &:hover {
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .btn__save {
+        width: 41.7rem;
+        margin: 0 auto;
+    }
+}
