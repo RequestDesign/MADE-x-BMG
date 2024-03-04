@@ -237,11 +237,25 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
     &__item {
         display: flex;
         align-items: center;
+        position: relative;
 
         &--big {
             .adding_application__item_input {
                 height: 13.3rem;
                 padding-bottom: 7.3rem;
+            }
+        }
+
+        &--subtitle{
+            .adding_application__item_name_text{
+                font-size: 1.8rem;
+                color: var(--normalTextColor);
+                font-weight: 500;
+            }
+
+            .adding_application__item_settings{
+                margin-left: auto;
+                margin-right: 1.5rem;
             }
         }
 
@@ -348,10 +362,11 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
             box-shadow: 0 0.3rem 1.4rem 0 rgba(0, 0, 0, 0.08);
             padding: 1.6rem;
             width: 28.9rem;
-            right: -24rem;
-            top: -3rem;
+            right: -20rem;
+            top: 4rem;
             color: var(--normalTextColor);
             border: var(--borderAdd);
+            z-index: 2;
         }
         &_choices {
             display: flex;
