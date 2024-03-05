@@ -22,7 +22,6 @@ import './js/components/modal-pass'
 import './js/components/modal-share-pass'
 import './js/components/modal-success'
 import './js/components/modal-sms'
-import './js/components/modal-edit-employee'
 import "./js/components/switcher";
 import "./js/components/form";
 import "./js/components/modal-reject-request";

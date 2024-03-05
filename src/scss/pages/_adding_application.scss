@@ -1,101 +1,105 @@
-body .adding_application_template, body .adding_application {
-    --mainTheme:#F9EC00;
-    --mainThemeColor:#000;
+body .adding_application_template,
+body .adding_application {
+    --mainTheme: #f9ec00;
+    --mainThemeColor: #000;
     --borderAdd: none;
     --normalTextColor: #101010;
-    --subTextColor: #ACACAC;
-    --reversTextColor: #FFF;
+    --subTextColor: #acacac;
+    --reversTextColor: #fff;
     --switchBtn: #f4f4f4;
     --switchBtnActive: #101010;
-    --switchBtnActiveColor: #FFF;
-    --backgroundCard: #F4F4F4;
+    --switchBtnActiveColor: #fff;
+    --backgroundCard: #f4f4f4;
     --settingsSwitchActive: #101010;
-    --settingsSwitchActiveColor: #FFF;
-    --inputBg:#FFF;
-    --tabs: #ACACAC;
+    --settingsSwitchActiveColor: #fff;
+    --inputBg: #fff;
+    --tabs: #acacac;
     --tabsActive: #292929;
-    --footerBorder: #D7D7D7;
+    --footerBorder: #d7d7d7;
     --cross: #101010;
-    --crossIneer: #FFF;
-    --appBG: #FFF;
+    --crossIneer: #fff;
+    --appBG: #fff;
     --appBGColor: #101010;
-    --bodyBg: #FFF;
-    --appBtnBG: #D7D7D7;
+    --bodyBg: #fff;
+    --appBtnBG: #d7d7d7;
     --appBtnBGColor: #101010;
 }
-body.color_yd .adding_application_template, body.color_yd .adding_application{
-    --mainTheme:#F9EC00;
-    --mainThemeColor:#101010;
+body.color_yd .adding_application_template,
+body.color_yd .adding_application {
+    --mainTheme: #f9ec00;
+    --mainThemeColor: #101010;
     --borderAdd: none;
-    --normalTextColor: #FFFFFF;
-    --subTextColor: #ACACAC;
+    --normalTextColor: #ffffff;
+    --subTextColor: #acacac;
     --reversTextColor: #101010;
     --switchBtn: #292929;
-    --switchBtnActive: #F9EC00;
+    --switchBtnActive: #f9ec00;
     --switchBtnActiveColor: #101010;
     --backgroundCard: #101010;
-    --settingsSwitchActive: #F9EC00;
+    --settingsSwitchActive: #f9ec00;
     --settingsSwitchActiveColor: #101010;
-    --inputBg:#292929;
-    --tabs: rgba(255, 255, 255, 0.30);
-    --tabsActive: #FFF;
+    --inputBg: #292929;
+    --tabs: rgba(255, 255, 255, 0.3);
+    --tabsActive: #fff;
     --footerBorder: #292929;
     --cross: #292929;
-    --crossIneer: #FFF;
+    --crossIneer: #fff;
     --appBG: #292929;
-    --appBGColor: #FFF;
-    --bodyBg: #1D1D1D;
-    --appBtnBG: #FFF;
+    --appBGColor: #fff;
+    --bodyBg: #1d1d1d;
+    --appBtnBG: #fff;
     --appBtnBGColor: #101010;
 }
-body.color_pl .adding_application_template, body.color_pl .adding_application {
-    --mainTheme:#D01181;
-    --mainThemeColor:#FFFFFF;
+body.color_pl .adding_application_template,
+body.color_pl .adding_application {
+    --mainTheme: #d01181;
+    --mainThemeColor: #ffffff;
     --borderAdd: none;
     --normalTextColor: #101010;
-    --subTextColor: #ACACAC;
-    --reversTextColor: #FFF;
+    --subTextColor: #acacac;
+    --reversTextColor: #fff;
     --switchBtn: #f4f4f4;
-    --switchBtnActive: #D01181;
-    --switchBtnActiveColor: #FFF;
-    --backgroundCard: #F1F4F6;
+    --switchBtnActive: #d01181;
+    --switchBtnActiveColor: #fff;
+    --backgroundCard: #f1f4f6;
     --settingsSwitchActive: #101010;
-    --settingsSwitchActiveColor: #FFF;
-    --inputBg:#FFF;
-    --tabs: #ACACAC;
+    --settingsSwitchActiveColor: #fff;
+    --inputBg: #fff;
+    --tabs: #acacac;
     --tabsActive: #292929;
-    --footerBorder: #D7D7D7;
+    --footerBorder: #d7d7d7;
     --cross: #101010;
-    --crossIneer: #FFF;
-    --appBG: #FFF;
+    --crossIneer: #fff;
+    --appBG: #fff;
     --appBGColor: #101010;
-    --bodyBg: #FFF;
-    --appBtnBG: #A1ACB9;
-    --appBtnBGColor: #FFF;
+    --bodyBg: #fff;
+    --appBtnBG: #a1acb9;
+    --appBtnBGColor: #fff;
 }
-body.color_pd .adding_application_template, body.color_pd .adding_application {
-    --mainTheme:#D01181;
-    --mainThemeColor:#FFFFFF;
-    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.20);
-    --normalTextColor: #FFFFFF;
-    --subTextColor: #ACACAC;
+body.color_pd .adding_application_template,
+body.color_pd .adding_application {
+    --mainTheme: #d01181;
+    --mainThemeColor: #ffffff;
+    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.2);
+    --normalTextColor: #ffffff;
+    --subTextColor: #acacac;
     --reversTextColor: #101010;
     --switchBtn: #101010;
-    --switchBtnActive: #D01181;
-    --switchBtnActiveColor: #FFF;
+    --switchBtnActive: #d01181;
+    --switchBtnActiveColor: #fff;
     --backgroundCard: #101010;
-    --settingsSwitchActive: #D01181;
-    --settingsSwitchActiveColor: #FFF;
-    --inputBg:#101010;
-    --tabs: rgba(255, 255, 255, 0.30);
-    --tabsActive: #FFF;
+    --settingsSwitchActive: #d01181;
+    --settingsSwitchActiveColor: #fff;
+    --inputBg: #101010;
+    --tabs: rgba(255, 255, 255, 0.3);
+    --tabsActive: #fff;
     --footerBorder: #292929;
     --cross: #292929;
-    --crossIneer: #FFF;
-    --appBG: #FFF;
+    --crossIneer: #fff;
+    --appBG: #fff;
     --appBGColor: #101010;
     --bodyBg: #101010;
-    --appBtnBG: #FFF;
+    --appBtnBG: #fff;
     --appBtnBGColor: #101010;
 }
 
@@ -162,12 +166,12 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
             right: -0.4rem;
 
             &::before {
-                content: '';
+                content: "";
                 display: flex;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%);
+                transform: translate(-50%, -50%);
                 background: var(--settingsSwitchActive);
                 width: 3.2rem;
                 height: 3.2rem;
@@ -178,7 +182,7 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
                 width: 2.4rem;
                 height: 2.4rem;
                 z-index: 1;
-                
+
                 path {
                     stroke: var(--switchBtnActiveColor);
                 }
@@ -239,6 +243,13 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
         align-items: center;
         position: relative;
 
+        &_top {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+
         &--big {
             .adding_application__item_input {
                 height: 13.3rem;
@@ -246,16 +257,39 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
             }
         }
 
-        &--subtitle{
-            .adding_application__item_name_text{
+        &--interval {
+            .adding_application__item_input_inner {
+                background-color: var(--backgroundCard);
+                border-radius: 1.2rem;
+                padding: 0.8rem;
+                width: 24rem;
+                margin-right: 1rem;
+            }
+        }
+
+        &--subtitle {
+            .adding_application__item_name span {
                 font-size: 1.8rem;
                 color: var(--normalTextColor);
                 font-weight: 500;
+                max-width: 100rem;
+            }
+        }
+
+        &--text {
+            .adding_application__item_name span {
+                color: var(--normalTextColor);
+                max-width: 100rem;
+            }
+        }
+
+        &--checkbox {
+            .adding_application__item_input {
+                margin-left: 26.4rem;
             }
 
-            .adding_application__item_settings{
-                margin-left: auto;
-                margin-right: 1.5rem;
+            & + & {
+                margin-top: 1rem;
             }
         }
 
@@ -289,7 +323,7 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
             margin-right: 3.2rem;
 
             span {
-                color: #ACACAC;
+                color: #acacac;
                 font-size: 1.6rem;
                 font-style: normal;
                 font-weight: 500;
@@ -321,8 +355,12 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
             position: relative;
             border: var(--borderAdd);
 
+            &.transparent {
+                background-color: transparent;
+            }
+
             &_text {
-                color: #ACACAC;
+                color: #acacac;
                 font-size: 1.6rem;
                 font-style: normal;
                 font-weight: 500;
@@ -343,6 +381,7 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
             width: 2.4rem;
             height: 2.4rem;
             cursor: pointer;
+            margin-left: 1rem;
 
             svg {
                 width: 2.4rem;
@@ -374,7 +413,7 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
         }
         &_choice {
             padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(161, 172, 185, 0.20);
+            border-bottom: 1px solid rgba(161, 172, 185, 0.2);
             display: flex;
             justify-content: space-between;
             cursor: pointer;
@@ -382,6 +421,11 @@ body.color_pd .adding_application_template, body.color_pd .adding_application {
             &:last-child {
                 border-bottom: unset;
             }
+        }
+
+        .file-icon {
+            width: 2.4rem;
+            height: 2.4rem;
         }
     }
     &__bottom {
