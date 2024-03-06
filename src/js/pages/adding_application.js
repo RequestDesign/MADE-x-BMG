@@ -86,20 +86,27 @@ $("body").on("keyup", ".adding_application__item_name_text", function (e) {
 //удалем поле
 $("body").on("click", ".adding_application__item_choice--delete", function () {
     $(this).closest(".adding_application__item").remove();
+    checkListEmpty()
 });
 
 //удаляем поле с чекбоксами
 $("body").on("click", ".adding_application__item_choice--delete-group", function () {
     $(this).closest(".adding_application__item_group").remove();
+    checkListEmpty()
 });
 
-//дублиируем поле
+//дублируем поле
 $("body").on("click", ".adding_application__item_choice--duplicate", function () {
-    $(this).closest(".adding_application__item").removeClass("active");
-    $(this).closest(".adding_application__item").find(".adding_application__item_box").slideToggle();
-    var $clone = $(this).closest(".adding_application__item").clone(true);
-    $clone.find(".adding_application__item_box").css("display", "none");
-    $(this).closest(".adding_application__item").after($clone);
+    let $originalItem = $(this).closest(".adding_application__item_group");
+    if ($originalItem.length === 0) {
+        $originalItem = $(this).closest(".adding_application__item");
+    }
+    if ($originalItem.length > 0) {
+        $originalItem.find(".adding_application__item_box").slideUp();
+        const $clone = $originalItem.clone(true);
+        $originalItem.after($clone);
+        $clone.find(".adding_application__item_box").hide();
+    }
 });
 
 //чекбокс "обязательное поле"
@@ -113,7 +120,7 @@ $("body").on("change", ".adding_application__item_choice--checkbox", function ()
 
 //добавляем новое поле
 $("body").on("click", ".adding_application__bottom_add", function () {
-    var newCategory = $(`
+    const newCategory = $(`
     <div class="adding_application__item" data-type="text-input">
         <div class="adding_application__item_position ui-sortable-handle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,6 +176,65 @@ $("body").on("click", ".adding_application__bottom_add", function () {
     $(".adding_application__list").append(newCategory);
 });
 
+//добавляем новое поле в модалку
+$("body").on("click", ".btn__add-field", function () {
+    const newCategory = $(`
+    <div class="adding_application__item" data-type="text-input">
+        <div class="adding_application__item_position ui-sortable-handle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="6" y1="8.5" x2="18" y2="8.5" stroke="#ACACAC" />
+                <line x1="6" y1="11.5" x2="18" y2="11.5" stroke="#ACACAC" />
+                <line x1="6" y1="14.5" x2="18" y2="14.5" stroke="#ACACAC" />
+            </svg>
+        </div>
+        <div class="adding_application__item_name">
+            <span class="adding_application__item_name_text">Текстовое поле</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 18.5H16.5" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M11.5 14.9999L8.5 15.5399L9 12.4999L15.73 5.78994C15.823 5.69621 15.9336 5.62182 16.0554 5.57105C16.1773 5.52028 16.308 5.49414 16.44 5.49414C16.572 5.49414 16.7027 5.52028 16.8246 5.57105C16.9464 5.62182 17.057 5.69621 17.15 5.78994L18.21 6.84994C18.3037 6.9429 18.3781 7.0535 18.4289 7.17536C18.4797 7.29722 18.5058 7.42793 18.5058 7.55994C18.5058 7.69195 18.4797 7.82266 18.4289 7.94452C18.3781 8.06637 18.3037 8.17698 18.21 8.26994L11.5 14.9999Z"
+                    fill="#101010"
+                    stroke="#101010"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        </div>
+        <div class="adding_application__item_input-wrapper"> 
+            <div class="adding_application__item_input">
+                <div class="adding_application__item_input_text required">Название</div>
+                <div class="adding_application__item_settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                        <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                        <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                    </svg>
+                </div>
+                <div class="adding_application__item_box">
+                    <div class="adding_application__item_choices">
+                        <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
+                        <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
+                            <span>Изменить тип поля</span>
+                        </div>
+                        <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
+                        <label class="adding_application__item_choice checkbox-wrapper">
+                            <span>Обязательное поле</span>
+                            <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
+                            <div class="checkbox-icon"></div>
+                        </label>
+                        <div class="adding_application__item_choice adding_application__item_choice--hint">
+                            <span>Добавить подсказку</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `);
+    $(".modal__edit-employee__list").append(newCategory);
+    checkListEmpty()
+});
+
 //добавляем подсказку
 $("body").on("click", ".adding_application__item_choice--hint", function () {
     let hintHTML = `
@@ -192,9 +258,9 @@ $("body").on("click", ".delete-hint", function () {
 
 //добавляем поле при активном чек-боксе
 $("body").on("click", ".adding_application__item_choice--add-checkbox-hint", function () {
-    if ($(this).closest(".adding_application__item_input").find(".checkbox-hint").length === 0) {
+    if ($(this).closest(".adding_application__item_input").find(".inner-tag").length === 0) {
         let hintHTML = `
-        <div class="checkbox-hint">
+        <div class="inner-tag">
             <span>Текстовое поле при активном чек-боксе</span>
             <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
@@ -208,9 +274,10 @@ $("body").on("click", ".adding_application__item_choice--add-checkbox-hint", fun
     }
 });
 
-//удаляем поле при активном чек-боксе
-$("body").on("click", ".checkbox-hint .delete-hint", function () {
-    $(this).closest(".checkbox-hint").remove();
+//удаляем поле при активном чек-боксе/тэг в "добавить сотрудника"
+$("body").on("click", ".inner-tag .delete-hint", function () {
+    $(this).closest(".inner-tag").remove();
+    checkTags();
 });
 
 //меняем фото справа
@@ -235,6 +302,13 @@ $("body").on("click", '[data-modal="modal-create"]', function () {
 $("body").on("click", '[data-modal="edit-employee"]', function () {
     $(".modal__edit-employee").addClass("active");
 });
+
+//удалены все поля в модалке
+function checkListEmpty() {
+    const $modalList = $('.modal__edit-employee__list');
+    const $modalListEmpty = $('.modal__edit-employee__list_empty');
+    $modalListEmpty.toggle(!$modalList.find('.adding_application__item').length);
+}
 
 //массив с видами полей
 
@@ -538,65 +612,45 @@ let itemTemplates = [
         html: `
         <div class="adding_application__item_group" data-type="checkboxes">
             <div class="adding_application__item">
-                ${positionSVG}
+            ${positionSVG}
                 <div class="adding_application__item_name">
                     <span>Чек-боксы</span>
                     ${editSVG}
                 </div>
-
+                <div class="adding_application__item_input-wrapper"> 
+                <div class="adding_application__item_input transparent">
+                    <div class="adding_application__item_input_text required"></div>
+                    ${settingsSVG}
+                    ${intemBoxDefaultHTML}
+                </div>
+            </div>
+            </div>
+            <div class="adding_application__item adding_application__item--checkbox">
+                <div class="adding_application__item_input-wrapper"> 
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Название чек-бокса</div>
+                    ${settingsSVG}
+                    ${intemBoxCheckboxHTML}
+                </div>
+            </div>
+            </div>
+            <div class="adding_application__item adding_application__item--checkbox">
+                <div class="adding_application__item_input-wrapper"> 
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Название чек-бокса</div>
+                    ${settingsSVG}
+                    ${intemBoxCheckboxHTML}
+                </div>
+            </div>
+            </div>
+            <div class="adding_application__item adding_application__item--checkbox">
                 <div class="adding_application__item_input-wrapper">
-                    <div class="adding_application__item_input transparent">
-                        <div class="adding_application__item_input_text required"></div>
-                        ${settingsSVG}
-                        <div class="adding_application__item_box">
-                            <div class="adding_application__item_choices">
-                                <div class="adding_application__item_choice adding_application__item_choice--delete-group"><span>Удалить поле</span></div>
-                                <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
-                                    <span>Изменить тип поля</span>
-                                </div>
-                                <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
-                                <label class="adding_application__item_choice checkbox-wrapper">
-                                    <span>Обязательное поле</span>
-                                    <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
-                                    <div class="checkbox-icon"></div>
-                                </label>
-                                <div class="adding_application__item_choice adding_application__item_choice--hint">
-                                    <span>Добавить подсказку</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Название чек-бокса</div>
+                    ${settingsSVG}
+                    ${intemBoxCheckboxHTML}
                 </div>
-
-                <div class="adding_application__item adding_application__item--checkbox">
-                    <div class="adding_application__item_input-wrapper">
-                        <div class="adding_application__item_input">
-                            <div class="adding_application__item_input_text">Название чек-бокса</div>
-                            ${settingsSVG}
-                            ${intemBoxCheckboxHTML}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="adding_application__item adding_application__item--checkbox">
-                    <div class="adding_application__item_input-wrapper">    
-                        <div class="adding_application__item_input">
-                            <div class="adding_application__item_input_text">Название чек-бокса</div>
-                            ${settingsSVG}
-                            ${intemBoxCheckboxHTML}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="adding_application__item adding_application__item--checkbox">
-                    <div class="adding_application__item_input-wrapper">    
-                        <div class="adding_application__item_input">
-                            <div class="adding_application__item_input_text">Название чек-бокса</div>
-                            ${settingsSVG}
-                            ${intemBoxCheckboxHTML}
-                        </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     `,
@@ -645,11 +699,24 @@ let clickedItem = null;
 
 $("body").on("click", ".adding_application__item_choice--change", function () {
     clickedItem = $(this).closest(".adding_application__item");
+    syncModalItem();
 });
 
 $("body").on("click", ".adding_application__item_group .adding_application__item_choice--change", function () {
     clickedItem = $(this).closest(".adding_application__item_group");
+    syncModalItem();
 });
+
+//галочка в модалке соответствует типу поля
+function syncModalItem() {
+    if (!clickedItem) return;
+    const dataType = clickedItem.data("type");
+    const radioInput = $(`.modal__create__form [data-type="${dataType}"]`);
+    if (radioInput.length > 0) {
+        $(".modal__create__form input[name='field']").prop("checked", false);
+        radioInput.prop("checked", true);
+    }
+}
 
 //меняем тип поля (удаляем прошлое и всталяем из массива)
 $(".modal__create__form").on("submit", function (e) {
@@ -662,3 +729,12 @@ $(".modal__create__form").on("submit", function (e) {
     }
     clickedItem = null;
 });
+
+//тэги в поле "добавить сотрудника"
+//если есть тэги - убираем текст
+function checkTags() {
+    const $employeeInput = $('[data-type="employee-input"] .adding_application__item_input');
+    const $employeeInputText = $employeeInput.find('.adding_application__item_input_text');
+    $employeeInputText.toggle(!$employeeInput.find('.inner-tag').length);
+}
+checkTags();
