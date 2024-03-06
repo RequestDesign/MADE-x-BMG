@@ -317,28 +317,8 @@ body.color_pd .adding_application {
             & + & {
                 margin-top: 1rem;
             }
-
-            .checkbox-hint {
-                width: fit-content;
-                padding: 0.8rem;
-                background-color: var(--inputInnerBg);
-                display: flex;
-                gap: 0.9rem;
-                border-radius: 1.2rem;
-                font-weight: 500;
-
-                span {
-                    white-space: nowrap;
-                    max-width: 60rem;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                }
-            }
         }
 
-        &.active {
-            z-index: 1;
-        }
         &:hover {
             .adding_application__item_name {
                 svg {
@@ -446,6 +426,13 @@ body.color_pd .adding_application {
                     background-size: 2.4rem;
                 }
             }
+
+            &_tags{
+                display: flex;
+                gap: 1rem;
+                max-width: 80.8rem;
+                overflow: hidden;
+            }
         }
         &_settings {
             width: 2.4rem;
@@ -532,6 +519,23 @@ body.color_pd .adding_application {
             width: 41.7rem;
             background: var(--appBtnBG);
             color: var(--appBtnBGColor);
+        }
+    }
+
+    .inner-tag {
+        width: fit-content;
+        padding: 0.8rem;
+        background-color: var(--inputInnerBg);
+        display: flex;
+        gap: 0.9rem;
+        border-radius: 1.2rem;
+        font-weight: 500;
+
+        span {
+            white-space: nowrap;
+            max-width: 60rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     }
 
