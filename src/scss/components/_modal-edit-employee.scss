@@ -3,6 +3,9 @@ body.color_pl .modal__edit-employee {
     --inputBorder: none;
     --settingsColor: #101010;
     --boxBg: #fff;
+    --btnDeleteFill: #101010;
+    --btnDeleteStroke: #fff;
+    // --backgroundCard: #fff;
 }
 
 body.color_pd .modal__edit-employee {
@@ -10,6 +13,9 @@ body.color_pd .modal__edit-employee {
     --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
     --settingsColor: #fff;
     --boxBg: #101010;
+    --btnDeleteFill: #D01181;
+    --btnDeleteStroke: #101010;
+    // --backgroundCard: #292929;
 }
 
 .modal__edit-employee {
@@ -39,6 +45,7 @@ body.color_pd .modal__edit-employee {
         border: var(--inputBorder) !important;
         font-weight: 500;
         margin-bottom: 3.2rem;
+        width: 100% !important;
 
         .checkbox-icon {
             width: 2.4rem;
@@ -59,16 +66,22 @@ body.color_pd .modal__edit-employee {
             align-items: flex-start;
             gap: 0.8rem;
 
-            &_name {
-                width: 100%;
+            &_position{
+                display: none;
+            }
 
+            &_name {
+                width: fit-content;
                 svg {
                     fill: var(--settingsColor);
                     stroke: var(--settingsColor);
-                    display: block;
-                    margin-left: 2rem;
                     opacity: 0;
+                    right: -4rem;
                 }
+            }
+
+            &_input-wrapper{
+                width: 100%;
             }
 
             &_input {
