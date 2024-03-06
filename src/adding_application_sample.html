@@ -184,6 +184,7 @@
                         </div>
 
                         <div class="adding_application__list">
+
                             <!-- subtitle -->
                             <div class="adding_application__item adding_application__item--subtitle" data-type="subtitle">
                                 <div class="adding_application__item_position">
@@ -206,7 +207,7 @@
                                         />
                                     </svg>
                                 </div>
-
+                                <div class="adding_application__item_input-wrapper"> 
                                 <div class="adding_application__item_input transparent">
                                     <div class="adding_application__item_input_text required"></div>
                                     <div class="adding_application__item_settings">
@@ -235,6 +236,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- date input -->
                             <div class="adding_application__item" data-type="date-input">
@@ -258,6 +260,7 @@
                                         />
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text required">__\__\____</div>
                                     <div class="adding_application__item_settings">
@@ -286,6 +289,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- number input -->
                             <div class="adding_application__item" data-type="number-input">
@@ -309,6 +313,7 @@
                                         />
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text required">Введите значение</div>
                                     <div class="adding_application__item_settings">
@@ -338,6 +343,8 @@
                                 </div>
                             </div>
 
+                            </div>
+
                             <!-- text input -->
                             <div class="adding_application__item" data-type="text-input">
                                 <div class="adding_application__item_position">
@@ -360,33 +367,48 @@
                                         />
                                     </svg>
                                 </div>
-                                <div class="adding_application__item_input">
-                                    <div class="adding_application__item_input_text required">Название</div>
-                                    <div class="adding_application__item_settings">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                                            <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                                            <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                                        </svg>
-                                    </div>
-                                    <div class="adding_application__item_box">
-                                        <div class="adding_application__item_choices">
-                                            <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
-                                            <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
-                                                <span>Изменить тип поля</span>
-                                            </div>
-                                            <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
-                                            <label class="adding_application__item_choice checkbox-wrapper">
-                                                <span>Обязательное поле</span>
-                                                <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
-                                                <div class="checkbox-icon"></div>
-                                            </label>
-                                            <div class="adding_application__item_choice adding_application__item_choice--hint">
-                                                <span>Добавить подсказку</span>
+                                <div class="adding_application__item_input-wrapper">
+                                    <div class="adding_application__item_input">
+                                        <div class="adding_application__item_input_text required">Название</div>
+                                        <div class="adding_application__item_settings">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                                                <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                                                <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                                            </svg>
+                                        </div>
+                                        <div class="adding_application__item_box">
+                                            <div class="adding_application__item_choices">
+                                                <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
+                                                <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
+                                                    <span>Изменить тип поля</span>
+                                                </div>
+                                                <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
+                                                <label class="adding_application__item_choice checkbox-wrapper">
+                                                    <span>Обязательное поле</span>
+                                                    <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
+                                                    <div class="checkbox-icon"></div>
+                                                </label>
+                                                <div class="adding_application__item_choice adding_application__item_choice--hint">
+                                                    <span>Добавить подсказку</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- hint -->
+                                    <div class="adding_application__item_hint">
+                                        <span>Текст подсказки</span>
+                                        <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
+                                            <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>                                            
+                                    </div>
+
+
                                 </div>
+                                
                             </div>
 
                             <!-- add employee -->
@@ -411,6 +433,7 @@
                                         />
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text required">Выберите сотрудника из списка или добавьте вручную</div>
                                     <div class="adding_application__item_settings">
@@ -440,6 +463,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- phone input -->
                             <div class="adding_application__item" data-type="phone-input">
@@ -463,6 +487,7 @@
                                         />
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text required">+7 (9__)-___-__-__</div>
                                     <div class="adding_application__item_settings">
@@ -491,6 +516,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- comment input -->
                             <div class="adding_application__item adding_application__item--big" data-type="comment-input">
@@ -514,6 +540,7 @@
                                         ></path>
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text required">Напишите дополнительную информацию</div>
                                     <div class="adding_application__item_settings">
@@ -525,19 +552,23 @@
                                     </div>
                                     <div class="adding_application__item_box">
                                         <div class="adding_application__item_choices">
-                                            <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
-                                            <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create" data-type="com">
-                                                <span>Изменить тип поля</span>
-                                            </div>
-                                            <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
-                                            <label class="adding_application__item_choice checkbox-wrapper">
-                                                <span>Обязательное поле</span>
-                                                <input class="adding_application__item_choice--checkbox" type="checkbox" checked="" />
-                                                <div class="checkbox-icon"></div>
-                                            </label>
+                                          <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
+                                          <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
+                                            <span>Изменить тип поля</span>
+                                          </div>
+                                          <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
+                                          <label class="adding_application__item_choice checkbox-wrapper">
+                                            <span>Обязательное поле</span>
+                                            <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
+                                            <div class="checkbox-icon"></div>
+                                          </label>
+                                          <div class="adding_application__item_choice adding_application__item_choice--hint">
+                                            <span>Добавить подсказку</span>
+                                          </div>
                                         </div>
-                                    </div>
+                                      </div>
                                 </div>
+                            </div>
                             </div>
 
                             <!-- date interval input -->
@@ -562,6 +593,7 @@
                                         />
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text required">
                                         <div class="adding_application__item_input_inner">
@@ -599,6 +631,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- time interval input -->
                             <div class="adding_application__item adding_application__item--interval" data-type="time-interval-input">
@@ -622,6 +655,7 @@
                                         />
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text required">
                                         <div class="adding_application__item_input_inner">
@@ -659,6 +693,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- file input -->
                             <div class="adding_application__item" data-type="file-input">
@@ -682,6 +717,7 @@
                                         />
                                     </svg>
                                 </div>
+                                <div class="adding_application__item_input-wrapper">
                                 <div class="adding_application__item_input">
                                     <div class="adding_application__item_input_text">Выберите файлы</div>
                                     <svg class="file-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -739,6 +775,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- checkboxes -->
                             <div class="adding_application__item_group" data-type="checkboxes">
@@ -763,6 +800,7 @@
                                             />
                                         </svg>
                                     </div>
+                                    <div class="adding_application__item_input-wrapper"> 
                                     <div class="adding_application__item_input transparent">
                                         <div class="adding_application__item_input_text required"></div>
                                         <div class="adding_application__item_settings">
@@ -791,8 +829,49 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
 
                                 <div class="adding_application__item adding_application__item--checkbox">
+                                    <div class="adding_application__item_input-wrapper"> 
+                                    <div class="adding_application__item_input">
+                                        <div class="adding_application__item_input_text">Название чек-бокса</div>
+
+
+                                        <div class="checkbox-hint">
+                                            <span>Текстовое поле при активном чек-боксе</span>
+                                            <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
+                                                <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg> 
+                                        </div>
+
+                                        
+                                        <div class="adding_application__item_settings">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                                                <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                                                <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                                            </svg>
+                                        </div>
+                                        <div class="adding_application__item_box">
+                                            <div class="adding_application__item_choices">
+                                                <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить чек бокс</span></div>
+                                                <div class="adding_application__item_choice adding_application__item_choice--add-checkbox-hint"><span>Добавить поле при активном чекбоксе</span></div>
+                                                <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
+                                                <label class="adding_application__item_choice checkbox-wrapper">
+                                                    <span>Обязательное поле</span>
+                                                    <input class="adding_application__item_choice--checkbox" type="checkbox" />
+                                                    <div class="checkbox-icon"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class="adding_application__item adding_application__item--checkbox">
+                                    <div class="adding_application__item_input-wrapper"> 
                                     <div class="adding_application__item_input">
                                         <div class="adding_application__item_input_text">Название чек-бокса</div>
                                         <div class="adding_application__item_settings">
@@ -816,8 +895,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
 
                                 <div class="adding_application__item adding_application__item--checkbox">
+                                    <div class="adding_application__item_input-wrapper">
                                     <div class="adding_application__item_input">
                                         <div class="adding_application__item_input_text">Название чек-бокса</div>
                                         <div class="adding_application__item_settings">
@@ -841,30 +922,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="adding_application__item adding_application__item--checkbox">
-                                    <div class="adding_application__item_input">
-                                        <div class="adding_application__item_input_text">Название чек-бокса</div>
-                                        <div class="adding_application__item_settings">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                                                <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                                                <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                                            </svg>
-                                        </div>
-                                        <div class="adding_application__item_box">
-                                            <div class="adding_application__item_choices">
-                                                <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить чек бокс</span></div>
-                                                <div class="adding_application__item_choice adding_application__item_choice--add-checkbox-hint"><span>Добавить поле при активном чекбоксе</span></div>
-                                                <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
-                                                <label class="adding_application__item_choice checkbox-wrapper">
-                                                    <span>Обязательное поле</span>
-                                                    <input class="adding_application__item_choice--checkbox" type="checkbox" />
-                                                    <div class="checkbox-icon"></div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
@@ -890,7 +947,7 @@
                                         />
                                     </svg>
                                 </div>
-
+                                <div class="adding_application__item_input-wrapper"> 
                                 <div class="adding_application__item_input transparent">
                                     <div class="adding_application__item_input_text required"></div>
                                     <div class="adding_application__item_settings">
@@ -919,6 +976,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             <!-- bullets -->
                             <div class="adding_application__item adding_application__item--text" data-type="bullets">
@@ -943,6 +1001,7 @@
                                     </svg>
                                 </div>
 
+                                <div class="adding_application__item_input-wrapper"> 
                                 <div class="adding_application__item_input transparent">
                                     <div class="adding_application__item_input_text required"></div>
                                     <div class="adding_application__item_settings">
@@ -970,6 +1029,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
 
@@ -1187,6 +1247,7 @@
                                     />
                                 </svg>
                             </div>
+                            <div class="adding_application__item_input-wrapper">
                             <div class="adding_application__item_input">
                                 <div class="adding_application__item_input_text">Введите ФИО</div>
                                 <div class="adding_application__item_settings">
@@ -1215,6 +1276,7 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
 
                         <!-- text input -->
                         <div class="adding_application__item">
@@ -1231,6 +1293,7 @@
                                     />
                                 </svg>
                             </div>
+                            <div class="adding_application__item_input-wrapper">
                             <div class="adding_application__item_input">
                                 <div class="adding_application__item_input_text">Введите должность</div>
                                 <div class="adding_application__item_settings">
@@ -1259,6 +1322,7 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
 
                         <!-- text input -->
                         <div class="adding_application__item">
@@ -1275,6 +1339,7 @@
                                     />
                                 </svg>
                             </div>
+                            <div class="adding_application__item_input-wrapper">
                             <div class="adding_application__item_input">
                                 <div class="adding_application__item_input_text">Выбрать файлы</div>
                                 <div class="adding_application__item_settings">
@@ -1302,6 +1367,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                     <button class="btn btn__save" data-modal="close-modal">Сохранить внесенные изменения</button>

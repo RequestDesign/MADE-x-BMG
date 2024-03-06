@@ -10,7 +10,7 @@ $(function () {
     $("[data-modal='close-modal']").on("click", closeModal);
 
     function closeModal() {
-        $(".modal").removeClass("active");
+        $(this).closest(".modal").removeClass("active");
         $("body").removeClass("lock");
     }
 });
