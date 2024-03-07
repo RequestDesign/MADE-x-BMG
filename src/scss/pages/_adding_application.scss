@@ -428,10 +428,24 @@ body.color_pd .adding_application {
             }
 
             &_tags{
-                display: flex;
-                gap: 1rem;
-                max-width: 80.8rem;
+                width: 80.8rem;
                 overflow: hidden;
+
+                .swiper-slide{
+                    width: fit-content;
+                    height: fit-content;
+                    margin-right: 1rem;
+                }
+            }
+
+            .swiper-button-next{
+                display: none;
+                margin-left: auto;
+                svg{
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+
             }
         }
         &_settings {

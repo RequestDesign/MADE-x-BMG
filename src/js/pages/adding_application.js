@@ -1,5 +1,14 @@
 import $ from "jquery";
 import "../utils/jquery-ui.min";
+import Swiper from "swiper";
+import "swiper/css";
+import { Navigation } from "swiper/modules";
+
+function remToPx(remValue) {
+    var htmlFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    var pxValue = remValue * htmlFontSize;
+    return Math.round(pxValue) + "px";
+}
 
 //меняем поля местами
 $(function () {
@@ -86,13 +95,13 @@ $("body").on("keyup", ".adding_application__item_name_text", function (e) {
 //удалем поле
 $("body").on("click", ".adding_application__item_choice--delete", function () {
     $(this).closest(".adding_application__item").remove();
-    checkListEmpty()
+    checkListEmpty();
 });
 
 //удаляем поле с чекбоксами
 $("body").on("click", ".adding_application__item_choice--delete-group", function () {
     $(this).closest(".adding_application__item_group").remove();
-    checkListEmpty()
+    checkListEmpty();
 });
 
 //дублируем поле
@@ -101,11 +110,19 @@ $("body").on("click", ".adding_application__item_choice--duplicate", function ()
     if ($originalItem.length === 0) {
         $originalItem = $(this).closest(".adding_application__item");
     }
+
     if ($originalItem.length > 0) {
         $originalItem.find(".adding_application__item_box").slideUp();
         const $clone = $originalItem.clone(true);
         $originalItem.after($clone);
         $clone.find(".adding_application__item_box").hide();
+
+        //REFACTOR
+        if ($clone.find(".adding_application__item_input_tags").length) {
+            $(".adding_application__item_input_tags").each(function () {
+                initializeSwiper(this);
+            });
+        }
     }
 });
 
@@ -232,7 +249,7 @@ $("body").on("click", ".btn__add-field", function () {
     </div>
     `);
     $(".modal__edit-employee__list").append(newCategory);
-    checkListEmpty()
+    checkListEmpty();
 });
 
 //добавляем подсказку
@@ -256,28 +273,25 @@ $("body").on("click", ".delete-hint", function () {
     $(this).closest(".adding_application__item_hint").remove();
 });
 
-//добавляем поле при активном чек-боксе
+let innerTagHtml = `
+<div class="inner-tag">
+    <span></span>
+    <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
+        <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg> 
+</div>
+`;
+
+// добавляем поле при активном чек-боксе
 $("body").on("click", ".adding_application__item_choice--add-checkbox-hint", function () {
     if ($(this).closest(".adding_application__item_input").find(".inner-tag").length === 0) {
-        let hintHTML = `
-        <div class="inner-tag">
-            <span>Текстовое поле при активном чек-боксе</span>
-            <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
-                <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg> 
-        </div>
-        `;
-        $(this).closest(".adding_application__item_input").find(".adding_application__item_input_text").after(hintHTML);
+        const $innerTag = $(innerTagHtml);
+        $innerTag.find("span").text("Текстовое поле при активном чек-боксе");
+        $(this).closest(".adding_application__item_input").find(".adding_application__item_input_text").after($innerTag);
         $(this).closest(".adding_application__item_box").slideUp();
     }
-});
-
-//удаляем поле при активном чек-боксе/тэг в "добавить сотрудника"
-$("body").on("click", ".inner-tag .delete-hint", function () {
-    $(this).closest(".inner-tag").remove();
-    checkTags();
 });
 
 //меняем фото справа
@@ -296,22 +310,24 @@ $("body").on("change", ".adding_application__photo_add input", function (e) {
 //модалка изменить тип поля
 $("body").on("click", '[data-modal="modal-create"]', function () {
     $(".modal__create").addClass("active");
-});
 
-//модалка введите данные сотрудника
-$("body").on("click", '[data-modal="edit-employee"]', function () {
-    $(".modal__edit-employee").addClass("active");
+    //скрываем "выбор сотрудников", "чек-боксы", "буллиты", "текст", "подзаголовок", если модалка вызвана из .modal__edit-employee
+    const isBothModalsActive = $(".modal__create").hasClass("active") && $(".modal__edit-employee").hasClass("active");
+    $(".modal__create__form_item:nth-of-type(7)").toggle(!isBothModalsActive);
+    $(".modal__create__form_item:nth-of-type(10)").toggle(!isBothModalsActive);
+    $(".modal__create__form_item:nth-of-type(11)").toggle(!isBothModalsActive);
+    $(".modal__create__form_item:nth-of-type(12)").toggle(!isBothModalsActive);
+    $(".modal__create__form_item:nth-of-type(13)").toggle(!isBothModalsActive);
 });
 
 //удалены все поля в модалке
 function checkListEmpty() {
-    const $modalList = $('.modal__edit-employee__list');
-    const $modalListEmpty = $('.modal__edit-employee__list_empty');
-    $modalListEmpty.toggle(!$modalList.find('.adding_application__item').length);
+    const $modalList = $(".modal__edit-employee__list");
+    const $modalListEmpty = $(".modal__edit-employee__list_empty");
+    $modalListEmpty.toggle(!$modalList.find(".adding_application__item").length);
 }
 
 //массив с видами полей
-
 const positionSVG = `
   <div class="adding_application__item_position">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -469,6 +485,14 @@ let itemTemplates = [
             <div class="adding_application__item_input-wrapper">
                 <div class="adding_application__item_input">
                     <div class="adding_application__item_input_text required">Выберите сотрудника из списка или добавьте вручную</div>
+                    <div class="adding_application__item_input_tags swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                    <button class="swiper-button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                                
+                    </button>
                     ${settingsSVG}
                     <div class="adding_application__item_box">
                         <div class="adding_application__item_choices">
@@ -728,13 +752,127 @@ $(".modal__create__form").on("submit", function (e) {
         clickedItem.replaceWith(selectedTemplate.html);
     }
     clickedItem = null;
+    checkTags();
 });
 
-//тэги в поле "добавить сотрудника"
-//если есть тэги - убираем текст
+//удаляем поле при активном чек-боксе/тэг в "добавить сотрудника"
+$("body").on("click", ".inner-tag .delete-hint", function () {
+    const $tagToDelete = $(this).closest(".inner-tag");
+    const $swiperContainer = $tagToDelete.closest(".adding_application__item_input_tags");
+
+    if ($tagToDelete.closest(".swiper-slide").length > 0) {
+        $tagToDelete.closest(".swiper-slide").remove();
+        updateSwiper($swiperContainer);
+        checkTags();
+    } else {
+        $tagToDelete.remove();
+        updateSwiper($swiperContainer);
+    }
+    checkTags();
+});
+
+//если есть тэги в поле "добавить сотрудника" - убираем текст, добавляем кнопку
 function checkTags() {
-    const $employeeInput = $('[data-type="employee-input"] .adding_application__item_input');
-    const $employeeInputText = $employeeInput.find('.adding_application__item_input_text');
-    $employeeInputText.toggle(!$employeeInput.find('.inner-tag').length);
+    $('[data-type="employee-input"] .adding_application__item_input').each(function () {
+        let $employeeInput = $(this);
+        let $employeeInputText = $employeeInput.find(".adding_application__item_input_text");
+        let $employeeBtnNext = $employeeInput.find(".swiper-button-next");
+        $employeeInputText.toggle(!$employeeInput.find(".inner-tag").length);
+
+        //показываем кнопку next если тэги не влезают
+        let $innerTags = $employeeInput.find(".inner-tag");
+        let totalTagsWidth = 0;
+        $innerTags.each(function () {
+            totalTagsWidth += parseFloat($(this).css("width"));
+        });
+        console.log(totalTagsWidth);
+        $employeeBtnNext.toggle(totalTagsWidth > parseFloat(remToPx(75)));
+
+        if (!$employeeInput.find(".inner-tag").length) {
+            $(this).find(".adding_application__item_input_tags").hide();
+        } else {
+            $(this).find(".adding_application__item_input_tags").show();
+        }
+    });
 }
-checkTags();
+
+$('[data-type="employee-input"] .adding_application__item_input').each(function () {
+    checkTags();
+});
+
+let clickedEmployeeItem = null;
+
+//модалка введите данные сотрудника
+$("body").on("click", '[data-modal="edit-employee"]', function () {
+    clickedEmployeeItem = $(this).closest(".adding_application__item[data-type='employee-input']");
+    $(".modal__edit-employee").addClass("active");
+    checkTags();
+});
+
+//добавляем тэги из модалки в инпут
+$("body").on("click", ".modal__edit-employee .btn__save", function () {
+    let $modal = $(this).closest(".modal__edit-employee");
+
+    //получем названия полей из модалки
+    let fieldNames = $modal
+        .find(".adding_application__item_name span")
+        .map(function () {
+            return $(this).text();
+        })
+        .get();
+
+    let $tagsList = clickedEmployeeItem.find(".adding_application__item_input_tags .swiper-wrapper");
+    $tagsList.empty();
+
+    //вставляем тэги
+    $.each(fieldNames, function (_, fieldName) {
+        const $innerTag = $(innerTagHtml);
+        $innerTag.find("span").text(fieldName);
+        const $swiperSlide = $('<div class="swiper-slide"></div>').append($innerTag);
+        $tagsList.append($swiperSlide);
+    });
+
+    //если галочка "выбрать из списка"
+    if ($(".modal__edit-employee__input-check input").prop("checked")) {
+        const $innerTagChecked = $(innerTagHtml);
+        $innerTagChecked.find("span").text("Сотрудники из списка");
+        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').append($innerTagChecked);
+        $tagsList.prepend($swiperSlideChecked);
+    }
+
+    ///удалить
+    if ($(".adding_application__item_input_tags").length) {
+        $(".adding_application__item_input_tags").each(function () {
+            initializeSwiper(this);
+        });
+    }
+
+    checkTags();
+});
+
+//свайпер тэгов
+function initializeSwiper(element) {
+    return new Swiper(element, {
+        loop: false,
+        slidesPerView: "auto",
+        modules: [Navigation],
+        navigation: {
+            nextEl: $(element).siblings(".swiper-button-next")[0],
+        },
+    });
+}
+
+//обновляем свайпер
+function updateSwiper($swiperContainer) {
+    $swiperContainer.each(function () {
+        const swiperInstance = $(this).data("swiper");
+        if (swiperInstance) {
+            swiperInstance.destroy();
+        }
+        initializeSwiper(this);
+    });
+}
+
+$(".adding_application__item_input_tags").each(function () {
+    initializeSwiper(this);
+});
