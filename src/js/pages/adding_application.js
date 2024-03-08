@@ -10,14 +10,6 @@ function remToPx(remValue) {
     return Math.round(pxValue) + "px";
 }
 
-//меняем поля местами
-$(function () {
-    $(".adding_application__list").sortable({
-        handle: ".adding_application__item_position",
-        cursor: "grabbing",
-    });
-});
-
 //ввод с конца текста
 function placeCaretAtEnd(el) {
     el.focus();
@@ -36,14 +28,73 @@ function placeCaretAtEnd(el) {
     }
 }
 
-//клик на 3 точки: открываем бокс у активного, закрываем остальные
+
+
+let clickedItem = null;
+let clickedEmployeeItem = null;
+
+let innerTagHtml = `
+<div class="inner-tag">
+    <span></span>
+    <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
+        <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg> 
+</div>
+`;
+
+//изменить фото справа
+$("body").on("change", ".adding_application__photo_add input", function (e) {
+    if ($(this).closest(".adding_application__photo").find(".adding_application__photo_empty").length) {
+        $(this).closest(".adding_application__photo").find(".adding_application__photo_empty").remove();
+        let fileImgElement = document.createElement("img");
+        fileImgElement.src = URL.createObjectURL(this.files[0]);
+        $(this).closest(".adding_application__photo")[0].prepend(fileImgElement);
+    } else {
+        const imgTake = $(this).closest(".adding_application__photo").find("img");
+        imgTake.attr("src", URL.createObjectURL(this.files[0]));
+    }
+});
+
+//меняем поля местами
+$(function () {
+    $(".adding_application__list").sortable({
+        handle: ".adding_application__item_position",
+        cursor: "grabbing",
+    });
+});
+
+
+
+//изменить название поля
+$("body").on("click", ".adding_application__item_name svg, .adding_application__title svg", function () {
+    $(this).siblings("span").attr("contenteditable", true);
+    placeCaretAtEnd($(this).siblings("span")[0]);
+});
+
+$("body").on("keydown", ".adding_application__item_name span, .adding_application__title span", function (e) {
+    if (e.which === 13) {
+        e.preventDefault();
+        $(this).attr("contenteditable", false);
+    }
+});
+
+//меняем название поля + плейсхолдер
+$("body").on("keyup", ".adding_application__item_name_text", function () {
+    $(this)
+        .closest(".adding_application__item")
+        .find(".adding_application__item_input_text")
+        .text(`Введите ${$(this).text().toLowerCase()}`);
+});
+
+//Dropdown (.adding_application__item_box)
 $("body").on("click", ".adding_application__item_settings", function () {
     let activeElement = $(this).closest(".adding_application__item");
     $(".adding_application__item").not(activeElement).removeClass("active").find(".adding_application__item_box").slideUp();
     activeElement.toggleClass("active").find(".adding_application__item_box").slideToggle();
 });
 
-//закрываем все боксы по клику вне
 $(document).on("click", function (e) {
     const count = $(e.target).closest(".adding_application__item_box").length + $(e.target).closest(".adding_application__item_settings").length;
     if (count === 0) {
@@ -56,68 +107,33 @@ $(document).on("click", function (e) {
     }
 });
 
-//активируем название поля для редактирования
-$("body").on("click", ".adding_application__item_name svg", function () {
-    $(this).siblings("span").attr("contenteditable", true);
-    placeCaretAtEnd($(this).siblings("span")[0]);
-});
-
-//активируем поле заголовка для редактирования
-$("body").on("click", ".adding_application__title svg", function () {
-    $(this).siblings("span").attr("contenteditable", true);
-    placeCaretAtEnd($(this).siblings("span")[0]);
-});
-
-//сохраняем название поля
-$("body").on("keydown", ".adding_application__item_name span", function (e) {
-    if (e.which === 13) {
-        e.preventDefault;
-        $(this).attr("contenteditable", false);
-    }
-});
-
-//сохраняем название заголовка
-$("body").on("keydown", ".adding_application__title span", function (e) {
-    if (e.which === 13) {
-        e.preventDefault;
-        $(this).attr("contenteditable", false);
-    }
-});
-
-//меняем название поля + плейсхолдер
-$("body").on("keyup", ".adding_application__item_name_text", function (e) {
-    $(this)
-        .closest(".adding_application__item")
-        .find(".adding_application__item_input_text")
-        .text(`Введите ${$(this).text().toLowerCase()}`);
-});
-
-//удалем поле
+//удалить поле
 $("body").on("click", ".adding_application__item_choice--delete", function () {
     $(this).closest(".adding_application__item").remove();
     checkListEmpty();
 });
 
-//удаляем поле с чекбоксами
+//удалить поле с чекбоксами
 $("body").on("click", ".adding_application__item_choice--delete-group", function () {
     $(this).closest(".adding_application__item_group").remove();
     checkListEmpty();
 });
 
-//дублируем поле
+//дублировать поле
 $("body").on("click", ".adding_application__item_choice--duplicate", function () {
-    let $originalItem = $(this).closest(".adding_application__item_group");
+    let $originalItem = $(this).parents(".adding_application__item_group, .adding_application__item--checkbox").first();
+    
     if ($originalItem.length === 0) {
         $originalItem = $(this).closest(".adding_application__item");
     }
 
     if ($originalItem.length > 0) {
         $originalItem.find(".adding_application__item_box").slideUp();
+        $originalItem.removeClass('active')
         const $clone = $originalItem.clone(true);
         $originalItem.after($clone);
         $clone.find(".adding_application__item_box").hide();
-
-        //REFACTOR
+        
         if ($clone.find(".adding_application__item_input_tags").length) {
             $(".adding_application__item_input_tags").each(function () {
                 initializeSwiper(this);
@@ -135,124 +151,69 @@ $("body").on("change", ".adding_application__item_choice--checkbox", function ()
     }
 });
 
-//добавляем новое поле
-$("body").on("click", ".adding_application__bottom_add", function () {
+//добавить новое поле
+function addNewField(targetContainer) {
     const newCategory = $(`
-    <div class="adding_application__item" data-type="text-input">
-        <div class="adding_application__item_position ui-sortable-handle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="6" y1="8.5" x2="18" y2="8.5" stroke="#ACACAC" />
-                <line x1="6" y1="11.5" x2="18" y2="11.5" stroke="#ACACAC" />
-                <line x1="6" y1="14.5" x2="18" y2="14.5" stroke="#ACACAC" />
-            </svg>
-        </div>
-        <div class="adding_application__item_name">
-            <span class="adding_application__item_name_text">Текстовое поле</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.5 18.5H16.5" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                    d="M11.5 14.9999L8.5 15.5399L9 12.4999L15.73 5.78994C15.823 5.69621 15.9336 5.62182 16.0554 5.57105C16.1773 5.52028 16.308 5.49414 16.44 5.49414C16.572 5.49414 16.7027 5.52028 16.8246 5.57105C16.9464 5.62182 17.057 5.69621 17.15 5.78994L18.21 6.84994C18.3037 6.9429 18.3781 7.0535 18.4289 7.17536C18.4797 7.29722 18.5058 7.42793 18.5058 7.55994C18.5058 7.69195 18.4797 7.82266 18.4289 7.94452C18.3781 8.06637 18.3037 8.17698 18.21 8.26994L11.5 14.9999Z"
-                    fill="#101010"
-                    stroke="#101010"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
-            </svg>
-        </div>
-        <div class="adding_application__item_input-wrapper"> 
-            <div class="adding_application__item_input">
-                <div class="adding_application__item_input_text required">Название</div>
-                <div class="adding_application__item_settings">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                        <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                        <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                    </svg>
-                </div>
-                <div class="adding_application__item_box">
-                    <div class="adding_application__item_choices">
-                        <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
-                        <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
-                            <span>Изменить тип поля</span>
-                        </div>
-                        <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
-                        <label class="adding_application__item_choice checkbox-wrapper">
-                            <span>Обязательное поле</span>
-                            <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
-                            <div class="checkbox-icon"></div>
-                        </label>
-                        <div class="adding_application__item_choice adding_application__item_choice--hint">
-                            <span>Добавить подсказку</span>
+        <div class="adding_application__item" data-type="text-input">
+            <div class="adding_application__item_position ui-sortable-handle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="6" y1="8.5" x2="18" y2="8.5" stroke="#ACACAC" />
+                    <line x1="6" y1="11.5" x2="18" y2="11.5" stroke="#ACACAC" />
+                    <line x1="6" y1="14.5" x2="18" y2="14.5" stroke="#ACACAC" />
+                </svg>
+            </div>
+            <div class="adding_application__item_name">
+                <span class="adding_application__item_name_text">Текстовое поле</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5 18.5H16.5" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M11.5 14.9999L8.5 15.5399L9 12.4999L15.73 5.78994C15.823 5.69621 15.9336 5.62182 16.0554 5.57105C16.1773 5.52028 16.308 5.49414 16.44 5.49414C16.572 5.49414 16.7027 5.52028 16.8246 5.57105C16.9464 5.62182 17.057 5.69621 17.15 5.78994L18.21 6.84994C18.3037 6.9429 18.3781 7.0535 18.4289 7.17536C18.4797 7.29722 18.5058 7.42793 18.5058 7.55994C18.5058 7.69195 18.4797 7.82266 18.4289 7.94452C18.3781 8.06637 18.3037 8.17698 18.21 8.26994L11.5 14.9999Z"
+                        fill="#101010"
+                        stroke="#101010"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </div>
+            <div class="adding_application__item_input-wrapper"> 
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text required">Название</div>
+                    <div class="adding_application__item_settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                            <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                            <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
+                        </svg>
+                    </div>
+                    <div class="adding_application__item_box">
+                        <div class="adding_application__item_choices">
+                            <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
+                            <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
+                                <span>Изменить тип поля</span>
+                            </div>
+                            <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
+                            <label class="adding_application__item_choice checkbox-wrapper">
+                                <span>Обязательное поле</span>
+                                <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
+                                <div class="checkbox-icon"></div>
+                            </label>
+                            <div class="adding_application__item_choice adding_application__item_choice--hint">
+                                <span>Добавить подсказку</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     `);
-    $(".adding_application__list").append(newCategory);
-});
-
-//добавляем новое поле в модалку
-$("body").on("click", ".btn__add-field", function () {
-    const newCategory = $(`
-    <div class="adding_application__item" data-type="text-input">
-        <div class="adding_application__item_position ui-sortable-handle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="6" y1="8.5" x2="18" y2="8.5" stroke="#ACACAC" />
-                <line x1="6" y1="11.5" x2="18" y2="11.5" stroke="#ACACAC" />
-                <line x1="6" y1="14.5" x2="18" y2="14.5" stroke="#ACACAC" />
-            </svg>
-        </div>
-        <div class="adding_application__item_name">
-            <span class="adding_application__item_name_text">Текстовое поле</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.5 18.5H16.5" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                    d="M11.5 14.9999L8.5 15.5399L9 12.4999L15.73 5.78994C15.823 5.69621 15.9336 5.62182 16.0554 5.57105C16.1773 5.52028 16.308 5.49414 16.44 5.49414C16.572 5.49414 16.7027 5.52028 16.8246 5.57105C16.9464 5.62182 17.057 5.69621 17.15 5.78994L18.21 6.84994C18.3037 6.9429 18.3781 7.0535 18.4289 7.17536C18.4797 7.29722 18.5058 7.42793 18.5058 7.55994C18.5058 7.69195 18.4797 7.82266 18.4289 7.94452C18.3781 8.06637 18.3037 8.17698 18.21 8.26994L11.5 14.9999Z"
-                    fill="#101010"
-                    stroke="#101010"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
-            </svg>
-        </div>
-        <div class="adding_application__item_input-wrapper"> 
-            <div class="adding_application__item_input">
-                <div class="adding_application__item_input_text required">Название</div>
-                <div class="adding_application__item_settings">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="17" r="1" transform="rotate(-180 12 17)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                        <circle cx="12" cy="12" r="1" transform="rotate(-180 12 12)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                        <circle cx="12" cy="7" r="1" transform="rotate(-180 12 7)" fill="#101010" stroke="#101010" stroke-width="0.5" />
-                    </svg>
-                </div>
-                <div class="adding_application__item_box">
-                    <div class="adding_application__item_choices">
-                        <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
-                        <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
-                            <span>Изменить тип поля</span>
-                        </div>
-                        <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
-                        <label class="adding_application__item_choice checkbox-wrapper">
-                            <span>Обязательное поле</span>
-                            <input class="adding_application__item_choice--checkbox" type="checkbox" checked />
-                            <div class="checkbox-icon"></div>
-                        </label>
-                        <div class="adding_application__item_choice adding_application__item_choice--hint">
-                            <span>Добавить подсказку</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    `);
-    $(".modal__edit-employee__list").append(newCategory);
+    $(targetContainer).append(newCategory);
     checkListEmpty();
-});
+}
 
-//добавляем подсказку
+$("body").on("click", ".adding_application__bottom_add", () => addNewField(".adding_application__list"));
+$("body").on("click", ".btn__add-field", () => addNewField(".modal__edit-employee__list"));
+
+//добавить подсказку
 $("body").on("click", ".adding_application__item_choice--hint", function () {
     let hintHTML = `
     <div class="adding_application__item_hint">
@@ -268,23 +229,12 @@ $("body").on("click", ".adding_application__item_choice--hint", function () {
     $(this).closest(".adding_application__item_box").slideUp();
 });
 
-//удаляем подсказку
+//удалить подсказку
 $("body").on("click", ".delete-hint", function () {
     $(this).closest(".adding_application__item_hint").remove();
 });
 
-let innerTagHtml = `
-<div class="inner-tag">
-    <span></span>
-    <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
-        <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg> 
-</div>
-`;
-
-// добавляем поле при активном чек-боксе
+//добавить поле при активном чек-боксе
 $("body").on("click", ".adding_application__item_choice--add-checkbox-hint", function () {
     if ($(this).closest(".adding_application__item_input").find(".inner-tag").length === 0) {
         const $innerTag = $(innerTagHtml);
@@ -294,23 +244,25 @@ $("body").on("click", ".adding_application__item_choice--add-checkbox-hint", fun
     }
 });
 
-//меняем фото справа
-$("body").on("change", ".adding_application__photo_add input", function (e) {
-    if ($(this).closest(".adding_application__photo").find(".adding_application__photo_empty").length) {
-        $(this).closest(".adding_application__photo").find(".adding_application__photo_empty").remove();
-        let fileImgElement = document.createElement("img");
-        fileImgElement.src = URL.createObjectURL(this.files[0]);
-        $(this).closest(".adding_application__photo")[0].prepend(fileImgElement);
+//удаляем поле при активном чек-боксе/тэг в "добавить сотрудника"
+$("body").on("click", ".inner-tag .delete-hint", function () {
+    const $tagToDelete = $(this).closest(".inner-tag");
+    const $swiperContainer = $tagToDelete.closest(".adding_application__item_input_tags");
+
+    if ($tagToDelete.closest(".swiper-slide").length > 0) {
+        $tagToDelete.closest(".swiper-slide").remove();
+        updateSwiper($swiperContainer);
+        checkTags();
     } else {
-        const imgTake = $(this).closest(".adding_application__photo").find("img");
-        imgTake.attr("src", URL.createObjectURL(this.files[0]));
+        $tagToDelete.remove();
+        updateSwiper($swiperContainer);
     }
+    checkTags();
 });
 
 //модалка изменить тип поля
 $("body").on("click", '[data-modal="modal-create"]', function () {
     $(".modal__create").addClass("active");
-
     //скрываем "выбор сотрудников", "чек-боксы", "буллиты", "текст", "подзаголовок", если модалка вызвана из .modal__edit-employee
     const isBothModalsActive = $(".modal__create").hasClass("active") && $(".modal__edit-employee").hasClass("active");
     $(".modal__create__form_item:nth-of-type(7)").toggle(!isBothModalsActive);
@@ -320,6 +272,34 @@ $("body").on("click", '[data-modal="modal-create"]', function () {
     $(".modal__create__form_item:nth-of-type(13)").toggle(!isBothModalsActive);
 });
 
+//галочка в модалке соответствует типу поля
+function syncModalItem() {
+    if (!clickedItem) return;
+    const dataType = clickedItem.data("type");
+    const radioInput = $(`.modal__create__form [data-type="${dataType}"]`);
+    if (radioInput.length > 0) {
+        $(".modal__create__form input[name='field']").prop("checked", false);
+        radioInput.prop("checked", true);
+    }
+}
+
+$("body").on("click", ".adding_application__item_choice--change", function () {
+    clickedItem = $(this).closest(".adding_application__item");
+    syncModalItem();
+});
+
+$("body").on("click", ".adding_application__item_group .adding_application__item_choice--change", function () {
+    clickedItem = $(this).closest(".adding_application__item_group");
+    syncModalItem();
+});
+
+//модалка введите данные сотрудника
+$("body").on("click", '[data-modal="edit-employee"]', function () {
+    clickedEmployeeItem = $(this).closest(".adding_application__item[data-type='employee-input']");
+    $(".modal__edit-employee").addClass("active");
+    checkTags();
+});
+
 //удалены все поля в модалке
 function checkListEmpty() {
     const $modalList = $(".modal__edit-employee__list");
@@ -327,7 +307,6 @@ function checkListEmpty() {
     $modalListEmpty.toggle(!$modalList.find(".adding_application__item").length);
 }
 
-//массив с видами полей
 const positionSVG = `
   <div class="adding_application__item_position">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -396,6 +375,7 @@ const intemBoxCheckboxHTML = `
     </div>
 `;
 
+//массив с видами полей
 let itemTemplates = [
     {
         type: "subtitle",
@@ -719,30 +699,7 @@ let itemTemplates = [
     },
 ];
 
-let clickedItem = null;
-
-$("body").on("click", ".adding_application__item_choice--change", function () {
-    clickedItem = $(this).closest(".adding_application__item");
-    syncModalItem();
-});
-
-$("body").on("click", ".adding_application__item_group .adding_application__item_choice--change", function () {
-    clickedItem = $(this).closest(".adding_application__item_group");
-    syncModalItem();
-});
-
-//галочка в модалке соответствует типу поля
-function syncModalItem() {
-    if (!clickedItem) return;
-    const dataType = clickedItem.data("type");
-    const radioInput = $(`.modal__create__form [data-type="${dataType}"]`);
-    if (radioInput.length > 0) {
-        $(".modal__create__form input[name='field']").prop("checked", false);
-        radioInput.prop("checked", true);
-    }
-}
-
-//меняем тип поля (удаляем прошлое и всталяем из массива)
+//изменить тип поля (удаляем прошлое и всталяем из массива)
 $(".modal__create__form").on("submit", function (e) {
     e.preventDefault();
     if (!clickedItem) return;
@@ -752,22 +709,6 @@ $(".modal__create__form").on("submit", function (e) {
         clickedItem.replaceWith(selectedTemplate.html);
     }
     clickedItem = null;
-    checkTags();
-});
-
-//удаляем поле при активном чек-боксе/тэг в "добавить сотрудника"
-$("body").on("click", ".inner-tag .delete-hint", function () {
-    const $tagToDelete = $(this).closest(".inner-tag");
-    const $swiperContainer = $tagToDelete.closest(".adding_application__item_input_tags");
-
-    if ($tagToDelete.closest(".swiper-slide").length > 0) {
-        $tagToDelete.closest(".swiper-slide").remove();
-        updateSwiper($swiperContainer);
-        checkTags();
-    } else {
-        $tagToDelete.remove();
-        updateSwiper($swiperContainer);
-    }
     checkTags();
 });
 
@@ -785,7 +726,6 @@ function checkTags() {
         $innerTags.each(function () {
             totalTagsWidth += parseFloat($(this).css("width"));
         });
-        console.log(totalTagsWidth);
         $employeeBtnNext.toggle(totalTagsWidth > parseFloat(remToPx(75)));
 
         if (!$employeeInput.find(".inner-tag").length) {
@@ -797,15 +737,6 @@ function checkTags() {
 }
 
 $('[data-type="employee-input"] .adding_application__item_input').each(function () {
-    checkTags();
-});
-
-let clickedEmployeeItem = null;
-
-//модалка введите данные сотрудника
-$("body").on("click", '[data-modal="edit-employee"]', function () {
-    clickedEmployeeItem = $(this).closest(".adding_application__item[data-type='employee-input']");
-    $(".modal__edit-employee").addClass("active");
     checkTags();
 });
 
@@ -840,11 +771,9 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
         $tagsList.prepend($swiperSlideChecked);
     }
 
-    ///удалить
+    //обновляем свайпер после добавления
     if ($(".adding_application__item_input_tags").length) {
-        $(".adding_application__item_input_tags").each(function () {
-            initializeSwiper(this);
-        });
+        updateSwiper($(".adding_application__item_input_tags"));
     }
 
     checkTags();
@@ -862,7 +791,10 @@ function initializeSwiper(element) {
     });
 }
 
-//обновляем свайпер
+$(".adding_application__item_input_tags").each(function () {
+    initializeSwiper(this);
+});
+
 function updateSwiper($swiperContainer) {
     $swiperContainer.each(function () {
         const swiperInstance = $(this).data("swiper");
@@ -872,7 +804,3 @@ function updateSwiper($swiperContainer) {
         initializeSwiper(this);
     });
 }
-
-$(".adding_application__item_input_tags").each(function () {
-    initializeSwiper(this);
-});
