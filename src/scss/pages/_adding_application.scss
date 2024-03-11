@@ -25,6 +25,7 @@ body .adding_application {
     --appBtnBGColor: #101010;
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
+    --inputInnerBg: #f4f4f4;
 }
 body.color_yd .adding_application_template,
 body.color_yd .adding_application {
@@ -53,6 +54,7 @@ body.color_yd .adding_application {
     --appBtnBGColor: #101010;
     --btnDeleteFill: #f9ec00;
     --btnDeleteStroke: #101010;
+    --inputInnerBg: #fff;
 }
 body.color_pl .adding_application_template,
 body.color_pl .adding_application {
@@ -278,6 +280,23 @@ body.color_pd .adding_application {
         }
 
         &--subtitle {
+
+            .adding_application__item_input{
+                height: 2.4rem;
+            }
+
+            .adding_application__item_name {
+                padding-top: 0.4rem;
+
+                svg {
+                    top: 0;
+                }
+            }
+
+            .adding_application__item_position {
+                padding-top: unset;
+            }
+
             .adding_application__item_name span {
                 font-size: 1.8rem;
                 color: var(--normalTextColor);
@@ -441,9 +460,18 @@ body.color_pd .adding_application {
             .swiper-button-next{
                 display: none;
                 margin-left: auto;
+
+                &:disabled{
+                    background-color: transparent !important;
+                }
+
                 svg{
                     width: 2.4rem;
                     height: 2.4rem;
+
+                    path{
+                        stroke: var(--settingsSwitchActive);
+                    }
                 }
 
             }

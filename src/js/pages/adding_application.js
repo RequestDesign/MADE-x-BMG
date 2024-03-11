@@ -28,8 +28,6 @@ function placeCaretAtEnd(el) {
     }
 }
 
-
-
 let clickedItem = null;
 let clickedEmployeeItem = null;
 
@@ -64,8 +62,6 @@ $(function () {
         cursor: "grabbing",
     });
 });
-
-
 
 //изменить название поля
 $("body").on("click", ".adding_application__item_name svg, .adding_application__title svg", function () {
