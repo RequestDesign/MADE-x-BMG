@@ -1,3 +1,21 @@
+body .modal__edit-employee {
+    --inputBg: #f1f4f6;
+    --inputBorder: none;
+    --settingsColor: #101010;
+    --boxBg: #fff;
+    --btnDeleteFill: #101010;
+    --btnDeleteStroke: #fff;
+}
+
+body.color_yd .modal__edit-employee {
+    --inputBg: #292929;
+    --inputBorder: none;
+    --settingsColor: #f9ec00;
+    --boxBg: #292929;
+    --btnDeleteFill: #f9ec00;
+    --btnDeleteStroke: #101010;
+}
+
 body.color_pl .modal__edit-employee {
     --inputBg: #f1f4f6;
     --inputBorder: none;
@@ -12,7 +30,7 @@ body.color_pd .modal__edit-employee {
     --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
     --settingsColor: #fff;
     --boxBg: #101010;
-    --btnDeleteFill: #D01181;
+    --btnDeleteFill: #d01181;
     --btnDeleteStroke: #101010;
 }
 
@@ -64,7 +82,7 @@ body.color_pd .modal__edit-employee {
             align-items: flex-start;
             gap: 0.8rem;
 
-            &_position{
+            &_position {
                 display: none;
             }
 
@@ -78,7 +96,7 @@ body.color_pd .modal__edit-employee {
                 }
             }
 
-            &_input-wrapper{
+            &_input-wrapper {
                 width: 100%;
             }
 
@@ -105,24 +123,24 @@ body.color_pd .modal__edit-employee {
             }
         }
 
-        &_empty{
+        &_empty {
             display: none;
         }
     }
 
-    &__add-field{
+    &__add-field {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
         margin-bottom: 2rem;
 
-        span{
+        span {
             font-size: 1.8rem;
             font-weight: 500;
         }
 
-        button svg{
+        button svg {
             width: 5.1rem;
             height: 5.1rem;
         }
