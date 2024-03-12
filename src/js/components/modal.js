@@ -12,5 +12,10 @@ $(function () {
     function closeModal() {
         $(this).closest(".modal").removeClass("active");
         $("body").removeClass("lock");
+        if($(this).closest(".modal").hasClass('modal__create')){
+            $(".modal__create__form_item").show()
+            // $(".modal__create .btn").removeClass('add-active-checkbox-field')
+            // $(".modal__create .btn").attr("data-modal", "close-modal")
+        }
     }
 });

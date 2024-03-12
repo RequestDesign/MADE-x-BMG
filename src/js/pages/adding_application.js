@@ -118,18 +118,18 @@ $("body").on("click", ".adding_application__item_choice--delete-group", function
 //дублировать поле
 $("body").on("click", ".adding_application__item_choice--duplicate", function () {
     let $originalItem = $(this).parents(".adding_application__item_group, .adding_application__item--checkbox").first();
-    
+
     if ($originalItem.length === 0) {
         $originalItem = $(this).closest(".adding_application__item");
     }
 
     if ($originalItem.length > 0) {
         $originalItem.find(".adding_application__item_box").slideUp();
-        $originalItem.removeClass('active')
+        $originalItem.removeClass("active");
         const $clone = $originalItem.clone(true);
         $originalItem.after($clone);
         $clone.find(".adding_application__item_box").hide();
-        
+
         if ($clone.find(".adding_application__item_input_tags").length) {
             $(".adding_application__item_input_tags").each(function () {
                 initializeSwiper(this);
@@ -230,15 +230,91 @@ $("body").on("click", ".delete-hint", function () {
     $(this).closest(".adding_application__item_hint").remove();
 });
 
-//добавить поле при активном чек-боксе
-$("body").on("click", ".adding_application__item_choice--add-checkbox-hint", function () {
-    if ($(this).closest(".adding_application__item_input").find(".inner-tag").length === 0) {
-        const $innerTag = $(innerTagHtml);
-        $innerTag.find("span").text("Текстовое поле при активном чек-боксе");
-        $(this).closest(".adding_application__item_input").find(".adding_application__item_input_text").after($innerTag);
-        $(this).closest(".adding_application__item_box").slideUp();
+
+
+
+
+
+
+
+
+//добавить поле при активном чекбоксе (только одно)
+let chosenFieldText = null;
+let clickedCheckbox = null;
+
+const addInnerTag = function (checkboxInput) {
+    const $innerTag = checkboxInput.find(".inner-tag");
+    if (chosenFieldText !== null) {
+        if ($innerTag.length > 0) {
+            $innerTag.find("span").text(chosenFieldText);
+        } else {
+            const newInnerTag = $(innerTagHtml);
+            newInnerTag.find("span").text(chosenFieldText);
+            checkboxInput.find(".adding_application__item_input_text").after(newInnerTag);
+        }
+        $(".modal__create").removeClass("active");
+        $(".modal__create .btn").removeClass("add-active-checkbox-field");
+        chosenFieldText = null;
     }
+};
+
+$("body").on("click", ".adding_application__item_choice--add-checkbox-field", function () {
+    clickedCheckbox = $(this).closest('.adding_application__item--checkbox');
+    $(this).closest(".adding_application__item_box").slideUp();
+
+    const modalCreate = $(".modal__create");
+    modalCreate.addClass("active");
+    modalCreate.find(".btn").addClass("add-active-checkbox-field");
+    modalCreate.find("input").prop("checked", false);
+
+    const addingActiveCheckboxField = $(".modal__create").hasClass("active");
+    $(".modal__create__form_item:nth-of-type(10)").toggle(!addingActiveCheckboxField);
+    $(".modal__create__form_item:nth-of-type(11)").toggle(!addingActiveCheckboxField);
+    $(".modal__create__form_item:nth-of-type(12)").toggle(!addingActiveCheckboxField);
+    $(".modal__create__form_item:nth-of-type(13)").toggle(!addingActiveCheckboxField);
+
+    updateDataModalAttribute(clickedCheckbox.find("input:checked"));
 });
+
+$(".modal__create input").on('click', function () {
+    let chosenField = $(this);
+    chosenFieldText = chosenField.closest('.modal__create__form_item').find('span').text();
+    console.log(chosenFieldText);
+    updateDataModalAttribute(chosenField);
+});
+
+$(".modal__create").on('click', '.add-active-checkbox-field', function () {
+    addInnerTag(clickedCheckbox);
+    updateDataModalAttribute(clickedCheckbox.find("input:checked"));
+});
+
+const updateDataModalAttribute = function (chosenField) {
+    const modalCreateBtn = $(".modal__create .add-active-checkbox-field");
+    if (chosenField.data("type") !== "employee-input") {
+        modalCreateBtn.attr("data-modal", "edit-field");
+    } else {
+        modalCreateBtn.attr("data-modal", "edit-employee");
+    }
+};
+
+
+
+
+
+
+//модалка "отредактируйте поле"
+$("body").on("click", '[data-modal="edit-field"]', function () {
+    $(".modal__create").removeClass("active");
+    $(".modal__edit-field").addClass("active");
+});
+
+
+
+
+
+
+
+
 
 //удаляем поле при активном чек-боксе/тэг в "добавить сотрудника"
 $("body").on("click", ".inner-tag .delete-hint", function () {
@@ -360,7 +436,7 @@ const intemBoxCheckboxHTML = `
     <div class="adding_application__item_box">
     <div class="adding_application__item_choices">
         <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить чек бокс</span></div>
-        <div class="adding_application__item_choice adding_application__item_choice--add-checkbox-hint"><span>Добавить поле при активном чекбоксе</span></div>
+        <div class="adding_application__item_choice adding_application__item_choice--add-checkbox-field"><span>Добавить поле при активном чекбоксе</span></div>
         <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
         <label class="adding_application__item_choice checkbox-wrapper">
             <span>Обязательное поле</span>
