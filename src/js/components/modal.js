@@ -12,10 +12,17 @@ $(function () {
     function closeModal() {
         $(this).closest(".modal").removeClass("active");
         $("body").removeClass("lock");
-        if($(this).closest(".modal").hasClass('modal__create')){
-            $(".modal__create__form_item").show()
-            // $(".modal__create .btn").removeClass('add-active-checkbox-field')
-            // $(".modal__create .btn").attr("data-modal", "close-modal")
+        if ($(this).closest(".modal").hasClass("modal__create")) {
+            $(".modal__create__form_item").show();
+            setTimeout(() => {
+                $(".modal__create .btn").removeClass("add-active-checkbox-field");
+                $(".modal__create .btn").attr("data-modal", "close-modal");
+            }, 100);
+        }
+        if ($(this).closest(".modal").hasClass("modal__edit-field")) {
+            setTimeout(() => {
+                $(".adding_application__item input").val("");
+            });
         }
     }
 });

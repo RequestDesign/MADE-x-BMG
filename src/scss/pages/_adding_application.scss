@@ -336,6 +336,25 @@ body.color_pd .adding_application {
             & + & {
                 margin-top: 1rem;
             }
+
+            .adding_application__item_input_text{
+                width: fit-content;
+            }
+
+            .adding_application__item_input_tags{
+                max-width: 60rem;
+                width: fit-content;
+                margin-right: unset !important;
+            }
+
+            .swiper-button-next{
+                margin-left: unset !important;
+            }
+
+            .swiper-wrapper{
+                width: fit-content;
+                margin-left: auto; 
+            }
         }
 
         &:hover {
@@ -458,7 +477,7 @@ body.color_pd .adding_application {
             }
 
             .swiper-button-next{
-                display: none;
+                // display: none;
                 margin-left: auto;
 
                 &:disabled{
