@@ -338,7 +338,7 @@ body.color_pd .adding_application {
             }
 
             .adding_application__item_input_text{
-                width: fit-content;
+                flex: 1;
             }
 
             .adding_application__item_input_tags{
@@ -477,7 +477,7 @@ body.color_pd .adding_application {
             }
 
             .swiper-button-next{
-                // display: none;
+                display: none;
                 margin-left: auto;
 
                 &:disabled{

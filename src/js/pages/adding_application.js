@@ -87,26 +87,28 @@ $("body").on("keyup", ".adding_application__item_name_text", function () {
 
 //Dropdown (.adding_application__item_box)
 $("body").on("click", ".adding_application__item_settings", function () {
-    let activeElement = $(this).closest(".adding_application__item");
-    $(".adding_application__item").not(activeElement).removeClass("active").find(".adding_application__item_box").slideUp();
-    activeElement.toggleClass("active").find(".adding_application__item_box").slideToggle();
+    let $activeElement = $(this).closest(".adding_application__item");
+    $(".adding_application__item").not($activeElement).removeClass("active").find(".adding_application__item_box").slideUp();
+    $activeElement.toggleClass("active");
+    let $itemBox = $activeElement.find(".adding_application__item_box");
+    $itemBox.slideToggle($activeElement.hasClass("active"));
 
-    if (activeElement.hasClass("adding_application__item--checkbox")) {
-        clickedCheckbox = activeElement;
+    if ($activeElement.hasClass("adding_application__item--checkbox")) {
+        clickedCheckbox = $activeElement;
     }
 });
 
-$(document).on("click", function (e) {
-    const count = $(e.target).closest(".adding_application__item_box").length + $(e.target).closest(".adding_application__item_settings").length;
-    if (count === 0) {
-        $(".adding_application__item").each(function (params) {
-            if ($(this).hasClass("active")) {
-                $(this).find(".adding_application__item_box").slideToggle();
-            }
-            $(this).removeClass("active");
-        });
-    }
-});
+// $(document).on("click", function (e) {
+//     const count = $(e.target).closest(".adding_application__item_box").length + $(e.target).closest(".adding_application__item_settings").length;
+//     if (count === 0) {
+//         $(".adding_application__item").each(function (params) {
+//             if ($(this).hasClass("active")) {
+//                 $(this).find(".adding_application__item_box").slideToggle();
+//             }
+//             $(this).removeClass("active");
+//         });
+//     }
+// });
 
 //удалить поле
 $("body").on("click", ".adding_application__item_choice--delete", function () {
@@ -284,10 +286,14 @@ $("body").on("click", ".adding_application__item_choice--add-checkbox-field", fu
     $(".modal__create__form_item:nth-of-type(13)").toggle(!addingActiveCheckboxField);
 });
 
+let chosenFieldText = null;
+let chosenField = null;
+
 //вызываем обновление data-type у кнопки при клике на тип поля
 $(".modal__create input").on("click", function () {
     chosenField = $(this);
     updateDataModalAttribute(chosenField);
+    chosenFieldText = chosenField.closest(".modal__create__form_item").find("span").text();
 });
 
 //обновляем data-type у кнопки, чтобы вызвать нужную модалку
@@ -304,23 +310,17 @@ const updateDataModalAttribute = function (chosenField) {
 $("body").on("click", '[data-modal="edit-field"]', function () {
     $(".modal__create").removeClass("active");
     $(".modal__edit-field").addClass("active");
+    $(".modal__edit-field").find('input:first').val(chosenFieldText);
 });
 
 //добавляем поле при активном чекбоксе(кроме "выбор сотрудников")
-let chosenFieldText = null;
-let chosenField = null;
-
 $(".modal__edit-field").on("click", ".btn__save", function () {
-    chosenFieldText = chosenField.closest(".modal__create__form_item").find("span").text();
     let $modal = $(this).closest(".modal__edit-field");
     let $tagsList = clickedCheckbox.find(".adding_application__item_input_tags .swiper-wrapper");
 
-    //получем названия полей из модалки
-    let fieldTitle = $modal.find(".adding_application__item input:first-of-type").val();
+    let fieldTitle = $modal.find(".adding_application__item input:first-of-type").val() || chosenFieldText;
     let hintText = $modal.find(".adding_application__item input:nth-of-type(1)").val();
-    console.log(fieldTitle, hintText);
 
-    //вставляем тэги
     const $innerTag = $(innerTagHtml);
     $innerTag.find("span").text(fieldTitle);
     const $swiperSlide = $('<div class="swiper-slide"></div>').append($innerTag);
@@ -331,7 +331,7 @@ $(".modal__edit-field").on("click", ".btn__save", function () {
         const $innerTagChecked = $(innerTagHtml);
         $innerTagChecked.find("span").text("Обязательное поле");
         const $swiperSlideChecked = $('<div class="swiper-slide"></div>').append($innerTagChecked);
-        $tagsList.prepend($swiperSlideChecked);
+        $tagsList.append($swiperSlideChecked);
     }
 
     //обновляем свайпер после добавления
@@ -352,6 +352,7 @@ $("body").on("click", ".inner-tag .delete-hint", function () {
         $tagToDelete.closest(".swiper-slide").remove();
         updateSwiper($swiperContainer);
         checkTags();
+        checkCheckboxTags();
     } else {
         $tagToDelete.remove();
         updateSwiper($swiperContainer);
@@ -705,29 +706,72 @@ let itemTemplates = [
             </div>
             </div>
             <div class="adding_application__item adding_application__item--checkbox">
-                <div class="adding_application__item_input-wrapper"> 
-                <div class="adding_application__item_input">
-                    <div class="adding_application__item_input_text">Название чек-бокса</div>
-                    ${settingsSVG}
-                    ${intemBoxCheckboxHTML}
+                <div class="adding_application__item_input-wrapper">
+                    <div class="adding_application__item_input">
+                        <div class="adding_application__item_input_text">Название чек-бокса</div>
+                        <div class="adding_application__item_input_tags swiper">
+                            <div class="swiper-wrapper">
+                            </div>
+                        </div>
+                        <button class="swiper-button-next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+                                    stroke="#101010"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        ${settingsSVG}
+                        ${intemBoxCheckboxHTML}
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div class="adding_application__item adding_application__item--checkbox">
-                <div class="adding_application__item_input-wrapper"> 
-                <div class="adding_application__item_input">
-                    <div class="adding_application__item_input_text">Название чек-бокса</div>
-                    ${settingsSVG}
-                    ${intemBoxCheckboxHTML}
-                </div>
-            </div>
             </div>
             <div class="adding_application__item adding_application__item--checkbox">
                 <div class="adding_application__item_input-wrapper">
-                <div class="adding_application__item_input">
-                    <div class="adding_application__item_input_text">Название чек-бокса</div>
-                    ${settingsSVG}
-                    ${intemBoxCheckboxHTML}
+                    <div class="adding_application__item_input">
+                        <div class="adding_application__item_input_text">Название чек-бокса</div>
+                        <div class="adding_application__item_input_tags swiper">
+                            <div class="swiper-wrapper">
+                            </div>
+                        </div>
+                        <button class="swiper-button-next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+                                    stroke="#101010"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        ${settingsSVG}
+                        ${intemBoxCheckboxHTML}
+                    </div>
+                </div>
+            </div>
+            <div class="adding_application__item adding_application__item--checkbox">
+                <div class="adding_application__item_input-wrapper">
+                    <div class="adding_application__item_input">
+                        <div class="adding_application__item_input_text">Название чек-бокса</div>
+                        <div class="adding_application__item_input_tags swiper">
+                            <div class="swiper-wrapper">
+                            </div>
+                        </div>
+                        <button class="swiper-button-next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+                                    stroke="#101010"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        ${settingsSVG}
+                        ${intemBoxCheckboxHTML}
+                    </div>
                 </div>
             </div>
             </div>
@@ -856,6 +900,8 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
         $innerTag.find("span").text(fieldName);
         const $swiperSlide = $('<div class="swiper-slide"></div>').append($innerTag);
         $tagsList.append($swiperSlide);
+        checkTags();
+        checkCheckboxTags()
     });
 
     //если галочка "выбрать из списка"
@@ -864,15 +910,14 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
         $innerTagChecked.find("span").text("Сотрудники из списка");
         const $swiperSlideChecked = $('<div class="swiper-slide"></div>').append($innerTagChecked);
         $tagsList.prepend($swiperSlideChecked);
+        checkTags();
+    checkCheckboxTags();
     }
 
     //обновляем свайпер после добавления
     if ($(".adding_application__item_input_tags").length) {
         updateSwiper($(".adding_application__item_input_tags"));
     }
-
-    checkCheckboxTags();
-    checkTags();
 });
 
 //свайпер тэгов
