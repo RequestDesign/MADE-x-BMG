@@ -331,7 +331,6 @@ body.color_pd .adding_application {
                     color: var(--normalTextColor);
                     width: unset;
                     max-width: 100rem;
-                    overflow-x: visible;
                 }
 
                 svg {
@@ -410,6 +409,7 @@ body.color_pd .adding_application {
                 font-weight: 500;
                 line-height: 93.75%;
                 overflow-x: hidden;
+                text-overflow: ellipsis;
                 -ms-overflow-style: none;
                 scrollbar-width: none;
 
