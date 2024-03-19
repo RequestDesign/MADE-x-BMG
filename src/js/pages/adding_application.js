@@ -114,7 +114,17 @@ $("body").on("click", ".adding_application__item_settings", function () {
 $("body").on("click", ".adding_application__item_choice--delete", function () {
     $(this).closest(".adding_application__item").remove();
     checkListEmpty();
+    checkCheckboxGroup();
 });
+
+//удалены все чек боксы - удаляем группу
+function checkCheckboxGroup() {
+    $(".adding_application__item_group").each(function () {
+        if (!$(this).find(".adding_application__item--checkbox").length) {
+            $(this).remove();
+        }
+    });
+}
 
 //удалить поле с чекбоксами
 $("body").on("click", ".adding_application__item_choice--delete-group", function () {
@@ -220,16 +230,23 @@ $("body").on("click", ".btn__add-field", () => addNewField(".modal__edit-employe
 $("body").on("click", ".adding_application__item_choice--hint", function () {
     let hintHTML = `
     <div class="adding_application__item_hint">
-        <span>Текст подсказки</span>
+        <input type="text" placeholder="Текст подсказки">
         <svg class="delete-hint" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none"/>
-            <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>                                            
+            <circle cx="12" cy="12" r="12" transform="rotate(180 12 12)" fill="none" />
+            <path d="M8.57157 15.4285L15.4287 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15.4287 15.4285L8.57157 8.57132" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
     </div>
     `;
-    $(this).closest(".adding_application__item_input-wrapper").append(hintHTML);
-    $(this).closest(".adding_application__item_box").slideUp();
+
+    if ($(this).closest(".adding_application__item").parent().hasClass("adding_application__item_group")) {
+        let itemGroup = $(this).closest(".adding_application__item").parent();
+        itemGroup.append(hintHTML);
+        $(this).closest(".adding_application__item_box").slideUp();
+    } else {
+        $(this).closest(".adding_application__item_input-wrapper").append(hintHTML);
+        $(this).closest(".adding_application__item_box").slideUp();
+    }
 });
 
 //удалить подсказку
@@ -310,7 +327,7 @@ const updateDataModalAttribute = function (chosenField) {
 $("body").on("click", '[data-modal="edit-field"]', function () {
     $(".modal__create").removeClass("active");
     $(".modal__edit-field").addClass("active");
-    $(".modal__edit-field").find('input:first').val(chosenFieldText);
+    $(".modal__edit-field").find("input:first").val(chosenFieldText);
 });
 
 //добавляем поле при активном чекбоксе(кроме "выбор сотрудников")
@@ -901,7 +918,7 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
         const $swiperSlide = $('<div class="swiper-slide"></div>').append($innerTag);
         $tagsList.append($swiperSlide);
         checkTags();
-        checkCheckboxTags()
+        checkCheckboxTags();
     });
 
     //если галочка "выбрать из списка"
@@ -911,7 +928,7 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
         const $swiperSlideChecked = $('<div class="swiper-slide"></div>').append($innerTagChecked);
         $tagsList.prepend($swiperSlideChecked);
         checkTags();
-    checkCheckboxTags();
+        checkCheckboxTags();
     }
 
     //обновляем свайпер после добавления

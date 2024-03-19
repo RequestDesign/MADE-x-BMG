@@ -5,6 +5,7 @@ body .modal__edit-employee {
     --boxBg: #fff;
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
+    --inputInnerBg: #f4f4f4;
 }
 
 body.color_yd .modal__edit-employee {
@@ -14,6 +15,7 @@ body.color_yd .modal__edit-employee {
     --boxBg: #292929;
     --btnDeleteFill: #f9ec00;
     --btnDeleteStroke: #101010;
+    --inputInnerBg: #fff;
 }
 
 body.color_pl .modal__edit-employee {
@@ -23,6 +25,7 @@ body.color_pl .modal__edit-employee {
     --boxBg: #fff;
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
+    --inputInnerBg: #f1f4f6;
 }
 
 body.color_pd .modal__edit-employee {
@@ -32,6 +35,7 @@ body.color_pd .modal__edit-employee {
     --boxBg: #101010;
     --btnDeleteFill: #d01181;
     --btnDeleteStroke: #101010;
+    --inputInnerBg: #292929;
 }
 
 .modal__edit-employee {

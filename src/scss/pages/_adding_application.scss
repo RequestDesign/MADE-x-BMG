@@ -255,6 +255,13 @@ body.color_pd .adding_application {
         align-items: flex-start;
         position: relative;
 
+        &_group {
+            .adding_application__item_hint {
+                margin-left: 26.4rem;
+                margin-top: 0.4rem;
+            }
+        }
+
         &_top {
             display: flex;
             align-items: center;
@@ -280,8 +287,7 @@ body.color_pd .adding_application {
         }
 
         &--subtitle {
-
-            .adding_application__item_input{
+            .adding_application__item_input {
                 height: 2.4rem;
             }
 
@@ -306,17 +312,27 @@ body.color_pd .adding_application {
         }
 
         &--text {
-            .adding_application__item_name span {
-                color: var(--normalTextColor);
-                max-width: 100rem;
-            }
-
             .adding_application__item_input {
                 height: 2.4rem;
             }
 
+            .adding_application__item_input-wrapper {
+                position: absolute;
+                right: 0;
+            }
+
             .adding_application__item_name {
                 padding-top: 0.4rem;
+                width: fit-content;
+                min-width: 19.2rem;
+                z-index: 1;
+
+                span {
+                    color: var(--normalTextColor);
+                    width: unset;
+                    max-width: 100rem;
+                    overflow-x: visible;
+                }
 
                 svg {
                     top: 0;
@@ -337,23 +353,23 @@ body.color_pd .adding_application {
                 margin-top: 1rem;
             }
 
-            .adding_application__item_input_text{
+            .adding_application__item_input_text {
                 flex: 1;
             }
 
-            .adding_application__item_input_tags{
+            .adding_application__item_input_tags {
                 max-width: 60rem;
                 width: fit-content;
                 margin-right: unset !important;
             }
 
-            .swiper-button-next{
+            .swiper-button-next {
                 margin-left: unset !important;
             }
 
-            .swiper-wrapper{
+            .swiper-wrapper {
                 width: fit-content;
-                margin-left: auto; 
+                margin-left: auto;
             }
         }
 
@@ -393,6 +409,13 @@ body.color_pd .adding_application {
                 font-style: normal;
                 font-weight: 500;
                 line-height: 93.75%;
+                overflow-x: hidden;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
             }
             svg {
                 display: none;
@@ -425,8 +448,11 @@ body.color_pd .adding_application {
             align-items: center;
             padding: 0.8rem 1.6rem;
 
-            span {
+            input {
                 color: #acacac;
+                &::placeholder {
+                    color: #acacac;
+                }
             }
         }
 
@@ -465,34 +491,33 @@ body.color_pd .adding_application {
                 }
             }
 
-            &_tags{
+            &_tags {
                 width: 80.8rem;
                 overflow: hidden;
 
-                .swiper-slide{
+                .swiper-slide {
                     width: fit-content;
                     height: fit-content;
                     margin-right: 1rem;
                 }
             }
 
-            .swiper-button-next{
+            .swiper-button-next {
                 display: none;
                 margin-left: auto;
 
-                &:disabled{
+                &:disabled {
                     background-color: transparent !important;
                 }
 
-                svg{
+                svg {
                     width: 2.4rem;
                     height: 2.4rem;
 
-                    path{
+                    path {
                         stroke: var(--settingsSwitchActive);
                     }
                 }
-
             }
         }
         &_settings {
