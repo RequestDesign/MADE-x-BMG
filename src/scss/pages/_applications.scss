@@ -136,6 +136,7 @@ body.color_pd .users {
 
         &_head {
             display: flex;
+            align-items: center;
             margin-bottom: 3rem;
             margin-right: -0.8rem;
             position: relative;
@@ -478,6 +479,12 @@ body.color_pd .users {
             }
             .applications__box_delete {
                 display: block;
+            }
+
+            &--dep{
+                .applications__box_name{
+                    border-radius: 1.6rem;
+                }
             }
         }
     }

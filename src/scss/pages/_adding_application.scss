@@ -26,6 +26,13 @@ body .adding_application {
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
     --inputInnerBg: #f4f4f4;
+    --qrCircle: #fff;
+
+    --tabTextColor: #101010;
+    --tabBgColor: #F4F4F4;
+    --tabTextColorActive: #FFFFFF;
+    --tabBgColorActive: #101010;
+
 }
 body.color_yd .adding_application_template,
 body.color_yd .adding_application {
@@ -55,6 +62,12 @@ body.color_yd .adding_application {
     --btnDeleteFill: #f9ec00;
     --btnDeleteStroke: #101010;
     --inputInnerBg: #fff;
+    --qrCircle: #f9ec00;
+
+    --tabTextColor: #FFFFFF;
+    --tabBgColor: #292929;
+    --tabTextColorActive: #101010;
+    --tabBgColorActive: #FFFFFF;
 }
 body.color_pl .adding_application_template,
 body.color_pl .adding_application {
@@ -84,6 +97,12 @@ body.color_pl .adding_application {
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
     --inputInnerBg: #f1f4f6;
+    --qrCircle: #f4f4f4;
+
+    --tabTextColor: #101010;
+    --tabBgColor: #F4F4F4;
+    --tabTextColorActive: #FFFFFF;
+    --tabBgColorActive: #101010;
 }
 body.color_pd .adding_application_template,
 body.color_pd .adding_application {
@@ -113,9 +132,19 @@ body.color_pd .adding_application {
     --btnDeleteFill: #d01181;
     --btnDeleteStroke: #101010;
     --inputInnerBg: #292929;
+    --qrCircle: #d01181;
+
+    --tabTextColor: #FFFFFF;
+    --tabBgColor: #292929;
+    --tabTextColorActive: #101010;
+    --tabBgColorActive: #FFFFFF;
 }
 
 .adding_application {
+    .main__title {
+        width: 122rem;
+    }
+
     &_template__title {
         font-size: 2.4rem;
         font-style: normal;
@@ -137,6 +166,7 @@ body.color_pd .adding_application {
         position: relative;
         z-index: 1;
         border: var(--borderAdd);
+        height: fit-content;
     }
     &__photo {
         width: 29rem;
@@ -205,6 +235,13 @@ body.color_pd .adding_application {
         }
     }
 
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
     &__subtitle {
         font-size: 2.4rem;
         font-style: normal;
@@ -215,7 +252,6 @@ body.color_pd .adding_application {
         color: var(--normalTextColor);
     }
     &__title {
-        margin-bottom: 2rem;
         display: flex;
         gap: 1rem;
         align-items: center;
@@ -254,6 +290,26 @@ body.color_pd .adding_application {
         display: flex;
         align-items: flex-start;
         position: relative;
+
+        &_pic {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 100%;
+            overflow: hidden;
+            margin-right: 1rem;
+
+            &.empty{
+                background-image: url('./../../assets/images/common/no-pic-circle-ico.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
 
         &_group {
             .adding_application__item_hint {
@@ -372,6 +428,23 @@ body.color_pd .adding_application {
             }
         }
 
+        &--link {
+            .adding_application__item_name {
+                padding-top: 1.5rem;
+                width: fit-content;
+                min-width: 11.2rem;
+
+                span {
+                    max-width: 100rem;
+                    color: var(--normalTextColor);
+                }
+
+                svg {
+                    top: 1rem;
+                }
+            }
+        }
+
         &:hover {
             .adding_application__item_name {
                 svg {
@@ -440,6 +513,7 @@ body.color_pd .adding_application {
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
+            flex: 1;
         }
 
         &_hint {
@@ -457,7 +531,7 @@ body.color_pd .adding_application {
         }
 
         &_input {
-            width: 89.6rem;
+            // width: 89.6rem;
             height: 6rem;
             border-radius: 1.6rem;
             background: var(--inputBg);
@@ -564,6 +638,18 @@ body.color_pd .adding_application {
             &:last-child {
                 border-bottom: unset;
             }
+
+            input{
+                display: none;
+            }
+
+            label{
+                cursor: pointer;
+            }
+
+            .adding_application__item_choice--delete-pic{
+                display: none;
+            }
         }
 
         .file-icon {
@@ -636,6 +722,89 @@ body.color_pd .adding_application {
 
         path {
             stroke: var(--btnDeleteStroke);
+        }
+    }
+
+    .qr {
+        margin-right: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 2.4rem;
+        background-color: var(--appBtnBG);
+        height: 4.6rem;
+        width: 8.7rem;
+        padding: 1.1rem;
+        position: relative;
+        cursor: pointer;
+
+        svg,
+        img {
+            display: block;
+            width: 2.4rem;
+            height: 2.4rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        &__indicator {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0.2rem;
+            width: 4.2rem;
+            height: 4.2rem;
+            background-color: var(--qrCircle);
+            border-radius: 100%;
+            z-index: 1;
+            transition: left 0.5s ease-in-out;
+        }
+
+        &__activated.active ~ .qr__indicator {
+            left: 4.2rem;
+        }
+    }
+
+    &__qr-field {
+        margin-bottom: 2rem;
+        .adding_application__item_input {
+            width: 116rem;
+        }
+
+        .adding_application__item_input_text {
+            color: var(--normalTextColor);
+        }
+
+        .radio-wrapper .radio-icon {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        .radio-wrapper input[type="checkbox"]:checked ~ .radio-icon {
+            background-size: 1.2rem 0.9rem;
+        }
+    }
+
+    &__tabs {
+        margin-left: auto;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &__tab {
+        border-radius: 2rem;
+        width: fit-content;
+        height: 4.5rem;
+        padding: 1.3rem 3.2rem;
+        font-weight: 500;
+
+        background: var(--tabBgColor);
+        color: var(--tabTextColor);
+
+        &.active {
+            background: var(--tabBgColorActive);
+            color: var(--tabTextColorActive);
         }
     }
 }

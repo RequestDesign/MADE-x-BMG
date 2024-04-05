@@ -25,7 +25,7 @@ body.color_pl .modal__edit-employee {
     --boxBg: #fff;
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
-    --inputInnerBg: #f1f4f6;
+    --inputInnerBg: #fff;
 }
 
 body.color_pd .modal__edit-employee {
@@ -167,5 +167,9 @@ body.color_pd .modal__edit-employee {
         path {
             stroke: var(--btnDeleteStroke);
         }
+    }
+
+    .adding_application__item--interval .adding_application__item_input_inner{
+        background-color: var(--inputInnerBg);
     }
 }
