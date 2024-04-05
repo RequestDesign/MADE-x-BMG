@@ -78,6 +78,11 @@
                         <input type="radio" name="field" data-type="subtitle" />
                         <div class="radio-icon"></div>
                     </label>
+                    <label class="modal__create__form_item radio-wrapper">
+                        <span>Ссылка</span>
+                        <input type="radio" name="field" data-type="link" />
+                        <div class="radio-icon"></div>
+                    </label>
                 </div>
                 <button class="btn" data-modal="close-modal">Изменить</button>
             </form>
@@ -100,8 +105,8 @@
             <img class="success-ico" src="./assets/images/common/success-ico.svg" alt="Success" />
         </div>
         <div class="modal-content">
-            <div class="modal__success__title">Ваша заявка <br />успешно отправлена</div>
-            <div class="modal__success__desc">После модерации заявки Вам придет уведомление с результатом ее рассмотрения</div>
+            <div class="modal__success__title">Ваша заявка <br />успешно добавлена</div>
+            <div class="modal__success__desc">После модерации заявки Вам придет уведомление с результатом ее добавления</div>
             <button class="btn btn__go-back" data-modal="close-modal">На главную</button>
         </div>
     </div>
@@ -332,6 +337,30 @@
                 </div>
             </div>
             <button class="btn btn__save" data-modal="close-modal">Сохранить</button>
+        </div>
+    </div>
+</div>
+
+<!-- modal change application type -->
+<div class="modal modal__change-application-type">
+    <div class="modal-back"></div>
+    <div class="modal-wrapper">
+        <div class="modal-exit">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="28" transform="rotate(180 28 28)" fill="#101010" />
+                <path d="M20 36L36 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M36 36L20 20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="modal-content">
+            <div class="modal__title">Вы уверенны, что хотите поменять тип заявки</div>
+            <div class="modal__desc">
+                При изменении типа заявки шаблон заявки не сохранится
+            </div>
+            <div class="modal__btns">
+                <button class="btn" data-modal="close-modal">Отмена</button>
+                <button class="btn btn__change" data-modal="close-modal">Изменить</button>
+            </div>
         </div>
     </div>
 </div>

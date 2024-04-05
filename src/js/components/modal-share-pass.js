@@ -11,6 +11,17 @@ $('[data-modal="share-pass"]').on("click", function () {
     }
     updateShareButtonState();
 });
+$('[data-modal="share-pass-dep"]').on("click", function () {
+    $(".modal__pass").removeClass("active");
+    $(".modal__share-pass-dep").addClass("active");
+    if($('.modal__share-pass__user-list').length){
+        uncheckAllUsers();
+    }
+    if($('.modal__share-pass__department-list').length){
+        uncheckAllDepartment();
+    }
+    updateShareButtonState();
+});
 $('[data-modal="share-pass-final"]').on("click", function () {
     $(".modal__share-pass").removeClass("active");
     uncheckAllUsers();
@@ -81,31 +92,31 @@ const users = [
 ];
 const department = [
     {
+        name: "Отдел Комерциализвации",
+        checked: false,
+    },
+    {
+        name: "Отдел Комерциализвации 2",
+        checked: false,
+    },
+    {
+        name: "Отдел Комерциализвации 3",
+        checked: false,
+    },
+    {
+        name: "Отдел Комерциализвации 4",
+        checked: false,
+    },
+    {
+        name: "Отдел Комерциализвации 5",
+        checked: false,
+    },
+    {
         name: "Calzedonia",
         checked: false,
     },
     {
-        name: "Calzedonia2",
-        checked: false,
-    },
-    {
-        name: "Calzedonia3",
-        checked: false,
-    },
-    {
-        name: "Calzedonia4",
-        checked: false,
-    },
-    {
-        name: "Calzedonia5",
-        checked: false,
-    },
-    {
-        name: "Calzedonia6",
-        checked: false,
-    },
-    {
-        name: "Calzedonia7",
+        name: "Calzedonia 1",
         checked: false,
     },
 ];

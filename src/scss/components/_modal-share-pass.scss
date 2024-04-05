@@ -1,4 +1,4 @@
-body .modal__share-pass {
+body .modal__share-pass, body .modal__share-pass-dep{
     --searchBg: #f4f4f4;
     --searchIcoColor: #101010;
     --userBg: #f4f4f4;
@@ -6,7 +6,7 @@ body .modal__share-pass {
     --userBorder: none;
 }
 
-body.color_yd .modal__share-pass {
+body.color_yd .modal__share-pass, body.color_yd .modal__share-pass-dep {
     --searchBg: #f4f4f4;
     --searchIcoColor: #101010;
     --userBg: #292929;
@@ -14,7 +14,7 @@ body.color_yd .modal__share-pass {
     --userBorder: none;
 }
 
-body.color_pl .modal__share-pass {
+body.color_pl .modal__share-pass, body.color_pl .modal__share-pass-dep {
     --searchBg: #f4f4f4;
     --searchIcoColor: #101010;
     --userBg: #f1f4f6;
@@ -22,7 +22,7 @@ body.color_pl .modal__share-pass {
     --userBorder: none;
 }
 
-body.color_pd .modal__share-pass {
+body.color_pd .modal__share-pass, body.color_pd .modal__share-pass-dep {
     --searchBg: #f4f4f4;
     --searchIcoColor: #101010;
     --userBg: #101010;
@@ -30,7 +30,7 @@ body.color_pd .modal__share-pass {
     --userRoleColor: #acacac;
 }
 
-.modal__share-pass {
+.modal__share-pass, .modal__share-pass-dep {
     .modal-wrapper {
         height: 69.1rem;
         width: 83.5rem;

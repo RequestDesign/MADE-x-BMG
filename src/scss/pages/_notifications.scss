@@ -778,6 +778,8 @@ body.color_pd .notifications-detail {
 
                 svg {
                     cursor: pointer;
+                    width: 2.4rem;
+                    height: 2.4rem;
                     path {
                         fill: var(--settingsSwitchActive);
                         stroke: var(--settingsSwitchActive);

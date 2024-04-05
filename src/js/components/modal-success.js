@@ -22,7 +22,7 @@ $('[data-modal="move-choice-final"]').on("click", function (e) {
 
 $('[data-modal="success"]').on("click", function (e) {
     e.preventDefault()
-    // $(".modal__success").addClass("active");
+    $(".modal__success").addClass("active");
 });
 
 $('[data-modal="make-request"]').on("click", function (e) {
