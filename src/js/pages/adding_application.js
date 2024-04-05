@@ -63,6 +63,18 @@ const intemBoxDefaultHTML = `
   </div>
 `;
 
+const itemBoxSmHTML = `
+<div class="adding_application__item_box">
+    <div class="adding_application__item_choices">
+        <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
+        <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
+            <span>Изменить тип поля</span>
+        </div>
+        <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
+    </div>
+</div>
+`
+
 const intemBoxCheckboxHTML = `
     <div class="adding_application__item_box">
     <div class="adding_application__item_choices">
@@ -93,7 +105,7 @@ let itemTemplates = [
                 <div class="adding_application__item_input transparent">
                     <div class="adding_application__item_input_text"></div>
                     ${settingsSVG}
-                    ${intemBoxDefaultHTML}
+                    ${itemBoxSmHTML}
                 </div>
             </div>
         </div>
@@ -418,7 +430,7 @@ let itemTemplates = [
                 <div class="adding_application__item_input transparent">
                     <div class="adding_application__item_input_text"></div>
                     ${settingsSVG}
-                    ${intemBoxDefaultHTML}
+                    ${itemBoxSmHTML}
                 </div>
             </div>
         </div>
@@ -437,7 +449,7 @@ let itemTemplates = [
                 <div class="adding_application__item_input transparent">
                     <div class="adding_application__item_input_text"></div>
                     ${settingsSVG}
-                    ${intemBoxDefaultHTML}
+                    ${itemBoxSmHTML}
                 </div>
             </div>
         </div>
