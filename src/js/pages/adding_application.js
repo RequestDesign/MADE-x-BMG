@@ -745,6 +745,7 @@ $("body").on("click", ".adding_application__item_choice--add-checkbox-field", fu
     $(".modal__create__form_item:nth-of-type(11)").toggle(!addingActiveCheckboxField);
     $(".modal__create__form_item:nth-of-type(12)").toggle(!addingActiveCheckboxField);
     $(".modal__create__form_item:nth-of-type(13)").toggle(!addingActiveCheckboxField);
+    $(".modal__create__form_item:nth-of-type(14)").hide()
 });
 
 let chosenFieldText = null;
@@ -782,16 +783,18 @@ $(".modal__edit-field").on("click", ".btn__save", function () {
     let fieldTitle = $modal.find(".adding_application__item input:first-of-type").val() || chosenFieldText;
     let hintText = $modal.find(".adding_application__item input:nth-of-type(1)").val();
 
+    let idCounter = 1;
+
     const $innerTag = $(innerTagHtml);
     $innerTag.find("span").text(fieldTitle);
-    const $swiperSlide = $('<div class="swiper-slide"></div>').append($innerTag);
+    const $swiperSlide = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTag);
     $tagsList.append($swiperSlide);
 
     //если галочка "обязательное поле"
     if ($(".modal__edit-field__input-check input").prop("checked")) {
         const $innerTagChecked = $(innerTagHtml);
         $innerTagChecked.find("span").text("Обязательное поле");
-        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').append($innerTagChecked);
+        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTagChecked);
         $tagsList.append($swiperSlideChecked);
     }
 
@@ -914,6 +917,8 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
     let $tagsList = clickedEmployeeItem.find(".adding_application__item_input_tags .swiper-wrapper");
     $tagsList.empty();
 
+    let idCounter = 1;
+
     //получем названия полей из модалки
     let fieldNames = $modal
         .find(".adding_application__item_name span")
@@ -926,7 +931,7 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
     $.each(fieldNames, function (_, fieldName) {
         const $innerTag = $(innerTagHtml);
         $innerTag.find("span").text(fieldName);
-        const $swiperSlide = $('<div class="swiper-slide"></div>').append($innerTag);
+        const $swiperSlide = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTag);
         $tagsList.append($swiperSlide);
         checkTags();
         checkCheckboxTags();
@@ -936,7 +941,7 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
     if ($(".modal__edit-employee__input-check input").prop("checked")) {
         const $innerTagChecked = $(innerTagHtml);
         $innerTagChecked.find("span").text("Сотрудники из списка");
-        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').append($innerTagChecked);
+        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTagChecked);
         $tagsList.prepend($swiperSlideChecked);
         checkTags();
         checkCheckboxTags();
