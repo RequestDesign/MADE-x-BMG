@@ -73,7 +73,7 @@ const itemBoxSmHTML = `
         <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
     </div>
 </div>
-`
+`;
 
 const intemBoxCheckboxHTML = `
     <div class="adding_application__item_box">
@@ -644,7 +644,7 @@ $("body").on("change", ".adding_application__item_choice--checkbox", function ()
 
 //добавить новое поле
 function addNewField(targetContainer, type) {
-    const selectedTemplate = itemTemplates.find(item => item.type === type);
+    const selectedTemplate = itemTemplates.find((item) => item.type === type);
 
     if (selectedTemplate) {
         const newCategory = $(selectedTemplate.html);
@@ -656,7 +656,9 @@ function addNewField(targetContainer, type) {
 }
 
 $("body").on("click", ".adding_application.adding_application--links .adding_application__bottom_add", () => addNewField(".adding_application--links .adding_application__list", "link"));
-$("body").on("click", ".adding_application:not(.adding_application--links) .adding_application__bottom_add", () => addNewField(".adding_application:not(.adding_application--links) .adding_application__list", "text-input"));
+$("body").on("click", ".adding_application:not(.adding_application--links) .adding_application__bottom_add", () =>
+    addNewField(".adding_application:not(.adding_application--links) .adding_application__list", "text-input")
+);
 $("body").on("click", ".btn__add-field", () => addNewField(".modal__edit-employee__list", "text-input"));
 
 //добавить подсказку
@@ -745,7 +747,7 @@ $("body").on("click", ".adding_application__item_choice--add-checkbox-field", fu
     $(".modal__create__form_item:nth-of-type(11)").toggle(!addingActiveCheckboxField);
     $(".modal__create__form_item:nth-of-type(12)").toggle(!addingActiveCheckboxField);
     $(".modal__create__form_item:nth-of-type(13)").toggle(!addingActiveCheckboxField);
-    $(".modal__create__form_item:nth-of-type(14)").hide()
+    $(".modal__create__form_item:nth-of-type(14)").hide();
 });
 
 let chosenFieldText = null;
@@ -787,14 +789,14 @@ $(".modal__edit-field").on("click", ".btn__save", function () {
 
     const $innerTag = $(innerTagHtml);
     $innerTag.find("span").text(fieldTitle);
-    const $swiperSlide = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTag);
+    const $swiperSlide = $('<div class="swiper-slide"></div>').attr("data-id", idCounter++).append($innerTag);
     $tagsList.append($swiperSlide);
 
     //если галочка "обязательное поле"
     if ($(".modal__edit-field__input-check input").prop("checked")) {
         const $innerTagChecked = $(innerTagHtml);
         $innerTagChecked.find("span").text("Обязательное поле");
-        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTagChecked);
+        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').attr("data-id", idCounter++).append($innerTagChecked);
         $tagsList.append($swiperSlideChecked);
     }
 
@@ -931,7 +933,7 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
     $.each(fieldNames, function (_, fieldName) {
         const $innerTag = $(innerTagHtml);
         $innerTag.find("span").text(fieldName);
-        const $swiperSlide = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTag);
+        const $swiperSlide = $('<div class="swiper-slide"></div>').attr("data-id", idCounter++).append($innerTag);
         $tagsList.append($swiperSlide);
         checkTags();
         checkCheckboxTags();
@@ -941,7 +943,7 @@ $("body").on("click", ".modal__edit-employee .btn__save", function () {
     if ($(".modal__edit-employee__input-check input").prop("checked")) {
         const $innerTagChecked = $(innerTagHtml);
         $innerTagChecked.find("span").text("Сотрудники из списка");
-        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').attr('data-id', idCounter++).append($innerTagChecked);
+        const $swiperSlideChecked = $('<div class="swiper-slide"></div>').attr("data-id", idCounter++).append($innerTagChecked);
         $tagsList.prepend($swiperSlideChecked);
         checkTags();
         checkCheckboxTags();
@@ -1037,7 +1039,7 @@ function bindLinkEventHandlers() {
         }
         $(this).closest(".adding_application__item_box").slideUp();
         item.removeClass("active");
-        updateLinkField()
+        updateLinkField();
     });
 
     //удалить фото
@@ -1056,28 +1058,47 @@ function bindLinkEventHandlers() {
         }
         $(this).closest(".adding_application__item_box").slideUp();
         item.removeClass("active");
-        updateLinkField()
-    }); 
-}
-
-//Изменить текст в "изменить фото", скрыть "удалить фото", если фото нет
-const updateLinkField = function (){
-    $('.adding_application__item--link').each(function() {
-        const $picContainer = $(this).find('.adding_application__item_pic');
-        const $deletePicChoice = $(this).find('.adding_application__item_choice--delete-pic');
-        const $changePicChoice = $(this).find('.adding_application__item_choice--change-pic span');
-        
-        if ($picContainer.hasClass("empty")) {
-            $deletePicChoice.hide();
-            $changePicChoice.text('Добавить фото')
-        } else {
-            $deletePicChoice.show();
-            $changePicChoice.text('Изменить фото')
-        }
+        updateLinkField();
     });
 }
 
-$(function(){
+//Изменить текст в "изменить фото", скрыть "удалить фото", если фото нет
+const updateLinkField = function () {
+    $(".adding_application__item--link").each(function () {
+        const $picContainer = $(this).find(".adding_application__item_pic");
+        const $deletePicChoice = $(this).find(".adding_application__item_choice--delete-pic");
+        const $changePicChoice = $(this).find(".adding_application__item_choice--change-pic span");
+
+        if ($picContainer.hasClass("empty")) {
+            $deletePicChoice.hide();
+            $changePicChoice.text("Добавить фото");
+        } else {
+            $deletePicChoice.show();
+            $changePicChoice.text("Изменить фото");
+        }
+    });
+};
+
+$(function () {
     updateLinkField();
     bindLinkEventHandlers();
-})
+});
+
+//фото у названия заявки
+$(function () {
+    $('input[type="file"]').on("change", function (e) {
+        if (e.target.files.length > 0) {
+            let file = e.target.files[0];
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                let img = $("<img>").attr("src", e.target.result);
+                if ($(".adding_application__top-img").hasClass("empty")) {
+                    $(".adding_application__top-img").removeClass("empty").append(img);
+                } else {
+                    $(".adding_application__top-img img").replaceWith(img);
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});

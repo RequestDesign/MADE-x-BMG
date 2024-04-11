@@ -27,12 +27,11 @@ body .adding_application {
     --btnDeleteStroke: #fff;
     --inputInnerBg: #f4f4f4;
     --qrCircle: #fff;
-
+    --innerTagText: #101010;
     --tabTextColor: #101010;
-    --tabBgColor: #F4F4F4;
-    --tabTextColorActive: #FFFFFF;
+    --tabBgColor: #f4f4f4;
+    --tabTextColorActive: #ffffff;
     --tabBgColorActive: #101010;
-
 }
 body.color_yd .adding_application_template,
 body.color_yd .adding_application {
@@ -63,11 +62,11 @@ body.color_yd .adding_application {
     --btnDeleteStroke: #101010;
     --inputInnerBg: #fff;
     --qrCircle: #f9ec00;
-
-    --tabTextColor: #FFFFFF;
+    --innerTagText: #101010;
+    --tabTextColor: #ffffff;
     --tabBgColor: #292929;
     --tabTextColorActive: #101010;
-    --tabBgColorActive: #FFFFFF;
+    --tabBgColorActive: #ffffff;
 }
 body.color_pl .adding_application_template,
 body.color_pl .adding_application {
@@ -98,10 +97,10 @@ body.color_pl .adding_application {
     --btnDeleteStroke: #fff;
     --inputInnerBg: #f1f4f6;
     --qrCircle: #f4f4f4;
-
+    --innerTagText: #101010;
     --tabTextColor: #101010;
-    --tabBgColor: #F4F4F4;
-    --tabTextColorActive: #FFFFFF;
+    --tabBgColor: #f4f4f4;
+    --tabTextColorActive: #ffffff;
     --tabBgColorActive: #101010;
 }
 body.color_pd .adding_application_template,
@@ -133,11 +132,11 @@ body.color_pd .adding_application {
     --btnDeleteStroke: #101010;
     --inputInnerBg: #292929;
     --qrCircle: #d01181;
-
-    --tabTextColor: #FFFFFF;
+    --innerTagText: #fff;
+    --tabTextColor: #ffffff;
     --tabBgColor: #292929;
     --tabTextColorActive: #101010;
-    --tabBgColorActive: #FFFFFF;
+    --tabBgColorActive: #ffffff;
 }
 
 .adding_application {
@@ -237,9 +236,61 @@ body.color_pd .adding_application {
 
     &__top {
         display: flex;
-        justify-content: space-between;
+        gap: 2rem;
         align-items: center;
         margin-bottom: 2rem;
+    }
+
+    &__top-img {
+        position: relative;
+        width: 5.2rem;
+        height: 5.2rem;
+        background-color: #e0e0e0;
+        border-radius: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+
+        &.empty {
+            background-image: url("./../../assets/images/common/empty-pic-icon.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1.6rem 1.6rem;
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--btnDeleteFill);
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 100%;
+            right: -0.5rem;
+            top: -0.5rem;
+            cursor: pointer;
+            z-index: 10;
+            border: 0.3rem solid var(--backgroundCard);
+
+            svg {
+                width: 1.2rem;
+                height: 1.2rem;
+                cursor: pointer;
+
+                path {
+                    stroke: var(--btnDeleteStroke);
+                }
+            }
+        }
     }
 
     &__subtitle {
@@ -267,6 +318,7 @@ body.color_pd .adding_application {
             font-weight: 500;
             line-height: 100%;
             letter-spacing: 0.032rem;
+            max-width: 94rem;
         }
         svg {
             display: none;
@@ -298,8 +350,8 @@ body.color_pd .adding_application {
             overflow: hidden;
             margin-right: 1rem;
 
-            &.empty{
-                background-image: url('./../../assets/images/common/no-pic-circle-ico.svg');
+            &.empty {
+                background-image: url("./../../assets/images/common/no-pic-circle-ico.svg");
                 background-size: contain;
                 background-repeat: no-repeat;
             }
@@ -639,15 +691,15 @@ body.color_pd .adding_application {
                 border-bottom: unset;
             }
 
-            input{
+            input {
                 display: none;
             }
 
-            label{
+            label {
                 cursor: pointer;
             }
 
-            .adding_application__item_choice--delete-pic{
+            .adding_application__item_choice--delete-pic {
                 display: none;
             }
         }
@@ -708,6 +760,7 @@ body.color_pd .adding_application {
             max-width: 60rem;
             text-overflow: ellipsis;
             overflow: hidden;
+            color: var(--innerTagText);
         }
     }
 
@@ -726,6 +779,7 @@ body.color_pd .adding_application {
     }
 
     .qr {
+        margin-left: auto;
         margin-right: 1.5rem;
         display: flex;
         align-items: center;
