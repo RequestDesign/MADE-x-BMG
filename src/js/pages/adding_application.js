@@ -1086,7 +1086,7 @@ $(function () {
 
 //фото у названия заявки
 $(function () {
-    $('input[type="file"]').on("change", function (e) {
+    $('.adding_application__top-img input[type="file"]').on("change", function (e) {
         if (e.target.files.length > 0) {
             let file = e.target.files[0];
             let reader = new FileReader();
