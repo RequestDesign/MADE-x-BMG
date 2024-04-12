@@ -186,11 +186,9 @@ body.color_pd .form {
             color: var(--textColor);
             border: var(--inputBorder);
             box-shadow: 0 0.3rem 1.4rem 0 rgba(0, 0, 0, 0.08);
-            
+            z-index: 10;
             position: absolute;
             top: 6rem;
-
-
         }
         &_list {
             max-height: 27.2rem;

@@ -9,12 +9,17 @@ $('.form__dropdown_top').on("click", function () {
     }
 });
 $('.form__dropdown_search .form__dropdown_top input').on("focus", function () {
-    if(!$(this).closest('.form__dropdown_top').hasClass('open')) {
-        $(this).closest('.form__dropdown').find('.form__dropdown_bottom').slideToggle()
-        $(this).closest('.form__dropdown_top').addClass("open");
-        $(this).closest('.form__item').addClass("active");
+    let $currentDropdown = $(this).closest('.form__dropdown');
+    if (!$currentDropdown.find('.form__dropdown_top').hasClass('open')) {
+        $('.form__dropdown_top.open').removeClass('open');
+        $('.form__item.active').removeClass('active');
+        $('.form__dropdown_bottom').slideUp();
+        $currentDropdown.find('.form__dropdown_bottom').slideDown();
+        $currentDropdown.find('.form__dropdown_top').addClass("open");
+        $currentDropdown.find('.form__item').addClass("active");
     }
 });
+
 
 function checkBtn(item) {
     var count = 0
@@ -48,13 +53,28 @@ $('.form__dropdown_item').on("click", function (e) {
                 topText.html('Выбран 1 сотрудник')
                 topText.addClass('active')
               break;
+              case 2:
+                topText.html('Выбрано 2 сотрудника')
+                topText.addClass('active')
+              break;
+              case 3:
+                topText.html('Выбрано 3 сотрудника')
+                topText.addClass('active')
+              break;
+              case 4:
+                topText.html('Выбрано 4 сотрудника')
+                topText.addClass('active')
+              break;
+              
             default:
-                topText.html(`Выбрано ${$(this).closest('.form__dropdown_list').find(':checked').length} сотрудника`)
+                topText.html(`Выбрано ${$(this).closest('.form__dropdown_list').find(':checked').length} сотрудников`)
                 topText.addClass('active')
         }
     }
-    if($(this).closest('.form__dropdown_search').length) {
+    if ($(this).closest('.form__dropdown_search').length) {
         $(this).closest('.form__dropdown').find('.form__dropdown_top input').val($(this).find('.form__dropdown_item_name').text())
+        const dataId = $(this).find('.form__dropdown_item_checkbox input').val();
+        $(this).closest('.form__dropdown').find('.form__dropdown_top input').attr("data-id", dataId);
     }
     checkBtn(this)
 });
