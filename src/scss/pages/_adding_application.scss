@@ -32,6 +32,9 @@ body .adding_application {
     --tabBgColor: #f4f4f4;
     --tabTextColorActive: #ffffff;
     --tabBgColorActive: #101010;
+
+    --textColor: #101010;
+    --inputBorder: none;
 }
 body.color_yd .adding_application_template,
 body.color_yd .adding_application {
@@ -67,6 +70,10 @@ body.color_yd .adding_application {
     --tabBgColor: #292929;
     --tabTextColorActive: #101010;
     --tabBgColorActive: #ffffff;
+
+    --textColor: #ffffff;
+    --inputBorder: none;
+    
 }
 body.color_pl .adding_application_template,
 body.color_pl .adding_application {
@@ -102,7 +109,11 @@ body.color_pl .adding_application {
     --tabBgColor: #f4f4f4;
     --tabTextColorActive: #ffffff;
     --tabBgColorActive: #101010;
+
+    --textColor: #101010;
+    --inputBorder: none;
 }
+
 body.color_pd .adding_application_template,
 body.color_pd .adding_application {
     --mainTheme: #d01181;
@@ -137,6 +148,9 @@ body.color_pd .adding_application {
     --tabBgColor: #292929;
     --tabTextColorActive: #101010;
     --tabBgColorActive: #ffffff;
+
+    --textColor: #ffffff;
+    --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
 }
 
 .adding_application {

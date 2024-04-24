@@ -86,10 +86,12 @@ $('.btn__move-choice-final_delete').on("click", function (e) {
     $(".modal__move-choice").removeClass("active");
 });
 
+//добавить столбец
 $('body').on("click",'.applications__add_column', function (e) {
     e.preventDefault()
     let newColum = document.createElement('div')
     newColum.classList.add("applications__item")
+    newColum.classList.add("show_change")
     newColum.innerHTML = `
         <div class="applications__item_head">
             <div class="applications__item_head_photo empty">
@@ -100,7 +102,7 @@ $('body').on("click",'.applications__add_column', function (e) {
                     <path d="M19.9858 15.5808C18.9954 15.2461 17.9569 15.0756 16.9115 15.0762C15.5883 15.0733 14.2784 15.3414 13.0625 15.8639" stroke="#ACACAC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <label class="applications__item_head_photo_add">
-                    <input type="file">
+                    <input type="file" name="section_image">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M6 1V11" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M1 5.9668H11" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -152,33 +154,21 @@ $('body').on("click",'.applications__add_column', function (e) {
     document.querySelector('.applications__container').append(newColum)
 });
 
+//добавить подкатегорию
 $('body').on("click",'.applications__add_subcategory', function (e) {
     e.preventDefault()
     var newCategory = $( `
-    <a href="#" class="applications__box ui-sortable-handle">
-        <div class="applications__box_img empty">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <g clip-path="url(#clip0_2285_662615)">
-                <path d="M3.44643 30.8574L28.5893 30.8574C29.8517 30.8574 30.875 29.8341 30.875 28.5717L30.875 3.42885C30.875 2.16649 29.8517 1.14314 28.5893 1.14314L3.44643 1.14314C2.18406 1.14314 1.16072 2.16649 1.16072 3.42885L1.16072 28.5717C1.16072 29.8341 2.18406 30.8574 3.44643 30.8574Z" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M21.1406 14.8574C23.3498 14.8574 25.1406 13.0666 25.1406 10.8574C25.1406 8.64828 23.3498 6.85742 21.1406 6.85742C18.9315 6.85742 17.1406 8.64828 17.1406 10.8574C17.1406 13.0666 18.9315 14.8574 21.1406 14.8574Z" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M21.4835 30.8573C20.7475 26.9373 18.6427 23.4062 15.5446 20.8943C12.4465 18.3823 8.55668 17.0528 4.5692 17.143C3.41874 17.1399 2.27064 17.2471 1.14062 17.463" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M30.8529 22.652C29.012 22.0303 27.0818 21.7138 25.1387 21.7149C22.6791 21.7095 20.2444 22.2074 17.9844 23.1777" stroke="#ACACAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_2285_662615">
-                <rect width="32" height="32" fill="white"/>
-                </clipPath>
-                </defs>
+    <a href="#!" class="applications__box ui-sortable-handle">
+        <label class="applications__box_change_img">
+            <input type="file" name="subcategory_image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="12" fill="#F9EC00"></circle>
+                <path d="M12 7V17" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M7 11.9688H17" stroke="#101010" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
-            <label class='applications__box_img_add'>
-                <input type="file">
-                <svg  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="16" cy="16" r="16" fill="#F9EC00"/>
-                    <path d="M16 8V24" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8 15.9473H24" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </label>
-
+        </label>
+        <div class="applications__box_img empty">
+            <img>
         </div>
         <div class="applications__box_name">
             <span contenteditable>Название</span>
@@ -191,6 +181,7 @@ $('body').on("click",'.applications__add_subcategory', function (e) {
     </a>
     `)
     $(this).closest('.applications__item').find('.applications__item_body').append(newCategory)
+    $(this).closest('.applications__item').addClass('show_change')
 });
 
 $('body').on('click', '.applications__item_head_name svg', function () {
@@ -229,6 +220,7 @@ $('body').on('change', '.applications__box_img_add input', function (e) {
     }
 })
 
+//меняем фото в подкатегории
 $('body').on('change', '.applications__box_change_img input', function (e) {
     let boxContainer = $(this).closest('.applications__box');
     if (boxContainer.hasClass('empty')) {
