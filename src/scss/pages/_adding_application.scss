@@ -35,6 +35,7 @@ body .adding_application {
 
     --textColor: #101010;
     --inputBorder: none;
+    --innerHintColor: #a1acb9;
 }
 body.color_yd .adding_application_template,
 body.color_yd .adding_application {
@@ -73,7 +74,7 @@ body.color_yd .adding_application {
 
     --textColor: #ffffff;
     --inputBorder: none;
-    
+    --innerHintColor: #ffffff;
 }
 body.color_pl .adding_application_template,
 body.color_pl .adding_application {
@@ -112,6 +113,7 @@ body.color_pl .adding_application {
 
     --textColor: #101010;
     --inputBorder: none;
+    --innerHintColor: #a1acb9;
 }
 
 body.color_pd .adding_application_template,
@@ -151,6 +153,7 @@ body.color_pd .adding_application {
 
     --textColor: #ffffff;
     --inputBorder: 0.1rem solid rgba(255, 255, 255, 0.2);
+    --innerHintColor: #ffffff;
 }
 
 .adding_application {
@@ -411,6 +414,7 @@ body.color_pd .adding_application {
         &--subtitle {
             .adding_application__item_input {
                 height: 2.4rem;
+                min-height: unset;
             }
 
             .adding_application__item_name {
@@ -436,6 +440,7 @@ body.color_pd .adding_application {
         &--text {
             .adding_application__item_input {
                 height: 2.4rem;
+                min-height: unset;
             }
 
             .adding_application__item_input-wrapper {
@@ -466,8 +471,12 @@ body.color_pd .adding_application {
         }
 
         &--checkbox {
+
+            .adding_application__item_name{
+                margin-left: 4rem;
+            }
             .adding_application__item_input {
-                margin-left: 26.4rem;
+                // margin-left: 26.4rem;
             }
 
             & + & {
@@ -590,6 +599,8 @@ body.color_pd .adding_application {
 
             input {
                 color: #acacac;
+                width: 95%;
+
                 &::placeholder {
                     color: #acacac;
                 }
@@ -598,13 +609,15 @@ body.color_pd .adding_application {
 
         &_input {
             // width: 89.6rem;
-            height: 6rem;
+            // height: 6rem;
+            min-height: 6rem;
+            height: fit-content;
             border-radius: 1.6rem;
             background: var(--inputBg);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 1.6rem;
+            padding: 1rem 1.6rem;
             position: relative;
             border: var(--borderAdd);
 
@@ -614,6 +627,7 @@ body.color_pd .adding_application {
             }
 
             &_text {
+                height: 2rem;
                 color: #acacac;
                 font-size: 1.6rem;
                 font-style: normal;
@@ -628,6 +642,7 @@ body.color_pd .adding_application {
                     background: url(../../assets/images/common/required.svg) no-repeat;
                     background-position: right center;
                     background-size: 2.4rem;
+                    height: 2rem;
                 }
             }
 
@@ -776,6 +791,27 @@ body.color_pd .adding_application {
             overflow: hidden;
             color: var(--innerTagText);
         }
+
+        &.required {
+            b {
+                color: #f06767;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .inner-tag-hint {
+        margin-top: 0.4rem;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        font-weight: 500;
+        color: var(--innerHintColor);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 14.6rem;
     }
 
     .delete-hint {
