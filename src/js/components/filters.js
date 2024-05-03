@@ -1,142 +1,5 @@
 import $ from "jquery";
 
-const requestType = [
-    {
-        title: "Все",
-        checked: false,
-    },
-    {
-        title: "option 1",
-        checked: false,
-    },
-    {
-        title: "option 2",
-        checked: false,
-    },
-    {
-        title: "option 3",
-        checked: false,
-    },
-];
-
-const requestTenant = [
-    {
-        title: "Все",
-        checked: false,
-    },
-    {
-        title: "Calzedonia",
-        checked: false,
-    },
-    {
-        title: "Аskona",
-        checked: false,
-    },
-    {
-        title: "Афродита",
-        checked: false,
-    },
-];
-
-//request type filter, request tenant filter
-function initializeFilterList(containerId, searchInputId, inputValueId, data) {
-    const container = $(`#${containerId}`);
-    const searchInput = $(`#${searchInputId}`);
-    const inputValue = $(`#${inputValueId}`);
-
-    function renderFilterList(filteredOptions) {
-        filteredOptions.sort((a, b) => (b.checked ? 1 : 0) - (a.checked ? 1 : 0));
-
-        container.html(
-            filteredOptions
-                .map((option, index) => {
-                    const title = option.title;
-                    const highlightedTitle = highlightMatches(title, (searchInput.val() || "").trim());
-                    return `
-                            <li class="request-filter-list__option ${option.checked ? "checked" : ""}">
-                                <span class="request-filter-list__title">${highlightedTitle}</span>
-                                <div class="request-filter-list__checkbox checkbox-wrapper">
-                                    <input type="checkbox" id="${containerId}Option${index}" ${option.checked ? "checked" : ""} data-index="${index}" />
-                                    <label for="${containerId}Option${index}" class="checkbox-icon"></label>
-                                </div>
-                            </li>`;
-                })
-                .join("")
-        );
-
-        updateInputValue();
-    }
-
-    function highlightMatches(text, query) {
-        if (!query) {
-            return text;
-        }
-        const regex = new RegExp(`(${query})`, "gi");
-        return text.replace(regex, "<mark>$1</mark>");
-    }
-
-    $(document).on("change", `#${containerId} .request-filter-list__checkbox input`, function () {
-        const title = $(this).closest("li").find(".request-filter-list__title").text();
-
-        if (title === "Все") {
-            const allChecked = $(this).prop("checked");
-            data.forEach((option) => {
-                option.checked = allChecked;
-            });
-
-            if (!allChecked) {
-                data.slice(1).forEach((option) => {
-                    option.checked = false;
-                });
-            }
-        } else {
-            const index = data.findIndex((option) => option.title === title);
-            if (index !== -1) {
-                data[index].checked = $(this).prop("checked");
-
-                if (!$(this).prop("checked")) {
-                    data[0].checked = false;
-                }
-            }
-        }
-        const searchQuery = searchInput.val().trim().toLowerCase();
-        const filteredOptions = data.filter((option) => option.title.toLowerCase().includes(searchQuery));
-        renderFilterList(filteredOptions);
-    });
-
-    searchInput.on("input", function () {
-        const searchQuery = $(this).val().trim().toLowerCase();
-        const filteredOptions = data.filter((option) => option.title.toLowerCase().includes(searchQuery));
-        renderFilterList(filteredOptions);
-    });
-
-    function updateInputValue() {
-        const selectedOptions = data.filter((option) => option.checked).map((option) => option.title);
-        if (selectedOptions.length === 0) {
-            inputValue.val("Не выбрано");
-        } else {
-            inputValue.val(selectedOptions.includes("Все") ? "Все" : selectedOptions.join(", "));
-        }
-        const startDateValue = $("#startDate").val();
-        const endDateValue = $("#endDate").val();
-
-        if (startDateValue && endDateValue) {
-            $("#requestDateInput").val(`с ${startDateValue} по ${endDateValue}`);
-        } else if (startDateValue) {
-            $("#requestDateInput").val(`с ${startDateValue}`);
-        } else if (endDateValue) {
-            $("#requestDateInput").val(`по ${endDateValue}`);
-        } else {
-            $("#requestDateInput").val("Не выбрано");
-        }
-    }
-    renderFilterList(data);
-    updateInputValue();
-}
-
-initializeFilterList("requestTypeList", "searchTypeInput", "requestTypeInput", requestType);
-initializeFilterList("requestTenantList", "searchTenantInput", "requestTenantInput", requestTenant);
-
 //request date filter
 $.datepicker.regional["ru"] = {
     monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
@@ -190,4 +53,35 @@ $("#filterDatepicker").datepicker({
     },
     nextText: "",
     prevText: "",
+});
+
+$(function() {
+    $('.request-filter-list__checkbox input[type="checkbox"]').on('change', (function() {
+        updateFilterList($(this));
+    }));
+
+    function updateFilterList(checkbox) {
+        let $filterList = checkbox.closest('.request-filter-list');
+        let $checkedOptions = $filterList.find('.request-filter-list__option input[type="checkbox"]:checked');
+        let selectedTitles = $checkedOptions.map(function() {
+            return $(this).closest('.request-filter-list__option').find('.request-filter-list__title').text().trim();
+        }).get();
+
+        let $inputField = checkbox.closest('.incoming-requests__filter').find('.incoming-requests__filter__input-wrapper input[type="text"]');
+        
+        if (checkbox.closest('.request-filter-list__option').find('.request-filter-list__title').text().trim() === 'Все') {
+            let allChecked = checkbox.prop('checked');
+            $filterList.find('.request-filter-list__option input[type="checkbox"]').not(checkbox).prop('checked', allChecked);
+            $inputField.val(allChecked ? 'Все' : 'Не выбрано');
+        } else {
+            let $allCheckbox = $filterList.find('.request-filter-list__option input[type="checkbox"]').first();
+            if (!checkbox.prop('checked')) {
+                $allCheckbox.prop('checked', false);
+            }
+    
+            let updatedTitles = selectedTitles.filter(title => title !== 'Все');
+            $inputField.val($filterList.find('.request-filter-list__option input[type="checkbox"]:checked').length ? 
+                            (updatedTitles.length > 0 ? updatedTitles.join(', ') : 'Не выбрано') : 'Не выбрано');
+        }
+    }
 });

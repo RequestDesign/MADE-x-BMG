@@ -13,3 +13,19 @@ $('.notifications__view').on('click', function(e){
         }
     }
 })
+
+$('.notifications__item').each(function() {
+    $(this).on('click', function(e) {
+        console.log('item clicked')
+    });
+});
+
+
+
+$('.notifications__item_delete').each(function() {
+    $(this).on('click', function(e) {
+        console.log('delete clicked')
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});

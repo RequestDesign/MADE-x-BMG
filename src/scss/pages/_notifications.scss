@@ -320,6 +320,11 @@ body.color_pd .main__title {
                     }
                     &_btn {
                         border: unset;
+
+                        svg{
+                            width: 3.6rem;
+                            height: 3.6rem;
+                        }
                     }
                 }
             }
@@ -412,6 +417,11 @@ body.color_pd .main__title {
                 color: #FFF;
                 background: var(--notifCancel);
             }
+
+            &.waiting{
+                background:#D7D7D7;
+                color: #101010;
+            }
         }
         &_bottom {
             display: flex;
@@ -449,6 +459,11 @@ body.color_pd .main__title {
             font-weight: 500;
             line-height: normal;
             letter-spacing: 0.016rem;
+
+            svg{
+                width: 3.6rem;
+                height: 3.6rem;
+            }
         }
     }
 
@@ -556,6 +571,10 @@ body.color_pd .main__title {
                     svg {
                         width: 1.6rem;
                         height: 1.6rem;
+
+                        path{
+                            stroke: var(--ItemBgColor) !important;
+                        }
                     }
                 }
                 &_btn {
