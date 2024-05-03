@@ -238,7 +238,7 @@
                     <div class="incoming-requests__filter">
                         <div class="incoming-requests__filter__title">Тип заявки</div>
                         <div class="incoming-requests__filter__input-wrapper">
-                            <input id="requestTypeInput" type="text" readonly />
+                            <input id="requestTypeInput" type="text" readonly value="Не выбрано"/>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 8" fill="none">
                                 <path
                                     d="M13 1L7.14427 6.85573C7.10153 6.90127 7.0499 6.93757 6.99259 6.96238C6.93527 6.9872 6.87347 7 6.81102 7C6.74856 7 6.68676 6.9872 6.62945 6.96238C6.57213 6.93757 6.52051 6.90127 6.47776 6.85573L0.622033 1"
@@ -259,17 +259,45 @@
                                     />
                                     <path d="M19.1441 20.1428L14.6318 15.6305" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <input type="search" id="searchTypeInput" />
                             </div>
 
-                            <ul id="requestTypeList" class="request-filter-list"></ul>
+                            <div id="requestTypeList" class="request-filter-list">
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">Все</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" data-id="typeAll">
+                                        <label for="requestTypeListOption0" class="checkbox-icon"></label>
+                                    </div>
+                                </label>
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">type 1</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" data-id="type1">
+                                        <div class="checkbox-icon"></div>
+                                    </div>
+                                </label>
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">type 2</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" id="requestTypeListOption2" data-id="type2">
+                                        <div class="checkbox-icon"></div>
+                                    </div>
+                                </label>
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">type 3</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" data-id="type3">
+                                        <div class="checkbox-icon"></div>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
                     </div>
 
                     <div class="incoming-requests__filter">
                         <div class="incoming-requests__filter__title">Арендатор</div>
                         <div class="incoming-requests__filter__input-wrapper">
-                            <input id="requestTenantInput" type="text" readonly />
+                            <input id="requestTenantInput" type="text" readonly value="Не выбрано"/>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 8" fill="none">
                                 <path
                                     d="M13 1L7.14427 6.85573C7.10153 6.90127 7.0499 6.93757 6.99259 6.96238C6.93527 6.9872 6.87347 7 6.81102 7C6.74856 7 6.68676 6.9872 6.62945 6.96238C6.57213 6.93757 6.52051 6.90127 6.47776 6.85573L0.622033 1"
@@ -291,16 +319,44 @@
                                     />
                                     <path d="M19.1441 20.1428L14.6318 15.6305" stroke="#101010" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <input type="search" id="searchTenantInput" />
                             </div>
-                            <ul id="requestTenantList" class="request-filter-list"></ul>
+                            <div id="requestTenantList" class="request-filter-list">
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">Все</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" data-id="tenantAll">
+                                        <label for="requestTenantListOption0" class="checkbox-icon"></label>
+                                    </div>
+                                </label>
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">11 Calzedonia</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" data-id="tenant1">
+                                        <div class="checkbox-icon"></div>
+                                    </div>
+                                </label>
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">Аskona</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" id="requestTenantListOption2" data-id="tenant2">
+                                        <div class="checkbox-icon"></div>
+                                    </div>
+                                </label>
+                                <label class="request-filter-list__option ">
+                                    <span class="request-filter-list__title">Афродита</span>
+                                    <div class="request-filter-list__checkbox checkbox-wrapper">
+                                        <input type="checkbox" data-id="tenant3">
+                                        <div class="checkbox-icon"></div>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
                     </div>
 
                     <div class="incoming-requests__filter">
                         <div class="incoming-requests__filter__title">Дата</div>
                         <div class="incoming-requests__filter__input-wrapper">
-                            <input id="requestDateInput" type="text" readonly />
+                            <input id="requestDateInput" type="text" readonly value="Не выбрано" />
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 8" fill="none">
                                 <path
                                     d="M13 1L7.14427 6.85573C7.10153 6.90127 7.0499 6.93757 6.99259 6.96238C6.93527 6.9872 6.87347 7 6.81102 7C6.74856 7 6.68676 6.9872 6.62945 6.96238C6.57213 6.93757 6.52051 6.90127 6.47776 6.85573L0.622033 1"
@@ -370,36 +426,16 @@
                                             </svg>
                                         </div>
                                         <div class="incoming-requests__item__details">
-                                            <div class="request-id">№ 1209878</div>
+                                            
                                             <div class="request-date">12 августа 14:35</div>
-                                            <div class="request-archive">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M3.46154 16.9998H2.23077C1.90435 16.9998 1.5913 16.8701 1.36048 16.6393C1.12967 16.4085 1 16.0954 1 15.769V5.92285H17V15.769C17 16.0954 16.8703 16.4085 16.6395 16.6393C16.4087 16.8701 16.0957 16.9998 15.7692 16.9998H14.5385"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M5.92188 13.9229L8.9988 16.9998L12.0757 13.9229" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9 16.9998V9.61523" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.28 1.61538C14.1747 1.43291 14.0244 1.2805 13.8434 1.17275C13.6624 1.06501 13.4567 1.00552 13.2462 1H4.75385C4.54326 1.00552 4.33762 1.06501 4.1566 1.17275C3.97559 1.2805 3.82526 1.43291 3.72 1.61538L1 5.92308H17L14.28 1.61538Z"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M9 1V5.92308" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
+                
                                         </div>
 
                                         <div class="incoming-requests__item__title"><span class="company">Calzedonia</span><span class="request">Заявка - уборка помещений</span></div>
                                         <div class="incoming-requests__item__title--row">Заявка №1209878 «Уборка помещений»</div>
 
                                         <div class="incoming-requests__item__subtitle">
-                                            <div class="request-category">Клининг</div>
+                                            
                                             <div class="request-status waiting">ожидает исполнения</div>
                                         </div>
 
@@ -432,36 +468,16 @@
                                             </svg>
                                         </div>
                                         <div class="incoming-requests__item__details">
-                                            <div class="request-id">№ 1209878</div>
+                                            
                                             <div class="request-date">12 августа 14:35</div>
-                                            <div class="request-archive">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M3.46154 16.9998H2.23077C1.90435 16.9998 1.5913 16.8701 1.36048 16.6393C1.12967 16.4085 1 16.0954 1 15.769V5.92285H17V15.769C17 16.0954 16.8703 16.4085 16.6395 16.6393C16.4087 16.8701 16.0957 16.9998 15.7692 16.9998H14.5385"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M5.92188 13.9229L8.9988 16.9998L12.0757 13.9229" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9 16.9998V9.61523" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.28 1.61538C14.1747 1.43291 14.0244 1.2805 13.8434 1.17275C13.6624 1.06501 13.4567 1.00552 13.2462 1H4.75385C4.54326 1.00552 4.33762 1.06501 4.1566 1.17275C3.97559 1.2805 3.82526 1.43291 3.72 1.61538L1 5.92308H17L14.28 1.61538Z"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M9 1V5.92308" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
+                
                                         </div>
 
                                         <div class="incoming-requests__item__title"><span class="company">Calzedonia</span><span class="request">Заявка - уборка помещений</span></div>
                                         <div class="incoming-requests__item__title--row">Заявка №1209878 «Уборка помещений»</div>
 
                                         <div class="incoming-requests__item__subtitle">
-                                            <div class="request-category">Клининг</div>
+                                            
                                             <div class="request-status waiting">ожидает исполнения</div>
                                         </div>
 
@@ -494,36 +510,16 @@
                                             </svg>
                                         </div>
                                         <div class="incoming-requests__item__details">
-                                            <div class="request-id">№ 1209878</div>
+                                            
                                             <div class="request-date">12 августа 14:35</div>
-                                            <div class="request-archive">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M3.46154 16.9998H2.23077C1.90435 16.9998 1.5913 16.8701 1.36048 16.6393C1.12967 16.4085 1 16.0954 1 15.769V5.92285H17V15.769C17 16.0954 16.8703 16.4085 16.6395 16.6393C16.4087 16.8701 16.0957 16.9998 15.7692 16.9998H14.5385"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M5.92188 13.9229L8.9988 16.9998L12.0757 13.9229" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9 16.9998V9.61523" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.28 1.61538C14.1747 1.43291 14.0244 1.2805 13.8434 1.17275C13.6624 1.06501 13.4567 1.00552 13.2462 1H4.75385C4.54326 1.00552 4.33762 1.06501 4.1566 1.17275C3.97559 1.2805 3.82526 1.43291 3.72 1.61538L1 5.92308H17L14.28 1.61538Z"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M9 1V5.92308" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
+                
                                         </div>
 
                                         <div class="incoming-requests__item__title"><span class="company">Calzedonia</span><span class="request">Заявка - уборка помещений</span></div>
                                         <div class="incoming-requests__item__title--row">Заявка №1209878 «Уборка помещений»</div>
 
                                         <div class="incoming-requests__item__subtitle">
-                                            <div class="request-category">Клининг</div>
+                                            
                                             <div class="request-status waiting">ожидает исполнения</div>
                                         </div>
 
@@ -568,36 +564,16 @@
                                             </svg>
                                         </div>
                                         <div class="incoming-requests__item__details">
-                                            <div class="request-id">№ 1209878</div>
+                                            
                                             <div class="request-date">12 августа 14:35</div>
-                                            <div class="request-archive">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M3.46154 16.9998H2.23077C1.90435 16.9998 1.5913 16.8701 1.36048 16.6393C1.12967 16.4085 1 16.0954 1 15.769V5.92285H17V15.769C17 16.0954 16.8703 16.4085 16.6395 16.6393C16.4087 16.8701 16.0957 16.9998 15.7692 16.9998H14.5385"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M5.92188 13.9229L8.9988 16.9998L12.0757 13.9229" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9 16.9998V9.61523" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.28 1.61538C14.1747 1.43291 14.0244 1.2805 13.8434 1.17275C13.6624 1.06501 13.4567 1.00552 13.2462 1H4.75385C4.54326 1.00552 4.33762 1.06501 4.1566 1.17275C3.97559 1.2805 3.82526 1.43291 3.72 1.61538L1 5.92308H17L14.28 1.61538Z"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M9 1V5.92308" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
+                
                                         </div>
 
                                         <div class="incoming-requests__item__title"><span class="company">Calzedonia</span><span class="request">Заявка - уборка помещений</span></div>
                                         <div class="incoming-requests__item__title--row">Заявка №1209878 «Уборка помещений»</div>
 
                                         <div class="incoming-requests__item__subtitle">
-                                            <div class="request-category">Клининг</div>
+                                            
                                             <div class="request-status waiting">ожидает исполнения</div>
                                         </div>
 
@@ -630,36 +606,16 @@
                                             </svg>
                                         </div>
                                         <div class="incoming-requests__item__details">
-                                            <div class="request-id">№ 1209878</div>
+                                            
                                             <div class="request-date">12 августа 14:35</div>
-                                            <div class="request-archive">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M3.46154 16.9998H2.23077C1.90435 16.9998 1.5913 16.8701 1.36048 16.6393C1.12967 16.4085 1 16.0954 1 15.769V5.92285H17V15.769C17 16.0954 16.8703 16.4085 16.6395 16.6393C16.4087 16.8701 16.0957 16.9998 15.7692 16.9998H14.5385"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M5.92188 13.9229L8.9988 16.9998L12.0757 13.9229" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9 16.9998V9.61523" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.28 1.61538C14.1747 1.43291 14.0244 1.2805 13.8434 1.17275C13.6624 1.06501 13.4567 1.00552 13.2462 1H4.75385C4.54326 1.00552 4.33762 1.06501 4.1566 1.17275C3.97559 1.2805 3.82526 1.43291 3.72 1.61538L1 5.92308H17L14.28 1.61538Z"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M9 1V5.92308" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
+                
                                         </div>
 
                                         <div class="incoming-requests__item__title"><span class="company">Calzedonia</span><span class="request">Заявка - уборка помещений</span></div>
                                         <div class="incoming-requests__item__title--row">Заявка №1209878 «Уборка помещений»</div>
 
                                         <div class="incoming-requests__item__subtitle">
-                                            <div class="request-category">Клининг</div>
+                                            
                                             <div class="request-status waiting">ожидает исполнения</div>
                                         </div>
 
@@ -692,36 +648,16 @@
                                             </svg>
                                         </div>
                                         <div class="incoming-requests__item__details">
-                                            <div class="request-id">№ 1209878</div>
+                                            
                                             <div class="request-date">12 августа 14:35</div>
-                                            <div class="request-archive">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M3.46154 16.9998H2.23077C1.90435 16.9998 1.5913 16.8701 1.36048 16.6393C1.12967 16.4085 1 16.0954 1 15.769V5.92285H17V15.769C17 16.0954 16.8703 16.4085 16.6395 16.6393C16.4087 16.8701 16.0957 16.9998 15.7692 16.9998H14.5385"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M5.92188 13.9229L8.9988 16.9998L12.0757 13.9229" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9 16.9998V9.61523" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.28 1.61538C14.1747 1.43291 14.0244 1.2805 13.8434 1.17275C13.6624 1.06501 13.4567 1.00552 13.2462 1H4.75385C4.54326 1.00552 4.33762 1.06501 4.1566 1.17275C3.97559 1.2805 3.82526 1.43291 3.72 1.61538L1 5.92308H17L14.28 1.61538Z"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M9 1V5.92308" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
+                
                                         </div>
 
                                         <div class="incoming-requests__item__title"><span class="company">Calzedonia</span><span class="request">Заявка - уборка помещений</span></div>
                                         <div class="incoming-requests__item__title--row">Заявка №1209878 «Уборка помещений»</div>
 
                                         <div class="incoming-requests__item__subtitle">
-                                            <div class="request-category">Клининг</div>
+                                            
                                             <div class="request-status waiting">ожидает исполнения</div>
                                         </div>
 
@@ -754,36 +690,16 @@
                                             </svg>
                                         </div>
                                         <div class="incoming-requests__item__details">
-                                            <div class="request-id">№ 1209878</div>
+                                            
                                             <div class="request-date">12 августа 14:35</div>
-                                            <div class="request-archive">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                                                    <path
-                                                        d="M3.46154 16.9998H2.23077C1.90435 16.9998 1.5913 16.8701 1.36048 16.6393C1.12967 16.4085 1 16.0954 1 15.769V5.92285H17V15.769C17 16.0954 16.8703 16.4085 16.6395 16.6393C16.4087 16.8701 16.0957 16.9998 15.7692 16.9998H14.5385"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M5.92188 13.9229L8.9988 16.9998L12.0757 13.9229" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9 16.9998V9.61523" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.28 1.61538C14.1747 1.43291 14.0244 1.2805 13.8434 1.17275C13.6624 1.06501 13.4567 1.00552 13.2462 1H4.75385C4.54326 1.00552 4.33762 1.06501 4.1566 1.17275C3.97559 1.2805 3.82526 1.43291 3.72 1.61538L1 5.92308H17L14.28 1.61538Z"
-                                                        stroke="#101010"
-                                                        stroke-width="1.6"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    />
-                                                    <path d="M9 1V5.92308" stroke="#101010" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
+                
                                         </div>
 
                                         <div class="incoming-requests__item__title"><span class="company">Calzedonia</span><span class="request">Заявка - уборка помещений</span></div>
                                         <div class="incoming-requests__item__title--row">Заявка №1209878 «Уборка помещений»</div>
 
                                         <div class="incoming-requests__item__subtitle">
-                                            <div class="request-category">Клининг</div>
+                                            
                                             <div class="request-status waiting">ожидает исполнения</div>
                                         </div>
 

@@ -36,3 +36,15 @@ $('.modal__password__eye input').on('change', function(evt){
 // $('.settings__right_hidden_btn').on('click', function(e){
 //     $(this).closest('.settings__right_hidden').css('display', 'none')
 // })
+
+$("body").on("change", ".settings__photos_change input[type='file']", function (e) {
+    const file = this.files[0];
+    const reader = new FileReader();
+    const avatarImg = $(this).closest(".settings__photos_box").find(".settings__photos_avatar img");
+    reader.onload = function (e) {
+        avatarImg.attr("src", e.target.result);
+    };
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+});

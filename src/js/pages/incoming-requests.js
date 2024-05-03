@@ -36,8 +36,11 @@ $(".btn__apply").on('click', function(){
 });
 
 //star
-$('.star-ico').on('click', function(){
+$(document).on('click', '.star-ico', function(e){
+    e.preventDefault()
+    e.stopPropagation()
     $(this).toggleClass('filled')
+    $(this).closest('.incoming-requests__item').toggleClass('important')
 })
 
 //clear filters

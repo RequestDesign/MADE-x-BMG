@@ -181,6 +181,7 @@ body.color_pd .incoming-requests {
     }
 
     &__search {
+        display: none !important;
         display: flex;
         gap: 1.4rem;
         align-items: center;
@@ -273,6 +274,7 @@ body.color_pd .incoming-requests {
             }
 
             &__search {
+                display: none !important;
                 background-color: var(--searchSmBg);
                 padding: 1rem 1.6rem;
                 border-radius: 0.8rem;
@@ -299,6 +301,7 @@ body.color_pd .incoming-requests {
                 color: var(--normalTextColor);
 
                 &__option {
+                    cursor: pointer;
                     padding: 0.8rem 0;
                     display: flex;
                     align-items: center;
@@ -670,35 +673,27 @@ body.color_pd .incoming-requests {
                 width: 100%;
                 margin-right: 13.5rem;
 
-                &:hover {
-                    .request-date {
-                        display: none;
-                    }
-                    .request-archive {
-                        display: flex;
-                    }
-                }
-
                 &__img {
                     display: none;
                 }
 
                 &__star {
-                    display: block;
-                    cursor: pointer;
+                    margin-right: 8rem;
+                    position: static;
+                    
                 }
 
                 &__info {
                     flex-direction: row;
                     align-items: center;
-                    gap: 8rem;
+                    gap: unset;
                     width: 100%;
                     padding: 2.1rem 2.5rem 2.2rem 2.4rem;
                 }
 
                 &__details {
                     order: 3;
-                    margin-left: auto;
+                    margin-left: 4rem;
                     color: var(--cardTextColor);
 
                     .request-id {
@@ -709,6 +704,7 @@ body.color_pd .incoming-requests {
                 &__subtitle {
                     align-items: flex-start;
                     width: 16.5rem;
+                    margin-left: auto;
                     .request-category {
                         display: none;
                     }
@@ -726,6 +722,7 @@ body.color_pd .incoming-requests {
                         white-space: nowrap;
                     }
                     &--row {
+                        margin-left: 8rem;
                         display: block;
                         max-width: 34rem;
                         overflow: hidden;
@@ -761,10 +758,15 @@ body.color_pd .incoming-requests {
         }
 
         &__star {
-            display: none;
+            // display: none;
+            position: absolute;
+            right: 2rem;
+            bottom: 9rem;
+            cursor: pointer;
         }
 
         &__info {
+            position: relative;
             padding: 2rem;
             display: flex;
             flex-direction: column;
@@ -773,6 +775,7 @@ body.color_pd .incoming-requests {
         }
 
         &__details {
+            margin-left: auto;
             display: flex;
             justify-content: space-between;
             color: #acacac;
