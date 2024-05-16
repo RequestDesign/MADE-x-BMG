@@ -67,6 +67,9 @@ const intemBoxCheckboxHTML = `
     <div class="adding_application__item_box">
     <div class="adding_application__item_choices">
         <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить чек бокс</span></div>
+        <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
+            <span>Изменить тип поля</span>
+        </div>
         <div class="adding_application__item_choice adding_application__item_choice--add-checkbox-field"><span>Добавить поле при активном чекбоксе</span></div>
         <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
         <label class="adding_application__item_choice checkbox-wrapper">
@@ -76,6 +79,9 @@ const intemBoxCheckboxHTML = `
         </label>
         <div class="adding_application__item_choice adding_application__item_choice-addbox">
             <span>Добавить еще один чек-бокс</span>
+        </div>
+        <div class="adding_application__item_choice adding_application__item_choice--hint">
+          <span>Добавить подсказку</span>
         </div>
     </div>
     </div>
@@ -438,7 +444,7 @@ let itemTemplates = [
     {
         type: "checkboxes",
         html: `
-        <div class="adding_application__item adding_application__item--checkbox">
+        <div class="adding_application__item adding_application__item--checkbox" data-type="checkboxes">
         <div class="adding_application__item_position">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="6" y1="8.5" x2="18" y2="8.5" stroke="#ACACAC" />

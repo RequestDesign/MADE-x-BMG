@@ -462,6 +462,7 @@ $(function () {
 
 //добавляем тэги из модалки "выбор сотрудников" в инпут
 $("body").on("click", ".modal__edit-employee .btn__save", function () {
+    if($(this).hasClass('btn__add-imp')) return
     let $modal = $(this).closest(".modal__edit-employee");
     let $tagsList = clickedEmployeeItem.find(".adding_application__item_input_tags .swiper-wrapper");
     $tagsList.empty();
