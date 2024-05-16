@@ -874,7 +874,8 @@ body.color_pd .incoming-requests {
 }
 
 body.color_pl .incoming-requests__box--unread .star-ico {
-    --starStroke: #ffffff;
+    // --starStroke: #ffffff;
+    --starStroke: #686868;
 }
 
 .incoming-requests ~ #ui-datepicker-div {

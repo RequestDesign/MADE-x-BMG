@@ -523,3 +523,18 @@ body.color_pd .form {
         }
     }
 }
+
+.modal__edit-employee--add {
+    .adding_application__item_input {
+        margin-bottom: 5.4rem;
+    }
+    .form__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .modal__edit-employee__list {
+        overflow: auto;
+        max-height: 50vh;
+    }
+}

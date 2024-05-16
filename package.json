@@ -43,6 +43,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+		"@fancyapps/ui": "^5.0.35",
     "animate.css": "^4.1.1",
     "cropperjs": "^1.6.1",
     "gsap": "^3.12.2",
