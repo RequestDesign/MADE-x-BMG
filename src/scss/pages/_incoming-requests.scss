@@ -36,6 +36,8 @@ body .incoming-requests {
     --settingsSwitchActive: #101010;
     --cardTextColor: #101010;
     --readTextColor: #101010;
+    --datapicker-prev: url("./../../assets/images/calendar/arrow-prew-black.svg");
+    --datapicker-next: url("./../../assets/images/calendar/arrow-next-black.svg")
 }
 body.color_yd .incoming-requests {
     --normalTextColor: #ffffff;
@@ -75,6 +77,8 @@ body.color_yd .incoming-requests {
     --settingsSwitchActive: #f9ec00;
     --cardTextColor: #fff;
     --readTextColor: #fff;
+    --datapicker-prev: url("./../../assets/images/calendar/arrow-prew-y.svg");
+    --datapicker-next: url("./../../assets/images/calendar/arrow-next-y.svg")
 }
 body.color_pl .incoming-requests {
     --normalTextColor: #101010;
@@ -115,6 +119,8 @@ body.color_pl .incoming-requests {
     --settingsSwitchActive: #101010;
     --cardTextColor: #101010;
     --readTextColor: #101010;
+    --datapicker-prev: url("./../../assets/images/calendar/arrow-prew-black.svg");
+    --datapicker-next: url("./../../assets/images/calendar/arrow-next-black.svg")
 }
 body.color_pd .incoming-requests {
     --normalTextColor: #ffffff;
@@ -155,6 +161,8 @@ body.color_pd .incoming-requests {
     --settingsSwitchActive: #d01181;
     --cardTextColor: #101010;
     --readTextColor: #fff;
+    --datapicker-prev: url("./../../assets/images/calendar/arrow-prew-p.svg");
+    --datapicker-next: url("./../../assets/images/calendar/arrow-next-p.svg")
 }
 
 .incoming-requests {
@@ -361,7 +369,7 @@ body.color_pd .incoming-requests {
                     display: block;
                     width: 2.4rem;
                     height: 2.4rem;
-                    background-image: url("./../../assets/images/calendar/arrow-prew-black.svg");
+                    background-image: var(--datapicker-prev);
                     background-size: 2.4rem 2.4rem;
                     background-repeat: no-repeat;
                 }
@@ -380,7 +388,7 @@ body.color_pd .incoming-requests {
                     display: block;
                     width: 2.4rem;
                     height: 2.4rem;
-                    background-image: url("./../../assets/images/calendar/arrow-next-black.svg");
+                    background-image: var(--datapicker-next);
                     background-size: 2.4rem 2.4rem;
                     background-repeat: no-repeat;
                 }
@@ -775,7 +783,7 @@ body.color_pd .incoming-requests {
         }
 
         &__details {
-            margin-left: auto;
+            // margin-left: auto;
             display: flex;
             justify-content: space-between;
             color: #acacac;

@@ -74,6 +74,9 @@ const intemBoxCheckboxHTML = `
             <input class="adding_application__item_choice--checkbox" type="checkbox" />
             <div class="checkbox-icon"></div>
         </label>
+        <div class="adding_application__item_choice adding_application__item_choice-addbox">
+            <span>Добавить еще один чек-бокс</span>
+        </div>
     </div>
     </div>
 `;
@@ -314,103 +317,160 @@ let itemTemplates = [
         </div>
     `,
     },
+    // {
+    //     type: "checkboxes",
+    //     html: `
+    //     <div class="adding_application__item_group" data-type="checkboxes">
+    //         <div class="adding_application__item">
+    //         ${positionSVG}
+    //             <div class="adding_application__item_name">
+    //                 <span>Чек-боксы</span>
+    //                 ${editSVG}
+    //             </div>
+    //             <div class="adding_application__item_input-wrapper"> 
+    //             <div class="adding_application__item_input transparent">
+    //                 <div class="adding_application__item_input_text"></div>
+    //                 ${settingsSVG}
+    //                 <div class="adding_application__item_box">
+    //                     <div class="adding_application__item_choices">
+    //                         <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
+    //                         <div class="adding_application__item_choice adding_application__item_choice--change" data-modal="modal-create">
+    //                             <span>Изменить тип поля</span>
+    //                         </div>
+    //                         <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
+    //                         <label class="adding_application__item_choice checkbox-wrapper">
+    //                             <span>Обязательное поле</span>
+    //                             <input class="adding_application__item_choice--checkbox" type="checkbox" />
+    //                             <div class="checkbox-icon"></div>
+    //                         </label>
+    //                         <div class="adding_application__item_choice adding_application__item_choice--hint">
+    //                             <span>Добавить подсказку</span>
+    //                         </div>
+    //                         <div class="adding_application__item_choice adding_application__item_choice-addbox">
+    //                             <span>Добавить еще один чек-бокс</span>
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //         </div>
+    //         <div class="adding_application__item adding_application__item--checkbox">
+    //             <div class="adding_application__item_name">
+    //                 <span>Название чек-бокса</span>
+    //                 ${editSVG}
+    //             </div>
+    //             <div class="adding_application__item_input-wrapper">
+    //                 <div class="adding_application__item_input">
+    //                     <div class="adding_application__item_input_text">Чек-бокс</div>
+    //                     <div class="adding_application__item_input_tags swiper">
+    //                         <div class="swiper-wrapper"></div>
+    //                     </div>
+    //                     <button class="swiper-button-next">
+    //                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //                             <path
+    //                                 d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+    //                                 stroke="#101010"
+    //                                 stroke-linecap="round"
+    //                                 stroke-linejoin="round"
+    //                             />
+    //                         </svg>
+    //                     </button>
+    //                     ${settingsSVG}
+    //                     ${intemBoxCheckboxHTML}
+    //                 </div>
+    //             </div>
+    //         </div>
+    //         <div class="adding_application__item adding_application__item--checkbox">
+    //             <div class="adding_application__item_name">
+    //                 <span>Название чек-бокса</span>
+    //                 ${editSVG}
+    //             </div>
+    //             <div class="adding_application__item_input-wrapper">
+    //                 <div class="adding_application__item_input">
+    //                     <div class="adding_application__item_input_text">Чек-бокс</div>
+    //                     <div class="adding_application__item_input_tags swiper">
+    //                         <div class="swiper-wrapper"></div>
+    //                     </div>
+    //                     <button class="swiper-button-next">
+    //                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //                             <path
+    //                                 d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+    //                                 stroke="#101010"
+    //                                 stroke-linecap="round"
+    //                                 stroke-linejoin="round"
+    //                             />
+    //                         </svg>
+    //                     </button>
+    //                     ${settingsSVG}
+    //                     ${intemBoxCheckboxHTML}
+    //                 </div>
+    //             </div>
+    //         </div>
+    //         <div class="adding_application__item adding_application__item--checkbox">
+    //             <div class="adding_application__item_name">
+    //                 <span>Название чек-бокса</span>
+    //                 ${editSVG}
+    //             </div>
+    //             <div class="adding_application__item_input-wrapper">
+    //                 <div class="adding_application__item_input">
+    //                     <div class="adding_application__item_input_text">Чек-бокс</div>
+    //                     <div class="adding_application__item_input_tags swiper">
+    //                         <div class="swiper-wrapper"></div>
+    //                     </div>
+    //                     <button class="swiper-button-next">
+    //                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //                             <path
+    //                                 d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+    //                                 stroke="#101010"
+    //                                 stroke-linecap="round"
+    //                                 stroke-linejoin="round"
+    //                             />
+    //                         </svg>
+    //                     </button>
+    //                     ${settingsSVG}
+    //                     ${intemBoxCheckboxHTML}
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // `,
+    // },
     {
         type: "checkboxes",
         html: `
-        <div class="adding_application__item_group" data-type="checkboxes">
-            <div class="adding_application__item">
-            ${positionSVG}
-                <div class="adding_application__item_name">
-                    <span>Чек-боксы</span>
-                    ${editSVG}
+        <div class="adding_application__item adding_application__item--checkbox">
+        <div class="adding_application__item_position">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="6" y1="8.5" x2="18" y2="8.5" stroke="#ACACAC" />
+                <line x1="6" y1="11.5" x2="18" y2="11.5" stroke="#ACACAC" />
+                <line x1="6" y1="14.5" x2="18" y2="14.5" stroke="#ACACAC" />
+            </svg>
+        </div>
+        <div class="adding_application__item_name">
+            <span>Название чек-бокса</span>
+            ${editSVG}
+        </div>
+        <div class="adding_application__item_input-wrapper">
+            <div class="adding_application__item_input">
+                <div class="adding_application__item_input_text">Чек-бокс</div>
+                <div class="adding_application__item_input_tags swiper">
+                    <div class="swiper-wrapper"></div>
                 </div>
-                <div class="adding_application__item_input-wrapper"> 
-                <div class="adding_application__item_input transparent">
-                    <div class="adding_application__item_input_text"></div>
-                    ${settingsSVG}
-                    ${intemBoxDefaultHTML}
-                </div>
-            </div>
-            </div>
-            <div class="adding_application__item adding_application__item--checkbox">
-                <div class="adding_application__item_name">
-                    <span>Название чек-бокса</span>
-                    ${editSVG}
-                </div>
-                <div class="adding_application__item_input-wrapper">
-                    <div class="adding_application__item_input">
-                        <div class="adding_application__item_input_text">Чек-бокс</div>
-                        <div class="adding_application__item_input_tags swiper">
-                            <div class="swiper-wrapper"></div>
-                        </div>
-                        <button class="swiper-button-next">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
-                                    stroke="#101010"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
-                        ${settingsSVG}
-                        ${intemBoxCheckboxHTML}
-                    </div>
-                </div>
-            </div>
-            <div class="adding_application__item adding_application__item--checkbox">
-                <div class="adding_application__item_name">
-                    <span>Название чек-бокса</span>
-                    ${editSVG}
-                </div>
-                <div class="adding_application__item_input-wrapper">
-                    <div class="adding_application__item_input">
-                        <div class="adding_application__item_input_text">Чек-бокс</div>
-                        <div class="adding_application__item_input_tags swiper">
-                            <div class="swiper-wrapper"></div>
-                        </div>
-                        <button class="swiper-button-next">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
-                                    stroke="#101010"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
-                        ${settingsSVG}
-                        ${intemBoxCheckboxHTML}
-                    </div>
-                </div>
-            </div>
-            <div class="adding_application__item adding_application__item--checkbox">
-                <div class="adding_application__item_name">
-                    <span>Название чек-бокса</span>
-                    ${editSVG}
-                </div>
-                <div class="adding_application__item_input-wrapper">
-                    <div class="adding_application__item_input">
-                        <div class="adding_application__item_input_text">Чек-бокс</div>
-                        <div class="adding_application__item_input_tags swiper">
-                            <div class="swiper-wrapper"></div>
-                        </div>
-                        <button class="swiper-button-next">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
-                                    stroke="#101010"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
-                        ${settingsSVG}
-                        ${intemBoxCheckboxHTML}
-                    </div>
-                </div>
+                <button class="swiper-button-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+                            stroke="#101010"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+                ${settingsSVG}
+                ${intemBoxCheckboxHTML}
             </div>
         </div>
+    </div>
     `,
     },
     {
@@ -477,6 +537,37 @@ let itemTemplates = [
                             <div class="adding_application__item_choice adding_application__item_choice--duplicate"><span>Продублировать поле</span></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        `,
+    },
+    {
+        type: "checkboxBox",
+        html: `
+        <div class="adding_application__item adding_application__item--checkbox">
+            <div class="adding_application__item_name">
+                <span>Название чек-бокса</span>
+                ${editSVG}
+            </div>
+            <div class="adding_application__item_input-wrapper">
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Чек-бокс</div>
+                    <div class="adding_application__item_input_tags swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                    <button class="swiper-button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 6L14.8557 11.8557C14.9013 11.8985 14.9376 11.9501 14.9624 12.0074C14.9872 12.0647 15 12.1265 15 12.189C15 12.2514 14.9872 12.3132 14.9624 12.3706C14.9376 12.4279 14.9013 12.4795 14.8557 12.5222L9 18.378"
+                                stroke="#101010"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+                    ${settingsSVG}
+                    ${intemBoxCheckboxHTML}
                 </div>
             </div>
         </div>

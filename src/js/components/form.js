@@ -28,7 +28,7 @@ function checkBtn(item) {
             count++
         }
     })
-    $(item).closest('.form').find('.form__dropdown').each(function (param) {
+    $(item).closest('.form').find('.form__dropdown.required').each(function (param) {
         if(!$(this).find(':checked').length) {
             count++
         }

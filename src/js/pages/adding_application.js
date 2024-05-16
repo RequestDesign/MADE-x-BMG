@@ -256,6 +256,20 @@ $("body").on("click", ".adding_application__item_group .adding_application__item
     syncModalItem();
 });
 
+$("body").on("click", ".adding_application__item_choice-addbox", function () {
+    const item = $(this).closest(".adding_application__item");
+    const selectedTemplate = itemTemplates.find((item) => item.type === 'checkboxes');
+
+    if (selectedTemplate) {
+        console.log(123);
+        const newCategory = $(selectedTemplate.html);
+        $(item).after(newCategory);
+        checkListEmpty();
+        bindLinkEventHandlers();
+        updateLinkField();
+    }
+});
+
 //открываем модалку "изменить тип поля" по клику на "добавить поле при активном чекбоксе"
 $("body").on("click", ".adding_application__item_choice--add-checkbox-field", function () {
     $(this).closest(".adding_application__item_box").slideUp();

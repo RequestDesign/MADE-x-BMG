@@ -13,7 +13,7 @@ $.datepicker.regional["ru"] = {
 $.datepicker.setDefaults($.datepicker.regional["ru"]);
 
 $("#filterDatepicker").datepicker({
-    minDate: 0,
+    // minDate: 0,
     beforeShowDay: function (date) {
         let date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#startDate").val());
         let date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#endDate").val());
