@@ -6,6 +6,7 @@ body .modal__edit-employee {
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
     --inputInnerBg: #f4f4f4;
+    --borderAdd: none;
 }
 
 body.color_yd .modal__edit-employee {
@@ -16,6 +17,7 @@ body.color_yd .modal__edit-employee {
     --btnDeleteFill: #f9ec00;
     --btnDeleteStroke: #101010;
     --inputInnerBg: #fff;
+    --borderAdd: none;
 }
 
 body.color_pl .modal__edit-employee {
@@ -26,6 +28,7 @@ body.color_pl .modal__edit-employee {
     --btnDeleteFill: #101010;
     --btnDeleteStroke: #fff;
     --inputInnerBg: #fff;
+    --borderAdd: none;
 }
 
 body.color_pd .modal__edit-employee {
@@ -36,6 +39,7 @@ body.color_pd .modal__edit-employee {
     --btnDeleteFill: #d01181;
     --btnDeleteStroke: #101010;
     --inputInnerBg: #292929;
+    --borderAdd: 0.1rem solid rgba(255, 255, 255, 0.2);
 }
 
 .modal__edit-employee {
@@ -128,7 +132,7 @@ body.color_pd .modal__edit-employee {
         }
 
         &_empty {
-            display: none;
+            // display: none;
         }
     }
 
@@ -172,4 +176,29 @@ body.color_pd .modal__edit-employee {
     .adding_application__item--interval .adding_application__item_input_inner{
         background-color: var(--inputInnerBg);
     }
+}
+
+
+.modal__edit-employee--add {
+    .adding_application__item_input {
+        cursor: pointer;
+        svg {
+            path {
+                stroke: var(--settingsColor);
+            }
+        }
+    }
+}
+
+.modal__edit-employee {
+    .modal-content {
+        overflow: auto;
+        max-height: 80vh;
+    }
+    .adding_application__item_box {
+        right: 1rem;
+    }
+}
+.modal__create__form_item--emp {
+    display: none;
 }

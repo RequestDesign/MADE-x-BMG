@@ -50,6 +50,21 @@ const intemBoxDefaultHTML = `
     </div>
   </div>
 `;
+const intemBoxSimplHTML = `
+  <div class="adding_application__item_box">
+    <div class="adding_application__item_choices">
+      <div class="adding_application__item_choice adding_application__item_choice--delete"><span>Удалить поле</span></div>
+      <label class="adding_application__item_choice checkbox-wrapper">
+        <span>Обязательное поле</span>
+        <input class="adding_application__item_choice--checkbox" type="checkbox" />
+        <div class="checkbox-icon"></div>
+      </label>
+      <div class="adding_application__item_choice adding_application__item_choice--hint">
+        <span>Добавить подсказку</span>
+      </div>
+    </div>
+  </div>
+`;
 
 const itemBoxSmHTML = `
 <div class="adding_application__item_box">
@@ -578,6 +593,119 @@ let itemTemplates = [
             </div>
         </div>
         `,
+    },
+    {
+        type: "name",
+        html: `
+        <div class="adding_application__item" data-type="text-input">
+            <div class="adding_application__item_name">
+                <span class="adding_application__item_name_text">ФИО</span>
+            </div>
+            <div class="adding_application__item_input-wrapper">
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">ФИО</div>
+                    ${settingsSVG}
+                    ${intemBoxSimplHTML}
+                </div>
+            </div>
+        </div>
+    `,
+    check: "ФИО",
+    },
+    {
+        type: "activ",
+        html: `
+        <div class="adding_application__item" data-type="text-input">
+            <div class="adding_application__item_name">
+                <span class="adding_application__item_name_text">Вид активности</span>
+            </div>
+            <div class="adding_application__item_input-wrapper">
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Вид активности</div>
+                    ${settingsSVG}
+                    ${intemBoxSimplHTML}
+                </div>
+            </div>
+        </div>
+    `,
+    check: "Вид активности",
+    },
+    {
+        type: "position",
+        html: `
+        <div class="adding_application__item" data-type="text-input">
+            <div class="adding_application__item_name">
+                <span class="adding_application__item_name_text">Должность</span>
+            </div>
+            <div class="adding_application__item_input-wrapper">
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Должность</div>
+                    ${settingsSVG}
+                    ${intemBoxSimplHTML}
+                </div>
+            </div>
+        </div>
+    `,
+    check: "Должность",
+    },
+    {
+        type: "qualification",
+        html: `
+        <div class="adding_application__item" data-type="text-input">
+            <div class="adding_application__item_name">
+                <span class="adding_application__item_name_text">Квалификация</span>
+            </div>
+            <div class="adding_application__item_input-wrapper">
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Квалификация</div>
+                    ${settingsSVG}
+                    ${intemBoxSimplHTML}
+                </div>
+            </div>
+        </div>
+    `,
+    check: "Квалификация",
+    },
+    {
+        type: "briefing",
+        html: `
+        <div class="adding_application__item" data-type="date-input">
+            <div class="adding_application__item_name">
+                <span>Дата инструктажа</span>
+            </div>
+            <div class="adding_application__item_input-wrapper"> 
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">__\\__\\____</div>
+                    ${settingsSVG}
+                    ${intemBoxSimplHTML}
+                </div>
+            </div>
+        </div>
+    `,
+    check: "Дата инструктажа",
+    },
+    {
+        type: "photo",
+        html: `
+        <div class="adding_application__item" data-type="file-input">
+            <div class="adding_application__item_name">
+                <span>Фото</span>
+            </div>
+            <div class="adding_application__item_input-wrapper">
+                <div class="adding_application__item_input">
+                    <div class="adding_application__item_input_text">Выберите файлы</div>
+                    <svg class="file-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.76471 5.70588C7.17993 5.70588 6.70588 6.17993 6.70588 6.76471V18.0588C6.70588 18.6436 7.17993 19.1176 7.76471 19.1176H16.2353C16.8201 19.1176 17.2941 18.6436 17.2941 18.0588V10.2376C17.2941 9.92846 17.1591 9.63479 16.9244 9.43364L12.8727 5.96079C12.6808 5.7963 12.4364 5.70588 12.1836 5.70588H7.76471ZM6 6.76471C6 5.79009 6.79009 5 7.76471 5H12.1836C12.6049 5 13.0123 5.15069 13.3321 5.42484L17.3838 8.89769C17.7749 9.23295 18 9.72239 18 10.2376V18.0588C18 19.0334 17.2099 19.8235 16.2353 19.8235H7.76471C6.79009 19.8235 6 19.0334 6 18.0588V6.76471Z" fill="#101010" stroke="#101010" stroke-width="0.2" stroke-linejoin="round"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3516 8.17664V5.70605H13.0574V8.17664C13.0574 8.76141 13.5315 9.23547 14.1163 9.23547H17.2927V9.94135H14.1163C13.1416 9.94135 12.3516 9.15126 12.3516 8.17664Z" fill="#101010" stroke="#101010" stroke-width="0.2" stroke-linejoin="round"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.105 12.0179C12.0361 11.1314 13.539 11.1314 14.4701 12.0179C15.411 12.9137 15.411 14.3737 14.4701 15.2696L12.3113 17.3249C11.7776 17.833 10.9191 17.833 10.3854 17.3249C9.84184 16.8074 9.84184 15.9609 10.3854 15.4434L12.5442 13.3881L13.0309 13.8994L10.8721 15.9547C10.6208 16.1939 10.6208 16.5744 10.8721 16.8136C11.1332 17.0622 11.5634 17.0622 11.8246 16.8136L13.9834 14.7583C14.6321 14.1407 14.6321 13.1468 13.9834 12.5291C13.3248 11.9022 12.2502 11.9022 11.5917 12.5291L8.71329 15.2696L8.22656 14.7583L11.105 12.0179Z" fill="#101010" stroke="#101010" stroke-width="0.2"/>
+                    </svg>
+                    ${settingsSVG}
+                    ${intemBoxSimplHTML}
+                </div>
+            </div>
+        </div>
+    `,
+    check: "Фото",
     },
 ];
 

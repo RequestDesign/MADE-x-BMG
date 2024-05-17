@@ -978,4 +978,11 @@ body.color_pd .adding_application__item--imp {
     .adding_application__item_input_tags {
         margin-left: 0;
     }
+    .adding_application__item_settings {
+        svg {
+            path {
+                stroke: var(--settingsSwitchActive);
+            }
+        }
+    }
 }

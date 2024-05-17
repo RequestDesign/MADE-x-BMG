@@ -182,7 +182,14 @@ $("body").on("click", ".adding_application.adding_application--links .adding_app
 $("body").on("click", ".adding_application:not(.adding_application--links) .adding_application__bottom_add", () =>
     addNewField(".adding_application:not(.adding_application--links) .adding_application__list", "text-input")
 );
-$("body").on("click", ".btn__add-field", () => addNewField(".modal__edit-employee__list", "text-input"));
+$("body").on("click", ".btn__add-field", () => {
+    $(".modal__create__form_item:nth-of-type(14)").hide();
+    $(".modal__create").addClass("active");
+    const isBothModalsActive = $(".modal__create").hasClass("active") && $(".modal__edit-employee").hasClass("active");
+    console.log(isBothModalsActive);
+    $(".modal__create__form_item").toggle(!isBothModalsActive);
+    isBothModalsActive ? $(".modal__create__form_item--emp").css('display', 'flex') : $(".modal__create__form_item--emp").css('display', 'none')
+});
 
 //добавить подсказку
 $("body").on("click", ".adding_application__item_choice--hint", function () {
@@ -216,13 +223,16 @@ $("body").on("click", ".delete-hint", function () {
 $(".adding_application, .modal__edit-employee").on("click", '[data-modal="modal-create"]', function () {
     $(".modal__create__form_item:nth-of-type(14)").hide();
     $(".modal__create").addClass("active");
-    //скрываем "выбор сотрудников", "чек-боксы", "буллиты", "текст", "подзаголовок", если модалка вызвана из .modal__edit-employee
+    // //скрываем "выбор сотрудников", "чек-боксы", "буллиты", "текст", "подзаголовок", если модалка вызвана из .modal__edit-employee
     const isBothModalsActive = $(".modal__create").hasClass("active") && $(".modal__edit-employee").hasClass("active");
-    $(".modal__create__form_item:nth-of-type(7)").toggle(!isBothModalsActive);
-    $(".modal__create__form_item:nth-of-type(10)").toggle(!isBothModalsActive);
-    $(".modal__create__form_item:nth-of-type(11)").toggle(!isBothModalsActive);
-    $(".modal__create__form_item:nth-of-type(12)").toggle(!isBothModalsActive);
-    $(".modal__create__form_item:nth-of-type(13)").toggle(!isBothModalsActive);
+    // $(".modal__create__form_item:nth-of-type(7)").toggle(!isBothModalsActive);
+    // $(".modal__create__form_item:nth-of-type(10)").toggle(!isBothModalsActive);
+    // $(".modal__create__form_item:nth-of-type(11)").toggle(!isBothModalsActive);
+    // $(".modal__create__form_item:nth-of-type(12)").toggle(!isBothModalsActive);
+    // $(".modal__create__form_item:nth-of-type(13)").toggle(!isBothModalsActive);
+    console.log(isBothModalsActive);
+    $(".modal__create__form_item").toggle(!isBothModalsActive);
+    isBothModalsActive ? $(".modal__create__form_item--emp").css('display', 'flex') : $(".modal__create__form_item--emp").css('display', 'none')
 });
 
 //модалка изменить тип поля вызвана с заявки типа ссылки
@@ -238,6 +248,7 @@ $(".adding_application--links").on("click", '[data-modal="modal-create"]', funct
 //галочка в модалке соответствует типу поля (при изменении типа поля)
 function syncModalItem() {
     if (!clickedItem) return;
+    if(clickedItem == 'add') return
     const dataType = clickedItem.data("type");
     const radioInput = $(`.modal__create__form [data-type="${dataType}"]`);
     if (radioInput.length > 0) {
@@ -248,6 +259,10 @@ function syncModalItem() {
 
 $("body").on("click", ".adding_application__item_choice--change", function () {
     clickedItem = $(this).closest(".adding_application__item");
+    syncModalItem();
+});
+$("body").on("click", ".btn__add-field", function () {
+    clickedItem = 'add';
     syncModalItem();
 });
 
@@ -402,11 +417,22 @@ $(".modal__create__form").on("submit", function (e) {
     if (!clickedItem) return;
     const selectedType = $("input[name='field']:checked").data("type");
     const selectedTemplate = itemTemplates.find((item) => item.type === selectedType);
-    if (selectedTemplate) {
-        clickedItem.replaceWith(selectedTemplate.html);
-        bindLinkEventHandlers();
-        updateLinkField();
+    if(clickedItem == 'add') {
+        let test = 0
+        $('.modal__edit-employee__list').find('.adding_application__item_name').find('span').each(function( index ) {
+            if($(this).text() == selectedTemplate.check) {
+                test ++
+            }
+        })
+        if(!test) $('.modal__edit-employee__list').append(selectedTemplate.html)
+    } else {
+        if (selectedTemplate) {
+            clickedItem.replaceWith(selectedTemplate.html);
+            bindLinkEventHandlers();
+            updateLinkField();
+        }
     }
+
     clickedItem = null;
     checkTags();
 });
